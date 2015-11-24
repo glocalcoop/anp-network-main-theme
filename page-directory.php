@@ -67,7 +67,7 @@ Template Name: Network Sites
 									),
 								),
 							);
-							$network_query = new WP_Query( $args );
+							$network_query = get_posts( $args );
 
 							?>
 							<?php
