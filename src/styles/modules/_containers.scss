@@ -103,6 +103,7 @@ hr {
 .page-template-page-full-width-php,
 // .page-template-page-news-php,
 .page-template-page-directory-php,
+.page-template-directory,
 // .page-news,
 .page-events,
 .page-directory,
@@ -156,12 +157,12 @@ hr {
 
 // ONE-COLUMN CONTENT 
 
-// main.main-news,
-// .home-start,
-// .sites-list,
-// .networks-list {
-//     @include row();
-// }
+main.main-news,
+.home-start,
+.sites-list,
+.networks-list {
+    @include row();
+}
 
 
 // CUSTOM CONTAINERS 

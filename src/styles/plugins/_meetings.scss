@@ -2,11 +2,6 @@
 MEETINGS ARCHIVE & SINGLE STYLES
 *********************/
 
-// <ul class="sort js-menu">
-// <li class="is-on" data-sort="id">Most Recently Added</li>
-// <li data-sort="slug">Alphabetically</li>
-// <li data-sort="posts">Most Active</li>
-// </ul>
 
 // Meetings List - Archive
 .post-type-archive-meeting,
@@ -15,7 +10,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
 .post-type-archive-agenda,
 .tax-meeting_tag,
 .tax-meeting_type,
-.tax-proposal_status {
+.tax-proposal_status,
+.archive-meeting,
+.archive-proposal,
+.archive-summary,
+.archive-agenda,
+.taxonomy-meeting_type,
+.taxonomy-meeting_tag {
 
     .content-filter {
         @extend %clearfix;
@@ -133,16 +134,17 @@ MEETINGS ARCHIVE & SINGLE STYLES
 
     }
 
-
-    
-  
 }
 
 // Single Post
 .single-meeting,
 .single-proposal,
 .single-agenda,
-.single-summary {
+.single-summary,
+.singular-agenda,
+.singular-proposal,
+.singular-meeting,
+.singular-summary {
     
     article {
         

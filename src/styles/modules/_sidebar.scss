@@ -13,32 +13,42 @@ SIDEBARS & ASIDES
 	.menu a:hover {
   	color: $white;
 	}
+
+  .widget {
+    padding: 20px;
+    margin: 0 0 $space-half;
+    background: $base5;
+    color: $white;
+    a, 
+    a:visited {
+      color: $white;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
   
 }
 
 .widgettitle {
 	margin: -5px 0 0.5em;
 	color: $white;
-    color: rgba(255,255,255,.7);
-    @include font-size($zeta);
+  color: rgba(255,255,255,.7);
+  @include font-size($zeta);
 }
 
 
 .widget {
-	padding: 20px;
-	margin: 0 0 $space-half;
-  background: $base5;
-  color: $white;
-	a, 
-	a:visited {
-		color: $white;
-		font-weight: 300;
-		display: block;
+
+  padding: 20px;
+
+  a, 
+  a:visited {
+    font-weight: 300;
+    display: block;
     padding: 0.5em 0;
-		&:hover {
-  		color: $white;
-		}
-	}
+  }
+
 	ul {
   	border-bottom: 1px solid $text-color;
   	border-bottom: 1px solid rgba(0,0,0,.1);

@@ -4,21 +4,30 @@
 
 	<div class="wrap">
 
-		<main class="first" role="main">
+		<main role="main">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<header class="article-header">
-				<h1 class="page-title"><?php the_title(); ?></h1>
-			</header>
+			<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
 
-			<section class="entry-content clearfix">
-				<?php the_content(); ?>
-			</section>
+				<header class="article-header">
 
-			<footer class="article-footer"></footer>
+					<h1 class="page-title"><?php the_title(); ?></h1>
 
-			<?php // comments_template(); // uncomment if you want to use them ?>
+				</header>
+
+				<section class="entry-content">
+					<?php the_content(); ?>
+				</section>
+
+				<footer class="article-footer">
+					<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'glocal-theme' ) . '</span> ', ', ', '' ); ?></p>
+
+				</footer>
+
+				<?php // comments_template(); // uncomment if you want to use them ?>
+
+			</article>
 
 			<?php endwhile; ?>
 
@@ -35,7 +44,7 @@
 
 			<?php else : ?>
 
-					<article id="post-not-found" class="hentry clearfix">
+					<article id="post-not-found" class="hentry">
 							<header class="article-header">
 								<h1><?php _e( 'Oops, Post Not Found!', 'glocal-theme' ); ?></h1>
 						</header>

@@ -12,9 +12,9 @@ URL: http://glocal.coop
  * Comment Layout
  */
 
-if(! function_exists( 'anp_comments' ) ) {
+if(! function_exists( 'bones_comments' ) ) {
 
-	function anp_comments( $comment, $args, $depth ) {
+	function bones_comments( $comment, $args, $depth ) {
 
 	   $GLOBALS['comment'] = $comment; ?>
 		<li <?php comment_class(); ?>>
@@ -58,9 +58,9 @@ if(! function_exists( 'anp_comments' ) ) {
  * Search
  */
 
-if(! function_exists( 'anp_wpsearch' ) ) {
+if(! function_exists( 'bones_wpsearch' ) ) {
 
-	function anp_wpsearch( $form ) {
+	function bones_wpsearch( $form ) {
 		$form = '<form role="search" class="search reveal" method="get" id="searchform" action="' . home_url( '/' ) . '" >
 		<label class="screen-reader-text" for="s">' . __( 'Search for:', 'anp-main-theme' ) . '</label>
 		<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_attr__( 'Search', 'anp-main-theme' ) . '" />

@@ -1,95 +1,154 @@
 <?php
 
-/************* REGISTER MENUS ***************/
+if(! function_exists( 'anp_restrict_meeting_access' ) ) {
 
-function glocal_register_menus() {
-    register_nav_menu('network-menu',__( 'Main Menu' ));
-    unregister_nav_menu( 'main-nav' );
-    unregister_nav_menu( 'secondary-nav' );
-    unregister_nav_menu( 'utility-nav' );
+  function anp_restrict_meeting_access( $content ) {
+
+      global $post;
+
+      if ( $post->post_type == 'meeting' || is_page( 'meetings' ) ) {
+          if ( !is_user_logged_in() ) {
+              $content = 'Please login to view this post';
+          }
+      }
+
+      return $content;
+  }
+
+  add_filter( 'the_content', 'anp_restrict_meeting_access' );
+
 }
-add_action( 'init', 'glocal_register_menus' );
+
+/*
+ * Menu Customization
+ */
 
 
-function glocal_global_nav($menu) {
-	// display the wp3 menu if available
-	wp_nav_menu(array(
-    'container' => false,                           // remove nav container
-    'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
-    'menu' => __( 'Global Network Menu', 'glocal-global-menu' ),  // nav name
-    'menu_class' => 'menu clearfix',                // adding custom nav class
-    'menu_id' => 'menu-main-navigation',            // menu id
-    'theme_location' => $menu,                      // where it's located in the theme
-    'before' => '',                                 // before the menu
-    'after' => '',                                  // after the menu
-    'link_before' => '',                            // before each link
-    'link_after' => '',                             // after each link
-    'depth' => 0,                                   // limit the depth of the nav
-    'fallback_cb' => 'false'                        // fallback function - FALSE
-	));
-} /* end global nav */
+if(! function_exists( 'anp_register_menus' ) ) {
+
+  function anp_register_menus() {
+      register_nav_menu( 'network-menu',__( 'Main Menu' ) );
+      unregister_nav_menu( 'main-nav' );
+      unregister_nav_menu( 'secondary-nav' );
+      unregister_nav_menu( 'utility-nav' );
+  }
+
+  add_action( 'init', 'anp_register_menus' );
+
+}
+
+/*
+ * Template function for getting the main site navigation
+ */
+
+if(! function_exists( 'anp_global_nav' ) ) {
+
+  function anp_global_nav( $menu ) {
+    // display the wp3 menu if available
+    wp_nav_menu(array(
+      'container' => false,
+      'container_class' => 'menu clearfix',
+      'menu' => __( 'Global Network Menu', 'glocal-global-menu' ),
+      'menu_class' => 'menu clearfix',
+      'menu_id' => 'menu-main-navigation',
+      'theme_location' => $menu,
+      'before' => '',
+      'after' => '',
+      'link_before' => '',
+      'link_after' => '',
+      'depth' => 0,
+      'fallback_cb' => 'false'
+    ));
+  } /* end global nav */
+
+}
 
 
-/************* REMOVE BAD CIVI STYLING *****************/
+/*
+ * CiviCRM Stylesheet Override
+ */
+
 // Uses civicrm override hook
 
-function tc_civicrm_theme_css( ) {
-    $tc_css = get_bloginfo( 'stylesheet_directory' ) .'/css/plugins/civicrm.css';
-    return $tc_css;
-}
-add_filter( 'tc_civicss_override', 'tc_civicrm_theme_css' );
+if(! function_exists( 'tc_civicrm_theme_css' ) ) {
 
-
-/************* CUSTOM WIDGET FOR DISPLAYING SOCIAL LINKS ***************/
-
-// Moved to its own plugin (glocal-social-menu). PEA 1/29/2015
-
-/************* FEATURED IMAGE PREVIEW IN ADMIN ********************/
-
-// add_theme_support( 'post-thumbnails' ); // theme should support
-function glocal_add_post_thumbnail_column( $cols ) { // add the thumb column
-  // output feature thumb in the end
-  //$cols['glocal_post_thumb'] = __( 'Featured image', 'glocal' );
-  //return $cols;
-  // output feature thumb in a different column position
-  $cols_start = array_slice( $cols, 0, 2, true );
-  $cols_end   = array_slice( $cols, 2, null, true );
-  $custom_cols = array_merge(
-    $cols_start,
-    array( 'glocal_post_thumb' => __( 'Featured image', 'glocal' ) ),
-    $cols_end
-  );
-  return $custom_cols;
-}
-add_filter( 'manage_posts_columns', 'glocal_add_post_thumbnail_column', 5 ); // add the thumb column to posts
-add_filter( 'manage_pages_columns', 'glocal_add_post_thumbnail_column', 5 ); // add the thumb column to pages
-
-function glocal_display_post_thumbnail_column( $col, $id ) { // output featured image thumbnail
-  switch( $col ){
-    case 'glocal_post_thumb':
-      if( function_exists( 'the_post_thumbnail' ) ) {
-        echo the_post_thumbnail( 'thumbnail' );
-      } else {
-        echo __( 'Not supported in theme', 'glocal' );
-      }
-      break;
+  function tc_civicrm_theme_css( ) {
+      $tc_css = get_bloginfo( 'stylesheet_directory' ) .'/css/plugins/civicrm.css';
+      return $tc_css;
   }
+
+  add_filter( 'tc_civicss_override', 'tc_civicrm_theme_css' );
+
 }
-add_action( 'manage_posts_custom_column', 'glocal_display_post_thumbnail_column', 5, 2 ); // add the thumb to posts
-add_action( 'manage_pages_custom_column', 'glocal_display_post_thumbnail_column', 5, 2 ); // add the thumb to pages
+
+/*
+ * Display Featured Image in Admin List
+ */
+
+if(! function_exists( 'anp_add_post_thumbnail_column' ) ) {
+
+  function anp_add_post_thumbnail_column( $cols ) { // add the thumb column
+
+    // output feature thumb in a different column position
+    $cols_start = array_slice( $cols, 0, 2, true );
+    $cols_end   = array_slice( $cols, 2, null, true );
+    $custom_cols = array_merge(
+      $cols_start,
+      array( 'glocal_post_thumb' => __( 'Featured image', 'glocal' ) ),
+      $cols_end
+    );
+
+    return $custom_cols;
+  }
+
+  add_filter( 'manage_posts_columns', 'anp_add_post_thumbnail_column', 5 ); // add the thumb column to posts
+  add_filter( 'manage_pages_columns', 'anp_add_post_thumbnail_column', 5 ); // add the thumb column to pages
+
+
+}
+
+if(! function_exists( 'anp_display_post_thumbnail_column' ) ) {
+
+  function anp_display_post_thumbnail_column( $col, $id ) { // output featured image thumbnail
+    switch( $col ){
+      case 'glocal_post_thumb':
+        if( function_exists( 'the_post_thumbnail' ) ) {
+          echo the_post_thumbnail( 'thumbnail' );
+        } else {
+          echo __( 'Not supported in theme', 'glocal' );
+        }
+        break;
+    }
+  }
+
+  add_action( 'manage_posts_custom_column', 'anp_display_post_thumbnail_column', 5, 2 ); // add the thumb to posts
+  add_action( 'manage_pages_custom_column', 'anp_display_post_thumbnail_column', 5, 2 ); // add the thumb to pages
+
+}
+
 
 /************* ADD SLUG TO BODY CLASS *****************/
 
-// Add specific CSS class by filter
-add_filter('body_class','glocal_class_names');
-function glocal_class_names( $classes ) {
-	// add 'class-name' to the $classes array
-	global $post; 
-	$post_slug_class = ( 1 == count( $post ) ) ? $post->post_name : ''; 
-	$classes[] = $post_slug_class . ' page-' . $post_slug_class;
-	// return the $classes array
-	return $classes;
+/*
+ * Add Slug to Body Class
+ */
+
+if(! function_exists( 'anp_add_slug_to_body_class' ) ) {
+
+  // Add specific CSS class by filter
+  function anp_add_slug_to_body_class( $classes ) {
+    // add 'class-name' to the $classes array
+    global $post; 
+    $post_slug_class = ( isset( $post->post_name ) ) ? $post->post_name : ''; 
+    $classes[] = $post_slug_class;
+    // return the $classes array
+    return $classes;
+  }
+
+  add_filter('body_class','anp_add_slug_to_body_class');
+
 }
+
 
 /************* CUSTOM EXCERPT *****************/
 

@@ -25,7 +25,7 @@ Template Name: Network News
 				</section>
 
 				<footer class="post-footer">
-					<?php the_tags( '<h6 class="tags">' . __( 'Tags:', 'anp-main-theme' ) . '</h6> ', ', ', '' ); ?>
+					<?php the_tags( '<h6 class="tags">' . __( 'Tags:', 'glocal-theme' ) . '</h6> ', ', ', '' ); ?>
 				</footer>
 
 			</article>
@@ -51,7 +51,7 @@ Template Name: Network News
 
 			} else {
 				
-				get_template_part( 'partials/error', 'plugin' );
+				get_template_part( 'templates/error', 'plugin' );
 				
 			}
 

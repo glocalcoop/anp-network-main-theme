@@ -59,7 +59,7 @@ add_theme_support( 'menus' );
 
 if(! function_exists( 'anp_register_sidebars' ) ) {
 
-	function bones_anp_register_sidebar() {
+	function anp_register_sidebars() {
 		register_sidebar(array(
 			'id' => 'sidebar1',
 			'name' => __( 'Primary', 'anp-main-theme' ),

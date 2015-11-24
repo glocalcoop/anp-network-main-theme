@@ -1,6 +1,6 @@
-			<?php get_template_part( 'partials/footer', 'global' ); ?>
+			<?php get_template_part( 'templates/footer', 'global' ); ?>
 
-			<?php get_template_part( 'partials/footer', 'local' ); ?>
+			<?php get_template_part( 'templates/footer', 'local' ); ?>
 
 		</div> <!-- end #container -->
 

@@ -45,4 +45,4 @@
 
 	<div id="container">
 
-		<?php get_template_part( 'partials/header', 'global' ); ?>
+		<?php get_template_part( 'templates/header', 'global' ); ?>

@@ -128,7 +128,8 @@ select {
   text-transform: none; }
 
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer; }
@@ -203,7 +204,13 @@ th {
 .post-type-archive-agenda .content-filter:after,
 .tax-meeting_tag .content-filter:after,
 .tax-meeting_type .content-filter:after,
-.tax-proposal_status .content-filter:after {
+.tax-proposal_status .content-filter:after,
+.archive-meeting .content-filter:after,
+.archive-proposal .content-filter:after,
+.archive-summary .content-filter:after,
+.archive-agenda .content-filter:after,
+.taxonomy-meeting_type .content-filter:after,
+.taxonomy-meeting_tag .content-filter:after {
   content: "";
   display: table;
   clear: both; }
@@ -216,21 +223,21 @@ th {
 
 @font-face {
   font-family: 'entypo';
-  src: url("../fonts/entypo.eot");
-  src: url("../fonts/entypo.eot?#iefix") format("embedded-opentype"), url("../fonts/entypo.woff") format("woff"), url("../fonts/entypo.ttf") format("truetype"), url("../fonts/entypo.svg#entypo") format("svg");
+  src: url("assets/fonts/entypo.eot");
+  src: url("assets/fonts/entypo.eot?#iefix") format("embedded-opentype"), url("assets/fonts/entypo.woff") format("woff"), url("assets/fonts/entypo.ttf") format("truetype"), url("assets/fonts/entypo.svg#entypo") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'entypo-social';
-  src: url("../fonts/entypo-social.eot");
-  src: url("../fonts/entypo-social.eot?#iefix") format("embedded-opentype"), url("../fonts/entypo-social.woff") format("woff"), url("../fonts/entypo-social.ttf") format("truetype"), url("../fonts/entypo-social.svg#entypo-social") format("svg");
+  src: url("assets/fonts/entypo-social.eot");
+  src: url("assets/fonts/entypo-social.eot?#iefix") format("embedded-opentype"), url("assets/fonts/entypo-social.woff") format("woff"), url("assets/fonts/entypo-social.ttf") format("truetype"), url("assets/fonts/entypo-social.svg#entypo-social") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'ios7-icon';
-  src: url("../fonts/ios7-icon.woff") format("woff"), url("../fonts/ios7-icon.ttf") format("truetype"), url("../fonts/ios7-icon.svg#ios7-icon") format("svg");
+  src: url("assets/fonts/ios7-icon.woff") format("woff"), url("assets/fonts/ios7-icon.ttf") format("truetype"), url("assets/fonts/ios7-icon.svg#ios7-icon") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -240,16 +247,32 @@ th {
 .post-type-archive-agenda article .connected-content li:before,
 .tax-meeting_tag article .connected-content li:before,
 .tax-meeting_type article .connected-content li:before,
-.tax-proposal_status article .connected-content li:before, .post-type-archive-meeting article .tags:before,
+.tax-proposal_status article .connected-content li:before,
+.archive-meeting article .connected-content li:before,
+.archive-proposal article .connected-content li:before,
+.archive-summary article .connected-content li:before,
+.archive-agenda article .connected-content li:before,
+.taxonomy-meeting_type article .connected-content li:before,
+.taxonomy-meeting_tag article .connected-content li:before, .post-type-archive-meeting article .tags:before,
 .post-type-archive-proposal article .tags:before,
 .post-type-archive-summary article .tags:before,
 .post-type-archive-agenda article .tags:before,
 .tax-meeting_tag article .tags:before,
 .tax-meeting_type article .tags:before,
-.tax-proposal_status article .tags:before, .single-meeting article .entry-content .connected-content li:before,
+.tax-proposal_status article .tags:before,
+.archive-meeting article .tags:before,
+.archive-proposal article .tags:before,
+.archive-summary article .tags:before,
+.archive-agenda article .tags:before,
+.taxonomy-meeting_type article .tags:before,
+.taxonomy-meeting_tag article .tags:before, .single-meeting article .entry-content .connected-content li:before,
 .single-proposal article .entry-content .connected-content li:before,
 .single-agenda article .entry-content .connected-content li:before,
-.single-summary article .entry-content .connected-content li:before {
+.single-summary article .entry-content .connected-content li:before,
+.singular-agenda article .entry-content .connected-content li:before,
+.singular-proposal article .entry-content .connected-content li:before,
+.singular-meeting article .entry-content .connected-content li:before,
+.singular-summary article .entry-content .connected-content li:before {
   font-family: 'FontAwesome'; }
 
 [class^="icon-"] {
@@ -280,7 +303,7 @@ th {
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal normal 14px / 1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -325,7 +348,7 @@ th {
     left: -1.85714em; }
 
 .fa-border {
-  padding: 0.2em 0.25em 0.15em;
+  padding: .2em .25em .15em;
   border: solid 0.08em #eee;
   border-radius: .1em; }
 
@@ -573,7 +596,13 @@ th {
 .post-type-archive-agenda article .tags:before,
 .tax-meeting_tag article .tags:before,
 .tax-meeting_type article .tags:before,
-.tax-proposal_status article .tags:before {
+.tax-proposal_status article .tags:before,
+.archive-meeting article .tags:before,
+.archive-proposal article .tags:before,
+.archive-summary article .tags:before,
+.archive-agenda article .tags:before,
+.taxonomy-meeting_type article .tags:before,
+.taxonomy-meeting_tag article .tags:before {
   content: ""; }
 
 .fa-book:before {
@@ -621,10 +650,20 @@ th {
 .post-type-archive-agenda article .connected-content li.agenda-link:before,
 .tax-meeting_tag article .connected-content li.agenda-link:before,
 .tax-meeting_type article .connected-content li.agenda-link:before,
-.tax-proposal_status article .connected-content li.agenda-link:before, .single-meeting article .entry-content .connected-content li.agenda-link:before,
+.tax-proposal_status article .connected-content li.agenda-link:before,
+.archive-meeting article .connected-content li.agenda-link:before,
+.archive-proposal article .connected-content li.agenda-link:before,
+.archive-summary article .connected-content li.agenda-link:before,
+.archive-agenda article .connected-content li.agenda-link:before,
+.taxonomy-meeting_type article .connected-content li.agenda-link:before,
+.taxonomy-meeting_tag article .connected-content li.agenda-link:before, .single-meeting article .entry-content .connected-content li.agenda-link:before,
 .single-proposal article .entry-content .connected-content li.agenda-link:before,
 .single-agenda article .entry-content .connected-content li.agenda-link:before,
-.single-summary article .entry-content .connected-content li.agenda-link:before {
+.single-summary article .entry-content .connected-content li.agenda-link:before,
+.singular-agenda article .entry-content .connected-content li.agenda-link:before,
+.singular-proposal article .entry-content .connected-content li.agenda-link:before,
+.singular-meeting article .entry-content .connected-content li.agenda-link:before,
+.singular-summary article .entry-content .connected-content li.agenda-link:before {
   content: ""; }
 
 .fa-dedent:before,
@@ -1084,16 +1123,28 @@ th {
   content: ""; }
 
 .fa-legal:before,
-.fa-gavel:before, .post-type-archive-meeting article .connected-content li.proposal-link:before,
+.fa-gavel:before,
+.post-type-archive-meeting article .connected-content li.proposal-link:before,
 .post-type-archive-proposal article .connected-content li.proposal-link:before,
 .post-type-archive-summary article .connected-content li.proposal-link:before,
 .post-type-archive-agenda article .connected-content li.proposal-link:before,
 .tax-meeting_tag article .connected-content li.proposal-link:before,
 .tax-meeting_type article .connected-content li.proposal-link:before,
-.tax-proposal_status article .connected-content li.proposal-link:before, .single-meeting article .entry-content .connected-content li.proposal-link:before,
+.tax-proposal_status article .connected-content li.proposal-link:before,
+.archive-meeting article .connected-content li.proposal-link:before,
+.archive-proposal article .connected-content li.proposal-link:before,
+.archive-summary article .connected-content li.proposal-link:before,
+.archive-agenda article .connected-content li.proposal-link:before,
+.taxonomy-meeting_type article .connected-content li.proposal-link:before,
+.taxonomy-meeting_tag article .connected-content li.proposal-link:before,
+.single-meeting article .entry-content .connected-content li.proposal-link:before,
 .single-proposal article .entry-content .connected-content li.proposal-link:before,
 .single-agenda article .entry-content .connected-content li.proposal-link:before,
-.single-summary article .entry-content .connected-content li.proposal-link:before {
+.single-summary article .entry-content .connected-content li.proposal-link:before,
+.singular-agenda article .entry-content .connected-content li.proposal-link:before,
+.singular-proposal article .entry-content .connected-content li.proposal-link:before,
+.singular-meeting article .entry-content .connected-content li.proposal-link:before,
+.singular-summary article .entry-content .connected-content li.proposal-link:before {
   content: ""; }
 
 .fa-dashboard:before,
@@ -1117,7 +1168,8 @@ th {
   content: ""; }
 
 .fa-paste:before,
-.fa-clipboard:before, .post-type-archive-meeting article .connected-content li.summary-link:before,
+.fa-clipboard:before,
+.post-type-archive-meeting article .connected-content li.summary-link:before,
 .post-type-archive-meeting article .connected-content li.meeting-link:before,
 .post-type-archive-proposal article .connected-content li.summary-link:before,
 .post-type-archive-proposal article .connected-content li.meeting-link:before,
@@ -1130,14 +1182,35 @@ th {
 .tax-meeting_type article .connected-content li.summary-link:before,
 .tax-meeting_type article .connected-content li.meeting-link:before,
 .tax-proposal_status article .connected-content li.summary-link:before,
-.tax-proposal_status article .connected-content li.meeting-link:before, .single-meeting article .entry-content .connected-content li.summary-link:before,
+.tax-proposal_status article .connected-content li.meeting-link:before,
+.archive-meeting article .connected-content li.summary-link:before,
+.archive-meeting article .connected-content li.meeting-link:before,
+.archive-proposal article .connected-content li.summary-link:before,
+.archive-proposal article .connected-content li.meeting-link:before,
+.archive-summary article .connected-content li.summary-link:before,
+.archive-summary article .connected-content li.meeting-link:before,
+.archive-agenda article .connected-content li.summary-link:before,
+.archive-agenda article .connected-content li.meeting-link:before,
+.taxonomy-meeting_type article .connected-content li.summary-link:before,
+.taxonomy-meeting_type article .connected-content li.meeting-link:before,
+.taxonomy-meeting_tag article .connected-content li.summary-link:before,
+.taxonomy-meeting_tag article .connected-content li.meeting-link:before,
+.single-meeting article .entry-content .connected-content li.summary-link:before,
 .single-meeting article .entry-content .connected-content li.meeting-link:before,
 .single-proposal article .entry-content .connected-content li.summary-link:before,
 .single-proposal article .entry-content .connected-content li.meeting-link:before,
 .single-agenda article .entry-content .connected-content li.summary-link:before,
 .single-agenda article .entry-content .connected-content li.meeting-link:before,
 .single-summary article .entry-content .connected-content li.summary-link:before,
-.single-summary article .entry-content .connected-content li.meeting-link:before {
+.single-summary article .entry-content .connected-content li.meeting-link:before,
+.singular-agenda article .entry-content .connected-content li.summary-link:before,
+.singular-agenda article .entry-content .connected-content li.meeting-link:before,
+.singular-proposal article .entry-content .connected-content li.summary-link:before,
+.singular-proposal article .entry-content .connected-content li.meeting-link:before,
+.singular-meeting article .entry-content .connected-content li.summary-link:before,
+.singular-meeting article .entry-content .connected-content li.meeting-link:before,
+.singular-summary article .entry-content .connected-content li.summary-link:before,
+.singular-summary article .entry-content .connected-content li.meeting-link:before {
   content: ""; }
 
 .fa-lightbulb-o:before {
@@ -2569,9 +2642,11 @@ style a page via class
 /* if user is logged in */
 /* paged items like search results or archives */
 /* individual paged (i.e. body.paged-3) */
-.post-excerpt, .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel .news-list .post-title a, .news-list .so-widget-sow-post-carousel .post-title a,
-.so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a,
-.so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a {
+.post-excerpt, .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel .news-list .post-title a, .news-list .so-widget-sow-post-carousel .post-title a, .so-widget-sow-post-carousel
+.home .widget_glocal_network_posts_widget .post-title a,
+.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .so-widget-sow-post-carousel
+.home-modules .widget_em_widget ul .all-events-link a,
+.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
@@ -2624,8 +2699,7 @@ hr {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto; }
-  .wrap:before,
-  .wrap:after {
+  .wrap:before, .wrap:after {
     content: " ";
     display: table; }
   .wrap:after {
@@ -2659,6 +2733,7 @@ hr {
 
 .page-template-page-full-width-php .content main,
 .page-template-page-directory-php .content main,
+.page-template-directory .content main,
 .page-events .content main,
 .page-directory .content main,
 .page-sites .content main {
@@ -2668,10 +2743,32 @@ hr {
   width: 100%; }
   .page-template-page-full-width-php .content main:last-child,
   .page-template-page-directory-php .content main:last-child,
+  .page-template-directory .content main:last-child,
   .page-events .content main:last-child,
   .page-directory .content main:last-child,
   .page-sites .content main:last-child {
     margin-right: 0; }
+
+main.main-news,
+.home-start,
+.sites-list,
+.networks-list {
+  *zoom: 1;
+  display: block; }
+  main.main-news:before, main.main-news:after,
+  .home-start:before,
+  .home-start:after,
+  .sites-list:before,
+  .sites-list:after,
+  .networks-list:before,
+  .networks-list:after {
+    content: " ";
+    display: table; }
+  main.main-news:after,
+  .home-start:after,
+  .sites-list:after,
+  .networks-list:after {
+    clear: both; }
 
 .home-intro {
   background: #fff;
@@ -2725,8 +2822,7 @@ hr {
       color: #fff;
       text-decoration: none;
       text-transform: uppercase; }
-      .header-global .site-title a:hover,
-      .header-global .site-title a:focus {
+      .header-global .site-title a:hover, .header-global .site-title a:focus {
         background-color: #4d4c4a; }
 
 @media screen and (min-width: 878px) {
@@ -2808,8 +2904,7 @@ hr {
     background: #247cc9;
     border-color: #247cc9;
     color: #fff !important; }
-    .nav-social .facebook a:hover,
-    .nav-social .facebook a:focus {
+    .nav-social .facebook a:hover, .nav-social .facebook a:focus {
       background: #fff;
       color: #247cc9 !important; }
     .nav-social .facebook a:before {
@@ -2826,8 +2921,7 @@ hr {
     background: #29abe2;
     border-color: #29abe2;
     color: #fff !important; }
-    .nav-social .twitter a:hover,
-    .nav-social .twitter a:focus {
+    .nav-social .twitter a:hover, .nav-social .twitter a:focus {
       background: #fff;
       color: #29abe2 !important; }
     .nav-social .twitter a:before {
@@ -2844,8 +2938,7 @@ hr {
     background: #00a99d;
     border-color: #00a99d;
     color: #fff !important; }
-    .nav-social .github a:hover,
-    .nav-social .github a:focus {
+    .nav-social .github a:hover, .nav-social .github a:focus {
       background: #fff;
       color: #00a99d !important; }
     .nav-social .github a:before {
@@ -2862,8 +2955,7 @@ hr {
     background: #22b573;
     border-color: #22b573;
     color: #fff !important; }
-    .nav-social .email a:hover,
-    .nav-social .email a:focus {
+    .nav-social .email a:hover, .nav-social .email a:focus {
       background: #fff;
       color: #22b573 !important; }
     .nav-social .email a:before {
@@ -2880,8 +2972,7 @@ hr {
     background: #ff931e;
     border-color: #ff931e;
     color: #fff !important; }
-    .nav-social .rss a:hover,
-    .nav-social .rss a:focus {
+    .nav-social .rss a:hover, .nav-social .rss a:focus {
       background: #fff;
       color: #ff931e !important; }
     .nav-social .rss a:before {
@@ -2898,8 +2989,7 @@ hr {
     background: #000;
     border-color: #000;
     color: #fff !important; }
-    .nav-social .network a:hover,
-    .nav-social .network a:focus {
+    .nav-social .network a:hover, .nav-social .network a:focus {
       background: #fff;
       color: #000 !important; }
     .nav-social .network a:before {
@@ -3073,8 +3163,7 @@ styles and our css is cleaner and more scalable. */
   .nav-global a,
   .nav-global a:visited {
     color: #fff; }
-    .nav-global a:hover,
-    .nav-global a:focus,
+    .nav-global a:hover, .nav-global a:focus,
     .nav-global a:visited:hover,
     .nav-global a:visited:focus {
       color: #e6e4df; }
@@ -3119,8 +3208,7 @@ styles and our css is cleaner and more scalable. */
       border-bottom: 1px solid #4d4c4a; }
       .nav-global .main-nav.active li a {
         display: block; }
-      .nav-global .main-nav.active li:hover,
-      .nav-global .main-nav.active li:focus {
+      .nav-global .main-nav.active li:hover, .nav-global .main-nav.active li:focus {
         background-color: #4d4c4a; }
       .nav-global .main-nav.active li:last-child {
         border-bottom: none; }
@@ -3139,8 +3227,7 @@ styles and our css is cleaner and more scalable. */
     color: #fff;
     text-decoration: none;
     text-transform: uppercase; }
-    .nav-global .anchor-menu:hover,
-    .nav-global .anchor-menu:focus {
+    .nav-global .anchor-menu:hover, .nav-global .anchor-menu:focus {
       background-color: #4d4c4a; }
   .nav-global .search-form {
     display: none; }
@@ -3183,8 +3270,7 @@ styles and our css is cleaner and more scalable. */
   .nav-global li {
     font-size: 1em;
     border-bottom: none; }
-    .nav-global li:hover,
-    .nav-global li:focus {
+    .nav-global li:hover, .nav-global li:focus {
       background-color: #4d4c4a; }
     .nav-global li li {
       border-bottom: 1px solid #4d4c4a; }
@@ -3223,8 +3309,7 @@ styles and our css is cleaner and more scalable. */
       display: inline-block;
       color: inherit;
       vertical-align: middle; }
-    .nav-anchors .anchor-menu:hover,
-    .nav-anchors .anchor-menu:focus {
+    .nav-anchors .anchor-menu:hover, .nav-anchors .anchor-menu:focus {
       background-color: #4d4c4a; }
     .nav-anchors .anchor-menu:before {
       float: right;
@@ -3312,8 +3397,7 @@ styles and our css is cleaner and more scalable. */
   color: #333231;
   padding: 0.8em;
   position: relative; }
-  .header-local .menu a:focus,
-  .header-local .menu a:hover {
+  .header-local .menu a:focus, .header-local .menu a:hover {
     color: #00a99d; }
 
 .header-local .menu-item-has-children > a:before {
@@ -3521,8 +3605,7 @@ a {
   /* mobile tap color */ }
   a:visited {
     color: #00a99d; }
-  a:hover,
-  a:focus {
+  a:hover, a:focus {
     color: #000; }
   a:link {
     /*
@@ -3540,13 +3623,21 @@ a {
   letter-spacing: 1px; }
 
 button,
-.button, .post-type-archive-meeting .content-filter li,
+.button,
+.post-type-archive-meeting .content-filter li,
 .post-type-archive-proposal .content-filter li,
 .post-type-archive-summary .content-filter li,
 .post-type-archive-agenda .content-filter li,
 .tax-meeting_tag .content-filter li,
 .tax-meeting_type .content-filter li,
-.tax-proposal_status .content-filter li, .so-widget-sow-cta .sow-cta-base .ow-button-base a {
+.tax-proposal_status .content-filter li,
+.archive-meeting .content-filter li,
+.archive-proposal .content-filter li,
+.archive-summary .content-filter li,
+.archive-agenda .content-filter li,
+.taxonomy-meeting_type .content-filter li,
+.taxonomy-meeting_tag .content-filter li,
+.so-widget-sow-cta .sow-cta-base .ow-button-base a {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -3556,14 +3647,13 @@ button,
   letter-spacing: 2px;
   line-height: 1.2;
   font-weight: 700;
-  padding: 0.75em 3em;
+  padding: .75em 3em;
   text-align: center;
   border: 0;
   background: #00a99d;
   color: #fff;
   display: inline-block; }
-  button:link,
-  button:visited,
+  button:link, button:visited,
   .button:link,
   .post-type-archive-meeting .content-filter li:link,
   .post-type-archive-proposal .content-filter li:link,
@@ -3572,17 +3662,30 @@ button,
   .tax-meeting_tag .content-filter li:link,
   .tax-meeting_type .content-filter li:link,
   .tax-proposal_status .content-filter li:link,
+  .archive-meeting .content-filter li:link,
+  .archive-proposal .content-filter li:link,
+  .archive-summary .content-filter li:link,
+  .archive-agenda .content-filter li:link,
+  .taxonomy-meeting_type .content-filter li:link,
+  .taxonomy-meeting_tag .content-filter li:link,
   .so-widget-sow-cta .sow-cta-base .ow-button-base a:link,
-  .button:visited, .post-type-archive-meeting .content-filter li:visited,
+  .button:visited,
+  .post-type-archive-meeting .content-filter li:visited,
   .post-type-archive-proposal .content-filter li:visited,
   .post-type-archive-summary .content-filter li:visited,
   .post-type-archive-agenda .content-filter li:visited,
   .tax-meeting_tag .content-filter li:visited,
   .tax-meeting_type .content-filter li:visited,
-  .tax-proposal_status .content-filter li:visited, .so-widget-sow-cta .sow-cta-base .ow-button-base a:visited {
+  .tax-proposal_status .content-filter li:visited,
+  .archive-meeting .content-filter li:visited,
+  .archive-proposal .content-filter li:visited,
+  .archive-summary .content-filter li:visited,
+  .archive-agenda .content-filter li:visited,
+  .taxonomy-meeting_type .content-filter li:visited,
+  .taxonomy-meeting_tag .content-filter li:visited,
+  .so-widget-sow-cta .sow-cta-base .ow-button-base a:visited {
     color: #fff; }
-  button:hover,
-  button:focus,
+  button:hover, button:focus,
   .button:hover,
   .post-type-archive-meeting .content-filter li:hover,
   .post-type-archive-proposal .content-filter li:hover,
@@ -3591,63 +3694,115 @@ button,
   .tax-meeting_tag .content-filter li:hover,
   .tax-meeting_type .content-filter li:hover,
   .tax-proposal_status .content-filter li:hover,
+  .archive-meeting .content-filter li:hover,
+  .archive-proposal .content-filter li:hover,
+  .archive-summary .content-filter li:hover,
+  .archive-agenda .content-filter li:hover,
+  .taxonomy-meeting_type .content-filter li:hover,
+  .taxonomy-meeting_tag .content-filter li:hover,
   .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover,
-  .button:focus, .post-type-archive-meeting .content-filter li:focus,
+  .button:focus,
+  .post-type-archive-meeting .content-filter li:focus,
   .post-type-archive-proposal .content-filter li:focus,
   .post-type-archive-summary .content-filter li:focus,
   .post-type-archive-agenda .content-filter li:focus,
   .tax-meeting_tag .content-filter li:focus,
   .tax-meeting_type .content-filter li:focus,
-  .tax-proposal_status .content-filter li:focus, .so-widget-sow-cta .sow-cta-base .ow-button-base a:focus {
+  .tax-proposal_status .content-filter li:focus,
+  .archive-meeting .content-filter li:focus,
+  .archive-proposal .content-filter li:focus,
+  .archive-summary .content-filter li:focus,
+  .archive-agenda .content-filter li:focus,
+  .taxonomy-meeting_type .content-filter li:focus,
+  .taxonomy-meeting_tag .content-filter li:focus,
+  .so-widget-sow-cta .sow-cta-base .ow-button-base a:focus {
     background: #00dccc;
     color: #fff !important; }
 
-.home-intro .button, .home-intro .post-type-archive-meeting .content-filter li, .post-type-archive-meeting .content-filter .home-intro li,
-.home-intro .post-type-archive-proposal .content-filter li, .post-type-archive-proposal .content-filter .home-intro li,
-.home-intro .post-type-archive-summary .content-filter li, .post-type-archive-summary .content-filter .home-intro li,
-.home-intro .post-type-archive-agenda .content-filter li, .post-type-archive-agenda .content-filter .home-intro li,
-.home-intro .tax-meeting_tag .content-filter li, .tax-meeting_tag .content-filter .home-intro li,
-.home-intro .tax-meeting_type .content-filter li, .tax-meeting_type .content-filter .home-intro li,
-.home-intro .tax-proposal_status .content-filter li, .tax-proposal_status .content-filter .home-intro li, .home-intro .so-widget-sow-cta .sow-cta-base .ow-button-base a, .so-widget-sow-cta .sow-cta-base .ow-button-base .home-intro a {
+.home-intro .button, .home-intro .post-type-archive-meeting .content-filter li, .post-type-archive-meeting .content-filter .home-intro li, .home-intro
+.post-type-archive-proposal .content-filter li,
+.post-type-archive-proposal .content-filter .home-intro li, .home-intro
+.post-type-archive-summary .content-filter li,
+.post-type-archive-summary .content-filter .home-intro li, .home-intro
+.post-type-archive-agenda .content-filter li,
+.post-type-archive-agenda .content-filter .home-intro li, .home-intro
+.tax-meeting_tag .content-filter li,
+.tax-meeting_tag .content-filter .home-intro li, .home-intro
+.tax-meeting_type .content-filter li,
+.tax-meeting_type .content-filter .home-intro li, .home-intro
+.tax-proposal_status .content-filter li,
+.tax-proposal_status .content-filter .home-intro li, .home-intro
+.archive-meeting .content-filter li,
+.archive-meeting .content-filter .home-intro li, .home-intro
+.archive-proposal .content-filter li,
+.archive-proposal .content-filter .home-intro li, .home-intro
+.archive-summary .content-filter li,
+.archive-summary .content-filter .home-intro li, .home-intro
+.archive-agenda .content-filter li,
+.archive-agenda .content-filter .home-intro li, .home-intro
+.taxonomy-meeting_type .content-filter li,
+.taxonomy-meeting_type .content-filter .home-intro li, .home-intro
+.taxonomy-meeting_tag .content-filter li,
+.taxonomy-meeting_tag .content-filter .home-intro li, .home-intro .so-widget-sow-cta .sow-cta-base .ow-button-base a, .so-widget-sow-cta .sow-cta-base .ow-button-base .home-intro a {
   margin-bottom: 10px;
   margin-right: 10px;
   width: 100%; }
 
-.sidebar .button,
-.sidebar .post-type-archive-meeting .content-filter li,
-.post-type-archive-meeting .content-filter .sidebar li,
-.sidebar .post-type-archive-proposal .content-filter li,
-.post-type-archive-proposal .content-filter .sidebar li,
-.sidebar .post-type-archive-summary .content-filter li,
-.post-type-archive-summary .content-filter .sidebar li,
-.sidebar .post-type-archive-agenda .content-filter li,
-.post-type-archive-agenda .content-filter .sidebar li,
-.sidebar .tax-meeting_tag .content-filter li,
-.tax-meeting_tag .content-filter .sidebar li,
-.sidebar .tax-meeting_type .content-filter li,
-.tax-meeting_type .content-filter .sidebar li,
-.sidebar .tax-proposal_status .content-filter li,
-.tax-proposal_status .content-filter .sidebar li, .sidebar .so-widget-sow-cta .sow-cta-base .ow-button-base a,
-.so-widget-sow-cta .sow-cta-base .ow-button-base .sidebar a, .sidebar input[type='submit'] {
+.sidebar .button, .sidebar .post-type-archive-meeting .content-filter li, .post-type-archive-meeting .content-filter .sidebar li, .sidebar
+.post-type-archive-proposal .content-filter li,
+.post-type-archive-proposal .content-filter .sidebar li, .sidebar
+.post-type-archive-summary .content-filter li,
+.post-type-archive-summary .content-filter .sidebar li, .sidebar
+.post-type-archive-agenda .content-filter li,
+.post-type-archive-agenda .content-filter .sidebar li, .sidebar
+.tax-meeting_tag .content-filter li,
+.tax-meeting_tag .content-filter .sidebar li, .sidebar
+.tax-meeting_type .content-filter li,
+.tax-meeting_type .content-filter .sidebar li, .sidebar
+.tax-proposal_status .content-filter li,
+.tax-proposal_status .content-filter .sidebar li, .sidebar
+.archive-meeting .content-filter li,
+.archive-meeting .content-filter .sidebar li, .sidebar
+.archive-proposal .content-filter li,
+.archive-proposal .content-filter .sidebar li, .sidebar
+.archive-summary .content-filter li,
+.archive-summary .content-filter .sidebar li, .sidebar
+.archive-agenda .content-filter li,
+.archive-agenda .content-filter .sidebar li, .sidebar
+.taxonomy-meeting_type .content-filter li,
+.taxonomy-meeting_type .content-filter .sidebar li, .sidebar
+.taxonomy-meeting_tag .content-filter li,
+.taxonomy-meeting_tag .content-filter .sidebar li, .sidebar .so-widget-sow-cta .sow-cta-base .ow-button-base a, .so-widget-sow-cta .sow-cta-base .ow-button-base .sidebar a,
+.sidebar input[type='submit'] {
   background: #4d4c4a;
   background: rgba(0, 0, 0, 0.6);
   font-weight: 700; }
-  .sidebar .button:hover,
-  .sidebar .post-type-archive-meeting .content-filter li:hover,
-  .post-type-archive-meeting .content-filter .sidebar li:hover,
-  .sidebar .post-type-archive-proposal .content-filter li:hover,
-  .post-type-archive-proposal .content-filter .sidebar li:hover,
-  .sidebar .post-type-archive-summary .content-filter li:hover,
-  .post-type-archive-summary .content-filter .sidebar li:hover,
-  .sidebar .post-type-archive-agenda .content-filter li:hover,
-  .post-type-archive-agenda .content-filter .sidebar li:hover,
-  .sidebar .tax-meeting_tag .content-filter li:hover,
-  .tax-meeting_tag .content-filter .sidebar li:hover,
-  .sidebar .tax-meeting_type .content-filter li:hover,
-  .tax-meeting_type .content-filter .sidebar li:hover,
-  .sidebar .tax-proposal_status .content-filter li:hover,
-  .tax-proposal_status .content-filter .sidebar li:hover, .sidebar .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover,
-  .so-widget-sow-cta .sow-cta-base .ow-button-base .sidebar a:hover, .sidebar input[type='submit']:hover {
+  .sidebar .button:hover, .sidebar .post-type-archive-meeting .content-filter li:hover, .post-type-archive-meeting .content-filter .sidebar li:hover, .sidebar
+  .post-type-archive-proposal .content-filter li:hover,
+  .post-type-archive-proposal .content-filter .sidebar li:hover, .sidebar
+  .post-type-archive-summary .content-filter li:hover,
+  .post-type-archive-summary .content-filter .sidebar li:hover, .sidebar
+  .post-type-archive-agenda .content-filter li:hover,
+  .post-type-archive-agenda .content-filter .sidebar li:hover, .sidebar
+  .tax-meeting_tag .content-filter li:hover,
+  .tax-meeting_tag .content-filter .sidebar li:hover, .sidebar
+  .tax-meeting_type .content-filter li:hover,
+  .tax-meeting_type .content-filter .sidebar li:hover, .sidebar
+  .tax-proposal_status .content-filter li:hover,
+  .tax-proposal_status .content-filter .sidebar li:hover, .sidebar
+  .archive-meeting .content-filter li:hover,
+  .archive-meeting .content-filter .sidebar li:hover, .sidebar
+  .archive-proposal .content-filter li:hover,
+  .archive-proposal .content-filter .sidebar li:hover, .sidebar
+  .archive-summary .content-filter li:hover,
+  .archive-summary .content-filter .sidebar li:hover, .sidebar
+  .archive-agenda .content-filter li:hover,
+  .archive-agenda .content-filter .sidebar li:hover, .sidebar
+  .taxonomy-meeting_type .content-filter li:hover,
+  .taxonomy-meeting_type .content-filter .sidebar li:hover, .sidebar
+  .taxonomy-meeting_tag .content-filter li:hover,
+  .taxonomy-meeting_tag .content-filter .sidebar li:hover, .sidebar .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover, .so-widget-sow-cta .sow-cta-base .ow-button-base .sidebar a:hover,
+  .sidebar input[type='submit']:hover {
     background: #757472;
     background: rgba(0, 0, 0, 0.4); }
 
@@ -3715,9 +3870,11 @@ POSTS & CONTENT STYLES
 	and floating images at the next breakpoint,
 	but it's up to you. Feel free to change it up.
 	*/ }
-  .post .entry-content h2, .post .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .post .entry-content h4, .post .entry-content h3, .post .entry-content .news-list .post-title, .news-list .post .entry-content .post-title,
-  .post .entry-content .home .widget_glocal_network_posts_widget .post-title, .home .widget_glocal_network_posts_widget .post .entry-content .post-title, .post .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list .post .entry-content .all-events-link,
-  .post .entry-content .home-modules .widget_em_widget ul .all-events-link, .home-modules .widget_em_widget ul .post .entry-content .all-events-link, .post .entry-content h4 {
+  .post .entry-content h2, .post .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .post .entry-content h4, .post .entry-content h3, .post .entry-content .news-list .post-title, .news-list .post .entry-content .post-title, .post .entry-content
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget .post .entry-content .post-title, .post .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list .post .entry-content .all-events-link, .post .entry-content
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul .post .entry-content .all-events-link, .post .entry-content h4 {
     margin-top: 1.8em; }
   .post .entry-content p {
     max-width: 40em; }
@@ -3844,9 +4001,13 @@ POSTS & CONTENT STYLES
   margin-top: 0;
   margin-bottom: 20px; }
 
-.home .post-excerpt, .home .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .home a, .home .so-widget-sow-post-carousel .news-list .post-title a, .so-widget-sow-post-carousel .news-list .post-title .home a, .home .news-list .so-widget-sow-post-carousel .post-title a, .news-list .so-widget-sow-post-carousel .post-title .home a,
-.so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .home .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .home a, .home .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .home a,
-.home .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .home a, .home .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .home a {
+.home .post-excerpt, .home .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .home a, .home .so-widget-sow-post-carousel .news-list .post-title a, .so-widget-sow-post-carousel .news-list .post-title .home a, .home .news-list .so-widget-sow-post-carousel .post-title a, .news-list .so-widget-sow-post-carousel .post-title .home a, .so-widget-sow-post-carousel
+.home .widget_glocal_network_posts_widget .post-title a,
+.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .home .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .home a, .home .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .home a, .home .so-widget-sow-post-carousel
+.home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel
+.home-modules .widget_em_widget ul .all-events-link .home a, .home
+.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a,
+.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .home a {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
@@ -3895,9 +4056,15 @@ POSTS & CONTENT STYLES
     margin: 3px 0 -3px;
     font-size: 22px;
     font-size: 1.375rem; }
-  .highlights-list .post-excerpt, .highlights-list .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .highlights-list a, .highlights-list .so-widget-sow-post-carousel .news-list .post-title a, .so-widget-sow-post-carousel .news-list .post-title .highlights-list a, .highlights-list .news-list .so-widget-sow-post-carousel .post-title a, .news-list .so-widget-sow-post-carousel .post-title .highlights-list a,
-  .highlights-list .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title .highlights-list a, .highlights-list .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .highlights-list a, .highlights-list .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .highlights-list a, .highlights-list .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .highlights-list a,
-  .highlights-list .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .highlights-list a, .highlights-list .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .highlights-list a {
+  .highlights-list .post-excerpt, .highlights-list .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .highlights-list a, .highlights-list .so-widget-sow-post-carousel .news-list .post-title a, .so-widget-sow-post-carousel .news-list .post-title .highlights-list a, .highlights-list .news-list .so-widget-sow-post-carousel .post-title a, .news-list .so-widget-sow-post-carousel .post-title .highlights-list a, .highlights-list .so-widget-sow-post-carousel
+  .home .widget_glocal_network_posts_widget .post-title a, .so-widget-sow-post-carousel
+  .home .widget_glocal_network_posts_widget .post-title .highlights-list a, .highlights-list
+  .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a,
+  .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .highlights-list a, .highlights-list .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .highlights-list a, .highlights-list .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .highlights-list a, .highlights-list .so-widget-sow-post-carousel
+  .home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel
+  .home-modules .widget_em_widget ul .all-events-link .highlights-list a, .highlights-list
+  .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a,
+  .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .highlights-list a {
     font-size: 14px;
     font-size: 0.875rem; }
   .highlights-list .blog-name,
@@ -3923,12 +4090,14 @@ POSTS & CONTENT STYLES
         margin-right: 0; } }
 
 .home .sites-list,
-.page-template-page-directory .sites-list {
+.page-template-page-directory .sites-list,
+.page-template-directory .sites-list {
   clear: both;
   padding: 0;
   width: 100%; }
   .home .sites-list li,
-  .page-template-page-directory .sites-list li {
+  .page-template-page-directory .sites-list li,
+  .page-template-directory .sites-list li {
     background: #fff;
     margin-top: 0;
     margin-bottom: 20px;
@@ -3944,43 +4113,54 @@ POSTS & CONTENT STYLES
     margin-right: 1.75788%;
     width: 49.12106%; }
     .home .sites-list li:last-child,
-    .page-template-page-directory .sites-list li:last-child {
+    .page-template-page-directory .sites-list li:last-child,
+    .page-template-directory .sites-list li:last-child {
       margin-right: 0; }
     .home .sites-list li:nth-child(2n),
-    .page-template-page-directory .sites-list li:nth-child(2n) {
+    .page-template-page-directory .sites-list li:nth-child(2n),
+    .page-template-directory .sites-list li:nth-child(2n) {
       margin-right: 0; }
     .home .sites-list li:nth-child(2n+1),
-    .page-template-page-directory .sites-list li:nth-child(2n+1) {
+    .page-template-page-directory .sites-list li:nth-child(2n+1),
+    .page-template-directory .sites-list li:nth-child(2n+1) {
       clear: left; }
     @media screen and (min-width: 878px) {
       .home .sites-list li,
-      .page-template-page-directory .sites-list li {
+      .page-template-page-directory .sites-list li,
+      .page-template-directory .sites-list li {
         display: block;
         float: left;
         margin-right: 1.75788%;
         width: 23.68159%; }
         .home .sites-list li:nth-child(2n),
-        .page-template-page-directory .sites-list li:nth-child(2n) {
+        .page-template-page-directory .sites-list li:nth-child(2n),
+        .page-template-directory .sites-list li:nth-child(2n) {
           margin-right: 1.75788%; }
         .home .sites-list li:nth-child(2n+1),
-        .page-template-page-directory .sites-list li:nth-child(2n+1) {
+        .page-template-page-directory .sites-list li:nth-child(2n+1),
+        .page-template-directory .sites-list li:nth-child(2n+1) {
           clear: none; }
         .home .sites-list li:last-child,
-        .page-template-page-directory .sites-list li:last-child {
+        .page-template-page-directory .sites-list li:last-child,
+        .page-template-directory .sites-list li:last-child {
           margin-right: 0; }
         .home .sites-list li:nth-child(4n),
-        .page-template-page-directory .sites-list li:nth-child(4n) {
+        .page-template-page-directory .sites-list li:nth-child(4n),
+        .page-template-directory .sites-list li:nth-child(4n) {
           margin-right: 0; }
         .home .sites-list li:nth-child(4n+1),
-        .page-template-page-directory .sites-list li:nth-child(4n+1) {
+        .page-template-page-directory .sites-list li:nth-child(4n+1),
+        .page-template-directory .sites-list li:nth-child(4n+1) {
           clear: left; } }
   .home .sites-list li:hover,
-  .page-template-page-directory .sites-list li:hover {
+  .page-template-page-directory .sites-list li:hover,
+  .page-template-directory .sites-list li:hover {
     box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 4; }
   .home .sites-list .item-image,
-  .page-template-page-directory .sites-list .item-image {
+  .page-template-page-directory .sites-list .item-image,
+  .page-template-directory .sites-list .item-image {
     display: block;
     width: 100%;
     height: 180px;
@@ -3989,12 +4169,15 @@ POSTS & CONTENT STYLES
     background-position: center center;
     background-repeat: no-repeat; }
   .home .sites-list a,
-  .page-template-page-directory .sites-list a {
+  .page-template-page-directory .sites-list a,
+  .page-template-directory .sites-list a {
     display: block; }
   .home .sites-list .item-title,
   .home .sites-list .site-name,
   .page-template-page-directory .sites-list .item-title,
-  .page-template-page-directory .sites-list .site-name {
+  .page-template-page-directory .sites-list .site-name,
+  .page-template-directory .sites-list .item-title,
+  .page-template-directory .sites-list .site-name {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin: 0;
@@ -4002,14 +4185,16 @@ POSTS & CONTENT STYLES
     font-size: 18px;
     font-size: 1.125rem; }
   .home .sites-list .meta,
-  .page-template-page-directory .sites-list .meta {
+  .page-template-page-directory .sites-list .meta,
+  .page-template-directory .sites-list .meta {
     margin: 0;
     padding: 6px 12px 0;
     font-size: 11px;
     font-size: 0.6875rem;
     color: #b8b6b2; }
   .home .sites-list.no-site-image li,
-  .page-template-page-directory .sites-list.no-site-image li {
+  .page-template-page-directory .sites-list.no-site-image li,
+  .page-template-directory .sites-list.no-site-image li {
     height: 104px;
     background: #247cc9;
     color: #fff; }
@@ -4018,7 +4203,10 @@ POSTS & CONTENT STYLES
     .home .sites-list.no-site-image li time,
     .page-template-page-directory .sites-list.no-site-image li a,
     .page-template-page-directory .sites-list.no-site-image li a:link,
-    .page-template-page-directory .sites-list.no-site-image li time {
+    .page-template-page-directory .sites-list.no-site-image li time,
+    .page-template-directory .sites-list.no-site-image li a,
+    .page-template-directory .sites-list.no-site-image li a:link,
+    .page-template-directory .sites-list.no-site-image li time {
       color: #fff; }
 
 .home .widget_glocal_network_posts_widget .item-image {
@@ -4040,6 +4228,18 @@ SIDEBARS & ASIDES
 .sidebar .menu a:hover {
   color: #fff; }
 
+.sidebar .widget {
+  padding: 20px;
+  margin: 0 0 12px;
+  background: #999894;
+  color: #fff; }
+  .sidebar .widget a,
+  .sidebar .widget a:visited {
+    color: #fff; }
+    .sidebar .widget a:hover,
+    .sidebar .widget a:visited:hover {
+      color: #fff; }
+
 .widgettitle {
   margin: -5px 0 0.5em;
   color: #fff;
@@ -4048,19 +4248,12 @@ SIDEBARS & ASIDES
   font-size: 1rem; }
 
 .widget {
-  padding: 20px;
-  margin: 0 0 12px;
-  background: #999894;
-  color: #fff; }
+  padding: 20px; }
   .widget a,
   .widget a:visited {
-    color: #fff;
     font-weight: 300;
     display: block;
     padding: 0.5em 0; }
-    .widget a:hover,
-    .widget a:visited:hover {
-      color: #fff; }
   .widget ul {
     border-bottom: 1px solid #333231;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -4157,29 +4350,59 @@ SIDEBARS & ASIDES
 .home .widget_glocal_network_posts_widget .post-title {
   margin: .25em 0 0; }
 
-.news-list .post-excerpt,
-.news-list .so-widget-sow-post-carousel h3 a,
-.so-widget-sow-post-carousel h3 .news-list a, .so-widget-sow-post-carousel .news-list .post-title a, .news-list .so-widget-sow-post-carousel .post-title a,
-.so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title .news-list a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .news-list a, .news-list .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a,
-.so-widget-sow-post-carousel .home-modules .events-list .all-events-link .news-list a, .news-list .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a,
-.home-modules .events-list .so-widget-sow-post-carousel .all-events-link .news-list a,
-.news-list .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a,
-.so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .news-list a, .news-list .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a,
-.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .news-list a, .home .widget_glocal_network_posts_widget .post-excerpt, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .home .widget_glocal_network_posts_widget a, .so-widget-sow-post-carousel .news-list .post-title .home .widget_glocal_network_posts_widget a, .news-list .so-widget-sow-post-carousel .post-title .home .widget_glocal_network_posts_widget a,
-.so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .home .widget_glocal_network_posts_widget a, .home .widget_glocal_network_posts_widget .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .home .widget_glocal_network_posts_widget a,
-.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .home .widget_glocal_network_posts_widget a, .home .widget_glocal_network_posts_widget .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .home .widget_glocal_network_posts_widget a {
-  margin: 0.25em 0 0.5em; }
-  .news-list .post-excerpt a,
-  .news-list .so-widget-sow-post-carousel h3 a a,
-  .so-widget-sow-post-carousel h3 .news-list a a, .so-widget-sow-post-carousel .news-list .post-title a a, .news-list .so-widget-sow-post-carousel .post-title a a,
-  .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title .news-list a a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .news-list a a, .news-list .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a a,
-  .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .news-list a a, .news-list .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a a,
-  .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .news-list a a,
-  .news-list .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a a,
-  .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .news-list a a, .news-list .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a a,
-  .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .news-list a a, .home .widget_glocal_network_posts_widget .post-excerpt a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel h3 a a, .so-widget-sow-post-carousel h3 .home .widget_glocal_network_posts_widget a a, .so-widget-sow-post-carousel .news-list .post-title .home .widget_glocal_network_posts_widget a a, .news-list .so-widget-sow-post-carousel .post-title .home .widget_glocal_network_posts_widget a a,
-  .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .home .widget_glocal_network_posts_widget a a, .home .widget_glocal_network_posts_widget .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .home .widget_glocal_network_posts_widget a a,
-  .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a a, .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .home .widget_glocal_network_posts_widget a a, .home .widget_glocal_network_posts_widget .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .home .widget_glocal_network_posts_widget a a {
+.news-list .post-excerpt, .news-list .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .news-list a, .so-widget-sow-post-carousel .news-list .post-title a, .news-list .so-widget-sow-post-carousel .post-title a, .so-widget-sow-post-carousel
+.home .widget_glocal_network_posts_widget .post-title .news-list a,
+.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .news-list a, .news-list .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .news-list a, .news-list .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .news-list a, .news-list .so-widget-sow-post-carousel
+.home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel
+.home-modules .widget_em_widget ul .all-events-link .news-list a, .news-list
+.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a,
+.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .news-list a,
+.home .widget_glocal_network_posts_widget .post-excerpt,
+.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3
+.home .widget_glocal_network_posts_widget a, .so-widget-sow-post-carousel .news-list .post-title
+.home .widget_glocal_network_posts_widget a, .news-list .so-widget-sow-post-carousel .post-title
+.home .widget_glocal_network_posts_widget a, .so-widget-sow-post-carousel
+.home .widget_glocal_network_posts_widget .post-title a,
+.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a,
+.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link
+.home .widget_glocal_network_posts_widget a,
+.home .widget_glocal_network_posts_widget .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link
+.home .widget_glocal_network_posts_widget a,
+.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel
+.home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel
+.home-modules .widget_em_widget ul .all-events-link
+.home .widget_glocal_network_posts_widget a,
+.home .widget_glocal_network_posts_widget
+.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a,
+.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link
+.home .widget_glocal_network_posts_widget a {
+  margin: .25em 0 .5em; }
+  .news-list .post-excerpt a, .news-list .so-widget-sow-post-carousel h3 a a, .so-widget-sow-post-carousel h3 .news-list a a, .so-widget-sow-post-carousel .news-list .post-title a a, .news-list .so-widget-sow-post-carousel .post-title a a, .so-widget-sow-post-carousel
+  .home .widget_glocal_network_posts_widget .post-title .news-list a a,
+  .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .news-list a a, .news-list .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .news-list a a, .news-list .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .news-list a a, .news-list .so-widget-sow-post-carousel
+  .home-modules .widget_em_widget ul .all-events-link a a, .so-widget-sow-post-carousel
+  .home-modules .widget_em_widget ul .all-events-link .news-list a a, .news-list
+  .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a a,
+  .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .news-list a a,
+  .home .widget_glocal_network_posts_widget .post-excerpt a,
+  .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel h3 a a, .so-widget-sow-post-carousel h3
+  .home .widget_glocal_network_posts_widget a a, .so-widget-sow-post-carousel .news-list .post-title
+  .home .widget_glocal_network_posts_widget a a, .news-list .so-widget-sow-post-carousel .post-title
+  .home .widget_glocal_network_posts_widget a a, .so-widget-sow-post-carousel
+  .home .widget_glocal_network_posts_widget .post-title a a,
+  .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a a,
+  .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link
+  .home .widget_glocal_network_posts_widget a a,
+  .home .widget_glocal_network_posts_widget .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link
+  .home .widget_glocal_network_posts_widget a a,
+  .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel
+  .home-modules .widget_em_widget ul .all-events-link a a, .so-widget-sow-post-carousel
+  .home-modules .widget_em_widget ul .all-events-link
+  .home .widget_glocal_network_posts_widget a a,
+  .home .widget_glocal_network_posts_widget
+  .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a a,
+  .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link
+  .home .widget_glocal_network_posts_widget a a {
     display: inline; }
 
 .news-list .blog-name,
@@ -4220,8 +4443,7 @@ SIDEBARS & ASIDES
   margin-top: 0;
   margin-bottom: 24px;
   background: #fff; }
-  .post:before,
-  .post:after {
+  .post:before, .post:after {
     content: " ";
     display: table; }
   .post:after {
@@ -4315,9 +4537,15 @@ SIDEBARS & ASIDES
     display: block;
     border: 5px solid #fff; }
 
-.network-posts .post-excerpt, .network-posts .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .network-posts a, .network-posts .so-widget-sow-post-carousel .news-list .post-title a, .so-widget-sow-post-carousel .news-list .post-title .network-posts a, .network-posts .news-list .so-widget-sow-post-carousel .post-title a, .news-list .so-widget-sow-post-carousel .post-title .network-posts a,
-.network-posts .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title .network-posts a, .network-posts .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .network-posts a, .network-posts .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .network-posts a, .network-posts .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .network-posts a,
-.network-posts .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link .network-posts a, .network-posts .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .network-posts a {
+.network-posts .post-excerpt, .network-posts .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel h3 .network-posts a, .network-posts .so-widget-sow-post-carousel .news-list .post-title a, .so-widget-sow-post-carousel .news-list .post-title .network-posts a, .network-posts .news-list .so-widget-sow-post-carousel .post-title a, .news-list .so-widget-sow-post-carousel .post-title .network-posts a, .network-posts .so-widget-sow-post-carousel
+.home .widget_glocal_network_posts_widget .post-title a, .so-widget-sow-post-carousel
+.home .widget_glocal_network_posts_widget .post-title .network-posts a, .network-posts
+.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a,
+.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title .network-posts a, .network-posts .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link .network-posts a, .network-posts .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link .network-posts a, .network-posts .so-widget-sow-post-carousel
+.home-modules .widget_em_widget ul .all-events-link a, .so-widget-sow-post-carousel
+.home-modules .widget_em_widget ul .all-events-link .network-posts a, .network-posts
+.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a,
+.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .network-posts a {
   font-size: 22px;
   font-size: 1.375rem;
   margin-bottom: 12px; }
@@ -4407,7 +4635,7 @@ input[type='submit'] {
   line-height: 1.2;
   white-space: inherit;
   margin: 0;
-  padding: 0.6em 2em; }
+  padding: .6em 2em; }
   input[type='submit']:hover {
     background: #fff;
     color: #333231; }
@@ -4544,7 +4772,7 @@ COMMENT FORM STYLES
 /* comment submit button */
 /* comment form title */
 #comment-form-title {
-  margin: 1.5em 0 0.5em; }
+  margin: 1.5em 0 .5em; }
 
 /* cancel comment reply link */
 /* logged in comments */
@@ -4640,8 +4868,7 @@ COMMENT STYLES
     margin-bottom: 10px;
     font-weight: 700;
     font-size: 0.9em; }
-    .commentlist .comment-reply-link:hover,
-    .commentlist .comment-reply-link:focus {
+    .commentlist .comment-reply-link:hover, .commentlist .comment-reply-link:focus {
       opacity: 1; }
 
 /* end .commentlist */
@@ -4705,9 +4932,11 @@ ALERTS AND NOTICES
   .wp-biographia-text p {
     display: none; }
 
-.wp-biographia-text h3, .wp-biographia-text .news-list .post-title, .news-list .wp-biographia-text .post-title,
-.wp-biographia-text .home .widget_glocal_network_posts_widget .post-title, .home .widget_glocal_network_posts_widget .wp-biographia-text .post-title, .wp-biographia-text .home-modules .events-list .all-events-link, .home-modules .events-list .wp-biographia-text .all-events-link,
-.wp-biographia-text .home-modules .widget_em_widget ul .all-events-link, .home-modules .widget_em_widget ul .wp-biographia-text .all-events-link {
+.wp-biographia-text h3, .wp-biographia-text .news-list .post-title, .news-list .wp-biographia-text .post-title, .wp-biographia-text
+.home .widget_glocal_network_posts_widget .post-title,
+.home .widget_glocal_network_posts_widget .wp-biographia-text .post-title, .wp-biographia-text .home-modules .events-list .all-events-link, .home-modules .events-list .wp-biographia-text .all-events-link, .wp-biographia-text
+.home-modules .widget_em_widget ul .all-events-link,
+.home-modules .widget_em_widget ul .wp-biographia-text .all-events-link {
   font-size: 18px;
   font-size: 1.125rem;
   margin: .5em 0 0; }
@@ -4822,7 +5051,7 @@ article.home-feature div.bx-wrapper .bx-viewport {
   .alo_easymail_widget_form .input-submit {
     width: 100%;
     margin-top: .5em;
-    padding: 0.5em 1em;
+    padding: .5em 1em;
     font-size: 15px;
     font-size: 0.9375rem; }
   .sidebar .alo_easymail_widget_form {
@@ -4991,13 +5220,13 @@ div.css-search {
     .css-events-list .event-header .meta:last-child:after,
     .css-events-list .event-header .meta span:last-child:after {
       content: ''; }
-    .css-events-list .event-header .meta a,
-    .css-events-list .event-header .meta a:visited,
-    .css-events-list .event-header .meta span a, .css-events-list .event-header .meta span a:visited {
+    .css-events-list .event-header .meta a, .css-events-list .event-header .meta a:visited,
+    .css-events-list .event-header .meta span a,
+    .css-events-list .event-header .meta span a:visited {
       color: #999894; }
-      .css-events-list .event-header .meta a:hover,
-      .css-events-list .event-header .meta a:visited:hover,
-      .css-events-list .event-header .meta span a:hover, .css-events-list .event-header .meta span a:visited:hover {
+      .css-events-list .event-header .meta a:hover, .css-events-list .event-header .meta a:visited:hover,
+      .css-events-list .event-header .meta span a:hover,
+      .css-events-list .event-header .meta span a:visited:hover {
         color: #333231; }
   .css-events-list .event-header span {
     padding-right: 5px; }
@@ -5029,7 +5258,7 @@ div.css-search {
         margin-left: 20px;
         margin-bottom: 10px; } }
   .css-events-list .event-title {
-    margin: 0.75em 0 0.25em; }
+    margin: .75em 0 .25em; }
     @media screen and (min-width: 878px) {
       .css-events-list .event-title {
         margin-top: .25em; } }
@@ -5372,7 +5601,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
 .post-type-archive-agenda .content-filter,
 .tax-meeting_tag .content-filter,
 .tax-meeting_type .content-filter,
-.tax-proposal_status .content-filter {
+.tax-proposal_status .content-filter,
+.archive-meeting .content-filter,
+.archive-proposal .content-filter,
+.archive-summary .content-filter,
+.archive-agenda .content-filter,
+.taxonomy-meeting_type .content-filter,
+.taxonomy-meeting_tag .content-filter {
   margin-bottom: .5em; }
   .post-type-archive-meeting .content-filter ul,
   .post-type-archive-proposal .content-filter ul,
@@ -5380,7 +5615,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .post-type-archive-agenda .content-filter ul,
   .tax-meeting_tag .content-filter ul,
   .tax-meeting_type .content-filter ul,
-  .tax-proposal_status .content-filter ul {
+  .tax-proposal_status .content-filter ul,
+  .archive-meeting .content-filter ul,
+  .archive-proposal .content-filter ul,
+  .archive-summary .content-filter ul,
+  .archive-agenda .content-filter ul,
+  .taxonomy-meeting_type .content-filter ul,
+  .taxonomy-meeting_tag .content-filter ul {
     text-align: center; }
   .post-type-archive-meeting .content-filter li,
   .post-type-archive-proposal .content-filter li,
@@ -5388,7 +5629,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .post-type-archive-agenda .content-filter li,
   .tax-meeting_tag .content-filter li,
   .tax-meeting_type .content-filter li,
-  .tax-proposal_status .content-filter li {
+  .tax-proposal_status .content-filter li,
+  .archive-meeting .content-filter li,
+  .archive-proposal .content-filter li,
+  .archive-summary .content-filter li,
+  .archive-agenda .content-filter li,
+  .taxonomy-meeting_type .content-filter li,
+  .taxonomy-meeting_tag .content-filter li {
     display: block;
     margin-bottom: .25em; }
     .post-type-archive-meeting .content-filter li a,
@@ -5397,7 +5644,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .post-type-archive-agenda .content-filter li a,
     .tax-meeting_tag .content-filter li a,
     .tax-meeting_type .content-filter li a,
-    .tax-proposal_status .content-filter li a {
+    .tax-proposal_status .content-filter li a,
+    .archive-meeting .content-filter li a,
+    .archive-proposal .content-filter li a,
+    .archive-summary .content-filter li a,
+    .archive-agenda .content-filter li a,
+    .taxonomy-meeting_type .content-filter li a,
+    .taxonomy-meeting_tag .content-filter li a {
       display: block;
       color: #fff; }
     .post-type-archive-meeting .content-filter li.active,
@@ -5406,7 +5659,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .post-type-archive-agenda .content-filter li.active,
     .tax-meeting_tag .content-filter li.active,
     .tax-meeting_type .content-filter li.active,
-    .tax-proposal_status .content-filter li.active {
+    .tax-proposal_status .content-filter li.active,
+    .archive-meeting .content-filter li.active,
+    .archive-proposal .content-filter li.active,
+    .archive-summary .content-filter li.active,
+    .archive-agenda .content-filter li.active,
+    .taxonomy-meeting_type .content-filter li.active,
+    .taxonomy-meeting_tag .content-filter li.active {
       background-color: #000; }
   @media screen and (min-width: 481px) {
     .post-type-archive-meeting .content-filter li,
@@ -5415,9 +5674,15 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .post-type-archive-agenda .content-filter li,
     .tax-meeting_tag .content-filter li,
     .tax-meeting_type .content-filter li,
-    .tax-proposal_status .content-filter li {
+    .tax-proposal_status .content-filter li,
+    .archive-meeting .content-filter li,
+    .archive-proposal .content-filter li,
+    .archive-summary .content-filter li,
+    .archive-agenda .content-filter li,
+    .taxonomy-meeting_type .content-filter li,
+    .taxonomy-meeting_tag .content-filter li {
       display: inline-block;
-      margin: 0 0.25em 0.25em 0;
+      margin: 0 .25em .25em 0;
       padding-right: 2em;
       padding-left: 2em; } }
 
@@ -5427,7 +5692,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
 .post-type-archive-agenda article,
 .tax-meeting_tag article,
 .tax-meeting_type article,
-.tax-proposal_status article {
+.tax-proposal_status article,
+.archive-meeting article,
+.archive-proposal article,
+.archive-summary article,
+.archive-agenda article,
+.taxonomy-meeting_type article,
+.taxonomy-meeting_tag article {
   background-color: #fff;
   margin-bottom: .125em;
   padding: .75em; }
@@ -5437,67 +5708,220 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .post-type-archive-agenda article p.meta,
   .tax-meeting_tag article p.meta,
   .tax-meeting_type article p.meta,
-  .tax-proposal_status article p.meta {
+  .tax-proposal_status article p.meta,
+  .archive-meeting article p.meta,
+  .archive-proposal article p.meta,
+  .archive-summary article p.meta,
+  .archive-agenda article p.meta,
+  .taxonomy-meeting_type article p.meta,
+  .taxonomy-meeting_tag article p.meta {
     margin-bottom: 0; }
-  .post-type-archive-meeting article header h2,
-  .post-type-archive-meeting article header .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .post-type-archive-meeting article header h4, .post-type-archive-meeting article header h3,
-  .post-type-archive-meeting article header .news-list .post-title,
-  .news-list .post-type-archive-meeting article header .post-title,
-  .post-type-archive-meeting article header .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .post-type-archive-meeting article header .post-title, .post-type-archive-meeting article header .home-modules .events-list .all-events-link,
-  .home-modules .events-list .post-type-archive-meeting article header .all-events-link,
-  .post-type-archive-meeting article header .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .post-type-archive-meeting article header .all-events-link, .post-type-archive-proposal article header h2,
-  .post-type-archive-proposal article header .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .post-type-archive-proposal article header h4, .post-type-archive-proposal article header h3,
-  .post-type-archive-proposal article header .news-list .post-title,
-  .news-list .post-type-archive-proposal article header .post-title,
-  .post-type-archive-proposal article header .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .post-type-archive-proposal article header .post-title, .post-type-archive-proposal article header .home-modules .events-list .all-events-link,
-  .home-modules .events-list .post-type-archive-proposal article header .all-events-link,
-  .post-type-archive-proposal article header .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .post-type-archive-proposal article header .all-events-link, .post-type-archive-summary article header h2,
-  .post-type-archive-summary article header .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .post-type-archive-summary article header h4, .post-type-archive-summary article header h3,
-  .post-type-archive-summary article header .news-list .post-title,
-  .news-list .post-type-archive-summary article header .post-title,
-  .post-type-archive-summary article header .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .post-type-archive-summary article header .post-title, .post-type-archive-summary article header .home-modules .events-list .all-events-link,
-  .home-modules .events-list .post-type-archive-summary article header .all-events-link,
-  .post-type-archive-summary article header .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .post-type-archive-summary article header .all-events-link, .post-type-archive-agenda article header h2,
-  .post-type-archive-agenda article header .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .post-type-archive-agenda article header h4, .post-type-archive-agenda article header h3,
-  .post-type-archive-agenda article header .news-list .post-title,
-  .news-list .post-type-archive-agenda article header .post-title,
-  .post-type-archive-agenda article header .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .post-type-archive-agenda article header .post-title, .post-type-archive-agenda article header .home-modules .events-list .all-events-link,
-  .home-modules .events-list .post-type-archive-agenda article header .all-events-link,
-  .post-type-archive-agenda article header .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .post-type-archive-agenda article header .all-events-link, .tax-meeting_tag article header h2,
-  .tax-meeting_tag article header .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .tax-meeting_tag article header h4, .tax-meeting_tag article header h3,
-  .tax-meeting_tag article header .news-list .post-title,
-  .news-list .tax-meeting_tag article header .post-title,
-  .tax-meeting_tag article header .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .tax-meeting_tag article header .post-title, .tax-meeting_tag article header .home-modules .events-list .all-events-link,
-  .home-modules .events-list .tax-meeting_tag article header .all-events-link,
-  .tax-meeting_tag article header .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .tax-meeting_tag article header .all-events-link, .tax-meeting_type article header h2,
-  .tax-meeting_type article header .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .tax-meeting_type article header h4, .tax-meeting_type article header h3,
-  .tax-meeting_type article header .news-list .post-title,
-  .news-list .tax-meeting_type article header .post-title,
-  .tax-meeting_type article header .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .tax-meeting_type article header .post-title, .tax-meeting_type article header .home-modules .events-list .all-events-link,
-  .home-modules .events-list .tax-meeting_type article header .all-events-link,
-  .tax-meeting_type article header .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .tax-meeting_type article header .all-events-link, .tax-proposal_status article header h2,
-  .tax-proposal_status article header .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .tax-proposal_status article header h4, .tax-proposal_status article header h3, .tax-proposal_status article header .news-list .post-title, .news-list .tax-proposal_status article header .post-title,
-  .tax-proposal_status article header .home .widget_glocal_network_posts_widget .post-title, .home .widget_glocal_network_posts_widget .tax-proposal_status article header .post-title, .tax-proposal_status article header .home-modules .events-list .all-events-link, .home-modules .events-list .tax-proposal_status article header .all-events-link,
-  .tax-proposal_status article header .home-modules .widget_em_widget ul .all-events-link, .home-modules .widget_em_widget ul .tax-proposal_status article header .all-events-link {
+  .post-type-archive-meeting article header h2, .post-type-archive-meeting article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .post-type-archive-meeting article header h4,
+  .post-type-archive-meeting article header h3,
+  .post-type-archive-meeting article header .news-list .post-title, .news-list
+  .post-type-archive-meeting article header .post-title,
+  .post-type-archive-meeting article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .post-type-archive-meeting article header .post-title,
+  .post-type-archive-meeting article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .post-type-archive-meeting article header .all-events-link,
+  .post-type-archive-meeting article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .post-type-archive-meeting article header .all-events-link,
+  .post-type-archive-proposal article header h2,
+  .post-type-archive-proposal article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .post-type-archive-proposal article header h4,
+  .post-type-archive-proposal article header h3,
+  .post-type-archive-proposal article header .news-list .post-title, .news-list
+  .post-type-archive-proposal article header .post-title,
+  .post-type-archive-proposal article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .post-type-archive-proposal article header .post-title,
+  .post-type-archive-proposal article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .post-type-archive-proposal article header .all-events-link,
+  .post-type-archive-proposal article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .post-type-archive-proposal article header .all-events-link,
+  .post-type-archive-summary article header h2,
+  .post-type-archive-summary article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .post-type-archive-summary article header h4,
+  .post-type-archive-summary article header h3,
+  .post-type-archive-summary article header .news-list .post-title, .news-list
+  .post-type-archive-summary article header .post-title,
+  .post-type-archive-summary article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .post-type-archive-summary article header .post-title,
+  .post-type-archive-summary article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .post-type-archive-summary article header .all-events-link,
+  .post-type-archive-summary article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .post-type-archive-summary article header .all-events-link,
+  .post-type-archive-agenda article header h2,
+  .post-type-archive-agenda article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .post-type-archive-agenda article header h4,
+  .post-type-archive-agenda article header h3,
+  .post-type-archive-agenda article header .news-list .post-title, .news-list
+  .post-type-archive-agenda article header .post-title,
+  .post-type-archive-agenda article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .post-type-archive-agenda article header .post-title,
+  .post-type-archive-agenda article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .post-type-archive-agenda article header .all-events-link,
+  .post-type-archive-agenda article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .post-type-archive-agenda article header .all-events-link,
+  .tax-meeting_tag article header h2,
+  .tax-meeting_tag article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .tax-meeting_tag article header h4,
+  .tax-meeting_tag article header h3,
+  .tax-meeting_tag article header .news-list .post-title, .news-list
+  .tax-meeting_tag article header .post-title,
+  .tax-meeting_tag article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .tax-meeting_tag article header .post-title,
+  .tax-meeting_tag article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .tax-meeting_tag article header .all-events-link,
+  .tax-meeting_tag article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .tax-meeting_tag article header .all-events-link,
+  .tax-meeting_type article header h2,
+  .tax-meeting_type article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .tax-meeting_type article header h4,
+  .tax-meeting_type article header h3,
+  .tax-meeting_type article header .news-list .post-title, .news-list
+  .tax-meeting_type article header .post-title,
+  .tax-meeting_type article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .tax-meeting_type article header .post-title,
+  .tax-meeting_type article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .tax-meeting_type article header .all-events-link,
+  .tax-meeting_type article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .tax-meeting_type article header .all-events-link,
+  .tax-proposal_status article header h2,
+  .tax-proposal_status article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .tax-proposal_status article header h4,
+  .tax-proposal_status article header h3,
+  .tax-proposal_status article header .news-list .post-title, .news-list
+  .tax-proposal_status article header .post-title,
+  .tax-proposal_status article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .tax-proposal_status article header .post-title,
+  .tax-proposal_status article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .tax-proposal_status article header .all-events-link,
+  .tax-proposal_status article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .tax-proposal_status article header .all-events-link,
+  .archive-meeting article header h2,
+  .archive-meeting article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .archive-meeting article header h4,
+  .archive-meeting article header h3,
+  .archive-meeting article header .news-list .post-title, .news-list
+  .archive-meeting article header .post-title,
+  .archive-meeting article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .archive-meeting article header .post-title,
+  .archive-meeting article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .archive-meeting article header .all-events-link,
+  .archive-meeting article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .archive-meeting article header .all-events-link,
+  .archive-proposal article header h2,
+  .archive-proposal article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .archive-proposal article header h4,
+  .archive-proposal article header h3,
+  .archive-proposal article header .news-list .post-title, .news-list
+  .archive-proposal article header .post-title,
+  .archive-proposal article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .archive-proposal article header .post-title,
+  .archive-proposal article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .archive-proposal article header .all-events-link,
+  .archive-proposal article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .archive-proposal article header .all-events-link,
+  .archive-summary article header h2,
+  .archive-summary article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .archive-summary article header h4,
+  .archive-summary article header h3,
+  .archive-summary article header .news-list .post-title, .news-list
+  .archive-summary article header .post-title,
+  .archive-summary article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .archive-summary article header .post-title,
+  .archive-summary article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .archive-summary article header .all-events-link,
+  .archive-summary article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .archive-summary article header .all-events-link,
+  .archive-agenda article header h2,
+  .archive-agenda article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .archive-agenda article header h4,
+  .archive-agenda article header h3,
+  .archive-agenda article header .news-list .post-title, .news-list
+  .archive-agenda article header .post-title,
+  .archive-agenda article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .archive-agenda article header .post-title,
+  .archive-agenda article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .archive-agenda article header .all-events-link,
+  .archive-agenda article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .archive-agenda article header .all-events-link,
+  .taxonomy-meeting_type article header h2,
+  .taxonomy-meeting_type article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .taxonomy-meeting_type article header h4,
+  .taxonomy-meeting_type article header h3,
+  .taxonomy-meeting_type article header .news-list .post-title, .news-list
+  .taxonomy-meeting_type article header .post-title,
+  .taxonomy-meeting_type article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .taxonomy-meeting_type article header .post-title,
+  .taxonomy-meeting_type article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .taxonomy-meeting_type article header .all-events-link,
+  .taxonomy-meeting_type article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .taxonomy-meeting_type article header .all-events-link,
+  .taxonomy-meeting_tag article header h2,
+  .taxonomy-meeting_tag article header .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .taxonomy-meeting_tag article header h4,
+  .taxonomy-meeting_tag article header h3,
+  .taxonomy-meeting_tag article header .news-list .post-title, .news-list
+  .taxonomy-meeting_tag article header .post-title,
+  .taxonomy-meeting_tag article header
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .taxonomy-meeting_tag article header .post-title,
+  .taxonomy-meeting_tag article header .home-modules .events-list .all-events-link, .home-modules .events-list
+  .taxonomy-meeting_tag article header .all-events-link,
+  .taxonomy-meeting_tag article header
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .taxonomy-meeting_tag article header .all-events-link {
     font-size: 22px;
     font-size: 1.375rem;
     margin-bottom: 0; }
@@ -5507,7 +5931,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .post-type-archive-agenda article .connected-content,
   .tax-meeting_tag article .connected-content,
   .tax-meeting_type article .connected-content,
-  .tax-proposal_status article .connected-content {
+  .tax-proposal_status article .connected-content,
+  .archive-meeting article .connected-content,
+  .archive-proposal article .connected-content,
+  .archive-summary article .connected-content,
+  .archive-agenda article .connected-content,
+  .taxonomy-meeting_type article .connected-content,
+  .taxonomy-meeting_tag article .connected-content {
     list-style: none;
     margin: 0;
     padding: 0; }
@@ -5517,7 +5947,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .post-type-archive-agenda article .connected-content li,
     .tax-meeting_tag article .connected-content li,
     .tax-meeting_type article .connected-content li,
-    .tax-proposal_status article .connected-content li {
+    .tax-proposal_status article .connected-content li,
+    .archive-meeting article .connected-content li,
+    .archive-proposal article .connected-content li,
+    .archive-summary article .connected-content li,
+    .archive-agenda article .connected-content li,
+    .taxonomy-meeting_type article .connected-content li,
+    .taxonomy-meeting_tag article .connected-content li {
       display: inline-block;
       margin-right: .75em;
       margin-bottom: 0; }
@@ -5527,10 +5963,15 @@ MEETINGS ARCHIVE & SINGLE STYLES
       .post-type-archive-agenda article .connected-content li a,
       .tax-meeting_tag article .connected-content li a,
       .tax-meeting_type article .connected-content li a,
-      .tax-proposal_status article .connected-content li a {
+      .tax-proposal_status article .connected-content li a,
+      .archive-meeting article .connected-content li a,
+      .archive-proposal article .connected-content li a,
+      .archive-summary article .connected-content li a,
+      .archive-agenda article .connected-content li a,
+      .taxonomy-meeting_type article .connected-content li a,
+      .taxonomy-meeting_tag article .connected-content li a {
         color: #000; }
-        .post-type-archive-meeting article .connected-content li a:hover,
-        .post-type-archive-meeting article .connected-content li a:focus,
+        .post-type-archive-meeting article .connected-content li a:hover, .post-type-archive-meeting article .connected-content li a:focus,
         .post-type-archive-proposal article .connected-content li a:hover,
         .post-type-archive-proposal article .connected-content li a:focus,
         .post-type-archive-summary article .connected-content li a:hover,
@@ -5542,7 +5983,19 @@ MEETINGS ARCHIVE & SINGLE STYLES
         .tax-meeting_type article .connected-content li a:hover,
         .tax-meeting_type article .connected-content li a:focus,
         .tax-proposal_status article .connected-content li a:hover,
-        .tax-proposal_status article .connected-content li a:focus {
+        .tax-proposal_status article .connected-content li a:focus,
+        .archive-meeting article .connected-content li a:hover,
+        .archive-meeting article .connected-content li a:focus,
+        .archive-proposal article .connected-content li a:hover,
+        .archive-proposal article .connected-content li a:focus,
+        .archive-summary article .connected-content li a:hover,
+        .archive-summary article .connected-content li a:focus,
+        .archive-agenda article .connected-content li a:hover,
+        .archive-agenda article .connected-content li a:focus,
+        .taxonomy-meeting_type article .connected-content li a:hover,
+        .taxonomy-meeting_type article .connected-content li a:focus,
+        .taxonomy-meeting_tag article .connected-content li a:hover,
+        .taxonomy-meeting_tag article .connected-content li a:focus {
           color: #00a99d; }
       .post-type-archive-meeting article .connected-content li::before,
       .post-type-archive-proposal article .connected-content li::before,
@@ -5550,7 +6003,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
       .post-type-archive-agenda article .connected-content li::before,
       .tax-meeting_tag article .connected-content li::before,
       .tax-meeting_type article .connected-content li::before,
-      .tax-proposal_status article .connected-content li::before {
+      .tax-proposal_status article .connected-content li::before,
+      .archive-meeting article .connected-content li::before,
+      .archive-proposal article .connected-content li::before,
+      .archive-summary article .connected-content li::before,
+      .archive-agenda article .connected-content li::before,
+      .taxonomy-meeting_type article .connected-content li::before,
+      .taxonomy-meeting_tag article .connected-content li::before {
         margin-right: .25em;
         color: #b8b6b2; }
   .post-type-archive-meeting article .tags,
@@ -5559,7 +6018,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .post-type-archive-agenda article .tags,
   .tax-meeting_tag article .tags,
   .tax-meeting_type article .tags,
-  .tax-proposal_status article .tags {
+  .tax-proposal_status article .tags,
+  .archive-meeting article .tags,
+  .archive-proposal article .tags,
+  .archive-summary article .tags,
+  .archive-agenda article .tags,
+  .taxonomy-meeting_type article .tags,
+  .taxonomy-meeting_tag article .tags {
     color: #b8b6b2; }
     .post-type-archive-meeting article .tags a,
     .post-type-archive-proposal article .tags a,
@@ -5567,7 +6032,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .post-type-archive-agenda article .tags a,
     .tax-meeting_tag article .tags a,
     .tax-meeting_type article .tags a,
-    .tax-proposal_status article .tags a {
+    .tax-proposal_status article .tags a,
+    .archive-meeting article .tags a,
+    .archive-proposal article .tags a,
+    .archive-summary article .tags a,
+    .archive-agenda article .tags a,
+    .taxonomy-meeting_type article .tags a,
+    .taxonomy-meeting_tag article .tags a {
       color: #b8b6b2; }
     .post-type-archive-meeting article .tags::before,
     .post-type-archive-proposal article .tags::before,
@@ -5575,7 +6046,13 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .post-type-archive-agenda article .tags::before,
     .tax-meeting_tag article .tags::before,
     .tax-meeting_type article .tags::before,
-    .tax-proposal_status article .tags::before {
+    .tax-proposal_status article .tags::before,
+    .archive-meeting article .tags::before,
+    .archive-proposal article .tags::before,
+    .archive-summary article .tags::before,
+    .archive-agenda article .tags::before,
+    .taxonomy-meeting_type article .tags::before,
+    .taxonomy-meeting_tag article .tags::before {
       margin-right: .25em; }
   .post-type-archive-meeting article .article-footer,
   .post-type-archive-proposal article .article-footer,
@@ -5583,13 +6060,23 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .post-type-archive-agenda article .article-footer,
   .tax-meeting_tag article .article-footer,
   .tax-meeting_type article .article-footer,
-  .tax-proposal_status article .article-footer {
+  .tax-proposal_status article .article-footer,
+  .archive-meeting article .article-footer,
+  .archive-proposal article .article-footer,
+  .archive-summary article .article-footer,
+  .archive-agenda article .article-footer,
+  .taxonomy-meeting_type article .article-footer,
+  .taxonomy-meeting_tag article .article-footer {
     display: none; }
 
 .single-meeting article p.meta,
 .single-proposal article p.meta,
 .single-agenda article p.meta,
-.single-summary article p.meta {
+.single-summary article p.meta,
+.singular-agenda article p.meta,
+.singular-proposal article p.meta,
+.singular-meeting article p.meta,
+.singular-summary article p.meta {
   margin-bottom: 0;
   font-size: 14px;
   font-size: 0.875rem; }
@@ -5597,71 +6084,182 @@ MEETINGS ARCHIVE & SINGLE STYLES
 .single-meeting article header .meta,
 .single-proposal article header .meta,
 .single-agenda article header .meta,
-.single-summary article header .meta {
+.single-summary article header .meta,
+.singular-agenda article header .meta,
+.singular-proposal article header .meta,
+.singular-meeting article header .meta,
+.singular-summary article header .meta {
   font-size: 16px;
   font-size: 1rem; }
 
 .single-meeting article .entry-content,
 .single-proposal article .entry-content,
 .single-agenda article .entry-content,
-.single-summary article .entry-content {
+.single-summary article .entry-content,
+.singular-agenda article .entry-content,
+.singular-proposal article .entry-content,
+.singular-meeting article .entry-content,
+.singular-summary article .entry-content {
   margin-top: .5em; }
-  .single-meeting article .entry-content h2,
-  .single-meeting article .entry-content .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .single-meeting article .entry-content h4, .single-proposal article .entry-content h2,
-  .single-proposal article .entry-content .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .single-proposal article .entry-content h4, .single-agenda article .entry-content h2,
-  .single-agenda article .entry-content .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .single-agenda article .entry-content h4, .single-summary article .entry-content h2, .single-summary article .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .single-summary article .entry-content h4 {
+  .single-meeting article .entry-content h2, .single-meeting article .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .single-meeting article .entry-content h4,
+  .single-proposal article .entry-content h2,
+  .single-proposal article .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .single-proposal article .entry-content h4,
+  .single-agenda article .entry-content h2,
+  .single-agenda article .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .single-agenda article .entry-content h4,
+  .single-summary article .entry-content h2,
+  .single-summary article .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .single-summary article .entry-content h4,
+  .singular-agenda article .entry-content h2,
+  .singular-agenda article .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .singular-agenda article .entry-content h4,
+  .singular-proposal article .entry-content h2,
+  .singular-proposal article .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .singular-proposal article .entry-content h4,
+  .singular-meeting article .entry-content h2,
+  .singular-meeting article .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .singular-meeting article .entry-content h4,
+  .singular-summary article .entry-content h2,
+  .singular-summary article .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .singular-summary article .entry-content h4 {
     font-size: 28px;
     font-size: 1.75rem;
     margin-top: .5em;
     padding-top: .5em; }
-    .single-meeting article .entry-content h2:first-child,
-    .single-meeting article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child,
-    .so-widget-sow-cta .sow-cta-base .single-meeting article .entry-content h4:first-child, .single-proposal article .entry-content h2:first-child,
-    .single-proposal article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child,
-    .so-widget-sow-cta .sow-cta-base .single-proposal article .entry-content h4:first-child, .single-agenda article .entry-content h2:first-child,
-    .single-agenda article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child,
-    .so-widget-sow-cta .sow-cta-base .single-agenda article .entry-content h4:first-child, .single-summary article .entry-content h2:first-child, .single-summary article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child, .so-widget-sow-cta .sow-cta-base .single-summary article .entry-content h4:first-child {
+    .single-meeting article .entry-content h2:first-child, .single-meeting article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child, .so-widget-sow-cta .sow-cta-base .single-meeting article .entry-content h4:first-child,
+    .single-proposal article .entry-content h2:first-child,
+    .single-proposal article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child, .so-widget-sow-cta .sow-cta-base
+    .single-proposal article .entry-content h4:first-child,
+    .single-agenda article .entry-content h2:first-child,
+    .single-agenda article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child, .so-widget-sow-cta .sow-cta-base
+    .single-agenda article .entry-content h4:first-child,
+    .single-summary article .entry-content h2:first-child,
+    .single-summary article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child, .so-widget-sow-cta .sow-cta-base
+    .single-summary article .entry-content h4:first-child,
+    .singular-agenda article .entry-content h2:first-child,
+    .singular-agenda article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child, .so-widget-sow-cta .sow-cta-base
+    .singular-agenda article .entry-content h4:first-child,
+    .singular-proposal article .entry-content h2:first-child,
+    .singular-proposal article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child, .so-widget-sow-cta .sow-cta-base
+    .singular-proposal article .entry-content h4:first-child,
+    .singular-meeting article .entry-content h2:first-child,
+    .singular-meeting article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child, .so-widget-sow-cta .sow-cta-base
+    .singular-meeting article .entry-content h4:first-child,
+    .singular-summary article .entry-content h2:first-child,
+    .singular-summary article .entry-content .so-widget-sow-cta .sow-cta-base h4:first-child, .so-widget-sow-cta .sow-cta-base
+    .singular-summary article .entry-content h4:first-child {
       padding-top: 0; }
-  .single-meeting article .entry-content h3,
-  .single-meeting article .entry-content .news-list .post-title,
-  .news-list .single-meeting article .entry-content .post-title,
-  .single-meeting article .entry-content .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .single-meeting article .entry-content .post-title, .single-meeting article .entry-content .home-modules .events-list .all-events-link,
-  .home-modules .events-list .single-meeting article .entry-content .all-events-link,
-  .single-meeting article .entry-content .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .single-meeting article .entry-content .all-events-link, .single-proposal article .entry-content h3,
-  .single-proposal article .entry-content .news-list .post-title,
-  .news-list .single-proposal article .entry-content .post-title,
-  .single-proposal article .entry-content .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .single-proposal article .entry-content .post-title, .single-proposal article .entry-content .home-modules .events-list .all-events-link,
-  .home-modules .events-list .single-proposal article .entry-content .all-events-link,
-  .single-proposal article .entry-content .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .single-proposal article .entry-content .all-events-link, .single-agenda article .entry-content h3,
-  .single-agenda article .entry-content .news-list .post-title,
-  .news-list .single-agenda article .entry-content .post-title,
-  .single-agenda article .entry-content .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .single-agenda article .entry-content .post-title, .single-agenda article .entry-content .home-modules .events-list .all-events-link,
-  .home-modules .events-list .single-agenda article .entry-content .all-events-link,
-  .single-agenda article .entry-content .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .single-agenda article .entry-content .all-events-link, .single-summary article .entry-content h3, .single-summary article .entry-content .news-list .post-title, .news-list .single-summary article .entry-content .post-title,
-  .single-summary article .entry-content .home .widget_glocal_network_posts_widget .post-title, .home .widget_glocal_network_posts_widget .single-summary article .entry-content .post-title, .single-summary article .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list .single-summary article .entry-content .all-events-link,
-  .single-summary article .entry-content .home-modules .widget_em_widget ul .all-events-link, .home-modules .widget_em_widget ul .single-summary article .entry-content .all-events-link {
+  .single-meeting article .entry-content h3, .single-meeting article .entry-content .news-list .post-title, .news-list .single-meeting article .entry-content .post-title, .single-meeting article .entry-content
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget .single-meeting article .entry-content .post-title, .single-meeting article .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list .single-meeting article .entry-content .all-events-link, .single-meeting article .entry-content
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul .single-meeting article .entry-content .all-events-link,
+  .single-proposal article .entry-content h3,
+  .single-proposal article .entry-content .news-list .post-title, .news-list
+  .single-proposal article .entry-content .post-title,
+  .single-proposal article .entry-content
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .single-proposal article .entry-content .post-title,
+  .single-proposal article .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list
+  .single-proposal article .entry-content .all-events-link,
+  .single-proposal article .entry-content
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .single-proposal article .entry-content .all-events-link,
+  .single-agenda article .entry-content h3,
+  .single-agenda article .entry-content .news-list .post-title, .news-list
+  .single-agenda article .entry-content .post-title,
+  .single-agenda article .entry-content
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .single-agenda article .entry-content .post-title,
+  .single-agenda article .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list
+  .single-agenda article .entry-content .all-events-link,
+  .single-agenda article .entry-content
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .single-agenda article .entry-content .all-events-link,
+  .single-summary article .entry-content h3,
+  .single-summary article .entry-content .news-list .post-title, .news-list
+  .single-summary article .entry-content .post-title,
+  .single-summary article .entry-content
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .single-summary article .entry-content .post-title,
+  .single-summary article .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list
+  .single-summary article .entry-content .all-events-link,
+  .single-summary article .entry-content
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .single-summary article .entry-content .all-events-link,
+  .singular-agenda article .entry-content h3,
+  .singular-agenda article .entry-content .news-list .post-title, .news-list
+  .singular-agenda article .entry-content .post-title,
+  .singular-agenda article .entry-content
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .singular-agenda article .entry-content .post-title,
+  .singular-agenda article .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list
+  .singular-agenda article .entry-content .all-events-link,
+  .singular-agenda article .entry-content
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .singular-agenda article .entry-content .all-events-link,
+  .singular-proposal article .entry-content h3,
+  .singular-proposal article .entry-content .news-list .post-title, .news-list
+  .singular-proposal article .entry-content .post-title,
+  .singular-proposal article .entry-content
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .singular-proposal article .entry-content .post-title,
+  .singular-proposal article .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list
+  .singular-proposal article .entry-content .all-events-link,
+  .singular-proposal article .entry-content
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .singular-proposal article .entry-content .all-events-link,
+  .singular-meeting article .entry-content h3,
+  .singular-meeting article .entry-content .news-list .post-title, .news-list
+  .singular-meeting article .entry-content .post-title,
+  .singular-meeting article .entry-content
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .singular-meeting article .entry-content .post-title,
+  .singular-meeting article .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list
+  .singular-meeting article .entry-content .all-events-link,
+  .singular-meeting article .entry-content
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .singular-meeting article .entry-content .all-events-link,
+  .singular-summary article .entry-content h3,
+  .singular-summary article .entry-content .news-list .post-title, .news-list
+  .singular-summary article .entry-content .post-title,
+  .singular-summary article .entry-content
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .singular-summary article .entry-content .post-title,
+  .singular-summary article .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list
+  .singular-summary article .entry-content .all-events-link,
+  .singular-summary article .entry-content
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .singular-summary article .entry-content .all-events-link {
     font-size: 22px;
     font-size: 1.375rem;
-    margin: 1em 0 0.25em 0; }
+    margin: 1em 0 .25em 0; }
   .single-meeting article .entry-content h4,
   .single-proposal article .entry-content h4,
   .single-agenda article .entry-content h4,
-  .single-summary article .entry-content h4 {
+  .single-summary article .entry-content h4,
+  .singular-agenda article .entry-content h4,
+  .singular-proposal article .entry-content h4,
+  .singular-meeting article .entry-content h4,
+  .singular-summary article .entry-content h4 {
     font-size: 18px;
     font-size: 1.125rem; }
-  .single-meeting article .entry-content p,
-  .single-meeting article .entry-content li,
-  .single-meeting article .entry-content dt,
-  .single-meeting article .entry-content dd,
+  .single-meeting article .entry-content p, .single-meeting article .entry-content li, .single-meeting article .entry-content dt, .single-meeting article .entry-content dd,
   .single-proposal article .entry-content p,
   .single-proposal article .entry-content li,
   .single-proposal article .entry-content dt,
@@ -5670,28 +6268,63 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .single-agenda article .entry-content li,
   .single-agenda article .entry-content dt,
   .single-agenda article .entry-content dd,
-  .single-summary article .entry-content p, .single-summary article .entry-content li, .single-summary article .entry-content dt, .single-summary article .entry-content dd {
+  .single-summary article .entry-content p,
+  .single-summary article .entry-content li,
+  .single-summary article .entry-content dt,
+  .single-summary article .entry-content dd,
+  .singular-agenda article .entry-content p,
+  .singular-agenda article .entry-content li,
+  .singular-agenda article .entry-content dt,
+  .singular-agenda article .entry-content dd,
+  .singular-proposal article .entry-content p,
+  .singular-proposal article .entry-content li,
+  .singular-proposal article .entry-content dt,
+  .singular-proposal article .entry-content dd,
+  .singular-meeting article .entry-content p,
+  .singular-meeting article .entry-content li,
+  .singular-meeting article .entry-content dt,
+  .singular-meeting article .entry-content dd,
+  .singular-summary article .entry-content p,
+  .singular-summary article .entry-content li,
+  .singular-summary article .entry-content dt,
+  .singular-summary article .entry-content dd {
     font-size: 16px;
     font-size: 1rem; }
   .single-meeting article .entry-content li,
   .single-proposal article .entry-content li,
   .single-agenda article .entry-content li,
-  .single-summary article .entry-content li {
+  .single-summary article .entry-content li,
+  .singular-agenda article .entry-content li,
+  .singular-proposal article .entry-content li,
+  .singular-meeting article .entry-content li,
+  .singular-summary article .entry-content li {
     margin-bottom: .25em; }
   .single-meeting article .entry-content ul,
   .single-proposal article .entry-content ul,
   .single-agenda article .entry-content ul,
-  .single-summary article .entry-content ul {
-    padding: 0 0 0 0.75em; }
+  .single-summary article .entry-content ul,
+  .singular-agenda article .entry-content ul,
+  .singular-proposal article .entry-content ul,
+  .singular-meeting article .entry-content ul,
+  .singular-summary article .entry-content ul {
+    padding: 0 0 0 .75em; }
     .single-meeting article .entry-content ul > li,
     .single-proposal article .entry-content ul > li,
     .single-agenda article .entry-content ul > li,
-    .single-summary article .entry-content ul > li {
+    .single-summary article .entry-content ul > li,
+    .singular-agenda article .entry-content ul > li,
+    .singular-proposal article .entry-content ul > li,
+    .singular-meeting article .entry-content ul > li,
+    .singular-summary article .entry-content ul > li {
       font-weight: bold; }
     .single-meeting article .entry-content ul ul li,
     .single-proposal article .entry-content ul ul li,
     .single-agenda article .entry-content ul ul li,
-    .single-summary article .entry-content ul ul li {
+    .single-summary article .entry-content ul ul li,
+    .singular-agenda article .entry-content ul ul li,
+    .singular-proposal article .entry-content ul ul li,
+    .singular-meeting article .entry-content ul ul li,
+    .singular-summary article .entry-content ul ul li {
       font-weight: normal; }
     .single-meeting article .entry-content ul ul,
     .single-meeting article .entry-content ul ul ul,
@@ -5704,7 +6337,19 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .single-agenda article .entry-content ul ul ul ul,
     .single-summary article .entry-content ul ul,
     .single-summary article .entry-content ul ul ul,
-    .single-summary article .entry-content ul ul ul ul {
+    .single-summary article .entry-content ul ul ul ul,
+    .singular-agenda article .entry-content ul ul,
+    .singular-agenda article .entry-content ul ul ul,
+    .singular-agenda article .entry-content ul ul ul ul,
+    .singular-proposal article .entry-content ul ul,
+    .singular-proposal article .entry-content ul ul ul,
+    .singular-proposal article .entry-content ul ul ul ul,
+    .singular-meeting article .entry-content ul ul,
+    .singular-meeting article .entry-content ul ul ul,
+    .singular-meeting article .entry-content ul ul ul ul,
+    .singular-summary article .entry-content ul ul,
+    .singular-summary article .entry-content ul ul ul,
+    .singular-summary article .entry-content ul ul ul ul {
       padding-left: .25em; }
   .single-meeting article .entry-content .connected-content,
   .single-meeting article .entry-content .post-content,
@@ -5713,95 +6358,222 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .single-agenda article .entry-content .connected-content,
   .single-agenda article .entry-content .post-content,
   .single-summary article .entry-content .connected-content,
-  .single-summary article .entry-content .post-content {
+  .single-summary article .entry-content .post-content,
+  .singular-agenda article .entry-content .connected-content,
+  .singular-agenda article .entry-content .post-content,
+  .singular-proposal article .entry-content .connected-content,
+  .singular-proposal article .entry-content .post-content,
+  .singular-meeting article .entry-content .connected-content,
+  .singular-meeting article .entry-content .post-content,
+  .singular-summary article .entry-content .connected-content,
+  .singular-summary article .entry-content .post-content {
     margin: .125em 0;
     padding: 2%;
     background-color: #fff; }
   .single-meeting article .entry-content .connected-content,
   .single-proposal article .entry-content .connected-content,
   .single-agenda article .entry-content .connected-content,
-  .single-summary article .entry-content .connected-content {
+  .single-summary article .entry-content .connected-content,
+  .singular-agenda article .entry-content .connected-content,
+  .singular-proposal article .entry-content .connected-content,
+  .singular-meeting article .entry-content .connected-content,
+  .singular-summary article .entry-content .connected-content {
     list-style: none; }
     .single-meeting article .entry-content .connected-content li::before,
     .single-proposal article .entry-content .connected-content li::before,
     .single-agenda article .entry-content .connected-content li::before,
-    .single-summary article .entry-content .connected-content li::before {
+    .single-summary article .entry-content .connected-content li::before,
+    .singular-agenda article .entry-content .connected-content li::before,
+    .singular-proposal article .entry-content .connected-content li::before,
+    .singular-meeting article .entry-content .connected-content li::before,
+    .singular-summary article .entry-content .connected-content li::before {
       margin-right: .125em;
       color: #b8b6b2;
       font-weight: normal; }
-  .single-meeting article .entry-content .post-content h2,
-  .single-meeting article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .single-meeting article .entry-content .post-content h4, .single-proposal article .entry-content .post-content h2,
-  .single-proposal article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .single-proposal article .entry-content .post-content h4, .single-agenda article .entry-content .post-content h2,
-  .single-agenda article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .single-agenda article .entry-content .post-content h4, .single-summary article .entry-content .post-content h2, .single-summary article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .single-summary article .entry-content .post-content h4 {
+  .single-meeting article .entry-content .post-content h2, .single-meeting article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .single-meeting article .entry-content .post-content h4,
+  .single-proposal article .entry-content .post-content h2,
+  .single-proposal article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .single-proposal article .entry-content .post-content h4,
+  .single-agenda article .entry-content .post-content h2,
+  .single-agenda article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .single-agenda article .entry-content .post-content h4,
+  .single-summary article .entry-content .post-content h2,
+  .single-summary article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .single-summary article .entry-content .post-content h4,
+  .singular-agenda article .entry-content .post-content h2,
+  .singular-agenda article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .singular-agenda article .entry-content .post-content h4,
+  .singular-proposal article .entry-content .post-content h2,
+  .singular-proposal article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .singular-proposal article .entry-content .post-content h4,
+  .singular-meeting article .entry-content .post-content h2,
+  .singular-meeting article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .singular-meeting article .entry-content .post-content h4,
+  .singular-summary article .entry-content .post-content h2,
+  .singular-summary article .entry-content .post-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .singular-summary article .entry-content .post-content h4 {
     margin: 0; }
   .single-meeting article .entry-content .post-content li,
   .single-proposal article .entry-content .post-content li,
   .single-agenda article .entry-content .post-content li,
-  .single-summary article .entry-content .post-content li {
+  .single-summary article .entry-content .post-content li,
+  .singular-agenda article .entry-content .post-content li,
+  .singular-proposal article .entry-content .post-content li,
+  .singular-meeting article .entry-content .post-content li,
+  .singular-summary article .entry-content .post-content li {
     font-weight: normal; }
 
 .single-meeting article .byline,
 .single-proposal article .byline,
 .single-agenda article .byline,
-.single-summary article .byline {
+.single-summary article .byline,
+.singular-agenda article .byline,
+.singular-proposal article .byline,
+.singular-meeting article .byline,
+.singular-summary article .byline {
   display: none; }
 
 .single-meeting article .post-footer,
 .single-proposal article .post-footer,
 .single-agenda article .post-footer,
-.single-summary article .post-footer {
-  margin: 1em 0 0.5em 0;
+.single-summary article .post-footer,
+.singular-agenda article .post-footer,
+.singular-proposal article .post-footer,
+.singular-meeting article .post-footer,
+.singular-summary article .post-footer {
+  margin: 1em 0 .5em 0;
   padding: .5em 0;
   border-bottom: 1px solid #e6e4df; }
   .single-meeting article .post-footer .meta,
   .single-proposal article .post-footer .meta,
   .single-agenda article .post-footer .meta,
-  .single-summary article .post-footer .meta {
+  .single-summary article .post-footer .meta,
+  .singular-agenda article .post-footer .meta,
+  .singular-proposal article .post-footer .meta,
+  .singular-meeting article .post-footer .meta,
+  .singular-summary article .post-footer .meta {
     margin-top: .5em;
     padding-top: .75em;
     margin-bottom: .5em;
     padding-bottom: .75em;
     border-top: 1px solid #e6e4df;
     border-bottom: 1px solid #e6e4df; }
-  .single-meeting article .post-footer h3,
-  .single-meeting article .post-footer .news-list .post-title,
-  .news-list .single-meeting article .post-footer .post-title,
-  .single-meeting article .post-footer .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .single-meeting article .post-footer .post-title, .single-meeting article .post-footer .home-modules .events-list .all-events-link,
-  .home-modules .events-list .single-meeting article .post-footer .all-events-link,
-  .single-meeting article .post-footer .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .single-meeting article .post-footer .all-events-link, .single-proposal article .post-footer h3,
-  .single-proposal article .post-footer .news-list .post-title,
-  .news-list .single-proposal article .post-footer .post-title,
-  .single-proposal article .post-footer .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .single-proposal article .post-footer .post-title, .single-proposal article .post-footer .home-modules .events-list .all-events-link,
-  .home-modules .events-list .single-proposal article .post-footer .all-events-link,
-  .single-proposal article .post-footer .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .single-proposal article .post-footer .all-events-link, .single-agenda article .post-footer h3,
-  .single-agenda article .post-footer .news-list .post-title,
-  .news-list .single-agenda article .post-footer .post-title,
-  .single-agenda article .post-footer .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .single-agenda article .post-footer .post-title, .single-agenda article .post-footer .home-modules .events-list .all-events-link,
-  .home-modules .events-list .single-agenda article .post-footer .all-events-link,
-  .single-agenda article .post-footer .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .single-agenda article .post-footer .all-events-link, .single-summary article .post-footer h3, .single-summary article .post-footer .news-list .post-title, .news-list .single-summary article .post-footer .post-title,
-  .single-summary article .post-footer .home .widget_glocal_network_posts_widget .post-title, .home .widget_glocal_network_posts_widget .single-summary article .post-footer .post-title, .single-summary article .post-footer .home-modules .events-list .all-events-link, .home-modules .events-list .single-summary article .post-footer .all-events-link,
-  .single-summary article .post-footer .home-modules .widget_em_widget ul .all-events-link, .home-modules .widget_em_widget ul .single-summary article .post-footer .all-events-link {
+  .single-meeting article .post-footer h3, .single-meeting article .post-footer .news-list .post-title, .news-list .single-meeting article .post-footer .post-title, .single-meeting article .post-footer
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget .single-meeting article .post-footer .post-title, .single-meeting article .post-footer .home-modules .events-list .all-events-link, .home-modules .events-list .single-meeting article .post-footer .all-events-link, .single-meeting article .post-footer
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul .single-meeting article .post-footer .all-events-link,
+  .single-proposal article .post-footer h3,
+  .single-proposal article .post-footer .news-list .post-title, .news-list
+  .single-proposal article .post-footer .post-title,
+  .single-proposal article .post-footer
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .single-proposal article .post-footer .post-title,
+  .single-proposal article .post-footer .home-modules .events-list .all-events-link, .home-modules .events-list
+  .single-proposal article .post-footer .all-events-link,
+  .single-proposal article .post-footer
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .single-proposal article .post-footer .all-events-link,
+  .single-agenda article .post-footer h3,
+  .single-agenda article .post-footer .news-list .post-title, .news-list
+  .single-agenda article .post-footer .post-title,
+  .single-agenda article .post-footer
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .single-agenda article .post-footer .post-title,
+  .single-agenda article .post-footer .home-modules .events-list .all-events-link, .home-modules .events-list
+  .single-agenda article .post-footer .all-events-link,
+  .single-agenda article .post-footer
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .single-agenda article .post-footer .all-events-link,
+  .single-summary article .post-footer h3,
+  .single-summary article .post-footer .news-list .post-title, .news-list
+  .single-summary article .post-footer .post-title,
+  .single-summary article .post-footer
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .single-summary article .post-footer .post-title,
+  .single-summary article .post-footer .home-modules .events-list .all-events-link, .home-modules .events-list
+  .single-summary article .post-footer .all-events-link,
+  .single-summary article .post-footer
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .single-summary article .post-footer .all-events-link,
+  .singular-agenda article .post-footer h3,
+  .singular-agenda article .post-footer .news-list .post-title, .news-list
+  .singular-agenda article .post-footer .post-title,
+  .singular-agenda article .post-footer
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .singular-agenda article .post-footer .post-title,
+  .singular-agenda article .post-footer .home-modules .events-list .all-events-link, .home-modules .events-list
+  .singular-agenda article .post-footer .all-events-link,
+  .singular-agenda article .post-footer
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .singular-agenda article .post-footer .all-events-link,
+  .singular-proposal article .post-footer h3,
+  .singular-proposal article .post-footer .news-list .post-title, .news-list
+  .singular-proposal article .post-footer .post-title,
+  .singular-proposal article .post-footer
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .singular-proposal article .post-footer .post-title,
+  .singular-proposal article .post-footer .home-modules .events-list .all-events-link, .home-modules .events-list
+  .singular-proposal article .post-footer .all-events-link,
+  .singular-proposal article .post-footer
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .singular-proposal article .post-footer .all-events-link,
+  .singular-meeting article .post-footer h3,
+  .singular-meeting article .post-footer .news-list .post-title, .news-list
+  .singular-meeting article .post-footer .post-title,
+  .singular-meeting article .post-footer
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .singular-meeting article .post-footer .post-title,
+  .singular-meeting article .post-footer .home-modules .events-list .all-events-link, .home-modules .events-list
+  .singular-meeting article .post-footer .all-events-link,
+  .singular-meeting article .post-footer
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .singular-meeting article .post-footer .all-events-link,
+  .singular-summary article .post-footer h3,
+  .singular-summary article .post-footer .news-list .post-title, .news-list
+  .singular-summary article .post-footer .post-title,
+  .singular-summary article .post-footer
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget
+  .singular-summary article .post-footer .post-title,
+  .singular-summary article .post-footer .home-modules .events-list .all-events-link, .home-modules .events-list
+  .singular-summary article .post-footer .all-events-link,
+  .singular-summary article .post-footer
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul
+  .singular-summary article .post-footer .all-events-link {
     font-size: 22px;
     font-size: 1.375rem;
-    margin: 0 0 0.25em 0; }
+    margin: 0 0 .25em 0; }
   .single-meeting article .post-footer ul,
   .single-proposal article .post-footer ul,
   .single-agenda article .post-footer ul,
-  .single-summary article .post-footer ul {
-    padding: 0 0 0 0.75em; }
+  .single-summary article .post-footer ul,
+  .singular-agenda article .post-footer ul,
+  .singular-proposal article .post-footer ul,
+  .singular-meeting article .post-footer ul,
+  .singular-summary article .post-footer ul {
+    padding: 0 0 0 .75em; }
     .single-meeting article .post-footer ul li,
     .single-proposal article .post-footer ul li,
     .single-agenda article .post-footer ul li,
-    .single-summary article .post-footer ul li {
+    .single-summary article .post-footer ul li,
+    .singular-agenda article .post-footer ul li,
+    .singular-proposal article .post-footer ul li,
+    .singular-meeting article .post-footer ul li,
+    .singular-summary article .post-footer ul li {
       list-style: square;
       font-size: 16px;
       font-size: 1rem;
@@ -5817,13 +6589,29 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .single-agenda article .post-footer ul ul ul ul,
     .single-summary article .post-footer ul ul,
     .single-summary article .post-footer ul ul ul,
-    .single-summary article .post-footer ul ul ul ul {
+    .single-summary article .post-footer ul ul ul ul,
+    .singular-agenda article .post-footer ul ul,
+    .singular-agenda article .post-footer ul ul ul,
+    .singular-agenda article .post-footer ul ul ul ul,
+    .singular-proposal article .post-footer ul ul,
+    .singular-proposal article .post-footer ul ul ul,
+    .singular-proposal article .post-footer ul ul ul ul,
+    .singular-meeting article .post-footer ul ul,
+    .singular-meeting article .post-footer ul ul ul,
+    .singular-meeting article .post-footer ul ul ul ul,
+    .singular-summary article .post-footer ul ul,
+    .singular-summary article .post-footer ul ul ul,
+    .singular-summary article .post-footer ul ul ul ul {
       padding-left: .25em; }
 
 .single-meeting article .article-footer,
 .single-proposal article .article-footer,
 .single-agenda article .article-footer,
-.single-summary article .article-footer {
+.single-summary article .article-footer,
+.singular-agenda article .article-footer,
+.singular-proposal article .article-footer,
+.singular-meeting article .article-footer,
+.singular-summary article .article-footer {
   display: none; }
 
 /* want to style individual post classes? Booya! */
@@ -5922,9 +6710,11 @@ article.home-feature div.bx-wrapper .bx-viewport {
   text-indent: 0;
   line-height: 48px; }
 
-.so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel .news-list .post-title a, .news-list .so-widget-sow-post-carousel .post-title a,
-.so-widget-sow-post-carousel .home .widget_glocal_network_posts_widget .post-title a, .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a,
-.so-widget-sow-post-carousel .home-modules .widget_em_widget ul .all-events-link a, .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a {
+.so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel .news-list .post-title a, .news-list .so-widget-sow-post-carousel .post-title a, .so-widget-sow-post-carousel
+.home .widget_glocal_network_posts_widget .post-title a,
+.home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .so-widget-sow-post-carousel
+.home-modules .widget_em_widget ul .all-events-link a,
+.home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a {
   color: #333231;
   font-weight: 300; }
 
@@ -5935,14 +6725,15 @@ article.home-feature div.bx-wrapper .bx-viewport {
 .so-widget-sow-post-carousel a.sow-carousel-previous {
   background-color: #00a99d;
   border-radius: 0; }
-  .so-widget-sow-post-carousel a.sow-carousel-next:hover,
-  .so-widget-sow-post-carousel a.sow-carousel-next:focus,
+  .so-widget-sow-post-carousel a.sow-carousel-next:hover, .so-widget-sow-post-carousel a.sow-carousel-next:focus,
   .so-widget-sow-post-carousel a.sow-carousel-previous:hover,
   .so-widget-sow-post-carousel a.sow-carousel-previous:focus {
     background-color: #000; }
 
 .so-widget-sow-headline h1,
-.so-widget-sow-headline h2, .so-widget-sow-headline .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .so-widget-sow-headline h4 {
+.so-widget-sow-headline h2,
+.so-widget-sow-headline .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+.so-widget-sow-headline h4 {
   color: #1a1919 !important; }
 
 .so-widget-sow-cta .sow-cta-base {
@@ -5954,8 +6745,7 @@ article.home-feature div.bx-wrapper .bx-viewport {
     color: #1a1919 !important; }
   .so-widget-sow-cta .sow-cta-base .ow-button-base a {
     border-radius: 0; }
-    .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover,
-    .so-widget-sow-cta .sow-cta-base .ow-button-base a:focus {
+    .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover, .so-widget-sow-cta .sow-cta-base .ow-button-base a:focus {
       background-color: #000 !important; }
     .so-widget-sow-cta .sow-cta-base .ow-button-base a .sow-icon-fontawesome {
       color: #fff !important; }
@@ -6015,16 +6805,12 @@ article.home-feature div.bx-wrapper .bx-viewport {
   .logo-NYCP:visited,
   .domain-logo:visited {
     color: #fff; }
-  .logo-NYCP:hover,
-  .logo-NYCP:focus,
-  .logo-NYCP:visited:hover,
+  .logo-NYCP:hover, .logo-NYCP:focus, .logo-NYCP:visited:hover,
   .domain-logo:hover,
   .domain-logo:focus,
   .domain-logo:visited:hover {
     color: #333231; }
-    .logo-NYCP:hover span,
-    .logo-NYCP:focus span,
-    .logo-NYCP:visited:hover span,
+    .logo-NYCP:hover span, .logo-NYCP:focus span, .logo-NYCP:visited:hover span,
     .domain-logo:hover span,
     .domain-logo:focus span,
     .domain-logo:visited:hover span {
@@ -6110,8 +6896,7 @@ body.overview .content {
     padding-top: 48px;
     padding-bottom: 48px;
     margin-bottom: 0; }
-    body.overview .content section:before,
-    body.overview .content section:after {
+    body.overview .content section:before, body.overview .content section:after {
       content: " ";
       display: table; }
     body.overview .content section:after {
@@ -6251,13 +7036,15 @@ body.overview .promo-intro {
 .overview-glocal,
 .overview-services {
   color: #fff; }
-  .overview-tools h2,
-  .overview-tools .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .overview-tools h4, .overview-tools p,
+  .overview-tools h2, .overview-tools .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .overview-tools h4, .overview-tools p,
   .overview-glocal h2,
-  .overview-glocal .so-widget-sow-cta .sow-cta-base h4,
-  .so-widget-sow-cta .sow-cta-base .overview-glocal h4, .overview-glocal p,
-  .overview-services h2, .overview-services .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .overview-services h4, .overview-services p {
+  .overview-glocal .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .overview-glocal h4,
+  .overview-glocal p,
+  .overview-services h2,
+  .overview-services .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
+  .overview-services h4,
+  .overview-services p {
     color: #fff; }
 
 .overview-tools {

@@ -56,35 +56,17 @@ Template Name: Network Sites
 							// Get post count for each site
 							$site_details = get_blog_details($site_id);
 
-							// Find Network pages that are associated with this site
-							$args = array (
-								'post_type'         => 'network',
-								'meta_query'        => array(
-									array(
-										'key'       => 'glocal_network_sites',
-										'value'     => $site_id,
-										'compare'   => '=',
-									),
-								),
-							);
-							$network_query = new WP_Query( $args );
-
 							?>
 							<?php
 							if(function_exists('glocal_get_site_image')) {
 								$header = glocal_get_site_image($site_id);
 							} ?>
 
-							<li class="isomote id-<?php echo $site_id; ?> site-<?php echo $site_slug; ?> network-<?php foreach($network_query as $post){ echo $post->post_name;} ?>" data-id="<?php echo $site_id ?>" data-slug="<?php echo $site_slug ?>" data-posts="<?php echo $site_details->post_count; ?>">
-								<a href="<?php echo $site_details->siteurl; ?>" class="item-image <?php if(!$header) { echo 'no-image'; } ?>" style="background-image: url('<?php if($header) { echo $header; } ?>');"></a>
+							<li class="isomote id-<?php echo $site_id; ?> site-<?php echo $site_slug; ?>" data-id="<?php echo $site_id ?>" data-slug="<?php echo $site_slug ?>" data-posts="<?php echo $site_details->post_count; ?>">
+								<a href="<?php echo $site_details->siteurl; ?>" class="item-image<?php echo (! $header ) ? ' no-image' : ''; ?>" style="background-image: url('<?php echo ( $header ) ? $header : ''; ?>');"></a>
 								<h3 class="item-title"><a href="<?php echo $site_details->siteurl; ?>"><?php echo $site_details->blogname; ?></a></h3>
-								<h6 class="meta item-network"><?php foreach($network_query as $post){ echo $post->post_title;} ?></h6>
 								<h6 class="meta item-posts">
-								<?php
-									if($site_details->post_count) {
-										echo $site_details->post_count . ' posts';
-									}
-								?>
+								<?php echo ( $site_details->post_count > 0 ) ? $site_details->post_count . ' posts' : ''; ?>
 								</h6>
 								<h6 class="meta item-topic"></h6>
 							</li>
@@ -111,13 +93,13 @@ Template Name: Network Sites
 
 					<article id="post-not-found" class="hentry clearfix">
 						<header class="article-header">
-							<h1><?php _e( 'Oops, Post Not Found!', 'anp-main-theme' ); ?></h1>
+							<h1><?php _e( 'Oops, Post Not Found!', 'glocal-theme' ); ?></h1>
 						</header>
 						<section class="directory-content">
-							<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'anp-main-theme' ); ?></p>
+							<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'glocal-theme' ); ?></p>
 						</section>
 						<footer class="article-footer">
-                            <p><?php _e( 'This is the error message in the page.php template.', 'anp-main-theme' ); ?></p>
+                            <p><?php _e( 'This is the error message in the page.php template.', 'glocal-theme' ); ?></p>
 						</footer>
 					</article>
 

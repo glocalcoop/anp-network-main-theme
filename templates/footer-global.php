@@ -26,7 +26,6 @@ $global_site_header = glocal_get_site_image(1);
 		</section>
 		
 		<nav class="footer-nav" role="navigation clearfix">
-			<?php bones_footer_links(); ?>
 		</nav>
 
 	</div>

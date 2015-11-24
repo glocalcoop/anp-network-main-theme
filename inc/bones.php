@@ -129,7 +129,7 @@ function bones_scripts_and_styles() {
 	if (!is_admin()) {
 
 		// modernizr (without media query polyfill)
-		wp_register_script( 'bones-modernizr', get_template_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+		wp_register_script( 'bones-modernizr', get_template_directory_uri() . '/assets/scripts/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
 		// register main stylesheet
 		// move to main functions.php
@@ -144,7 +144,7 @@ function bones_scripts_and_styles() {
 		}
 
 		//adding scripts file in the footer
-		wp_register_script( 'bones-js', get_template_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+		wp_register_script( 'bones-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'bones-modernizr' );

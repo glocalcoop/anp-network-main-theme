@@ -9,32 +9,32 @@ include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 /************* INCLUDE NEEDED FILES ***************/
 
+
+// require_once( trailingslashit( get_template_directory() ) . 'inc/bones.php' );
+
+// Get the template directory and make sure it has a trailing slash.
+$hybrid_base_dir = trailingslashit( get_template_directory() );
+
+// Load the Hybrid Core framework and theme files.
+require_once( $hybrid_base_dir . 'library/hybrid.php' );
+require_once( $hybrid_base_dir . 'inc/theme.php' );
+
+new Hybrid();
+
 /**
- * Core functions
- */
-
-require_once( trailingslashit( get_template_directory() ) . 'inc/bones.php' ); 
-
-/**
- * Enqueue styles/scripts
- */
-
-require_once( trailingslashit( get_template_directory() ) . 'inc/enqueue.php' );
-
-/**
- * Custom functions
+ * Custom Functions
  */
 
 require_once( trailingslashit( get_template_directory() ) . 'inc/custom-functions.php' );
 
 /**
- * Theme options
+ * Enqueue
  */
 
-require_once( trailingslashit( get_template_directory() ) . 'inc/theme-options.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/enqueue.php' );
 
 /**
- * Helpers
+ * Extras
  */
 
 require_once( trailingslashit( get_template_directory() ) . 'inc/extras.php' );
@@ -46,33 +46,17 @@ require_once( trailingslashit( get_template_directory() ) . 'inc/extras.php' );
 require_once( trailingslashit( get_template_directory() ) . 'inc/helpers.php' );
 
 /**
- * Admin
+ * Theme Options
  */
 
-// require_once( trailingslashit( get_template_directory() ) . 'inc/admin.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/theme-options.php' );
 
+/**
+ * Customizer
+ */
 
-/************* COMMENT LAYOUT *********************/
+// require_once( trailingslashit( get_template_directory() ) . 'inc/customizer.php' );
 
-
-
-
-/************* REMOVE UNWANTED THEME SUPPORT OPTIONS *****************/
-// http://codex.wordpress.org/Function_Reference/add_theme_support
-// http://codex.wordpress.org/Function_Reference/remove_theme_support
-
-function glocal_custom_theme_support() {
-
-	// Turn off support for custom background
-	remove_theme_support( 'custom-background' );
-
-	// Turn on support for custom header image
-	add_theme_support( 'custom-header', array(
-		'header-text' => false
-	) );
-
-}
-add_action( 'after_setup_theme', 'glocal_custom_theme_support', 60 );
 
 
 
