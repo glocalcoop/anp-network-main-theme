@@ -10,13 +10,13 @@
 
 				<header class="article-header">
 
-					<h1><?php _e( 'Epic 404 - Article Not Found', 'glocal-theme' ); ?></h1>
+					<h1><?php _e( 'Epic 404 - Article Not Found', 'anp-main-theme' ); ?></h1>
 
 				</header>
 
 				<section class="entry-content">
 
-					<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'glocal-theme' ); ?></p>
+					<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'anp-main-theme' ); ?></p>
 
 				</section>
 
@@ -28,7 +28,7 @@
 
 				<footer class="article-footer">
 
-						<p><?php _e( 'This is the 404.php template.', 'glocal-theme' ); ?></p>
+						<p><?php _e( 'This is the 404.php template.', 'anp-main-theme' ); ?></p>
 
 				</footer>
 
