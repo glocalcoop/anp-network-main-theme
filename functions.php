@@ -45,11 +45,6 @@ require_once( trailingslashit( get_template_directory() ) . 'inc/extras.php' );
 
 require_once( trailingslashit( get_template_directory() ) . 'inc/helpers.php' );
 
-/**
- * Theme Options
- */
-
-require_once( trailingslashit( get_template_directory() ) . 'inc/theme-options.php' );
 
 /**
  * Customizer

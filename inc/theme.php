@@ -1,55 +1,99 @@
 <?php
 
+# Theme setup
+add_action( 'after_setup_theme', 'anp_theme_setup', 5 );
+
 # Register custom image sizes.
-add_action( 'init', 'hybrid_base_register_image_sizes', 5 );
+add_action( 'init', 'anp_theme_register_image_sizes', 5 );
 
 # Register custom menus.
-add_action( 'init', 'hybrid_base_register_menus', 5 );
+add_action( 'init', 'anp_theme_register_menus', 5 );
 
 # Register custom layouts.
-add_action( 'hybrid_register_layouts', 'hybrid_base_register_layouts' );
+//add_action( 'hybrid_register_layouts', 'anp_theme_register_layouts' );
 
 # Register sidebars.
-add_action( 'widgets_init', 'hybrid_base_register_sidebars', 5 );
+add_action( 'widgets_init', 'anp_theme_register_sidebars', 5 );
 
 # Add custom scripts and styles
-add_action( 'wp_enqueue_scripts', 'hybrid_base_enqueue_scripts', 5 );
-add_action( 'wp_enqueue_scripts', 'hybrid_base_enqueue_styles',  5 );
+add_action( 'wp_enqueue_scripts', 'anp_theme_enqueue_scripts', 5 );
+add_action( 'wp_enqueue_scripts', 'anp_theme_enqueue_styles',  5 );
+
 
 /**
- * Registers custom image sizes for the theme.
+ * Sets up the ANP Main Network theme.
  *
  * @since  1.0.0
  * @access public
  * @return void
  */
-function hybrid_base_register_image_sizes() {
 
-    // Sets the 'post-thumbnail' size.
-    //set_post_thumbnail_size( 150, 150, true );
+if ( ! function_exists( 'anp_theme_setup' ) ) {
+
+    // Register Theme Features
+    function anp_theme_setup()  {
+
+        // Add theme support for Post Formats
+        $formats = array( 'gallery', 'image', 'video', 'link', 'aside', );
+        add_theme_support( 'post-formats', $formats );  
+
+        // Add theme support for Semantic Markup
+        $markup = array( 'search-form' );
+        add_theme_support( 'html5', $markup );  
+
+        add_theme_support( 'menus' );
+
+        // Add theme support for custom header
+        add_theme_support( 'custom-header' );
+
+        // Add theme support for Translation
+        load_theme_textdomain( 'glocal', get_template_directory() . '/library/language' );  
+
+        // Loop Pagination
+        // Provides a template tag for adding pagination to multi-post pages (e.g., archives, blog, search)
+        // http://themehybrid.com/docs/hybrid-core-extensions
+        add_theme_support( 'loop-pagination' );
+    }
+
+}
+
+
+/**
+ * Register custom image sizes for the theme.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+function anp_theme_register_image_sizes() {
+
+    add_image_size( 'bones-thumb-600', 600, 150, true );
+    add_image_size( 'bones-thumb-300', 300, 100, true );
+    add_image_size( 'bones-thumb-150', 150, 150, true );
+
 }
 
 /**
- * Registers nav menu locations.
+ * Register nav menu locations.
  *
  * @since  1.0.0
  * @access public
  * @return void
  */
-function hybrid_base_register_menus() {
+function anp_theme_register_menus() {
     register_nav_menu( 'primary',    esc_html_x( 'Primary',    'nav menu location', 'anp-main-theme' ) );
     register_nav_menu( 'secondary',  esc_html_x( 'Secondary',  'nav menu location', 'anp-main-theme' ) );
     register_nav_menu( 'subsidiary', esc_html_x( 'Subsidiary', 'nav menu location', 'anp-main-theme' ) );
 }
 
 /**
- * Registers layouts.
+ * Register layouts.
  *
  * @since  1.0.0
  * @access public
  * @return void
  */
-function hybrid_base_register_layouts() {
+function anp_theme_register_layouts() {
 
     hybrid_register_layout( '1c',   array( 'label' => esc_html__( '1 Column',                     'anp-main-theme' ), 'image' => '%s/images/layouts/1c.png'   ) );
     hybrid_register_layout( '2c-l', array( 'label' => esc_html__( '2 Columns: Content / Sidebar', 'anp-main-theme' ), 'image' => '%s/images/layouts/2c-l.png' ) );
@@ -57,90 +101,18 @@ function hybrid_base_register_layouts() {
 }
 
 /**
- * Registers sidebars.
+ * Register sidebars.
  *
  * @since  1.0.0
  * @access public
  * @return void
  */
 
-        register_sidebar(array(
-            'id' => 'sidebar1',
-            'name' => __( 'Primary', 'anp-main-theme' ),
-            'description' => __( 'First (primary) sidebar.', 'anp-main-theme' ),
-            'before_widget' => '<div id="%1$s" class="widget primary %2$s">',
-            'after_widget' => '</div>',
-            'before_title' => '<h4 class="widgettitle">',
-            'after_title' => '</h4>',
-        ));
-        register_sidebar(array(
-            'id' => 'home-modules',
-            'name' => __( 'Homepage Modules', 'anp-main-theme' ),
-            'description' => __( 'Modules for the Homepage', 'anp-main-theme' ),
-            'before_widget' => '<article id="%1$s" class="module row %2$s">',
-            'after_widget' => '</article>',
-            'before_title' => '<h2 class="module-heading">',
-            'after_title' => '</h2>',
-        ));
-        register_sidebar(array(
-            'id' => 'home-sidebar',
-            'name' => __( 'Home Sidebar', 'anp-main-theme' ),
-            'description' => __( 'A homepage widget area.', 'anp-main-theme' ),
-            'before_widget' => '<div id="%1$s" class="home-sidebar">',
-            'after_widget' => '</div>',
-            'before_title' => '<h4 class="module-heading">',
-            'after_title' => '</h4>',
-        ));
-        register_sidebar(array(
-            'id' => 'footer1',
-            'name' => __( 'Footer 1', 'anp-main-theme' ),
-            'description' => __( 'First footer widget area.', 'anp-main-theme' ),
-            'before_widget' => '<div id="%1$s" class="widget footer-widget-1 %2$s">',
-            'after_widget' => '</div>',
-            'before_title' => '<h4 class="widgettitle">',
-            'after_title' => '</h4>',
-        ));
-        register_sidebar(array(
-            'id' => 'footer2',
-            'name' => __( 'Footer 2', 'anp-main-theme' ),
-            'description' => __( 'Second footer widget area.', 'anp-main-theme' ),
-            'before_widget' => '<nav id="%1$s" class="widget footer-widget-2 %2$s">',
-            'after_widget' => '</nav>',
-            'before_title' => '<h4 class="widgettitle">',
-            'after_title' => '</h4>',
-        ));
-        register_sidebar(array(
-            'id' => 'footer3',
-            'name' => __( 'Footer 3', 'anp-main-theme' ),
-            'description' => __( 'Third footer widget area.', 'anp-main-theme' ),
-            'before_widget' => '<div id="%1$s" class="widget footer-widget-3 %2$s">',
-            'after_widget' => '</div>',
-            'before_title' => '<h4 class="widgettitle">',
-            'after_title' => '</h4>',
-        ));
-        register_sidebar(array(
-            'id' => 'footer4',
-            'name' => __( 'Footer 4', 'anp-main-theme' ),
-            'description' => __( 'Fourth footer widget area.', 'anp-main-theme' ),
-            'before_widget' => '<div id="%1$s" class="widget footer-widget-4 %2$s">',
-            'after_widget' => '</div>',
-            'before_title' => '<h4 class="widgettitle">',
-            'after_title' => '</h4>',
-        ));
-        register_sidebar(array(
-            'id' => 'social',
-            'name' => __( 'Social Widget', 'anp-main-theme' ),
-            'description' => __( 'Widget area for social links.', 'anp-main-theme' ),
-            'before_widget' => '<div id="%1$s" class="social-links %2$s">',
-            'after_widget' => '</div>',
-            'before_title' => '<h4 class="widgettitle">',
-            'after_title' => '</h4>',
-        ));
-function hybrid_base_register_sidebars() {
+ function anp_theme_register_sidebars() {
 
     hybrid_register_sidebar(
         array(
-            'id'          => 'primary',
+            'id'          => 'sidebar1',
             'name'        => esc_html_x( 'Primary', 'sidebar', 'anp-main-theme' ),
             'description' => esc_html__( '', 'anp-main-theme' )
         )
@@ -203,7 +175,7 @@ function hybrid_base_register_sidebars() {
  * @access public
  * @return void
  */
-function hybrid_base_enqueue_scripts() {
+function anp_theme_enqueue_scripts() {
 
     if( is_page_template( 'page-directory.php' ) ) {
         // Deregister WP jquery
@@ -238,7 +210,7 @@ function hybrid_base_enqueue_scripts() {
  * @access public
  * @return void
  */
-function hybrid_base_enqueue_styles() {
+function anp_theme_enqueue_styles() {
 
     // Load one-five base style.
     wp_enqueue_style( 'hybrid-one-five' );
