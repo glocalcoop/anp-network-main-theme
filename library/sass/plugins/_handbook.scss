@@ -1,0 +1,14 @@
+/*********************
+HANDBOOK STYLES
+*********************/
+
+article.handbook {
+    @extend .post;
+
+    .byline {
+        display: none;
+    }
+}
+
+
+.single-handbook {}
