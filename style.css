@@ -3652,7 +3652,7 @@ button,
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-.page-title,
+.page-title, article.handbook .entry-title,
 .archive-title,
 .section-title {
   text-transform: uppercase;

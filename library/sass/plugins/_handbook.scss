@@ -8,6 +8,10 @@ article.handbook {
     .byline {
         display: none;
     }
+
+    .entry-title {
+        @extend .page-title;
+    }
 }
 
 
