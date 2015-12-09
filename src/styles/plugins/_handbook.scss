@@ -1,0 +1,18 @@
+/*********************
+HANDBOOK STYLES
+*********************/
+
+article.handbook {
+    @extend .post;
+
+    .byline {
+        display: none;
+    }
+
+    .entry-title {
+        @extend h1.page-title;
+    }
+}
+
+
+.single-handbook {}

@@ -3839,7 +3839,7 @@ POSTS & CONTENT STYLES
 /* hentry class */
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
-.post {
+.post, article.handbook {
   padding: 24px; }
 
 .post-image img {
@@ -3863,55 +3863,59 @@ POSTS & CONTENT STYLES
   font-size: 22px;
   font-size: 1.375rem; }
 
-.post .entry-content {
+.post .entry-content, article.handbook .entry-content {
   /*
 	image alignment on a screen this size may be
 	a bit difficult. It's set to start aligning
 	and floating images at the next breakpoint,
 	but it's up to you. Feel free to change it up.
 	*/ }
-  .post .entry-content h2, .post .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .post .entry-content h4, .post .entry-content h3, .post .entry-content .news-list .post-title, .news-list .post .entry-content .post-title, .post .entry-content
+  .post .entry-content h2, article.handbook .entry-content h2, .post .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base .post .entry-content h4, article.handbook .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base article.handbook .entry-content h4, .post .entry-content h3, article.handbook .entry-content h3, .post .entry-content .news-list .post-title, .news-list .post .entry-content .post-title, article.handbook .entry-content .news-list .post-title, .news-list article.handbook .entry-content .post-title, .post .entry-content
   .home .widget_glocal_network_posts_widget .post-title,
-  .home .widget_glocal_network_posts_widget .post .entry-content .post-title, .post .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list .post .entry-content .all-events-link, .post .entry-content
+  .home .widget_glocal_network_posts_widget .post .entry-content .post-title, article.handbook .entry-content
+  .home .widget_glocal_network_posts_widget .post-title,
+  .home .widget_glocal_network_posts_widget article.handbook .entry-content .post-title, .post .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list .post .entry-content .all-events-link, article.handbook .entry-content .home-modules .events-list .all-events-link, .home-modules .events-list article.handbook .entry-content .all-events-link, .post .entry-content
   .home-modules .widget_em_widget ul .all-events-link,
-  .home-modules .widget_em_widget ul .post .entry-content .all-events-link, .post .entry-content h4 {
+  .home-modules .widget_em_widget ul .post .entry-content .all-events-link, article.handbook .entry-content
+  .home-modules .widget_em_widget ul .all-events-link,
+  .home-modules .widget_em_widget ul article.handbook .entry-content .all-events-link, .post .entry-content h4, article.handbook .entry-content h4 {
     margin-top: 1.8em; }
-  .post .entry-content p {
+  .post .entry-content p, article.handbook .entry-content p {
     max-width: 40em; }
-  .post .entry-content a {
+  .post .entry-content a, article.handbook .entry-content a {
     color: #333231;
     border-bottom: 1px solid rgba(0, 169, 157, 0.2);
     box-shadow: inset 0 -3px 0 rgba(0, 169, 157, 0.2); }
-    .post .entry-content a:hover {
+    .post .entry-content a:hover, article.handbook .entry-content a:hover {
       color: #00a99d;
       border-bottom-color: rgba(0, 169, 157, 0.1);
       box-shadow: inset 0 -3px 0 rgba(0, 169, 157, 0.1); }
-  .post .entry-content ul, .post .entry-content ol {
+  .post .entry-content ul, article.handbook .entry-content ul, .post .entry-content ol, article.handbook .entry-content ol {
     padding: 0 40px; }
-  .post .entry-content ul {
+  .post .entry-content ul, article.handbook .entry-content ul {
     list-style: square; }
-  .post .entry-content ol {
+  .post .entry-content ol, article.handbook .entry-content ol {
     list-style: decimal; }
-  .post .entry-content dl {
+  .post .entry-content dl, article.handbook .entry-content dl {
     border-top: 1px solid #fff;
     padding-top: 1em; }
-  .post .entry-content dt {
+  .post .entry-content dt, article.handbook .entry-content dt {
     float: left; }
-  .post .entry-content dd {
+  .post .entry-content dd, article.handbook .entry-content dd {
     margin-left: 375px; }
-  .post .entry-content img {
+  .post .entry-content img, article.handbook .entry-content img {
     margin: 0 0 20px 0;
     max-width: 100%;
     height: auto; }
-  .post .entry-content .alignleft, .post .entry-content img.alignleft {
+  .post .entry-content .alignleft, article.handbook .entry-content .alignleft, .post .entry-content img.alignleft, article.handbook .entry-content img.alignleft {
     float: left;
     margin-right: 40px;
     margin-bottom: 20px; }
-  .post .entry-content .alignright, .post .entry-content img.alignright {
+  .post .entry-content .alignright, article.handbook .entry-content .alignright, .post .entry-content img.alignright, article.handbook .entry-content img.alignright {
     float: right;
     margin-left: 40px;
     margin-bottom: 20px; }
-  .post .entry-content video, .post .entry-content object {
+  .post .entry-content video, article.handbook .entry-content video, .post .entry-content object, article.handbook .entry-content object {
     max-width: 100%;
     height: auto; }
 
@@ -4437,73 +4441,73 @@ SIDEBARS & ASIDES
     .home .widget_glocal_network_posts_widget li:last-child {
       margin-right: 0; } }
 
-.post {
+.post, article.handbook {
   *zoom: 1;
   display: block;
   margin-top: 0;
   margin-bottom: 24px;
   background: #fff; }
-  .post:before, .post:after {
+  .post:before, article.handbook:before, .post:after, article.handbook:after {
     content: " ";
     display: table; }
-  .post:after {
+  .post:after, article.handbook:after {
     clear: both; }
-  .post .post-header {
+  .post .post-header, article.handbook .post-header {
     display: block;
     float: left;
     margin-right: 2.35765%;
     width: 14.70196%;
     padding: 34px 0 24px 24px;
     color: #757472; }
-    .post .post-header:last-child {
+    .post .post-header:last-child, article.handbook .post-header:last-child {
       margin-right: 0; }
-  .post .post-body {
+  .post .post-body, article.handbook .post-body {
     display: block;
     float: left;
     margin-right: 2.35765%;
     width: 82.94039%;
     padding: 24px 24px 24px 0; }
-    .post .post-body:last-child {
+    .post .post-body:last-child, article.handbook .post-body:last-child {
       margin-right: 0; }
-  .post .post-title {
+  .post .post-title, article.handbook .post-title {
     margin-bottom: 18px; }
-  .post .post-date,
-  .post .post-categories li {
+  .post .post-date, article.handbook .post-date,
+  .post .post-categories li, article.handbook .post-categories li {
     font-size: 16px;
     font-size: 1rem; }
 
 .blog .news .post-image {
   float: right; }
 
-.main-news .post .post-header {
+.main-news .post .post-header, .main-news article.handbook .post-header {
   display: block;
   float: left;
   margin-right: 1.75788%;
   width: 17.32172%; }
-  .main-news .post .post-header:last-child {
+  .main-news .post .post-header:last-child, .main-news article.handbook .post-header:last-child {
     margin-right: 0; }
 
-.main-news .post .post-body {
+.main-news .post .post-body, .main-news article.handbook .post-body {
   display: block;
   float: left;
   margin-right: 1.75788%;
   width: 80.9204%; }
-  .main-news .post .post-body:last-child {
+  .main-news .post .post-body:last-child, .main-news article.handbook .post-body:last-child {
     margin-right: 0; }
-  .main-news .post .post-body .post-image {
+  .main-news .post .post-body .post-image, .main-news article.handbook .post-body .post-image {
     float: right;
     margin-left: 24px;
     margin-bottom: 6px; }
-    .main-news .post .post-body .post-image img {
+    .main-news .post .post-body .post-image img, .main-news article.handbook .post-body .post-image img {
       display: block;
       border: 5px solid #fff; }
 
-.main-news .post .post-footer {
+.main-news .post .post-footer, .main-news article.handbook .post-footer {
   display: block;
   float: left;
   margin-right: 1.75788%;
   width: 17.32172%; }
-  .main-news .post .post-footer:last-child {
+  .main-news .post .post-footer:last-child, .main-news article.handbook .post-footer:last-child {
     margin-right: 0; }
 
 .event-image {
@@ -6623,6 +6627,12 @@ MEETINGS ARCHIVE & SINGLE STYLES
 /* hentry class */
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
+/*********************
+HANDBOOK STYLES
+*********************/
+article.handbook .byline {
+  display: none; }
+
 .entry-content > ul.sites-list {
   list-style: none;
   margin: 0;
