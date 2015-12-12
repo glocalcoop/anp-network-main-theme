@@ -5,7 +5,7 @@ Theme URI: https://github.com/glocalcoop/activist-network.git
 Description: Theme for the main site of a multisite network. Based on the <a href="https://github.com/eddiemachado/bones" title="Bones">Bones Development Theme</a>
 Author: Pea, Glocal Coop
 Author URI: http://glocal.coop
-Version: 1.1.2
+Version: 1.1.3
 Tags: clean, flexible-width, modularized
 Text Domain: network-main
 */
@@ -279,7 +279,7 @@ th {
   font-weight: normal;
   font-style: normal; }
 
-.fa {
+.fa, article.handbook a.anchor:before {
   display: inline-block;
   font: normal normal normal 14px / 1 FontAwesome;
   font-size: inherit;
@@ -336,10 +336,10 @@ th {
 .fa-pull-right {
   float: right; }
 
-.fa.fa-pull-left {
+.fa.fa-pull-left, article.handbook a.fa-pull-left.anchor:before {
   margin-right: .3em; }
 
-.fa.fa-pull-right {
+.fa.fa-pull-right, article.handbook a.fa-pull-right.anchor:before {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -349,10 +349,10 @@ th {
 .pull-left {
   float: left; }
 
-.fa.pull-left {
+.fa.pull-left, article.handbook a.pull-left.anchor:before {
   margin-right: .3em; }
 
-.fa.pull-right {
+.fa.pull-right, article.handbook a.pull-right.anchor:before {
   margin-left: .3em; }
 
 .fa-spin {
@@ -979,7 +979,8 @@ th {
   content: ""; }
 
 .fa-chain:before,
-.fa-link:before {
+.fa-link:before,
+article.handbook a.anchor:before {
   content: ""; }
 
 .fa-cloud:before {
@@ -2758,31 +2759,39 @@ hr {
   max-height: 60px;
   width: auto; }
 
-.footer .widgettitle {
+.footer .widgettitle, .footer article.handbook .table-of-contents h3, article.handbook .table-of-contents .footer h3, .footer article.handbook .table-of-contents .news-list .post-title, article.handbook .table-of-contents .news-list .footer .post-title, .footer .news-list article.handbook .table-of-contents .post-title, .news-list article.handbook .table-of-contents .footer .post-title, .footer article.handbook .table-of-contents
+.home .widget_glocal_network_posts_widget .post-title, article.handbook .table-of-contents
+.home .widget_glocal_network_posts_widget .footer .post-title, .footer
+.home .widget_glocal_network_posts_widget article.handbook .table-of-contents .post-title,
+.home .widget_glocal_network_posts_widget article.handbook .table-of-contents .footer .post-title, .footer article.handbook .table-of-contents .home-modules .events-list .all-events-link, article.handbook .table-of-contents .home-modules .events-list .footer .all-events-link, .footer .home-modules .events-list article.handbook .table-of-contents .all-events-link, .home-modules .events-list article.handbook .table-of-contents .footer .all-events-link, .footer article.handbook .table-of-contents
+.home-modules .widget_em_widget ul .all-events-link, article.handbook .table-of-contents
+.home-modules .widget_em_widget ul .footer .all-events-link, .footer
+.home-modules .widget_em_widget ul article.handbook .table-of-contents .all-events-link,
+.home-modules .widget_em_widget ul article.handbook .table-of-contents .footer .all-events-link {
   display: none; }
 
-.footer .widget {
+.footer .widget, .footer article.handbook .table-of-contents, article.handbook .footer .table-of-contents {
   background: #fff;
   margin-bottom: 30px; }
-  .footer .widget ul {
+  .footer .widget ul, .footer article.handbook .table-of-contents ul, article.handbook .footer .table-of-contents ul {
     margin-bottom: 0; }
-  .footer .widget li {
+  .footer .widget li, .footer article.handbook .table-of-contents li, article.handbook .footer .table-of-contents li {
     font-size: 16px;
     font-size: 1rem;
     color: #333231;
     padding: 0;
     margin: 0;
     display: block !important; }
-  .footer .widget a, .footer .widget a:visited {
+  .footer .widget a, .footer article.handbook .table-of-contents a, article.handbook .footer .table-of-contents a, .footer .widget a:visited, .footer article.handbook .table-of-contents a:visited, article.handbook .footer .table-of-contents a:visited {
     color: #00a99d; }
   @media screen and (min-width: 481px) {
-    .footer .widget {
+    .footer .widget, .footer article.handbook .table-of-contents, article.handbook .footer .table-of-contents {
       display: block;
       float: left;
       margin-right: 1.75788%;
       width: 23.68159%;
       margin-bottom: 0; }
-      .footer .widget:last-child {
+      .footer .widget:last-child, .footer article.handbook .table-of-contents:last-child, article.handbook .footer .table-of-contents:last-child {
         margin-right: 0; } }
 
 .footer-slug {
@@ -4054,32 +4063,36 @@ SIDEBARS & ASIDES
 .sidebar .menu a:hover {
   color: #fff; }
 
-.widgettitle {
+.widgettitle, article.handbook .table-of-contents h3, article.handbook .table-of-contents .news-list .post-title, .news-list article.handbook .table-of-contents .post-title, article.handbook .table-of-contents
+.home .widget_glocal_network_posts_widget .post-title,
+.home .widget_glocal_network_posts_widget article.handbook .table-of-contents .post-title, article.handbook .table-of-contents .home-modules .events-list .all-events-link, .home-modules .events-list article.handbook .table-of-contents .all-events-link, article.handbook .table-of-contents
+.home-modules .widget_em_widget ul .all-events-link,
+.home-modules .widget_em_widget ul article.handbook .table-of-contents .all-events-link {
   margin: -5px 0 0.5em;
   color: #fff;
   color: rgba(255, 255, 255, 0.7);
   font-size: 16px;
   font-size: 1rem; }
 
-.widget {
+.widget, article.handbook .table-of-contents {
   padding: 20px;
   margin: 0 0 12px;
   background: #999894;
   color: #fff; }
-  .widget a,
-  .widget a:visited {
+  .widget a, article.handbook .table-of-contents a,
+  .widget a:visited, article.handbook .table-of-contents a:visited {
     color: #fff;
     font-weight: 300;
     display: block;
     padding: 0.5em 0; }
-    .widget a:hover,
-    .widget a:visited:hover {
+    .widget a:hover, article.handbook .table-of-contents a:hover,
+    .widget a:visited:hover, article.handbook .table-of-contents a:visited:hover {
       color: #fff; }
-  .widget ul {
+  .widget ul, article.handbook .table-of-contents ul {
     border-bottom: 1px solid #333231;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin: 0; }
-  .widget li {
+  .widget li, article.handbook .table-of-contents li {
     border-top: 1px solid #333231;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0;
@@ -4087,27 +4100,27 @@ SIDEBARS & ASIDES
     line-height: 1.3;
     display: block !important;
     /* deep nesting */ }
-    .widget li ul {
+    .widget li ul, article.handbook .table-of-contents li ul {
       margin: 0;
       padding-left: 20px;
       border: 0; }
-    .widget li li {
+    .widget li li, article.handbook .table-of-contents li li {
       border: 0;
       padding: 0;
       color: #b8b6b2; }
-    .widget li a {
+    .widget li a, article.handbook .table-of-contents li a {
       border: 0; }
-  .widget form {
+  .widget form, article.handbook .table-of-contents form {
     background: transparent;
     padding: 20px 0; }
-  .widget label {
+  .widget label, article.handbook .table-of-contents label {
     margin-bottom: 0; }
-  .widget input[type="text"],
-  .widget input[type="password"],
-  .widget input[type='email'] {
+  .widget input[type="text"], article.handbook .table-of-contents input[type="text"],
+  .widget input[type="password"], article.handbook .table-of-contents input[type="password"],
+  .widget input[type='email'], article.handbook .table-of-contents input[type='email'] {
     padding: 2px 5px; }
 
-.glocal-partner .sidebar .widget {
+.glocal-partner .sidebar .widget, .glocal-partner .sidebar article.handbook .table-of-contents, article.handbook .glocal-partner .sidebar .table-of-contents {
   background: rgba(0, 0, 0, 0.3); }
 
 .widget_search {
@@ -4138,22 +4151,22 @@ SIDEBARS & ASIDES
   #wp-calendar td#next {
     text-align: right; }
 
-.widget ul.nav-social {
+.widget ul.nav-social, article.handbook .table-of-contents ul.nav-social {
   float: none;
   border-bottom: none; }
-  .widget ul.nav-social li {
+  .widget ul.nav-social li, article.handbook .table-of-contents ul.nav-social li {
     display: inline-block !important;
     line-height: 30px;
     height: 30px;
     width: 30px;
     margin-right: 5px; }
-    .widget ul.nav-social li:last-child {
+    .widget ul.nav-social li:last-child, article.handbook .table-of-contents ul.nav-social li:last-child {
       margin-right: 0; }
-    .widget ul.nav-social li a {
+    .widget ul.nav-social li a, article.handbook .table-of-contents ul.nav-social li a {
       height: 30px;
       padding: 0 !important; }
 
-.widget .sites-list .site-name,
+.widget .sites-list .site-name, article.handbook .table-of-contents .sites-list .site-name,
 .widget_glocal_network_sites_widget .sites-list .site-name {
   font-size: 1.375rem;
   margin-bottom: 0; }
@@ -5201,7 +5214,15 @@ ul.event-categories {
 .em-booking-form-details textarea {
   width: 300px; }
 
-.widget_em_calendar .widgettitle {
+.widget_em_calendar .widgettitle, .widget_em_calendar article.handbook .table-of-contents h3, article.handbook .table-of-contents .widget_em_calendar h3, .widget_em_calendar article.handbook .table-of-contents .news-list .post-title, article.handbook .table-of-contents .news-list .widget_em_calendar .post-title, .widget_em_calendar .news-list article.handbook .table-of-contents .post-title, .news-list article.handbook .table-of-contents .widget_em_calendar .post-title, .widget_em_calendar article.handbook .table-of-contents
+.home .widget_glocal_network_posts_widget .post-title, article.handbook .table-of-contents
+.home .widget_glocal_network_posts_widget .widget_em_calendar .post-title, .widget_em_calendar
+.home .widget_glocal_network_posts_widget article.handbook .table-of-contents .post-title,
+.home .widget_glocal_network_posts_widget article.handbook .table-of-contents .widget_em_calendar .post-title, .widget_em_calendar article.handbook .table-of-contents .home-modules .events-list .all-events-link, article.handbook .table-of-contents .home-modules .events-list .widget_em_calendar .all-events-link, .widget_em_calendar .home-modules .events-list article.handbook .table-of-contents .all-events-link, .home-modules .events-list article.handbook .table-of-contents .widget_em_calendar .all-events-link, .widget_em_calendar article.handbook .table-of-contents
+.home-modules .widget_em_widget ul .all-events-link, article.handbook .table-of-contents
+.home-modules .widget_em_widget ul .widget_em_calendar .all-events-link, .widget_em_calendar
+.home-modules .widget_em_widget ul article.handbook .table-of-contents .all-events-link,
+.home-modules .widget_em_widget ul article.handbook .table-of-contents .widget_em_calendar .all-events-link {
   display: none; }
 
 table.em-calendar {
@@ -5399,7 +5420,15 @@ table.em-calendar {
   list-style: none;
   margin: 10px 20px 10px 0; }
 
-.widget_theme_my_login .widgettitle {
+.widget_theme_my_login .widgettitle, .widget_theme_my_login article.handbook .table-of-contents h3, article.handbook .table-of-contents .widget_theme_my_login h3, .widget_theme_my_login article.handbook .table-of-contents .news-list .post-title, article.handbook .table-of-contents .news-list .widget_theme_my_login .post-title, .widget_theme_my_login .news-list article.handbook .table-of-contents .post-title, .news-list article.handbook .table-of-contents .widget_theme_my_login .post-title, .widget_theme_my_login article.handbook .table-of-contents
+.home .widget_glocal_network_posts_widget .post-title, article.handbook .table-of-contents
+.home .widget_glocal_network_posts_widget .widget_theme_my_login .post-title, .widget_theme_my_login
+.home .widget_glocal_network_posts_widget article.handbook .table-of-contents .post-title,
+.home .widget_glocal_network_posts_widget article.handbook .table-of-contents .widget_theme_my_login .post-title, .widget_theme_my_login article.handbook .table-of-contents .home-modules .events-list .all-events-link, article.handbook .table-of-contents .home-modules .events-list .widget_theme_my_login .all-events-link, .widget_theme_my_login .home-modules .events-list article.handbook .table-of-contents .all-events-link, .home-modules .events-list article.handbook .table-of-contents .widget_theme_my_login .all-events-link, .widget_theme_my_login article.handbook .table-of-contents
+.home-modules .widget_em_widget ul .all-events-link, article.handbook .table-of-contents
+.home-modules .widget_em_widget ul .widget_theme_my_login .all-events-link, .widget_theme_my_login
+.home-modules .widget_em_widget ul article.handbook .table-of-contents .all-events-link,
+.home-modules .widget_em_widget ul article.handbook .table-of-contents .widget_theme_my_login .all-events-link {
   max-width: 75%; }
 
 .widget_theme_my_login .login {
@@ -5990,6 +6019,41 @@ HANDBOOK STYLES
 article.handbook .byline {
   display: none; }
 
+article.handbook .entry-content a,
+article.handbook .entry-content a:hover,
+article.handbook .entry-content a:focus {
+  box-shadow: none; }
+
+article.handbook a.anchor {
+  border-bottom: none;
+  color: transparent;
+  width: 0; }
+  article.handbook a.anchor:before {
+    opacity: 1;
+    color: #00a99d; }
+  article.handbook a.anchor:hover, article.handbook a.anchor:focus {
+    color: transparent;
+    border-bottom: none;
+    box-shadow: none; }
+
+article.handbook .toc-jump {
+  display: none; }
+
+article.handbook .table-of-contents {
+  float: right;
+  padding: 2em; }
+  article.handbook .table-of-contents ul {
+    padding-right: 0;
+    padding-left: 0; }
+  article.handbook .table-of-contents a {
+    padding-left: 10px;
+    padding-right: 10px; }
+  article.handbook .table-of-contents a:hover {
+    padding-left: 15px;
+    padding-right: 5px;
+    background: #333231;
+    background: rgba(0, 0, 0, 0.1); }
+
 .entry-content > ul.sites-list {
   list-style: none;
   margin: 0;
@@ -6217,33 +6281,37 @@ article.home-feature div.bx-wrapper .bx-viewport {
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.glocal-network .sidebar .widget:first-child {
+.glocal-network .sidebar .widget:first-child, .glocal-network .sidebar article.handbook .table-of-contents:first-child, article.handbook .glocal-network .sidebar .table-of-contents:first-child {
   background: #22b573; }
 
-.glocal-network .sidebar .widget:nth-child(2) {
+.glocal-network .sidebar .widget:nth-child(2), .glocal-network .sidebar article.handbook .table-of-contents:nth-child(2), article.handbook .glocal-network .sidebar .table-of-contents:nth-child(2) {
   background: #00a99d; }
 
-.glocal-network .sidebar .widget:nth-child(3) {
+.glocal-network .sidebar .widget:nth-child(3), .glocal-network .sidebar article.handbook .table-of-contents:nth-child(3), article.handbook .glocal-network .sidebar .table-of-contents:nth-child(3) {
   background: #29abe2; }
 
-.glocal-network .sidebar .widget:nth-child(4) {
+.glocal-network .sidebar .widget:nth-child(4), .glocal-network .sidebar article.handbook .table-of-contents:nth-child(4), article.handbook .glocal-network .sidebar .table-of-contents:nth-child(4) {
   background: #247cc9; }
 
-.sidebar .widget li a,
-.footer .widget li a {
+.sidebar .widget li a, .sidebar article.handbook .table-of-contents li a, article.handbook .sidebar .table-of-contents li a,
+.footer .widget li a,
+.footer article.handbook .table-of-contents li a, article.handbook
+.footer .table-of-contents li a {
   padding-left: 0;
   padding-right: 20px; }
-  .sidebar .widget li a:hover,
-  .footer .widget li a:hover {
+  .sidebar .widget li a:hover, .sidebar article.handbook .table-of-contents li a:hover, article.handbook .sidebar .table-of-contents li a:hover,
+  .footer .widget li a:hover,
+  .footer article.handbook .table-of-contents li a:hover, article.handbook
+  .footer .table-of-contents li a:hover {
     padding-left: 15px;
     padding-right: 5px;
     background: #333231;
     background: rgba(0, 0, 0, 0.1); }
 
-.footer .widget li a:hover {
+.footer .widget li a:hover, .footer article.handbook .table-of-contents li a:hover, article.handbook .footer .table-of-contents li a:hover {
   color: #333231; }
 
-.sidebar .widget .menu a:before {
+.sidebar .widget .menu a:before, .sidebar article.handbook .table-of-contents .menu a:before, article.handbook .sidebar .table-of-contents .menu a:before {
   display: none; }
 
 body.overview .content {

@@ -12,6 +12,66 @@ article.handbook {
     .entry-title {
         @extend .page-title;
     }
+
+    .entry-content {
+        a,
+        a:hover,
+        a:focus {
+            box-shadow: none;
+        }
+    }
+
+    a.anchor {
+        border-bottom: none;
+        color: transparent;
+        width: 0;
+        &:before {
+            @extend .fa;
+            @extend .fa-link;
+            opacity: 1;
+            color: $anchor-color;
+        }
+        &:hover,
+        &:focus {
+            color: transparent;
+            border-bottom: none;
+            box-shadow: none;
+        }
+    }
+
+    .toc-jump {
+        display: none;
+    }
+
+    .table-of-contents {
+        @extend .widget;
+        float: right;
+        padding: 2em;
+
+        h3 {
+            @extend .widgettitle;
+            // margin-top: 0;
+            // margin-bottom: 0;
+        }
+
+        ul {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        a {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        a:hover {
+            padding-left: 15px;
+            padding-right: 5px;
+            background: $text-color;
+            background: rgba(0,0,0,.1);
+        }
+
+    }
 }
 
 
