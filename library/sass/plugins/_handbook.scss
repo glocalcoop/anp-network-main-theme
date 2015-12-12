@@ -14,6 +14,10 @@ article.handbook {
     }
 
     .entry-content {
+        p {
+            max-width: 100%;
+        }
+        
         a,
         a:hover,
         a:focus {
@@ -40,7 +44,29 @@ article.handbook {
     }
 
     .toc-jump {
-        display: none;
+
+        a {
+            border-bottom: none;
+            color: transparent;
+            width: 0;
+
+            &:before {
+                @extend .fa;
+                @extend .fa-angle-up;
+                opacity: 1;
+                color: $anchor-color;
+                font-size: 2.75em;
+            }
+
+            &:hover,
+            &:focus {
+                color: transparent;
+                border-bottom: none;
+                box-shadow: none;
+            }
+
+        }
+
     }
 
     .table-of-contents {
