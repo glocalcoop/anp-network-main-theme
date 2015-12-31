@@ -28,21 +28,21 @@ function custom_post_example() {
 	register_post_type( 'custom_type', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 		// let's now add all the options for this post type
 		array( 'labels' => array(
-			'name' => __( 'Custom Types', 'glocal-theme' ), /* This is the Title of the Group */
-			'singular_name' => __( 'Custom Post', 'glocal-theme' ), /* This is the individual type */
-			'all_items' => __( 'All Custom Posts', 'glocal-theme' ), /* the all items menu item */
-			'add_new' => __( 'Add New', 'glocal-theme' ), /* The add new menu item */
-			'add_new_item' => __( 'Add New Custom Type', 'glocal-theme' ), /* Add New Display Title */
-			'edit' => __( 'Edit', 'glocal-theme' ), /* Edit Dialog */
-			'edit_item' => __( 'Edit Post Types', 'glocal-theme' ), /* Edit Display Title */
-			'new_item' => __( 'New Post Type', 'glocal-theme' ), /* New Display Title */
-			'view_item' => __( 'View Post Type', 'glocal-theme' ), /* View Display Title */
-			'search_items' => __( 'Search Post Type', 'glocal-theme' ), /* Search Custom Type Title */ 
-			'not_found' =>  __( 'Nothing found in the Database.', 'glocal-theme' ), /* This displays if there are no entries yet */ 
-			'not_found_in_trash' => __( 'Nothing found in Trash', 'glocal-theme' ), /* This displays if there is nothing in the trash */
+			'name' => __( 'Custom Types', 'anp-network-theme' ), /* This is the Title of the Group */
+			'singular_name' => __( 'Custom Post', 'anp-network-theme' ), /* This is the individual type */
+			'all_items' => __( 'All Custom Posts', 'anp-network-theme' ), /* the all items menu item */
+			'add_new' => __( 'Add New', 'anp-network-theme' ), /* The add new menu item */
+			'add_new_item' => __( 'Add New Custom Type', 'anp-network-theme' ), /* Add New Display Title */
+			'edit' => __( 'Edit', 'anp-network-theme' ), /* Edit Dialog */
+			'edit_item' => __( 'Edit Post Types', 'anp-network-theme' ), /* Edit Display Title */
+			'new_item' => __( 'New Post Type', 'anp-network-theme' ), /* New Display Title */
+			'view_item' => __( 'View Post Type', 'anp-network-theme' ), /* View Display Title */
+			'search_items' => __( 'Search Post Type', 'anp-network-theme' ), /* Search Custom Type Title */ 
+			'not_found' =>  __( 'Nothing found in the Database.', 'anp-network-theme' ), /* This displays if there are no entries yet */ 
+			'not_found_in_trash' => __( 'Nothing found in Trash', 'anp-network-theme' ), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
 			), /* end of arrays */
-			'description' => __( 'This is the example custom post type', 'glocal-theme' ), /* Custom Type Description */
+			'description' => __( 'This is the example custom post type', 'anp-network-theme' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
@@ -79,16 +79,16 @@ function custom_post_example() {
 		array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
 		array('hierarchical' => true,     /* if this is true, it acts like categories */
 			'labels' => array(
-				'name' => __( 'Custom Categories', 'glocal-theme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Custom Category', 'glocal-theme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Custom Categories', 'glocal-theme' ), /* search title for taxomony */
-				'all_items' => __( 'All Custom Categories', 'glocal-theme' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Custom Category', 'glocal-theme' ), /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Custom Category:', 'glocal-theme' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit Custom Category', 'glocal-theme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Custom Category', 'glocal-theme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Custom Category', 'glocal-theme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Custom Category Name', 'glocal-theme' ) /* name title for taxonomy */
+				'name' => __( 'Custom Categories', 'anp-network-theme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Custom Category', 'anp-network-theme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Custom Categories', 'anp-network-theme' ), /* search title for taxomony */
+				'all_items' => __( 'All Custom Categories', 'anp-network-theme' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Custom Category', 'anp-network-theme' ), /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Custom Category:', 'anp-network-theme' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit Custom Category', 'anp-network-theme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Custom Category', 'anp-network-theme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Custom Category', 'anp-network-theme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Custom Category Name', 'anp-network-theme' ) /* name title for taxonomy */
 			),
 			'show_admin_column' => true, 
 			'show_ui' => true,
@@ -102,16 +102,16 @@ function custom_post_example() {
 		array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
 		array('hierarchical' => false,    /* if this is false, it acts like tags */
 			'labels' => array(
-				'name' => __( 'Custom Tags', 'glocal-theme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Custom Tag', 'glocal-theme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Custom Tags', 'glocal-theme' ), /* search title for taxomony */
-				'all_items' => __( 'All Custom Tags', 'glocal-theme' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Custom Tag', 'glocal-theme' ), /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Custom Tag:', 'glocal-theme' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit Custom Tag', 'glocal-theme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Custom Tag', 'glocal-theme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Custom Tag', 'glocal-theme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Custom Tag Name', 'glocal-theme' ) /* name title for taxonomy */
+				'name' => __( 'Custom Tags', 'anp-network-theme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Custom Tag', 'anp-network-theme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Custom Tags', 'anp-network-theme' ), /* search title for taxomony */
+				'all_items' => __( 'All Custom Tags', 'anp-network-theme' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Custom Tag', 'anp-network-theme' ), /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Custom Tag:', 'anp-network-theme' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit Custom Tag', 'anp-network-theme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Custom Tag', 'anp-network-theme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Custom Tag', 'anp-network-theme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Custom Tag Name', 'anp-network-theme' ) /* name title for taxonomy */
 			),
 			'show_admin_column' => true,
 			'show_ui' => true,

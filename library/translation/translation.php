@@ -10,5 +10,5 @@ URL: http://themble.com/bones/
 
 
 // Adding Translation Option
-load_theme_textdomain( 'glocal-theme', get_template_directory() .'/library/translation' );
+load_theme_textdomain( 'anp-network-theme', get_template_directory() .'/library/translation' );
 ?>

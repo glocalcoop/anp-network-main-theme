@@ -6,7 +6,7 @@
 
 		<main class="main-results" role="main">
 		
-			<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'glocal-theme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+			<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'anp-network-theme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -15,10 +15,10 @@
 					<h3 class="search-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 					
 					<p class="byline vcard">
-					    <?php printf( __( '<time class="updated" datetime="%1$s" pubdate>%2$s</time>', 'glocal-theme' ), get_the_time( 'Y-m-j' ) ); ?>
+					    <?php printf( __( '<time class="updated" datetime="%1$s" pubdate>%2$s</time>', 'anp-network-theme' ), get_the_time( 'Y-m-j' ) ); ?>
 					</p>
 
-					<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'glocal-theme' ) . '</span>' ); ?>
+					<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'anp-network-theme' ) . '</span>' ); ?>
 
 
 				</article>
@@ -30,8 +30,8 @@
 					<?php } else { ?>
 							<nav class="wp-prev-next">
 									<ul class="clearfix">
-										<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'glocal-theme' )) ?></li>
-										<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'glocal-theme' )) ?></li>
+										<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'anp-network-theme' )) ?></li>
+										<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'anp-network-theme' )) ?></li>
 									</ul>
 							</nav>
 					<?php } ?>
@@ -40,13 +40,13 @@
 
 						<article id="post-not-found" class="hentry clearfix">
 							<header class="article-header">
-								<h1><?php _e( 'Sorry, No Results.', 'glocal-theme' ); ?></h1>
+								<h1><?php _e( 'Sorry, No Results.', 'anp-network-theme' ); ?></h1>
 							</header>
 							<section class="entry-content">
-								<p><?php _e( 'Try your search again.', 'glocal-theme' ); ?></p>
+								<p><?php _e( 'Try your search again.', 'anp-network-theme' ); ?></p>
 							</section>
 							<footer class="article-footer">
-									<p><?php _e( 'This is the error message in the search.php template.', 'glocal-theme' ); ?></p>
+									<p><?php _e( 'This is the error message in the search.php template.', 'anp-network-theme' ); ?></p>
 							</footer>
 						</article>
 

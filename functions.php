@@ -86,8 +86,8 @@ you like. Enjoy!
 function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Primary', 'glocal-theme' ),
-		'description' => __( 'First (primary) sidebar.', 'glocal-theme' ),
+		'name' => __( 'Primary', 'anp-network-theme' ),
+		'description' => __( 'First (primary) sidebar.', 'anp-network-theme' ),
 		'before_widget' => '<div id="%1$s" class="widget primary %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -95,8 +95,8 @@ function bones_register_sidebars() {
 	));
 	register_sidebar(array(
 		'id' => 'home-modules',
-		'name' => __( 'Homepage Modules', 'glocal-theme' ),
-		'description' => __( 'Modules for the Homepage', 'glocal-theme' ),
+		'name' => __( 'Homepage Modules', 'anp-network-theme' ),
+		'description' => __( 'Modules for the Homepage', 'anp-network-theme' ),
 		'before_widget' => '<article id="%1$s" class="module row %2$s">',
 		'after_widget' => '</article>',
 		'before_title' => '<h2 class="module-heading">',
@@ -104,8 +104,8 @@ function bones_register_sidebars() {
 	));
 	register_sidebar(array(
 		'id' => 'home-sidebar',
-		'name' => __( 'Home Sidebar', 'glocal-theme' ),
-		'description' => __( 'A homepage widget area.', 'glocal-theme' ),
+		'name' => __( 'Home Sidebar', 'anp-network-theme' ),
+		'description' => __( 'A homepage widget area.', 'anp-network-theme' ),
 		'before_widget' => '<div id="%1$s" class="home-sidebar">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="module-heading">',
@@ -113,8 +113,8 @@ function bones_register_sidebars() {
 	));
 	register_sidebar(array(
 		'id' => 'footer1',
-		'name' => __( 'Footer 1', 'glocal-theme' ),
-		'description' => __( 'First footer widget area.', 'glocal-theme' ),
+		'name' => __( 'Footer 1', 'anp-network-theme' ),
+		'description' => __( 'First footer widget area.', 'anp-network-theme' ),
 		'before_widget' => '<div id="%1$s" class="widget footer-widget-1 %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -122,8 +122,8 @@ function bones_register_sidebars() {
 	));
 	register_sidebar(array(
 		'id' => 'footer2',
-		'name' => __( 'Footer 2', 'glocal-theme' ),
-		'description' => __( 'Second footer widget area.', 'glocal-theme' ),
+		'name' => __( 'Footer 2', 'anp-network-theme' ),
+		'description' => __( 'Second footer widget area.', 'anp-network-theme' ),
 		'before_widget' => '<nav id="%1$s" class="widget footer-widget-2 %2$s">',
 		'after_widget' => '</nav>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -131,8 +131,8 @@ function bones_register_sidebars() {
 	));
 	register_sidebar(array(
 		'id' => 'footer3',
-		'name' => __( 'Footer 3', 'glocal-theme' ),
-		'description' => __( 'Third footer widget area.', 'glocal-theme' ),
+		'name' => __( 'Footer 3', 'anp-network-theme' ),
+		'description' => __( 'Third footer widget area.', 'anp-network-theme' ),
 		'before_widget' => '<div id="%1$s" class="widget footer-widget-3 %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -140,8 +140,8 @@ function bones_register_sidebars() {
 	));
 	register_sidebar(array(
 		'id' => 'footer4',
-		'name' => __( 'Footer 4', 'glocal-theme' ),
-		'description' => __( 'Fourth footer widget area.', 'glocal-theme' ),
+		'name' => __( 'Footer 4', 'anp-network-theme' ),
+		'description' => __( 'Fourth footer widget area.', 'anp-network-theme' ),
 		'before_widget' => '<div id="%1$s" class="widget footer-widget-4 %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -149,8 +149,8 @@ function bones_register_sidebars() {
 	));
 	register_sidebar(array(
 		'id' => 'social',
-		'name' => __( 'Social Widget', 'glocal-theme' ),
-		'description' => __( 'Widget area for social links.', 'glocal-theme' ),
+		'name' => __( 'Social Widget', 'anp-network-theme' ),
+		'description' => __( 'Widget area for social links.', 'anp-network-theme' ),
 		'before_widget' => '<div id="%1$s" class="social-links %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -278,13 +278,13 @@ function bones_comments( $comment, $args, $depth ) {
 				?>
 				<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
 				<?php // end custom gravatar call ?>
-				<?php printf(__( '<cite class="fn">%s</cite>', 'glocal-theme' ), get_comment_author_link()) ?>
-				<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'glocal-theme' )); ?> </a></time>
-				<?php edit_comment_link(__( '(Edit)', 'glocal-theme' ),'  ','') ?>
+				<?php printf(__( '<cite class="fn">%s</cite>', 'anp-network-theme' ), get_comment_author_link()) ?>
+				<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'anp-network-theme' )); ?> </a></time>
+				<?php edit_comment_link(__( '(Edit)', 'anp-network-theme' ),'  ','') ?>
 			</header>
 			<?php if ($comment->comment_approved == '0') : ?>
 				<div class="alert alert-info">
-					<p><?php _e( 'Your comment is awaiting moderation.', 'glocal-theme' ) ?></p>
+					<p><?php _e( 'Your comment is awaiting moderation.', 'anp-network-theme' ) ?></p>
 				</div>
 			<?php endif; ?>
 			<section class="comment_content clearfix">
@@ -301,8 +301,8 @@ function bones_comments( $comment, $args, $depth ) {
 // Search Form
 function bones_wpsearch($form) {
 	$form = '<form role="search" class="search reveal" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-	<label class="screen-reader-text" for="s">' . __( 'Search for:', 'glocal-theme' ) . '</label>
-	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_attr__( 'Search', 'glocal-theme' ) . '" />
+	<label class="screen-reader-text" for="s">' . __( 'Search for:', 'anp-network-theme' ) . '</label>
+	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_attr__( 'Search', 'anp-network-theme' ) . '" />
 	<button type="submit" id="searchsubmit"></button>
 	</form>';
 	return $form;

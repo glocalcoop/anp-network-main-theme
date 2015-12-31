@@ -11,7 +11,7 @@
 	</section>
 
 	<footer class="article-footer">
-		<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'glocal-theme' ) . '</span> ', ', ', '' ); ?></p>
+		<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'anp-network-theme' ) . '</span> ', ', ', '' ); ?></p>
 
 	</footer>
 

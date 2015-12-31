@@ -29,7 +29,7 @@
             wp_nav_menu(array(
 				'container' => false,                           // remove nav container
 				'container_class' => 'menu',           // class of container (should you choose to use it)
-				'menu' => __( 'Global Network Menu', 'glocal-theme' ),  // nav name
+				'menu' => __( 'Global Network Menu', 'anp-network-theme' ),  // nav name
 				'menu_class' => 'main-nav',           // adding custom nav class
 		        'menu_id' => 'menu-global',         			// menu id
 				'theme_location' => 'network-menu',             // where it's located in the theme
