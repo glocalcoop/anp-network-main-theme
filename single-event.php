@@ -1,4 +1,31 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying a single event
+ *
+ * Please note that since 1.7, this template is not used by default. You can edit the 'event details'
+ * by using the event-meta-event-single.php template.
+ *
+ * Or you can edit the entire single event template by creating a single-event.php template
+ * in your theme. You can use this template as a guide.
+ *
+ * For a list of available functions (outputting dates, venue details etc) see http://codex.wp-event-organiser.com/
+ *
+ ***************** NOTICE: *****************
+ *  Do not make changes to this file. Any changes made to this file
+ * will be overwritten if the plug-in is updated.
+ *
+ * To overwrite this template with your own, make a copy of it (with the same name)
+ * in your theme directory. See http://docs.wp-event-organiser.com/theme-integration for more information
+ *
+ * WordPress will automatically prioritise the template in your theme directory.
+ ***************** NOTICE: *****************
+ *
+ * @package Event Organiser (plug-in)
+ * @since 1.0.0
+ */
+
+//Call the template header
+get_header(); ?>
 
 <div class="content">
 
@@ -6,89 +33,63 @@
 
 		<main role="main">
 
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php 
+			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-			global $post;
+				<header class="article-header">
 
-            $EM_Event = em_get_event($post->ID, 'post_id');
+					<?php if( has_post_thumbnail() ) : ?>
 
-			?>
-
-				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-
-					<header class="article-header">
-
-						<section class="event-image"><?php echo $EM_Event->output('#_EVENTIMAGE'); ?></section>
-						
-						<h1 class="entry-title single-title event-title" itemprop="headline"><?php echo $EM_Event->output('#_EVENTNAME'); ?></h1>
-						<p class="byline vcard"><?php
-							printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&amp;</span> filed under %4$s.', 'glocal-theme' ), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')), bones_get_the_author_posts_link(), get_the_category_list(', ') );
-						?></p>
-
-					</header>
-
-					<section class="event-details">
-						<h4 class="date-time">
-							<span class="event-day"><?php echo $EM_Event->output('#l'); ?></span>
-							<span class="event-date"><?php echo $EM_Event->output('#F #j, #Y'); ?></span>
-							<span class="event-time"><?php echo $EM_Event->output('#g:#i#a'); ?> - <?php echo $EM_Event->output('#@g:#@i#@a'); ?></span>
-						</h4>
-
-						<?php if($EM_Event->location_id) { ?>
-						<h4 class="location">
-							<span class="location-name"><?php echo $EM_Event->output('#_LOCATIONLINK'); ?></span>
-							<span class="location-address"><?php echo $EM_Event->output('#_LOCATIONTOWN #_LOCATIONSTATE'); ?></span>
-						</h4>
-						<?php } ?>
-
-						<div class="tools"><a href="<?php echo $EM_Event->output('#_EVENTICALURL'); ?>" class="add-to-calendar button">Add to Calendar</a></div>
-					</section>
-
-					<section class="event-description">
-					
-					    <?php echo $EM_Event->output('#_EVENTNOTES'); ?>
-					
-						<?php if($EM_Event->location_id) { ?>
-						<div class="event-map"><?php echo $EM_Event->output('#_MAP'); ?></div>
-						<?php } ?>
-
-					</section>
-
-					<footer class="event-footer">
-						<div class="meta categories"><?php echo $EM_Event->output('#_EVENTCATEGORIES'); ?></div>
-						<div class="meta tags"><?php echo $EM_Event->output('#_EVENTTAGS'); ?></div>
-						<div class="share"></div>
-					</footer>
-
-					<?php
-					// echo "<pre>";
-					// var_dump($EM_Event);
-					// echo "</pre>";
-					?>
-
-					<?php comments_template(); ?>
-
-				</article>
-
-			<?php endwhile; ?>
-
-			<?php else : ?>
-
-				<article id="post-not-found" class="hentry clearfix">
-						<header class="article-header">
-							<h1><?php _e( 'Oops, Post Not Found!', 'glocal-theme' ); ?></h1>
-						</header>
-						<section class="entry-content">
-							<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'glocal-theme' ); ?></p>
+						<section class="event-image">
+							<?php the_post_thumbnail('full'); ?> 
 						</section>
-						<footer class="article-footer">
-								<p><?php _e( 'This is the error message in the single.php template.', 'glocal-theme' ); ?></p>
-						</footer>
-				</article>
 
-			<?php endif; ?>
+					<?php endif; ?>
+
+					<!-- Display event title -->
+					<h1 class="entry-title single-title event-title" itemprop="headline"><?php the_title(); ?></h1>
+
+				</header><!-- .entry-header -->
+		
+				<!-- Get event information, see template: event-meta-event-single.php -->
+				<?php get_template_part( 'partials/event-meta', 'event-single' ); ?>
+
+				<section class="event-description">
+
+					<!-- The content or the description of the event-->
+					<?php the_content(); ?>
+
+					<!-- Does the event have a venue? -->
+					<?php if( eo_get_venue() ): ?>
+						<!-- Display map -->
+						<div class="event-map">
+							<?php echo eo_get_venue_map(eo_get_venue(),array('width'=>'100%')); ?>
+						</div>
+					<?php endif; ?>
+
+				</section>
+
+				<footer class="event-footer">
+
+					<div class="meta categories">
+
+						<?php $categories_list = get_the_term_list( get_the_ID(), 'event-category', '', ', ',''); ?>
+
+						<?php echo ( $categories_list ) ? $categories_list : '' ?></div>
+				
+					<?php edit_post_link( __( 'Edit'), '<span class="edit-link">', '</span>' ); ?>
+				</footer><!-- .entry-meta -->
+
+			</article><!-- #post-<?php the_ID(); ?> -->
+
+			<!-- If comments are enabled, show them -->
+			<div class="comments-template">
+				<?php comments_template(); ?>
+			</div>				
+
+		<?php endwhile; // end of the loop. ?>
+
 
 		</main>
 
@@ -98,4 +99,6 @@
 
 </div>
 
+
+<!-- Call template footer -->
 <?php get_footer(); ?>
