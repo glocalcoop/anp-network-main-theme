@@ -96,6 +96,11 @@
 // SINGLE EVENT PAGE
 
 .single-event {
+
+    h3 {
+        margin-bottom: 0;
+    }
+
     .byline {
         display: none;
     }
@@ -114,7 +119,7 @@
     }
     .event-details {
         @include breakpoint(sm) {float: left; width: 33%;}
-        h4 span {
+        .location-address span {
             @include breakpoint(sm) {display: block;}
         }
 
@@ -123,7 +128,7 @@
         }
     }
     .date-time, 
-    .location {
+    .event-location {
         margin: .75em 0;
         line-height: 1.5;
         @include breakpoint(sm) {margin-bottom: 1.5em;}        
@@ -133,9 +138,12 @@
     }
     .event-time,
     .location-address {
-        font-size: 75%;
-        display: block;
+        //font-size: 75%;
+        // display: block;
         @include breakpoint(sm) {margin-top: .75em;}        
+    }
+    .meta {
+        font-size: 1rem;
     }
     div.tools {
         margin: 1.5em 0;
