@@ -6,7 +6,7 @@ Author: Pea, Glocal Coop
 Author URI: http://glocal.coop
 Version: 1.1.3
 Tags: clean, flexible-width, modularized
-Text Domain: network-main
+Text Domain: anp-network-main
 */
 
 
@@ -53,12 +53,13 @@ Text Domain: network-main
 @import "plugins/biographia";
 @import "plugins/bxslider";
 @import "plugins/easymail";
-@import "plugins/eventmanager";
+//@import "plugins/eventmanager";
 @import "plugins/formmanager";
 @import "plugins/thememylogin";
 @import "plugins/meetings";
 @import "plugins/handbook";
 @import "plugins/glocalnetworkcontent";
+@import "plugins/eventorganiser";
 @import "plugins/siteorigin";
 
 
