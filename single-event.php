@@ -29,73 +29,71 @@ get_header(); ?>
 
 <div class="content">
 
-	<div class="wrap">
+    <div class="wrap">
 
-		<main role="main">
+        <main role="main">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+            <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-				<header class="article-header">
+                <header class="article-header">
 
-					<?php if( has_post_thumbnail() ) : ?>
+                    <?php if( has_post_thumbnail() ) : ?>
 
-						<section class="event-image">
-							<?php the_post_thumbnail('full'); ?> 
-						</section>
+                        <section class="event-image">
+                            <?php the_post_thumbnail('full'); ?> 
+                        </section>
 
-					<?php endif; ?>
+                    <?php endif; ?>
 
-					<!-- Display event title -->
-					<h1 class="entry-title single-title event-title" itemprop="headline"><?php the_title(); ?></h1>
+                    <!-- Display event title -->
+                    <h1 class="entry-title single-title event-title" itemprop="headline"><?php the_title(); ?></h1>
 
-				</header><!-- .entry-header -->
-		
-				<!-- Get event information, see template: event-meta-event-single.php -->
-				<?php get_template_part( 'partials/event-meta', 'event-single' ); ?>
+                </header><!-- .entry-header -->
+        
+                <!-- Get event information, see template: event-meta-event-single.php -->
+                <?php get_template_part( 'partials/event-meta', 'event-single' ); ?>
 
-				<section class="event-description">
+                <section class="event-description">
 
-					<!-- The content or the description of the event-->
-					<?php the_content(); ?>
+                    <!-- The content or the description of the event-->
+                    <?php the_content(); ?>
 
-					<!-- Does the event have a venue? -->
-					<?php if( eo_get_venue() ): ?>
-						<!-- Display map -->
-						<div class="event-map">
-							<?php echo eo_get_venue_map(eo_get_venue(),array('width'=>'100%')); ?>
-						</div>
-					<?php endif; ?>
+                    <!-- Does the event have a venue? -->
+                    <?php if( eo_get_venue() ): ?>
+                        <!-- Display map -->
+                        <div class="event-map">
+                            <?php echo eo_get_venue_map(eo_get_venue(),array('width'=>'100%')); ?>
+                        </div>
+                    <?php endif; ?>
 
-				</section>
+                </section>
 
-				<footer class="event-footer">
+                <footer class="event-footer">
 
-					<div class="meta categories">
+                    <?php if( function_exists( 'eo_get_event_meta_list' ) ) : ?>
+                        <?php echo anp_get_event_meta_list(); ?>
+                    <?php endif; ?>
+                
+                    <?php edit_post_link( __( 'Edit'), '<span class="edit-link">', '</span>' ); ?>
+                </footer><!-- .entry-meta -->
 
-						<?php $categories_list = get_the_term_list( get_the_ID(), 'event-category', '', ', ',''); ?>
+            </article><!-- #post-<?php the_ID(); ?> -->
 
-						<?php echo ( $categories_list ) ? $categories_list : '' ?></div>
-				
-					<?php edit_post_link( __( 'Edit'), '<span class="edit-link">', '</span>' ); ?>
-				</footer><!-- .entry-meta -->
+            <!-- If comments are enabled, show them -->
+            <div class="comments-template">
+                <?php comments_template(); ?>
+            </div>              
 
-			</article><!-- #post-<?php the_ID(); ?> -->
-
-			<!-- If comments are enabled, show them -->
-			<div class="comments-template">
-				<?php comments_template(); ?>
-			</div>				
-
-		<?php endwhile; // end of the loop. ?>
+        <?php endwhile; // end of the loop. ?>
 
 
-		</main>
+        </main>
 
-		<?php get_sidebar(); ?>
+        <?php get_sidebar(); ?>
 
-	</div>
+    </div>
 
 </div>
 
