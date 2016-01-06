@@ -52,6 +52,8 @@ get_header(); ?>
 						 </div>
 					<?php endif; ?>
 
+					<h3><?php _e( 'Address', 'anp-network-main' ); ?></h3>
+
 				 	<!-- Get event information, see template: event-venue-address.php -->
 					<?php get_template_part( '/partials/event', 'venue-address' ); ?>
 					
