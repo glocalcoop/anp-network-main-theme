@@ -8,8 +8,6 @@
 
 // EVENT LIST
 
-// events list
-
 .event-list {
     @include fill-parent;
     p {
@@ -17,7 +15,7 @@
         line-height: 1.5;
     }
     a {
-        color: $teal;
+        color: $anchor-color;
         &.button {
             margin: 0 0 1em 0;
         }
@@ -30,7 +28,14 @@
         clear: both;
     }
     .event-header {
-        @include breakpoint(sm) {@include span-columns(2);}
+        @include span-columns(16);
+        margin: 0;
+        padding: 0;
+
+        @include breakpoint(md) {
+            @include span-columns(4);
+            padding: 34px 0 24px 24px;
+        }
         .meta,
         .meta span {
             margin: 0;
@@ -54,6 +59,13 @@
                 }
             }
         }
+        .event-meta {
+            display: block;
+        }
+        .event-categories {
+            margin-top: 1em;
+            color: $anchor-color;
+        }
         span {
             padding-right: 5px;
             @include breakpoint(sm) {display: block;}
@@ -64,7 +76,11 @@
         }
     }
     .event-content {
-        @include breakpoint(sm) {@include span-columns(14);}
+        @include span-columns(16);
+
+        @include breakpoint(md) {
+            @include span-columns(12);
+        }
     }
     .event-image {
         border: $frame-border;  
@@ -79,6 +95,7 @@
         @include breakpoint(md) {margin-top: .25em;}
     }
     .event-location {
+        @extend h6;
         color: $quiet-color;
         margin-bottom: 1em;
         text-transform: uppercase;
@@ -142,6 +159,10 @@
         // display: block;
         @include breakpoint(sm) {margin-top: .75em;}        
     }
+    .location-name,
+    .city-state-postalcode {
+        display: block;
+    }
     .meta {
         font-size: 1rem;
     }
@@ -160,6 +181,9 @@
         width: 100%;
         height: 220px;
         overflow: hidden;
+    }
+    .event-categories {
+        margin-top: 1em;
     }
     .event-footer {
         clear: both;
