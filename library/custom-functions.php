@@ -216,4 +216,35 @@ function glocal_get_site_image($site_id) {
 }
 
 
+/************* Custom Event Meta *****************/
+
+if( !function_exists( 'anp_get_event_meta_list' ) ) {
+
+  function anp_get_event_meta_list( $event_id = 0 ) {
+
+    $event_id = (int) ( empty( $event_id ) ? get_the_ID() : $event_id);
+
+    if( empty( $event_id ) ){ 
+      return false;
+    }
+
+    $html  = '<div class="meta event-meta">';
+    $venue = get_taxonomy( 'event-venue' );
+
+    if( get_the_terms( $event_id, 'event-category' ) ) {
+      $html .= get_the_term_list( $event_id, 'event-category', '<ul class="meta event-categories categories"><li>','</li><li>', '</li></ul>' );
+    }
+
+    if( get_the_terms( $event_id, 'event-tag' ) && !is_wp_error( get_the_terms( $event_id, 'event-tag' ) ) ) {
+      $html .= get_the_term_list( $event_id, 'event-tag', '<ul class="meta event-tags tags"><li>','</li><li>', '</li></ul>' );
+    }
+
+    $html .='</div>';
+
+    return $html;
+  }
+
+}
+
+
 ?>

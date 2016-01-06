@@ -43,4 +43,8 @@
 
 	<div class="tools"><a href="" class="add-to-calendar button"><?php _e( 'Save to Calendar', 'anp-network-theme' ); ?></a></div>
 
+	<?php if( function_exists( 'eo_get_event_meta_list' ) ) : ?>
+        <?php echo anp_get_event_meta_list(); ?>
+    <?php endif; ?>
+
 </section>
