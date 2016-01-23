@@ -214,10 +214,10 @@ function bones_theme_support() {
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-nav' => __( 'The Main Menu', 'glocal-theme' ),   // main nav in header
-			'secondary-nav' => __( 'The Secondary Menu', 'glocal-theme' ),   // secondary nav in header
-			'utility-nav' => __( 'The Utility Menu', 'glocal-theme' ),   // utility nav in header
-			'footer-links' => __( 'Footer Links', 'glocal-theme' ) // secondary nav in footer
+			'main-nav' => __( 'The Main Menu', 'anp-network-theme' ),   // main nav in header
+			'secondary-nav' => __( 'The Secondary Menu', 'anp-network-theme' ),   // secondary nav in header
+			'utility-nav' => __( 'The Utility Menu', 'anp-network-theme' ),   // utility nav in header
+			'footer-links' => __( 'Footer Links', 'anp-network-theme' ) // secondary nav in footer
 		)
 	);
 } /* end bones theme support */
@@ -233,7 +233,7 @@ function bones_main_nav() {
 	wp_nav_menu(array(
 		'container' => false,                           // remove nav container
 		'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
-		'menu' => __( 'The Main Menu', 'glocal-theme' ),  // nav name
+		'menu' => __( 'The Main Menu', 'anp-network-theme' ),  // nav name
 		'menu_class' => 'menu clearfix',                 // adding custom nav class
 		'theme_location' => 'main-nav',               // where it's located in the theme
 		'before' => '',                                 // before the menu
@@ -251,7 +251,7 @@ function bones_footer_links() {
 	wp_nav_menu(array(
 		'container' => '',                              // remove nav container
 		'container_class' => 'footer-links clearfix',   // class of container (should you choose to use it)
-		'menu' => __( 'Footer Links', 'glocal-theme' ),   // nav name
+		'menu' => __( 'Footer Links', 'anp-network-theme' ),   // nav name
 		'menu_class' => 'menu footer-nav clearfix',      // adding custom nav class
 		'theme_location' => 'footer-links',             // where it's located in the theme
 		'before' => '',                                 // before the menu
@@ -305,7 +305,7 @@ function bones_related_posts() {
 				<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 			<?php endforeach; }
 		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'glocal-theme' ) . '</li>'; ?>
+			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'anp-network-theme' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_query();
@@ -353,7 +353,7 @@ function bones_filter_ptags_on_images($content){
 function bones_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'glocal-theme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'glocal-theme' ) .'</a>';
+	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'anp-network-theme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'anp-network-theme' ) .'</a>';
 }
 
 /*

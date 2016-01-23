@@ -8,7 +8,7 @@
 
 			<?php if (is_category()) { ?>
 				<h1 class="archive-title h2">
-					<span><?php _e( 'Posts Categorized:', 'glocal-theme' ); ?></span> <?php single_cat_title(); ?>
+					<span><?php _e( 'Posts Categorized:', 'anp-network-theme' ); ?></span> <?php single_cat_title(); ?>
 				</h1>
           
             <?php } elseif ( is_post_type_archive() ) { ?>
@@ -18,12 +18,12 @@
           
             <?php } elseif ( is_tax() ) { ?>
                 <h1 class="archive-title h2">
-					<span><?php _e( 'Taxonomy:', 'glocal-theme' ); ?></span> <?php single_term_title(); ?>
+					<span><?php _e( 'Taxonomy:', 'anp-network-theme' ); ?></span> <?php single_term_title(); ?>
 				</h1>
 
 			<?php } elseif (is_tag()) { ?>
 				<h1 class="archive-title h2">
-					<span><?php _e( 'Posts Tagged:', 'glocal-theme' ); ?></span> <?php single_tag_title(); ?>
+					<span><?php _e( 'Posts Tagged:', 'anp-network-theme' ); ?></span> <?php single_tag_title(); ?>
 				</h1>
 
 			<?php } elseif (is_author()) {
@@ -31,22 +31,22 @@
 				$author_id = $post->post_author;
 			?>
 				<h1 class="archive-title h2">
-					<span><?php _e( 'Posts By:', 'glocal-theme' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
+					<span><?php _e( 'Posts By:', 'anp-network-theme' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
 				</h1>
 				
 			<?php } elseif (is_day()) { ?>
 				<h1 class="archive-title h2">
-					<span><?php _e( 'Daily Archives:', 'glocal-theme' ); ?></span> <?php the_time('l, F j, Y'); ?>
+					<span><?php _e( 'Daily Archives:', 'anp-network-theme' ); ?></span> <?php the_time('l, F j, Y'); ?>
 				</h1>
 
 			<?php } elseif (is_month()) { ?>
 				<h1 class="archive-title h2">
-					<span><?php _e( 'Monthly Archives:', 'glocal-theme' ); ?></span> <?php the_time('F Y'); ?>
+					<span><?php _e( 'Monthly Archives:', 'anp-network-theme' ); ?></span> <?php the_time('F Y'); ?>
 				</h1>
 
 			<?php } elseif (is_year()) { ?>
 				<h1 class="archive-title h2">
-					<span><?php _e( 'Yearly Archives:', 'glocal-theme' ); ?></span> <?php the_time('Y'); ?>
+					<span><?php _e( 'Yearly Archives:', 'anp-network-theme' ); ?></span> <?php the_time('Y'); ?>
 				</h1>
 					
 			<?php } ?>
@@ -68,8 +68,8 @@
 					<?php } else { ?>
 						<nav class="wp-prev-next">
 							<ul class="clearfix">
-								<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'glocal-theme' )) ?></li>
-								<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'glocal-theme' )) ?></li>
+								<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'anp-network-theme' )) ?></li>
+								<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'anp-network-theme' )) ?></li>
 							</ul>
 						</nav>
 					<?php } ?>

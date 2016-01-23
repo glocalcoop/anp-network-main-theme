@@ -27,8 +27,8 @@
 					<?php } else { ?>
 							<nav class="wp-prev-next">
 									<ul class="clearfix">
-										<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'glocal-theme' )) ?></li>
-										<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'glocal-theme' )) ?></li>
+										<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'anp-network-theme' )) ?></li>
+										<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'anp-network-theme' )) ?></li>
 									</ul>
 							</nav>
 					<?php } ?>
@@ -37,13 +37,13 @@
 
 					<article id="post-not-found" class="hentry clearfix">
 							<header class="article-header">
-								<h1><?php _e( 'Oops, Post Not Found!', 'glocal-theme' ); ?></h1>
+								<h1><?php _e( 'Oops, Post Not Found!', 'anp-network-theme' ); ?></h1>
 						</header>
 							<section class="entry-content">
-								<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'glocal-theme' ); ?></p>
+								<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'anp-network-theme' ); ?></p>
 						</section>
 						<footer class="article-footer">
-								<p><?php _e( 'This is the error message in the index.php template.', 'glocal-theme' ); ?></p>
+								<p><?php _e( 'This is the error message in the index.php template.', 'anp-network-theme' ); ?></p>
 						</footer>
 					</article>
 

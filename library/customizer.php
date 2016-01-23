@@ -10,8 +10,8 @@ function anp_customize_register( $wp_customize ) {
 	//Section
 
 	$wp_customize->add_section( 'colors', array(
-		'title' => __( 'Colors', 'glocal-theme' ),
-		'description' => __( 'Description', 'glocal-theme' ),
+		'title' => __( 'Colors', 'anp-network-theme' ),
+		'description' => __( 'Description', 'anp-network-theme' ),
 		'priority' => 40, // After title_tagline
 		'capability' => 'edit_theme_options'
 	) );
@@ -73,49 +73,49 @@ function anp_customize_register( $wp_customize ) {
 
 	//Primary Color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary_color', array(
-		'label' => __( 'Primary Color', 'glocal-theme' ),
+		'label' => __( 'Primary Color', 'anp-network-theme' ),
 		'section' => 'colors'
 	) ) );
 
 	//Secondary Color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_color', array(
-		'label' => __( 'Secondary Color', 'glocal-theme' ),
+		'label' => __( 'Secondary Color', 'anp-network-theme' ),
 		'section' => 'colors'
 	) ) );
 
 	//Accent Color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
-		'label' => __( 'Accent Color', 'glocal-theme' ),
+		'label' => __( 'Accent Color', 'anp-network-theme' ),
 		'section' => 'colors'
 	) ) );
 
 	//Page Background Color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'page_background_color', array(
-		'label' => __( 'Page Background Color', 'glocal-theme' ),
+		'label' => __( 'Page Background Color', 'anp-network-theme' ),
 		'section' => 'colors'
 	) ) );
 
 	//Post Background Color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'post_background_color', array(
-		'label' => __( 'Post Background Color', 'glocal-theme' ),
+		'label' => __( 'Post Background Color', 'anp-network-theme' ),
 		'section' => 'colors'
 	) ) );
 
 	//Heading Color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'heading_color', array(
-		'label' => __( 'Heading Color', 'glocal-theme' ),
+		'label' => __( 'Heading Color', 'anp-network-theme' ),
 		'section' => 'colors'
 	) ) );
 
 	//Text Color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text_color', array(
-		'label' => __( 'Text Color', 'glocal-theme' ),
+		'label' => __( 'Text Color', 'anp-network-theme' ),
 		'section' => 'colors'
 	) ) );
 
 	//Link Color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'label' => __( 'Link Color', 'glocal-theme' ),
+		'label' => __( 'Link Color', 'anp-network-theme' ),
 		'section' => 'colors'
 	) ) );
 
