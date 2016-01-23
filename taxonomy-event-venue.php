@@ -38,7 +38,7 @@ get_header(); ?>
 					<?php $venue_id = get_queried_object_id(); ?>
 					<?php $venue_address = eo_get_venue_address( $venue_id ); ?>
 					
-					<h1 class="entry-title single-title" itemprop="headline">
+					<h1 class="single-title page-title" itemprop="headline">
 						<?php echo eo_get_venue_name( $venue_id ); ?>
 					</h1>
 

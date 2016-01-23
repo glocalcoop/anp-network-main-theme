@@ -37,7 +37,7 @@ get_header(); ?>
 				<!-- Page header, display category title-->
 				<header class="page-header">	
 
-					<h1 class="entry-title single-title" itemprop="headline">
+					<h1 class="single-title page-title" itemprop="headline">
 						<?php _e( 'Event Tag: ', 'anp-network-main' ); ?><?php echo single_tag_title( '', false ); ?>
 					</h1>
 
