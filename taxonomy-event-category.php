@@ -66,8 +66,8 @@ get_header(); ?>
 				global $wp_query;
 				if ( $wp_query->max_num_pages > 1 ) : ?>
 					<nav id="nav-above">
-						<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'eventorganiser' ) ); ?></div>
-						<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'eventorganiser' ) ); ?></div>
+						<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'anp-network-main' ) ); ?></div>
+						<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'anp-network-main' ) ); ?></div>
 					</nav><!-- #nav-above -->
 				<?php endif; ?>
 
@@ -100,8 +100,8 @@ get_header(); ?>
 				<?php 
 				if ( $wp_query->max_num_pages > 1 ) : ?>
 					<nav id="nav-below">
-						<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'eventorganiser' ) ); ?></div>
-						<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'eventorganiser' ) ); ?></div>
+						<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'anp-network-main' ) ); ?></div>
+						<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'anp-network-main' ) ); ?></div>
 					</nav><!-- #nav-below -->
 				<?php endif; ?>
 
@@ -110,11 +110,11 @@ get_header(); ?>
 				<!-- If there are no events -->
 				<section id="post-0" class="post no-results not-found" itemprop="articleBody">
 					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', 'eventorganiser' ); ?></h1>
+						<h1 class="entry-title"><?php _e( 'Nothing Found', 'anp-network-main' ); ?></h1>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
-						<p><?php _e( 'Apologies, but no events were found for the requested category. ', 'eventorganiser' ); ?></p>
+						<p><?php _e( 'Apologies, but no events were found for the requested category. ', 'anp-network-main' ); ?></p>
 					</div><!-- .entry-content -->
 				</section><!-- #post-0 -->
 

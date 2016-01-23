@@ -33,15 +33,15 @@ get_header(); ?>
 			<?php
 				if( eo_is_event_archive('day') )
 					//Viewing date archive
-					echo __('Events: ','eventorganiser').' '.eo_get_event_archive_date('jS F Y');
+					echo __('Events: ','anp-network-main').' '.eo_get_event_archive_date('jS F Y');
 				elseif( eo_is_event_archive('month') )
 					//Viewing month archive
-					echo __('Events: ','eventorganiser').' '.eo_get_event_archive_date('F Y');
+					echo __('Events: ','anp-network-main').' '.eo_get_event_archive_date('F Y');
 				elseif( eo_is_event_archive('year') )
 					//Viewing year archive
-					echo __('Events: ','eventorganiser').' '.eo_get_event_archive_date('Y');
+					echo __('Events: ','anp-network-main').' '.eo_get_event_archive_date('Y');
 				else
-					_e('Events','eventorganiser');
+					_e('Events','anp-network-main');
 			?>
 			</h1>
 		</header>
@@ -54,8 +54,8 @@ get_header(); ?>
 			global $wp_query;
 			if ( $wp_query->max_num_pages > 1 ) : ?>
 				<nav id="nav-above">
-					<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'eventorganiser' ) ); ?></div>
-					<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'eventorganiser' ) ); ?></div>
+					<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'anp-network-main' ) ); ?></div>
+					<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'anp-network-main' ) ); ?></div>
 				</nav><!-- #nav-above -->
 			<?php endif; ?>
 
@@ -71,8 +71,8 @@ get_header(); ?>
 		<?php 
 			if ( $wp_query->max_num_pages > 1 ) : ?>
 				<nav id="nav-below">
-					<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'eventorganiser' ) ); ?></div>
-					<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'eventorganiser' ) ); ?></div>
+					<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'anp-network-main' ) ); ?></div>
+					<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'anp-network-main' ) ); ?></div>
 				</nav><!-- #nav-below -->
 			<?php endif; ?>
 
@@ -80,11 +80,11 @@ get_header(); ?>
 			<!-- If there are no events -->
 			<article id="post-0" class="post no-results not-found">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Nothing Found', 'eventorganiser' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Nothing Found', 'anp-network-main' ); ?></h1>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
-					<p><?php _e( 'Apologies, but no results were found for the requested archive. ', 'eventorganiser' ); ?></p>
+					<p><?php _e( 'Apologies, but no results were found for the requested archive. ', 'anp-network-main' ); ?></p>
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->
 
