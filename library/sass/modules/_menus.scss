@@ -350,7 +350,7 @@ styles and our css is cleaner and more scalable. */
     .sub-menu {
       margin: 0;
       width: 100%;
-      background: $white;
+      background: $bg-content;
       @include transition(all 0.3s ease-out);
     }
 
@@ -407,7 +407,7 @@ styles and our css is cleaner and more scalable. */
         }
         
         .sub-menu {
-            background: $white;
+            background: $bg-content;
             position: absolute;
             z-index: 99; // to stay above carousel w/z-index of 50
             top: 100%;
@@ -474,11 +474,11 @@ styles and our css is cleaner and more scalable. */
         text-transform: uppercase;
         letter-spacing: $tracking;
         &.is-on {
-            background: $white;
+            background: $bg-content;
             color: $text-color;
         }
         &:hover {
-            background: $white;
+            background: $bg-content;
             cursor: pointer;
         }
     }
@@ -507,7 +507,7 @@ $f-height: 2.5em; // set variable for this menu
         display: block;
         padding: 0 1em;
         margin: 0;
-        background: $white;
+        background: $bg-content;
         color: $text-color;
         width: 100%;
         white-space: nowrap;

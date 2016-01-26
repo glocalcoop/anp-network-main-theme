@@ -82,7 +82,7 @@
     line-height: 1.1;
     margin: 0;
     padding: 20px;
-    background: $white;
+    background: $bg-content;
     position: absolute;
     top: 20px;
     left: -20px;
@@ -104,7 +104,7 @@
         float: right;
     }
     .banner {
-        background: $white;
+        background: $bg-content;
         padding: $space;
         margin-bottom: $space;
         @include breakpoint(sm) {@include span-columns(4);}

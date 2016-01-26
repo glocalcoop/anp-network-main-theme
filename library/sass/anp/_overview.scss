@@ -10,7 +10,7 @@
   }
   a:hover,
   a:focus {
-      background: $white;
+      background: $bg-content;
       color: $color;
   }
 }
@@ -94,16 +94,16 @@ body.overview {
       text-align: center;
   }
   li:nth-child(4n+1) {  
-      @include rainbow-button($green);
+      @include rainbow-button($success);
   }
   li:nth-child(4n+2) {  
-      @include rainbow-button($teal);
+      @include rainbow-button($primary);
   }
   li:nth-child(4n+3) {  
-      @include rainbow-button($blue);
+      @include rainbow-button($tertiary);
   }
   li:nth-child(4n+4) {  
-      @include rainbow-button($navy);
+      @include rainbow-button($tertiary);
   }
 }
 
@@ -161,10 +161,10 @@ body.overview {
 }
 
 .overview-tools {
-  background: $blue;
+  background: $tertiary;
 }
 .overview-glocal {
-  background: $navy;
+  background: $tertiary;
 }
 .overview-services {
   background: $base2;

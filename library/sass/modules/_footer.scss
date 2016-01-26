@@ -18,7 +18,7 @@
 }
 
 .footer .widget {
-  background: $white;
+  background: $bg-content;
   margin-bottom: 30px;   
 	ul {
     	margin-bottom: 0;
@@ -31,7 +31,7 @@
     	display: block !important;
 	}
 	a, a:visited {
-    	color: $teal;
+    	color: $primary;
 	}
 	@include breakpoint(sm) {
 	  @include span-columns(4);
@@ -72,11 +72,11 @@
         height: 100%;
         line-height: 30px; // needed to vertically center icons
     }
-    .facebook a {@include flip-button($navy); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-facebook;}
-    .twitter a {@include flip-button($blue); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-twitter;}
-    .github a {@include flip-button($teal); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-github;}
-    .email a {@include flip-button($green); @include font-icon-base($family:"entypo"); @extend %entypo-mail;}
-    .rss a {@include flip-button($orange); @include font-icon-base($family:"entypo"); @extend %entypo-rss;}
+    .facebook a {@include flip-button($tertiary); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-facebook;}
+    .twitter a {@include flip-button($tertiary); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-twitter;}
+    .github a {@include flip-button($primary); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-github;}
+    .email a {@include flip-button($success); @include font-icon-base($family:"entypo"); @extend %entypo-mail;}
+    .rss a {@include flip-button($secondary); @include font-icon-base($family:"entypo"); @extend %entypo-rss;}
     .network a {@include flip-button($black); @include font-icon-base($family:"entypo"); @extend %entypo-network;}
     
     // child themes

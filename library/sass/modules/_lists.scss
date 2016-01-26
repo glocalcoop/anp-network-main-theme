@@ -34,23 +34,23 @@
         padding: 20px;
         height: 100%;
         &:hover {
-            background: $orange;
+            background: $secondary;
         }
     }
 }
 
 #promo-directory {
-    background: $yellow; 
+    background: $warning; 
     .icon {@extend %ios7-store;}
 }
 #promo-network {
-    background: $yellow; 
+    background: $warning; 
     .icon {@extend %ios7-profile;}
 } 
 #promo-builder {
-    background: $green; 
+    background: $success; 
     .icon {@extend %ios7-sites;}
-    a:hover {background: $teal;}
+    a:hover {background: $primary;}
 } 
 
 
@@ -137,7 +137,7 @@
   overflow-x: hidden;
   margin: 0;
   li {
-    background: $white;
+    background: $bg-content;
     padding: $space-third $space;
     margin-bottom: 2px;
   }
@@ -179,7 +179,7 @@
 		padding: 0;
 		@include fill-parent;
 		li {
-		  background: $white;
+		  background: $bg-content;
 		  margin-top: 0;
 		  margin-bottom: 20px;
 		  padding: 0;
@@ -227,7 +227,7 @@
 		//if there is no image
 		&.no-site-image li {
 			height: 104px;
-			background: $navy;
+			background: $tertiary;
 			color: $white;
 			a,
 			a:link,

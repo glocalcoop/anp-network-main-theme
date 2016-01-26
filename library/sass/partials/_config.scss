@@ -10,34 +10,83 @@ $max-width: 1200px;
 
 // COLORS
 
-$navy: #247cc9;
-$blue: #29abe2;
-$teal: #00a99d;
-$green: #22b573;
-$lime: #8cc63f;
-$yellow: #fbb03b;
-$orange: #ff931e;
-$red: #f15a24;
 
-$primary: $teal;
-$secondary: $navy;
-$tertiary: $yellow;
-$highlight: $red;
+// $primary: $primary;
+// $secondary: $tertiary;
+// $tertiary: $warning;
+// $highlight: $danger;
+
+$primary:       #2f4550; //rgba(47, 69, 80, 100)
+$secondary:     #000000; //rgba(0, 0, 0, 100)
+$tertiary:      #586f7c; //rgba(88, 111, 124, 100)
+$tertiary2:     #b8dbd9; //rgba(184, 219, 217, 100)
+$tertiary3:     #f4f4f9; //rgba(244, 244, 249, 100)
+
+// $primary: #003459; //rgba(0, 52, 89, 100)
+// $secondary: #00171f; //rgba(0, 23, 31, 100)
+// $tertiary: #007ea7; //rgba(0, 126, 167, 100)
+// $tertiary2: #00a8e8; //rgba(0, 168, 232, 100)
+// $tertiary3:   #ffffff; //rgba(255, 255, 255, 100)
+
+// $primary:   #e0fbfc; //rgba(224, 251, 252, 100)
+// $secondary: #c2dfe3; //rgba(194, 223, 227, 100)
+// $tertiary: #9db4c0; //rgba(157, 180, 192, 100)
+// $tertiary2: #5c6b73; //rgba(92, 107, 115, 100)
+// $tertiary3: #253237; //rgba(37, 50, 55, 100)
+
+
+// $primary:   #000000; //rgba(0, 0, 0, 100)
+// $secondary: #14213d; //rgba(20, 33, 61, 100)
+// $tertiary: #fca311; //rgba(252, 163, 17, 100)
+// $tertiary2: #e5e5e5; //rgba(229, 229, 229, 100)
+// $tertiary3: #ffffff; //rgba(255, 255, 255, 100)
+
+// $primary:   #e3b505; //rgba(227, 181, 5, 100)
+// $secondary: #95190c; //rgba(149, 25, 12, 100)
+// $tertiary: #610345; //rgba(97, 3, 69, 100)
+// $tertiary2: #107e7d; //rgba(16, 126, 125, 100)
+// $tertiary3: #044b7f; //rgba(4, 75, 127, 100)
+
+
+// $primary:       #611c35; //rgba(97, 28, 53, 100)
+// $secondary:     #4da1a9; //rgba(77, 161, 169, 100)
+// $tertiary:      #ffa630; //rgba(255, 166, 48, 100)
+// $tertiary2:     #2e5077; //rgba(46, 80, 119, 100)
+// $tertiary3:     #d7e8ba; //rgba(215, 232, 186, 100)
+
+// $primary:   #177e89; //rgba(23, 126, 137, 100)
+// $secondary: #084c61; //rgba(8, 76, 97, 100)
+// $tertiary: #db3a34; //rgba(219, 58, 52, 100)
+// $tertiary2: #ffc857; //rgba(255, 200, 87, 100)
+// $tertiary3: #323031; //rgba(50, 48, 49, 100)
+
+// $primary:   #050505; //rgba(5, 5, 5, 100)
+// $secondary: #1b9aaa; //rgba(27, 154, 170, 100)
+// $tertiary: #dddbcb; //rgba(221, 219, 203, 100)
+// $tertiary2: #f5f1e3; //rgba(245, 241, 227, 100)
+// $tertiary3: #ffffff; //rgba(255, 255, 255, 100)
 
 $black: #000;
 $white: #fff;
 
-// shades of beige -- HSB(43, 3, X)
-$base1: #1a1919;
-$base2: #333231;
-$base3: #4d4c4a;
-$base4: #757472;
-$base5: #999894;
-$base6: #b8b6b2;
-$base7: #d1cfcb;
-$base8: #e6e4df;
-$base9: #f5f3f0;
-$base0: #fcfdf9;
+// shades of gray-- HSB(43, 3, X)
+
+$base0: #fcfcfc;
+$base9: #eee;
+$base8: #ddd;
+$base7: #cecece;
+$base6: #c0c0c0; //rgb(192,192,192)
+$base5: #a9a9a9; //rgb(169,169,169)
+$base4: #888; //rgb(128,128,128)
+$base3: #666; //rgb(105,105,105)
+$base2: #333;
+$base1: #111;
+
+$success:         #42A084; //#5cb85c
+$info:            #7A9E9F; //#5bc0de
+$warning:         #fbb03b; //#f0ad4e
+$danger:          #f15a24; //#d9534f
+$default:         $base3; //#d9534f
 
 
 // Tutorial: how to use color variables properly:
@@ -47,10 +96,12 @@ $headline-color: $base1;
 $text-color: $base2;
 $quiet-color: $base6;
 $loud-color: $black;
-$hr-color: $base6;
-$hr-alt: $base8;
-$anchor-color: $teal;
+$hr-color: $base8;
+$hr-alt: $base6;
+$anchor-color: $primary;
 $anchor-hover: $loud-color;
+$bg-body: $white;
+$bg-content: $base0;
 
 
 // TYPOGRAPHY

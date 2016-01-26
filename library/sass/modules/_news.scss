@@ -3,7 +3,7 @@
 .news-list,
 .home .widget_glocal_network_posts_widget {
     li {
-        background: $white;
+        background: $bg-content;
         margin-top: 0;
         margin-bottom: 0;
         padding: 10px;
@@ -55,7 +55,7 @@
   @include row();
   margin-top: 0;
   margin-bottom: $space;
-  background: $white;
+  background: $bg-content;
   .post-header {
     @include span-columns(2 of 12);
     @include pad(34px 0 24px 24px);
@@ -119,7 +119,7 @@
 
 .network-posts {
     li {
-        background: $white;
+        background: $bg-content;
         margin-bottom: $space;
         padding: $space-32 $space $space-34;
         max-width: none;

@@ -10,7 +10,7 @@ ALERTS AND NOTICES
 
 .alert-help {
 	@extend %alert;
-	background: $blue;
+	background: $tertiary;
 }
 
 .alert-info {
@@ -20,12 +20,12 @@ ALERTS AND NOTICES
 
 .alert-error {
 	@extend %alert;
-	background: $red;
+	background: $danger;
 }
 
 .alert-success {
 	@extend %alert;
-	background: $green;
+	background: $success;
 }
 
 

@@ -39,7 +39,7 @@ input[type='submit'] {
     margin: 0;
     padding: .6em 2em;
     &:hover {
-        background: $white;
+        background: $bg-content;
         color: $base2;
     }
 }
@@ -103,7 +103,7 @@ input[type='submit'] {
         border-radius: 0;
         @include breakpoint(md) {@include font-size(16); height: 24px; width: 24px; line-height: 24px; }
         &:hover {
-            background: $white;
+            background: $bg-content;
             border-color: $base6;
         }
     }
@@ -131,14 +131,14 @@ COMMENT FORM STYLES
 		input[type=url],
 		textarea {
 			padding: 4px 8px;
-			background: $white;
+			background: $bg-content;
 			border: 1px solid $base6;
 			&:focus {
-				border-color: $blue;
+				border-color: $tertiary;
 			}
 			&:invalid {
 				outline: none;
-				border-color: $red;
+				border-color: $danger;
 				background-color: $base0;
 				-webkit-box-shadow: none;
 				   -moz-box-shadow: none;

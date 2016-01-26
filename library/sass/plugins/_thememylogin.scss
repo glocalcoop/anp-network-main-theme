@@ -11,10 +11,10 @@
         @include font-size($epsilon);
 	}
 	p.error {
-        background-color: lighten($red, 30);
+        background-color: lighten($danger, 30);
     }
     p.message {
-        background-color: lighten($yellow, 30);
+        background-color: lighten($warning, 30);
     }
     form label {
         margin-bottom: 0;
@@ -25,21 +25,21 @@
     background-color: $base8;
     border-color: $base6 !important;
     &.bad {
-        background-color: lighten($orange, 30);
-        border-color: $orange !important;
+        background-color: lighten($secondary, 30);
+        border-color: $secondary !important;
     }
     
     &.good {
-        background-color: lighten($yellow, 30);
-        border-color: $yellow !important;
+        background-color: lighten($warning, 30);
+        border-color: $warning !important;
     }
     &.short {
-        background-color: lighten($red, 30);
-        border-color: $red !important;
+        background-color: lighten($danger, 30);
+        border-color: $danger !important;
     }
     &.strong {
-        background-color: lighten($green, 30);
-        border-color: $green !important;
+        background-color: lighten($success, 30);
+        border-color: $success !important;
     }
 }
 

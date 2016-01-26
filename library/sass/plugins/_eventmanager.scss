@@ -69,7 +69,7 @@ div.css-search {
                 display: none;
             }
             &:hover {
-                background: $teal;
+                background: $primary;
             }
         }
     }
@@ -89,7 +89,7 @@ div.css-search {
         line-height: 1.5;
     }
     a {
-        color: $teal;
+        color: $primary;
         &.button {
             margin: 0 0 1em 0;
         }
@@ -314,7 +314,7 @@ table.em-calendar {
     .events-list,
     .widget_em_widget ul { // Added .widget_em_widget ul to apply styles to EM widget PEA 1/24/2015
         li {
-          background: $teal;
+          background: $primary;
           color: $white;
           max-height: 100px; 
           overflow: hidden;
@@ -323,13 +323,13 @@ table.em-calendar {
         	@include breakpoint(xs) {@include span-columns(8); @include omega(2n); display: inline-block; }
         	@include breakpoint(sm) {@include span-columns(4); @include omega-reset(2n); @include omega(4n);}
             &:hover {
-                background: $navy;
+                background: $tertiary;
                 cursor: pointer;
             }
         }
         .event-promo,
         .all-events-link {
-            //background: lighten($teal, 10);
+            //background: lighten($primary, 10);
             height: 100px;
             a {
                 display: block;

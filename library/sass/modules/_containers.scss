@@ -14,7 +14,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background: $base9;
+  background: $bg-body;
 }
 
 
@@ -77,25 +77,6 @@ hr {
 
 }
 
-//.content {
-//
-//	main {
-//		@include span-columns(12);
-//	}
-//	aside {
-//		@include span-columns(4);
-//	}
-//
-//	@include breakpoint(sm) {
-//
-//		main,
-//		aside {
-//			@include span-columns(16);
-//		}
-//	}
-//
-//}
-
 
 // SINGLE COLUMN, FULLWIDTH PAGE
 
@@ -116,58 +97,10 @@ hr {
 }
 
 
-// CONTENT COLUMNS
-
-// main
-// main {
-//   padding-bottom: 60px; 
-//   @include breakpoint(md) {
-//     @include span-columns(12);
-//   }
-//   // clear right margin if right column
-//   &:last-child {
-//       @include omega();
-//   }
-//   // single column layout 
-//   .page-template-page-iframe-php &,
-//   // .page-template-default &,
-//   .directory &,
-//   .sites &,
-//   .news & {
-//       @include fill-parent;
-//   }
-// }
-
-// // sidebar
-// aside,
-// div[role='complementary'] {
-// 	@include breakpoint(md) {
-//     @include span-columns(4);
-//   }
-//     // clear right margin if right column
-//     &:last-child {
-//         @include omega();
-//     }
-// }
-
-
-
-
-
-// ONE-COLUMN CONTENT 
-
-// main.main-news,
-// .home-start,
-// .sites-list,
-// .networks-list {
-//     @include row();
-// }
-
-
 // CUSTOM CONTAINERS 
 
 .home-intro {
-    background: $white;
+    background: $bg-content;
     margin: 20px 0;
     @include pad($space $space 0);
   	@include breakpoint(md) {@include span-columns(16); }
