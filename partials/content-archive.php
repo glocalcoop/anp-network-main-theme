@@ -1,8 +1,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
 
-	<header class="article-header">
+	<header class="entry-header">
 
-		<h2 class="post-title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<h2 class="entry-title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 	</header>
 

@@ -3,17 +3,19 @@
 .news-list,
 .home .widget_glocal_network_posts_widget {
     li {
-        background: $bg-content;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 10px;
-        height: 300px;
-        overflow: hidden;
+      background: $bg-content;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 10px;
+      height: 300px;
+      overflow: hidden;
     }
+    .entry-title,
     .post-title {
-        margin: .25em 0 0;
-		@extend h3;
+      margin: .25em 0 0;
+  		@extend h3;
     }
+    .entry-content,
     .post-excerpt {
         margin:  .25em 0 .5em;
 		a {
@@ -56,15 +58,18 @@
   margin-top: 0;
   margin-bottom: $space;
   background: $bg-content;
+  .entry-header,
   .post-header {
     @include span-columns(2 of 12);
     @include pad(34px 0 24px 24px);
     color: $base4;
   }
+  .entry-body,
   .post-body {
     @include span-columns(10 of 12);
     @include pad(24px 24px 24px 0);
   }
+  .entry-title,
   .post-title {
     margin-bottom: $space-34;
   }
@@ -81,9 +86,11 @@
 // News Listing
 
 .main-news .post {
+  .entry-header,
   .post-header {
     @include span-columns(3);
   }
+  .entry-content,
   .post-body {
     @include span-columns(13);
     .post-image {
@@ -96,6 +103,7 @@
         }      
     }
   }
+  .entry-footer,
   .post-footer {
     @include span-columns(3);
   }
@@ -126,6 +134,7 @@
         @include fill-parent;
         clear: both;
     }    
+    .entry-title,
     .post-title {
     	@include font-size($beta);
     	margin-bottom: $space-fourth;
@@ -140,6 +149,7 @@
             border: $frame-border;
         }
     }
+    .entry-content,
     .post-excerpt {
     	@include font-size($delta);
     	margin-bottom: $space-half;

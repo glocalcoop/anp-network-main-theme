@@ -16,8 +16,8 @@ Template Name: Network News
 
 			<article role="article" id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting">
 
-				<header class="post-header">
-					<h1 class="post-title" itemprop="headline"><?php the_title(); ?></h1>
+				<header class="entry-header">
+					<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 				</header>
 
 				<section class="post-body" itemprop="articleBody">
