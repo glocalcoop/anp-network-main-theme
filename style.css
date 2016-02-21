@@ -6536,6 +6536,9 @@ Add a counter to the multi-steps indicator
   .cd-multi-steps.text-bottom.count li > * {
     padding-top: 34px; } }
 
+/*********************
+BOX SLIDER PLUGIN 
+*********************/
 div.bx-wrapper {
   position: relative;
   margin: 20px auto; }
@@ -6616,6 +6619,9 @@ article.home-feature div.bx-wrapper .bx-viewport {
   text-indent: 0;
   line-height: 48px; }
 
+/*********************
+EASY MAIL
+*********************/
 .alo_easymail_widget_form {
   display: inline-block; }
   .alo_easymail_widget_form td, .alo_easymail_widget_form label, .alo_easymail_widget_form #buddypress .radio strong, #buddypress .radio .alo_easymail_widget_form strong, .alo_easymail_widget_form
@@ -6655,6 +6661,9 @@ article.home-feature div.bx-wrapper .bx-viewport {
   font-size: 14px;
   margin-top: 20px; }
 
+/*********************
+THEME MY LOGIN
+*********************/
 .login {
   padding: 0 0 20px; }
   .login p.error,
@@ -8270,6 +8279,9 @@ article.handbook .table-of-contents {
     background: #444;
     background: rgba(0, 0, 0, 0.1); }
 
+/*********************
+NETWORK CONTENT
+*********************/
 .entry-content > ul.sites-list {
   list-style: none;
   margin: 0;
@@ -8357,6 +8369,9 @@ article.home-feature div.bx-wrapper .bx-viewport {
   text-indent: 0;
   line-height: 48px; }
 
+/*********************
+EVENT ORGANISER
+*********************/
 .page-events #main {
   width: 100%; }
 
@@ -9314,6 +9329,9 @@ table.em-calendar {
     max-height: auto;
     text-align: center; } }
 
+/*********************
+BUDDYPRESS STYLES
+*********************/
 body.buddypress .page-title {
   margin-bottom: 35px; }
 
@@ -11143,6 +11161,9 @@ body.buddypress .page-title {
 #buddypress .bbp-no-topic p {
   color: #fff !important; }
 
+/*********************
+PAGE BUILDER
+*********************/
 .so-widget-sow-post-carousel h3 a, .so-widget-sow-post-carousel .news-list .entry-title a, .news-list .so-widget-sow-post-carousel .entry-title a, .so-widget-sow-post-carousel
 .news-list .post-title a,
 .news-list .so-widget-sow-post-carousel .post-title a, .so-widget-sow-post-carousel
