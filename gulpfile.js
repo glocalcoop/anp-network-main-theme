@@ -3,7 +3,7 @@
 var gulp = require('gulp'),
 	plumber = require( 'gulp-plumber' ),
 	watch = require( 'gulp-watch' ),
-	minifycss = require( 'gulp-minify-css' ),
+	minifycss = require( 'gulp-cssnano' ),
 	rename = require( 'gulp-rename' ),
 	notify = require( 'gulp-notify' ),
 	include = require( 'gulp-include' ),
