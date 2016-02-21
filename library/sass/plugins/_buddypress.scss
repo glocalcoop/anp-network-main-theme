@@ -160,7 +160,7 @@ body.buddypress {
 
     #group-create-tabs {
         ul {
-            @extend .breadcrumb;
+            @extend %breadcrumb;
         }
     }
 
@@ -394,7 +394,7 @@ body.buddypress {
     }
 
     button.ed_button,
-    .button.ed_button,
+    %button.ed_button,
     .mce-btn button {
         text-transform: none;
         font-weight: normal;
@@ -438,7 +438,7 @@ body.buddypress {
     .activity-meta,
     .acomment-options,
     .action {
-        .button,
+        %button,
         .bp-primary-action,
         .bp-secondary-action,
         .group-button a {
@@ -447,40 +447,40 @@ body.buddypress {
             &.confirm,
             &.leave-group {
                 &:before {
-                    @extend .fa-times;
+                    @extend %fa-times;
                     color: $danger;
                 }
             }
 
             &.member-ban {
                 &:before {
-                    @extend .fa-ban;
+                    @extend %fa-ban;
                     color: $danger;
                 }
             }
             &.member-promote-to-mod,
             &.member-promote-to-admin {
                 &:before {
-                    @extend .fa-level-up;
+                    @extend %fa-level-up;
                 }
             }
             &.admin-demote-to-member {
                 &:before {
-                    @extend .fa-level-down;
+                    @extend %fa-level-down;
                 }
             }
 
             &.acomment-reply {
                 &:before {
-                    @extend .fa-reply;
+                    @extend %fa-reply;
                 }
                 span {
                     @include badge($font-size: $nano);
                 }
             }
-            &.fav {
+            &%fav {
                 &:before {
-                    @extend .fa-heart;
+                    @extend %fa-heart;
                 }
             }
         }
@@ -525,8 +525,8 @@ body.buddypress {
 
         &:before {
             margin-right: 6px;
-            @extend .fa;
-            @extend .fa-envelope;
+            @extend %fa;
+            @extend %fa-envelope;
 
         }
     }

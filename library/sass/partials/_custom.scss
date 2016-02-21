@@ -142,8 +142,8 @@
   }
 
   &:before {
-    @extend .fa;
-    @extend .fa-cog;
+    @extend %fa;
+    @extend %fa-cog;
     margin-right: 4px;
     color: $default;
   }
@@ -295,17 +295,38 @@
   }
 }
 
+%button {
+    @include transition(all 0.25s ease);
+    @include font-size($milli);
+    text-transform: uppercase; 
+    letter-spacing: $tracking-loose;
+    line-height: 1.2;
+    font-weight: 700;
+    padding: .75em 3em;
+    text-align: center;
+    border: 0;
+    background: $anchor-color;
+    color: $white;
+    display: inline-block;
+    border-radius: $base-border-radius;
+    &:link,
+    &:visited {
+        color: $white;
+    }
+    &:hover,
+    &:focus {
+        background: lighten($anchor-color, 10);
+        color: $white !important;
+    }
+}
+
 
 // STATES
 
-.is-hidden {
-  display: none;
+%is-hidden {
+  @extend %visuallyhidden;
 }
 
-.fullwidth { 
+%fullwidth { 
   width: 100%; 
 }
-
-
-
-

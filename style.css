@@ -229,10 +229,7 @@ html {
   font-weight: normal;
   font-style: normal; }
 
-.fa, .breadcrumb li:not(:last-child) a:after, #buddypress #group-create-tabs ul li:not(:last-child) a:after,
-.breadcrumb li:not(:last-child) span:after, #buddypress #group-create-tabs ul li:not(:last-child) span:after, .cd-breadcrumb.custom-separator li::after,
-.cd-multi-steps.custom-separator li::after, .cd-breadcrumb.custom-icons li > *::before,
-.cd-multi-steps.custom-icons li > *::before, article.handbook a.anchor:before, article.handbook .toc-jump a:before, #buddypress .small .button:before, #buddypress .small .post-type-archive-meeting .content-filter li:before, .post-type-archive-meeting .content-filter #buddypress .small li:before, #buddypress .small
+#buddypress #group-create-tabs ul li:not(:last-child) a:after, #buddypress #group-create-tabs ul li:not(:last-child) span:after, article.handbook a.anchor:before, article.handbook .toc-jump a:before, #buddypress .small button:before, #buddypress .small .post-type-archive-meeting .content-filter li:before, .post-type-archive-meeting .content-filter #buddypress .small li:before, #buddypress .small
 .post-type-archive-proposal .content-filter li:before,
 .post-type-archive-proposal .content-filter #buddypress .small li:before, #buddypress .small
 .post-type-archive-summary .content-filter li:before,
@@ -248,7 +245,7 @@ html {
 #buddypress .small .bp-primary-action:before,
 #buddypress .small .bp-secondary-action:before,
 #buddypress .small .group-button a:before,
-#buddypress .activity-meta .button:before,
+#buddypress .activity-meta button:before,
 #buddypress .activity-meta .post-type-archive-meeting .content-filter li:before, .post-type-archive-meeting .content-filter
 #buddypress .activity-meta li:before,
 #buddypress .activity-meta
@@ -280,7 +277,7 @@ html {
 #buddypress .activity-meta .bp-primary-action:before,
 #buddypress .activity-meta .bp-secondary-action:before,
 #buddypress .activity-meta .group-button a:before,
-#buddypress .acomment-options .button:before,
+#buddypress .acomment-options button:before,
 #buddypress .acomment-options .post-type-archive-meeting .content-filter li:before, .post-type-archive-meeting .content-filter
 #buddypress .acomment-options li:before,
 #buddypress .acomment-options
@@ -312,7 +309,7 @@ html {
 #buddypress .acomment-options .bp-primary-action:before,
 #buddypress .acomment-options .bp-secondary-action:before,
 #buddypress .acomment-options .group-button a:before,
-#buddypress .action .button:before,
+#buddypress .action button:before,
 #buddypress .action .post-type-archive-meeting .content-filter li:before, .post-type-archive-meeting .content-filter
 #buddypress .action li:before,
 #buddypress .action
@@ -353,160 +350,11 @@ html {
 
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
-.fa-glass:before {
-  content: ""; }
-
-.fa-music:before {
-  content: ""; }
-
-.fa-search:before, .nav-anchors .anchor-search:before, #searchform #searchsubmit:before {
+.nav-anchors .anchor-search:before, #searchform #searchsubmit:before {
   content: ""; }
 
-.fa-envelope-o:before {
-  content: ""; }
 
-.fa-heart:before, #buddypress .small .button.fav:before, #buddypress .small .post-type-archive-meeting .content-filter li.fav:before, .post-type-archive-meeting .content-filter #buddypress .small li.fav:before, #buddypress .small
-.post-type-archive-proposal .content-filter li.fav:before,
-.post-type-archive-proposal .content-filter #buddypress .small li.fav:before, #buddypress .small
-.post-type-archive-summary .content-filter li.fav:before,
-.post-type-archive-summary .content-filter #buddypress .small li.fav:before, #buddypress .small
-.post-type-archive-agenda .content-filter li.fav:before,
-.post-type-archive-agenda .content-filter #buddypress .small li.fav:before, #buddypress .small
-.tax-meeting_tag .content-filter li.fav:before,
-.tax-meeting_tag .content-filter #buddypress .small li.fav:before, #buddypress .small
-.tax-meeting_type .content-filter li.fav:before,
-.tax-meeting_type .content-filter #buddypress .small li.fav:before, #buddypress .small
-.tax-proposal_status .content-filter li.fav:before,
-.tax-proposal_status .content-filter #buddypress .small li.fav:before, #buddypress .small .so-widget-sow-cta .sow-cta-base .ow-button-base a.fav:before, .so-widget-sow-cta .sow-cta-base .ow-button-base #buddypress .small a.fav:before,
-#buddypress .small .bp-primary-action.fav:before,
-#buddypress .small .bp-secondary-action.fav:before,
-#buddypress .small .group-button a.fav:before,
-#buddypress .activity-meta .button.fav:before,
-#buddypress .activity-meta .post-type-archive-meeting .content-filter li.fav:before, .post-type-archive-meeting .content-filter
-#buddypress .activity-meta li.fav:before,
-#buddypress .activity-meta
-.post-type-archive-proposal .content-filter li.fav:before,
-.post-type-archive-proposal .content-filter
-#buddypress .activity-meta li.fav:before,
-#buddypress .activity-meta
-.post-type-archive-summary .content-filter li.fav:before,
-.post-type-archive-summary .content-filter
-#buddypress .activity-meta li.fav:before,
-#buddypress .activity-meta
-.post-type-archive-agenda .content-filter li.fav:before,
-.post-type-archive-agenda .content-filter
-#buddypress .activity-meta li.fav:before,
-#buddypress .activity-meta
-.tax-meeting_tag .content-filter li.fav:before,
-.tax-meeting_tag .content-filter
-#buddypress .activity-meta li.fav:before,
-#buddypress .activity-meta
-.tax-meeting_type .content-filter li.fav:before,
-.tax-meeting_type .content-filter
-#buddypress .activity-meta li.fav:before,
-#buddypress .activity-meta
-.tax-proposal_status .content-filter li.fav:before,
-.tax-proposal_status .content-filter
-#buddypress .activity-meta li.fav:before,
-#buddypress .activity-meta .so-widget-sow-cta .sow-cta-base .ow-button-base a.fav:before, .so-widget-sow-cta .sow-cta-base .ow-button-base
-#buddypress .activity-meta a.fav:before,
-#buddypress .activity-meta .bp-primary-action.fav:before,
-#buddypress .activity-meta .bp-secondary-action.fav:before,
-#buddypress .activity-meta .group-button a.fav:before,
-#buddypress .acomment-options .button.fav:before,
-#buddypress .acomment-options .post-type-archive-meeting .content-filter li.fav:before, .post-type-archive-meeting .content-filter
-#buddypress .acomment-options li.fav:before,
-#buddypress .acomment-options
-.post-type-archive-proposal .content-filter li.fav:before,
-.post-type-archive-proposal .content-filter
-#buddypress .acomment-options li.fav:before,
-#buddypress .acomment-options
-.post-type-archive-summary .content-filter li.fav:before,
-.post-type-archive-summary .content-filter
-#buddypress .acomment-options li.fav:before,
-#buddypress .acomment-options
-.post-type-archive-agenda .content-filter li.fav:before,
-.post-type-archive-agenda .content-filter
-#buddypress .acomment-options li.fav:before,
-#buddypress .acomment-options
-.tax-meeting_tag .content-filter li.fav:before,
-.tax-meeting_tag .content-filter
-#buddypress .acomment-options li.fav:before,
-#buddypress .acomment-options
-.tax-meeting_type .content-filter li.fav:before,
-.tax-meeting_type .content-filter
-#buddypress .acomment-options li.fav:before,
-#buddypress .acomment-options
-.tax-proposal_status .content-filter li.fav:before,
-.tax-proposal_status .content-filter
-#buddypress .acomment-options li.fav:before,
-#buddypress .acomment-options .so-widget-sow-cta .sow-cta-base .ow-button-base a.fav:before, .so-widget-sow-cta .sow-cta-base .ow-button-base
-#buddypress .acomment-options a.fav:before,
-#buddypress .acomment-options .bp-primary-action.fav:before,
-#buddypress .acomment-options .bp-secondary-action.fav:before,
-#buddypress .acomment-options .group-button a.fav:before,
-#buddypress .action .button.fav:before,
-#buddypress .action .post-type-archive-meeting .content-filter li.fav:before, .post-type-archive-meeting .content-filter
-#buddypress .action li.fav:before,
-#buddypress .action
-.post-type-archive-proposal .content-filter li.fav:before,
-.post-type-archive-proposal .content-filter
-#buddypress .action li.fav:before,
-#buddypress .action
-.post-type-archive-summary .content-filter li.fav:before,
-.post-type-archive-summary .content-filter
-#buddypress .action li.fav:before,
-#buddypress .action
-.post-type-archive-agenda .content-filter li.fav:before,
-.post-type-archive-agenda .content-filter
-#buddypress .action li.fav:before,
-#buddypress .action
-.tax-meeting_tag .content-filter li.fav:before,
-.tax-meeting_tag .content-filter
-#buddypress .action li.fav:before,
-#buddypress .action
-.tax-meeting_type .content-filter li.fav:before,
-.tax-meeting_type .content-filter
-#buddypress .action li.fav:before,
-#buddypress .action
-.tax-proposal_status .content-filter li.fav:before,
-.tax-proposal_status .content-filter
-#buddypress .action li.fav:before,
-#buddypress .action .so-widget-sow-cta .sow-cta-base .ow-button-base a.fav:before, .so-widget-sow-cta .sow-cta-base .ow-button-base
-#buddypress .action a.fav:before,
-#buddypress .action .bp-primary-action.fav:before,
-#buddypress .action .bp-secondary-action.fav:before,
-#buddypress .action .group-button a.fav:before {
-  content: ""; }
-
-.fa-star:before {
-  content: ""; }
-
-.fa-star-o:before {
-  content: ""; }
-
-.fa-user:before {
-  content: ""; }
-
-.fa-film:before {
-  content: ""; }
-
-.fa-th-large:before {
-  content: ""; }
-
-.fa-th:before {
-  content: ""; }
-
-.fa-th-list:before {
-  content: ""; }
-
-.fa-check:before {
-  content: ""; }
-
-.fa-remove:before,
-.fa-close:before,
-.fa-times:before,
-#buddypress .small .button.confirm:before,
+#buddypress .small button.confirm:before,
 #buddypress .small .post-type-archive-meeting .content-filter li.confirm:before,
 .post-type-archive-meeting .content-filter #buddypress .small li.confirm:before,
 #buddypress .small
@@ -529,7 +377,7 @@ html {
 .tax-proposal_status .content-filter #buddypress .small li.confirm:before,
 #buddypress .small .so-widget-sow-cta .sow-cta-base .ow-button-base a.confirm:before,
 .so-widget-sow-cta .sow-cta-base .ow-button-base #buddypress .small a.confirm:before,
-#buddypress .small .button.leave-group:before,
+#buddypress .small button.leave-group:before,
 #buddypress .small .post-type-archive-meeting .content-filter li.leave-group:before,
 .post-type-archive-meeting .content-filter #buddypress .small li.leave-group:before,
 #buddypress .small
@@ -558,7 +406,7 @@ html {
 #buddypress .small .bp-secondary-action.leave-group:before,
 #buddypress .small .group-button a.confirm:before,
 #buddypress .small .group-button a.leave-group:before,
-#buddypress .activity-meta .button.confirm:before,
+#buddypress .activity-meta button.confirm:before,
 #buddypress .activity-meta .post-type-archive-meeting .content-filter li.confirm:before,
 .post-type-archive-meeting .content-filter
 #buddypress .activity-meta li.confirm:before,
@@ -589,7 +437,7 @@ html {
 #buddypress .activity-meta .so-widget-sow-cta .sow-cta-base .ow-button-base a.confirm:before,
 .so-widget-sow-cta .sow-cta-base .ow-button-base
 #buddypress .activity-meta a.confirm:before,
-#buddypress .activity-meta .button.leave-group:before,
+#buddypress .activity-meta button.leave-group:before,
 #buddypress .activity-meta .post-type-archive-meeting .content-filter li.leave-group:before,
 .post-type-archive-meeting .content-filter
 #buddypress .activity-meta li.leave-group:before,
@@ -626,7 +474,7 @@ html {
 #buddypress .activity-meta .bp-secondary-action.leave-group:before,
 #buddypress .activity-meta .group-button a.confirm:before,
 #buddypress .activity-meta .group-button a.leave-group:before,
-#buddypress .acomment-options .button.confirm:before,
+#buddypress .acomment-options button.confirm:before,
 #buddypress .acomment-options .post-type-archive-meeting .content-filter li.confirm:before,
 .post-type-archive-meeting .content-filter
 #buddypress .acomment-options li.confirm:before,
@@ -657,7 +505,7 @@ html {
 #buddypress .acomment-options .so-widget-sow-cta .sow-cta-base .ow-button-base a.confirm:before,
 .so-widget-sow-cta .sow-cta-base .ow-button-base
 #buddypress .acomment-options a.confirm:before,
-#buddypress .acomment-options .button.leave-group:before,
+#buddypress .acomment-options button.leave-group:before,
 #buddypress .acomment-options .post-type-archive-meeting .content-filter li.leave-group:before,
 .post-type-archive-meeting .content-filter
 #buddypress .acomment-options li.leave-group:before,
@@ -694,7 +542,7 @@ html {
 #buddypress .acomment-options .bp-secondary-action.leave-group:before,
 #buddypress .acomment-options .group-button a.confirm:before,
 #buddypress .acomment-options .group-button a.leave-group:before,
-#buddypress .action .button.confirm:before,
+#buddypress .action button.confirm:before,
 #buddypress .action .post-type-archive-meeting .content-filter li.confirm:before,
 .post-type-archive-meeting .content-filter
 #buddypress .action li.confirm:before,
@@ -725,7 +573,7 @@ html {
 #buddypress .action .so-widget-sow-cta .sow-cta-base .ow-button-base a.confirm:before,
 .so-widget-sow-cta .sow-cta-base .ow-button-base
 #buddypress .action a.confirm:before,
-#buddypress .action .button.leave-group:before,
+#buddypress .action button.leave-group:before,
 #buddypress .action .post-type-archive-meeting .content-filter li.leave-group:before,
 .post-type-archive-meeting .content-filter
 #buddypress .action li.leave-group:before,
@@ -764,21 +612,8 @@ html {
 #buddypress .action .group-button a.leave-group:before {
   content: ""; }
 
-.fa-search-plus:before {
-  content: ""; }
 
-.fa-search-minus:before {
-  content: ""; }
-
-.fa-power-off:before {
-  content: ""; }
-
-.fa-signal:before {
-  content: ""; }
-
-.fa-gear:before,
-.fa-cog:before,
-#buddypress .small .button:before,
+#buddypress .small button:before,
 #buddypress .small .post-type-archive-meeting .content-filter li:before,
 .post-type-archive-meeting .content-filter #buddypress .small li:before,
 #buddypress .small
@@ -804,7 +639,7 @@ html {
 #buddypress .small .bp-primary-action:before,
 #buddypress .small .bp-secondary-action:before,
 #buddypress .small .group-button a:before,
-#buddypress .activity-meta .button:before,
+#buddypress .activity-meta button:before,
 #buddypress .activity-meta .post-type-archive-meeting .content-filter li:before,
 .post-type-archive-meeting .content-filter
 #buddypress .activity-meta li:before,
@@ -838,7 +673,7 @@ html {
 #buddypress .activity-meta .bp-primary-action:before,
 #buddypress .activity-meta .bp-secondary-action:before,
 #buddypress .activity-meta .group-button a:before,
-#buddypress .acomment-options .button:before,
+#buddypress .acomment-options button:before,
 #buddypress .acomment-options .post-type-archive-meeting .content-filter li:before,
 .post-type-archive-meeting .content-filter
 #buddypress .acomment-options li:before,
@@ -872,7 +707,7 @@ html {
 #buddypress .acomment-options .bp-primary-action:before,
 #buddypress .acomment-options .bp-secondary-action:before,
 #buddypress .acomment-options .group-button a:before,
-#buddypress .action .button:before,
+#buddypress .action button:before,
 #buddypress .action .post-type-archive-meeting .content-filter li:before,
 .post-type-archive-meeting .content-filter
 #buddypress .action li:before,
@@ -908,74 +743,7 @@ html {
 #buddypress .action .group-button a:before {
   content: ""; }
 
-.fa-trash-o:before {
-  content: ""; }
-
-.fa-home:before {
-  content: ""; }
-
-.fa-file-o:before {
-  content: ""; }
-
-.fa-clock-o:before {
-  content: ""; }
-
-.fa-road:before {
-  content: ""; }
-
-.fa-download:before {
-  content: ""; }
-
-.fa-arrow-circle-o-down:before {
-  content: ""; }
-
-.fa-arrow-circle-o-up:before {
-  content: ""; }
-
-.fa-inbox:before {
-  content: ""; }
-
-.fa-play-circle-o:before {
-  content: ""; }
-
-.fa-rotate-right:before,
-.fa-repeat:before {
-  content: ""; }
-
-.fa-refresh:before {
-  content: ""; }
-
-.fa-list-alt:before {
-  content: ""; }
-
-.fa-lock:before {
-  content: ""; }
-
-.fa-flag:before {
-  content: ""; }
-
-.fa-headphones:before {
-  content: ""; }
-
-.fa-volume-off:before {
-  content: ""; }
-
-.fa-volume-down:before {
-  content: ""; }
-
-.fa-volume-up:before {
-  content: ""; }
-
-.fa-qrcode:before {
-  content: ""; }
-
-.fa-barcode:before {
-  content: ""; }
-
-.fa-tag:before {
-  content: ""; }
-
-.fa-tags:before, .post-type-archive-meeting article .tags:before,
+.post-type-archive-meeting article .tags:before,
 .post-type-archive-proposal article .tags:before,
 .post-type-archive-summary article .tags:before,
 .post-type-archive-agenda article .tags:before,
@@ -984,46 +752,7 @@ html {
 .tax-proposal_status article .tags:before {
   content: ""; }
 
-.fa-book:before {
-  content: ""; }
-
-.fa-bookmark:before {
-  content: ""; }
-
-.fa-print:before {
-  content: ""; }
-
-.fa-camera:before {
-  content: ""; }
-
-.fa-font:before {
-  content: ""; }
-
-.fa-bold:before {
-  content: ""; }
-
-.fa-italic:before {
-  content: ""; }
-
-.fa-text-height:before {
-  content: ""; }
-
-.fa-text-width:before {
-  content: ""; }
-
-.fa-align-left:before {
-  content: ""; }
-
-.fa-align-center:before {
-  content: ""; }
-
-.fa-align-right:before {
-  content: ""; }
-
-.fa-align-justify:before {
-  content: ""; }
-
-.fa-list:before, .post-type-archive-meeting article .connected-content li.agenda-link:before,
+.post-type-archive-meeting article .connected-content li.agenda-link:before,
 .post-type-archive-proposal article .connected-content li.agenda-link:before,
 .post-type-archive-summary article .connected-content li.agenda-link:before,
 .post-type-archive-agenda article .connected-content li.agenda-link:before,
@@ -1035,110 +764,13 @@ html {
 .single-summary article .entry-content .connected-content li.agenda-link:before {
   content: ""; }
 
-.fa-dedent:before,
-.fa-outdent:before {
-  content: ""; }
-
-.fa-indent:before {
-  content: ""; }
-
-.fa-video-camera:before {
-  content: ""; }
-
-.fa-photo:before,
-.fa-image:before,
-.fa-picture-o:before {
-  content: ""; }
-
-.fa-pencil:before {
-  content: ""; }
-
-.fa-map-marker:before {
-  content: ""; }
-
-.fa-adjust:before {
-  content: ""; }
-
-.fa-tint:before {
-  content: ""; }
-
-.fa-edit:before,
-.fa-pencil-square-o:before {
-  content: ""; }
-
-.fa-share-square-o:before {
-  content: ""; }
-
-.fa-check-square-o:before {
-  content: ""; }
-
-.fa-arrows:before {
-  content: ""; }
-
-.fa-step-backward:before {
-  content: ""; }
-
-.fa-fast-backward:before {
-  content: ""; }
-
-.fa-backward:before {
-  content: ""; }
-
-.fa-play:before {
-  content: ""; }
-
-.fa-pause:before {
-  content: ""; }
-
-.fa-stop:before {
-  content: ""; }
-
-.fa-forward:before {
-  content: ""; }
-
-.fa-fast-forward:before {
-  content: ""; }
-
-.fa-step-forward:before {
-  content: ""; }
-
-.fa-eject:before {
-  content: ""; }
-
-.fa-chevron-left:before, .bx-wrapper .bx-controls-direction .bx-prev:before {
+.bx-wrapper .bx-controls-direction .bx-prev:before {
   content: ""; }
 
-.fa-chevron-right:before, .bx-wrapper .bx-controls-direction .bx-next:before {
+.bx-wrapper .bx-controls-direction .bx-next:before {
   content: ""; }
 
-.fa-plus-circle:before {
-  content: ""; }
-
-.fa-minus-circle:before {
-  content: ""; }
-
-.fa-times-circle:before {
-  content: ""; }
-
-.fa-check-circle:before {
-  content: ""; }
-
-.fa-question-circle:before {
-  content: ""; }
-
-.fa-info-circle:before {
-  content: ""; }
-
-.fa-crosshairs:before {
-  content: ""; }
-
-.fa-times-circle-o:before {
-  content: ""; }
-
-.fa-check-circle-o:before {
-  content: ""; }
-
-.fa-ban:before, #buddypress .small .button.member-ban:before, #buddypress .small .post-type-archive-meeting .content-filter li.member-ban:before, .post-type-archive-meeting .content-filter #buddypress .small li.member-ban:before, #buddypress .small
+#buddypress .small button.member-ban:before, #buddypress .small .post-type-archive-meeting .content-filter li.member-ban:before, .post-type-archive-meeting .content-filter #buddypress .small li.member-ban:before, #buddypress .small
 .post-type-archive-proposal .content-filter li.member-ban:before,
 .post-type-archive-proposal .content-filter #buddypress .small li.member-ban:before, #buddypress .small
 .post-type-archive-summary .content-filter li.member-ban:before,
@@ -1154,7 +786,7 @@ html {
 #buddypress .small .bp-primary-action.member-ban:before,
 #buddypress .small .bp-secondary-action.member-ban:before,
 #buddypress .small .group-button a.member-ban:before,
-#buddypress .activity-meta .button.member-ban:before,
+#buddypress .activity-meta button.member-ban:before,
 #buddypress .activity-meta .post-type-archive-meeting .content-filter li.member-ban:before, .post-type-archive-meeting .content-filter
 #buddypress .activity-meta li.member-ban:before,
 #buddypress .activity-meta
@@ -1186,7 +818,7 @@ html {
 #buddypress .activity-meta .bp-primary-action.member-ban:before,
 #buddypress .activity-meta .bp-secondary-action.member-ban:before,
 #buddypress .activity-meta .group-button a.member-ban:before,
-#buddypress .acomment-options .button.member-ban:before,
+#buddypress .acomment-options button.member-ban:before,
 #buddypress .acomment-options .post-type-archive-meeting .content-filter li.member-ban:before, .post-type-archive-meeting .content-filter
 #buddypress .acomment-options li.member-ban:before,
 #buddypress .acomment-options
@@ -1218,7 +850,7 @@ html {
 #buddypress .acomment-options .bp-primary-action.member-ban:before,
 #buddypress .acomment-options .bp-secondary-action.member-ban:before,
 #buddypress .acomment-options .group-button a.member-ban:before,
-#buddypress .action .button.member-ban:before,
+#buddypress .action button.member-ban:before,
 #buddypress .action .post-type-archive-meeting .content-filter li.member-ban:before, .post-type-archive-meeting .content-filter
 #buddypress .action li.member-ban:before,
 #buddypress .action
@@ -1252,361 +884,24 @@ html {
 #buddypress .action .group-button a.member-ban:before {
   content: ""; }
 
-.fa-arrow-left:before {
-  content: ""; }
-
-.fa-arrow-right:before {
-  content: ""; }
-
-.fa-arrow-up:before {
-  content: ""; }
-
-.fa-arrow-down:before {
-  content: ""; }
-
-.fa-mail-forward:before,
-.fa-share:before {
-  content: ""; }
-
-.fa-expand:before {
-  content: ""; }
-
-.fa-compress:before {
-  content: ""; }
-
-.fa-plus:before {
-  content: ""; }
-
-.fa-minus:before {
-  content: ""; }
-
-.fa-asterisk:before {
-  content: ""; }
-
-.fa-exclamation-circle:before {
-  content: ""; }
-
-.fa-gift:before {
-  content: ""; }
-
-.fa-leaf:before {
-  content: ""; }
-
-.fa-fire:before {
-  content: ""; }
-
-.fa-eye:before {
-  content: ""; }
-
-.fa-eye-slash:before {
-  content: ""; }
-
-.fa-warning:before,
-.fa-exclamation-triangle:before {
-  content: ""; }
-
-.fa-plane:before {
-  content: ""; }
-
-.fa-calendar:before {
-  content: ""; }
-
-.fa-random:before {
-  content: ""; }
-
-.fa-comment:before {
-  content: ""; }
-
-.fa-magnet:before {
-  content: ""; }
-
-.fa-chevron-up:before {
-  content: ""; }
-
-.fa-chevron-down:before {
-  content: ""; }
-
-.fa-retweet:before {
-  content: ""; }
-
-.fa-shopping-cart:before {
-  content: ""; }
-
-.fa-folder:before {
-  content: ""; }
-
-.fa-folder-open:before {
-  content: ""; }
-
-.fa-arrows-v:before {
-  content: ""; }
-
-.fa-arrows-h:before {
-  content: ""; }
-
-.fa-bar-chart-o:before,
-.fa-bar-chart:before {
-  content: ""; }
-
-.fa-twitter-square:before {
-  content: ""; }
-
-.fa-facebook-square:before {
-  content: ""; }
-
-.fa-camera-retro:before {
-  content: ""; }
-
-.fa-key:before {
-  content: ""; }
-
-.fa-gears:before,
-.fa-cogs:before {
-  content: ""; }
-
-.fa-comments:before {
-  content: ""; }
-
-.fa-thumbs-o-up:before {
-  content: ""; }
-
-.fa-thumbs-o-down:before {
-  content: ""; }
-
-.fa-star-half:before {
-  content: ""; }
-
-.fa-heart-o:before {
-  content: ""; }
-
-.fa-sign-out:before {
-  content: ""; }
-
-.fa-linkedin-square:before {
-  content: ""; }
-
-.fa-thumb-tack:before {
-  content: ""; }
-
-.fa-external-link:before {
-  content: ""; }
-
-.fa-sign-in:before {
-  content: ""; }
-
-.fa-trophy:before {
-  content: ""; }
-
-.fa-github-square:before {
-  content: ""; }
-
-.fa-upload:before {
-  content: ""; }
-
-.fa-lemon-o:before {
-  content: ""; }
-
-.fa-phone:before {
-  content: ""; }
-
-.fa-square-o:before {
-  content: ""; }
-
-.fa-bookmark-o:before {
-  content: ""; }
-
-.fa-phone-square:before {
-  content: ""; }
-
-.fa-twitter:before, .nav-social .twitter a:before {
+.nav-social .twitter a:before {
   content: ""; }
 
-.fa-facebook-f:before,
-.fa-facebook:before,
-.nav-social .facebook a:before {
-  content: ""; }
-
-.fa-github:before, .nav-social .github a:before {
+.nav-social .github a:before {
   content: ""; }
 
-.fa-unlock:before {
-  content: ""; }
 
-.fa-credit-card:before {
-  content: ""; }
-
-.fa-feed:before,
-.fa-rss:before,
 .nav-social .rss a:before {
   content: ""; }
 
-.fa-hdd-o:before {
-  content: ""; }
 
-.fa-bullhorn:before {
-  content: ""; }
-
-.fa-bell:before {
-  content: ""; }
-
-.fa-certificate:before {
-  content: ""; }
-
-.fa-hand-o-right:before {
-  content: ""; }
-
-.fa-hand-o-left:before {
-  content: ""; }
-
-.fa-hand-o-up:before {
-  content: ""; }
-
-.fa-hand-o-down:before {
-  content: ""; }
-
-.fa-arrow-circle-left:before {
-  content: ""; }
-
-.fa-arrow-circle-right:before {
-  content: ""; }
-
-.fa-arrow-circle-up:before {
-  content: ""; }
-
-.fa-arrow-circle-down:before {
-  content: ""; }
-
-.fa-globe:before {
-  content: ""; }
-
-.fa-wrench:before {
-  content: ""; }
-
-.fa-tasks:before {
-  content: ""; }
-
-.fa-filter:before {
-  content: ""; }
-
-.fa-briefcase:before {
-  content: ""; }
-
-.fa-arrows-alt:before {
-  content: ""; }
-
-.fa-group:before,
-.fa-users:before {
-  content: ""; }
-
-.fa-chain:before,
-.fa-link:before,
 article.handbook a.anchor:before {
   content: ""; }
 
-.fa-cloud:before {
-  content: ""; }
-
-.fa-flask:before {
-  content: ""; }
-
-.fa-cut:before,
-.fa-scissors:before {
-  content: ""; }
-
-.fa-copy:before,
-.fa-files-o:before {
-  content: ""; }
-
-.fa-paperclip:before {
-  content: ""; }
-
-.fa-save:before,
-.fa-floppy-o:before {
-  content: ""; }
-
-.fa-square:before {
-  content: ""; }
-
-.fa-navicon:before,
-.fa-reorder:before,
-.fa-bars:before {
-  content: ""; }
-
-.fa-list-ul:before {
-  content: ""; }
-
-.fa-list-ol:before {
-  content: ""; }
-
-.fa-strikethrough:before {
-  content: ""; }
-
-.fa-underline:before {
-  content: ""; }
-
-.fa-table:before {
-  content: ""; }
-
-.fa-magic:before {
-  content: ""; }
-
-.fa-truck:before {
-  content: ""; }
-
-.fa-pinterest:before {
-  content: ""; }
-
-.fa-pinterest-square:before {
-  content: ""; }
-
-.fa-google-plus-square:before {
-  content: ""; }
-
-.fa-google-plus:before {
-  content: ""; }
-
-.fa-money:before {
-  content: ""; }
-
-.fa-caret-down:before {
-  content: ""; }
-
-.fa-caret-up:before {
-  content: ""; }
-
-.fa-caret-left:before {
-  content: ""; }
-
-.fa-caret-right:before {
-  content: ""; }
-
-.fa-columns:before {
-  content: ""; }
-
-.fa-unsorted:before,
-.fa-sort:before {
-  content: ""; }
-
-.fa-sort-down:before,
-.fa-sort-desc:before {
-  content: ""; }
-
-.fa-sort-up:before,
-.fa-sort-asc:before {
-  content: ""; }
-
-.fa-envelope:before, #buddypress .gemail_icon:before {
+#buddypress .gemail_icon:before {
   content: ""; }
 
-.fa-linkedin:before {
-  content: ""; }
 
-.fa-rotate-left:before,
-.fa-undo:before {
-  content: ""; }
-
-.fa-legal:before,
-.fa-gavel:before,
 .post-type-archive-meeting article .connected-content li.proposal-link:before,
 .post-type-archive-proposal article .connected-content li.proposal-link:before,
 .post-type-archive-summary article .connected-content li.proposal-link:before,
@@ -1620,28 +915,10 @@ article.handbook a.anchor:before {
 .single-summary article .entry-content .connected-content li.proposal-link:before {
   content: ""; }
 
-.fa-dashboard:before,
-.fa-tachometer:before {
-  content: ""; }
-
-.fa-comment-o:before {
-  content: ""; }
-
-.fa-comments-o:before {
-  content: ""; }
-
-.fa-flash:before,
-.fa-bolt:before {
-  content: ""; }
-
-.fa-sitemap:before, .nav-social .network a:before {
+.nav-social .network a:before {
   content: ""; }
 
-.fa-umbrella:before {
-  content: ""; }
 
-.fa-paste:before,
-.fa-clipboard:before,
 .post-type-archive-meeting article .connected-content li.summary-link:before,
 .post-type-archive-meeting article .connected-content li.meeting-link:before,
 .post-type-archive-proposal article .connected-content li.summary-link:before,
@@ -1666,119 +943,15 @@ article.handbook a.anchor:before {
 .single-summary article .entry-content .connected-content li.meeting-link:before {
   content: ""; }
 
-.fa-lightbulb-o:before {
-  content: ""; }
-
-.fa-exchange:before {
-  content: ""; }
-
-.fa-cloud-download:before {
-  content: ""; }
-
-.fa-cloud-upload:before {
-  content: ""; }
-
-.fa-user-md:before {
-  content: ""; }
-
-.fa-stethoscope:before {
-  content: ""; }
-
-.fa-suitcase:before {
-  content: ""; }
-
-.fa-bell-o:before {
-  content: ""; }
-
-.fa-coffee:before {
-  content: ""; }
-
-.fa-cutlery:before {
-  content: ""; }
-
-.fa-file-text-o:before {
-  content: ""; }
-
-.fa-building-o:before {
-  content: ""; }
-
-.fa-hospital-o:before {
-  content: ""; }
-
-.fa-ambulance:before {
-  content: ""; }
-
-.fa-medkit:before {
-  content: ""; }
-
-.fa-fighter-jet:before {
-  content: ""; }
-
-.fa-beer:before {
-  content: ""; }
-
-.fa-h-square:before {
-  content: ""; }
-
-.fa-plus-square:before {
-  content: ""; }
-
-.fa-angle-double-left:before {
-  content: ""; }
-
-.fa-angle-double-right:before {
-  content: ""; }
-
-.fa-angle-double-up:before {
-  content: ""; }
-
-.fa-angle-double-down:before {
-  content: ""; }
-
-.fa-angle-left:before {
-  content: ""; }
-
-.fa-angle-right:before {
-  content: ""; }
-
-.fa-angle-up:before, article.handbook .toc-jump a:before {
+article.handbook .toc-jump a:before {
   content: ""; }
 
-.fa-angle-down:before, .nav-anchors .anchor-menu:before, .header-local .menu-item-has-children > a:before, .directory-content .filter li.is-on:before,
+.nav-anchors .anchor-menu:before, .header-local .menu-item-has-children > a:before, .directory-content .filter li.is-on:before,
 .directory-content .sort li.is-on:before {
   content: ""; }
 
-.fa-desktop:before {
-  content: ""; }
 
-.fa-laptop:before {
-  content: ""; }
-
-.fa-tablet:before {
-  content: ""; }
-
-.fa-mobile-phone:before,
-.fa-mobile:before {
-  content: ""; }
-
-.fa-circle-o:before {
-  content: ""; }
-
-.fa-quote-left:before {
-  content: ""; }
-
-.fa-quote-right:before {
-  content: ""; }
-
-.fa-spinner:before {
-  content: ""; }
-
-.fa-circle:before {
-  content: ""; }
-
-.fa-mail-reply:before,
-.fa-reply:before,
-#buddypress .small .button.acomment-reply:before,
+#buddypress .small button.acomment-reply:before,
 #buddypress .small .post-type-archive-meeting .content-filter li.acomment-reply:before,
 .post-type-archive-meeting .content-filter #buddypress .small li.acomment-reply:before,
 #buddypress .small
@@ -1804,7 +977,7 @@ article.handbook a.anchor:before {
 #buddypress .small .bp-primary-action.acomment-reply:before,
 #buddypress .small .bp-secondary-action.acomment-reply:before,
 #buddypress .small .group-button a.acomment-reply:before,
-#buddypress .activity-meta .button.acomment-reply:before,
+#buddypress .activity-meta button.acomment-reply:before,
 #buddypress .activity-meta .post-type-archive-meeting .content-filter li.acomment-reply:before,
 .post-type-archive-meeting .content-filter
 #buddypress .activity-meta li.acomment-reply:before,
@@ -1838,7 +1011,7 @@ article.handbook a.anchor:before {
 #buddypress .activity-meta .bp-primary-action.acomment-reply:before,
 #buddypress .activity-meta .bp-secondary-action.acomment-reply:before,
 #buddypress .activity-meta .group-button a.acomment-reply:before,
-#buddypress .acomment-options .button.acomment-reply:before,
+#buddypress .acomment-options button.acomment-reply:before,
 #buddypress .acomment-options .post-type-archive-meeting .content-filter li.acomment-reply:before,
 .post-type-archive-meeting .content-filter
 #buddypress .acomment-options li.acomment-reply:before,
@@ -1872,7 +1045,7 @@ article.handbook a.anchor:before {
 #buddypress .acomment-options .bp-primary-action.acomment-reply:before,
 #buddypress .acomment-options .bp-secondary-action.acomment-reply:before,
 #buddypress .acomment-options .group-button a.acomment-reply:before,
-#buddypress .action .button.acomment-reply:before,
+#buddypress .action button.acomment-reply:before,
 #buddypress .action .post-type-archive-meeting .content-filter li.acomment-reply:before,
 .post-type-archive-meeting .content-filter
 #buddypress .action li.acomment-reply:before,
@@ -1908,155 +1081,7 @@ article.handbook a.anchor:before {
 #buddypress .action .group-button a.acomment-reply:before {
   content: ""; }
 
-.fa-github-alt:before {
-  content: ""; }
-
-.fa-folder-o:before {
-  content: ""; }
-
-.fa-folder-open-o:before {
-  content: ""; }
-
-.fa-smile-o:before {
-  content: ""; }
-
-.fa-frown-o:before {
-  content: ""; }
-
-.fa-meh-o:before {
-  content: ""; }
-
-.fa-gamepad:before {
-  content: ""; }
-
-.fa-keyboard-o:before {
-  content: ""; }
-
-.fa-flag-o:before {
-  content: ""; }
-
-.fa-flag-checkered:before {
-  content: ""; }
-
-.fa-terminal:before {
-  content: ""; }
-
-.fa-code:before {
-  content: ""; }
-
-.fa-mail-reply-all:before,
-.fa-reply-all:before {
-  content: ""; }
-
-.fa-star-half-empty:before,
-.fa-star-half-full:before,
-.fa-star-half-o:before {
-  content: ""; }
-
-.fa-location-arrow:before {
-  content: ""; }
-
-.fa-crop:before {
-  content: ""; }
-
-.fa-code-fork:before {
-  content: ""; }
-
-.fa-unlink:before,
-.fa-chain-broken:before {
-  content: ""; }
-
-.fa-question:before {
-  content: ""; }
-
-.fa-info:before {
-  content: ""; }
-
-.fa-exclamation:before {
-  content: ""; }
-
-.fa-superscript:before {
-  content: ""; }
-
-.fa-subscript:before {
-  content: ""; }
-
-.fa-eraser:before {
-  content: ""; }
-
-.fa-puzzle-piece:before {
-  content: ""; }
-
-.fa-microphone:before {
-  content: ""; }
-
-.fa-microphone-slash:before {
-  content: ""; }
-
-.fa-shield:before {
-  content: ""; }
-
-.fa-calendar-o:before {
-  content: ""; }
-
-.fa-fire-extinguisher:before {
-  content: ""; }
-
-.fa-rocket:before {
-  content: ""; }
-
-.fa-maxcdn:before {
-  content: ""; }
-
-.fa-chevron-circle-left:before {
-  content: ""; }
-
-.fa-chevron-circle-right:before {
-  content: ""; }
-
-.fa-chevron-circle-up:before {
-  content: ""; }
-
-.fa-chevron-circle-down:before {
-  content: ""; }
-
-.fa-html5:before {
-  content: ""; }
-
-.fa-css3:before {
-  content: ""; }
-
-.fa-anchor:before {
-  content: ""; }
-
-.fa-unlock-alt:before {
-  content: ""; }
-
-.fa-bullseye:before {
-  content: ""; }
-
-.fa-ellipsis-h:before {
-  content: ""; }
-
-.fa-ellipsis-v:before {
-  content: ""; }
-
-.fa-rss-square:before {
-  content: ""; }
-
-.fa-play-circle:before {
-  content: ""; }
-
-.fa-ticket:before {
-  content: ""; }
-
-.fa-minus-square:before {
-  content: ""; }
-
-.fa-minus-square-o:before {
-  content: ""; }
-
-.fa-level-up:before, #buddypress .small .button.member-promote-to-mod:before, #buddypress .small .post-type-archive-meeting .content-filter li.member-promote-to-mod:before, .post-type-archive-meeting .content-filter #buddypress .small li.member-promote-to-mod:before, #buddypress .small
+#buddypress .small button.member-promote-to-mod:before, #buddypress .small .post-type-archive-meeting .content-filter li.member-promote-to-mod:before, .post-type-archive-meeting .content-filter #buddypress .small li.member-promote-to-mod:before, #buddypress .small
 .post-type-archive-proposal .content-filter li.member-promote-to-mod:before,
 .post-type-archive-proposal .content-filter #buddypress .small li.member-promote-to-mod:before, #buddypress .small
 .post-type-archive-summary .content-filter li.member-promote-to-mod:before,
@@ -2068,7 +1093,7 @@ article.handbook a.anchor:before {
 .tax-meeting_type .content-filter li.member-promote-to-mod:before,
 .tax-meeting_type .content-filter #buddypress .small li.member-promote-to-mod:before, #buddypress .small
 .tax-proposal_status .content-filter li.member-promote-to-mod:before,
-.tax-proposal_status .content-filter #buddypress .small li.member-promote-to-mod:before, #buddypress .small .so-widget-sow-cta .sow-cta-base .ow-button-base a.member-promote-to-mod:before, .so-widget-sow-cta .sow-cta-base .ow-button-base #buddypress .small a.member-promote-to-mod:before, #buddypress .small .button.member-promote-to-admin:before, #buddypress .small .post-type-archive-meeting .content-filter li.member-promote-to-admin:before, .post-type-archive-meeting .content-filter #buddypress .small li.member-promote-to-admin:before, #buddypress .small
+.tax-proposal_status .content-filter #buddypress .small li.member-promote-to-mod:before, #buddypress .small .so-widget-sow-cta .sow-cta-base .ow-button-base a.member-promote-to-mod:before, .so-widget-sow-cta .sow-cta-base .ow-button-base #buddypress .small a.member-promote-to-mod:before, #buddypress .small button.member-promote-to-admin:before, #buddypress .small .post-type-archive-meeting .content-filter li.member-promote-to-admin:before, .post-type-archive-meeting .content-filter #buddypress .small li.member-promote-to-admin:before, #buddypress .small
 .post-type-archive-proposal .content-filter li.member-promote-to-admin:before,
 .post-type-archive-proposal .content-filter #buddypress .small li.member-promote-to-admin:before, #buddypress .small
 .post-type-archive-summary .content-filter li.member-promote-to-admin:before,
@@ -2087,7 +1112,7 @@ article.handbook a.anchor:before {
 #buddypress .small .bp-secondary-action.member-promote-to-admin:before,
 #buddypress .small .group-button a.member-promote-to-mod:before,
 #buddypress .small .group-button a.member-promote-to-admin:before,
-#buddypress .activity-meta .button.member-promote-to-mod:before,
+#buddypress .activity-meta button.member-promote-to-mod:before,
 #buddypress .activity-meta .post-type-archive-meeting .content-filter li.member-promote-to-mod:before, .post-type-archive-meeting .content-filter
 #buddypress .activity-meta li.member-promote-to-mod:before,
 #buddypress .activity-meta
@@ -2116,7 +1141,7 @@ article.handbook a.anchor:before {
 #buddypress .activity-meta li.member-promote-to-mod:before,
 #buddypress .activity-meta .so-widget-sow-cta .sow-cta-base .ow-button-base a.member-promote-to-mod:before, .so-widget-sow-cta .sow-cta-base .ow-button-base
 #buddypress .activity-meta a.member-promote-to-mod:before,
-#buddypress .activity-meta .button.member-promote-to-admin:before,
+#buddypress .activity-meta button.member-promote-to-admin:before,
 #buddypress .activity-meta .post-type-archive-meeting .content-filter li.member-promote-to-admin:before, .post-type-archive-meeting .content-filter
 #buddypress .activity-meta li.member-promote-to-admin:before,
 #buddypress .activity-meta
@@ -2151,7 +1176,7 @@ article.handbook a.anchor:before {
 #buddypress .activity-meta .bp-secondary-action.member-promote-to-admin:before,
 #buddypress .activity-meta .group-button a.member-promote-to-mod:before,
 #buddypress .activity-meta .group-button a.member-promote-to-admin:before,
-#buddypress .acomment-options .button.member-promote-to-mod:before,
+#buddypress .acomment-options button.member-promote-to-mod:before,
 #buddypress .acomment-options .post-type-archive-meeting .content-filter li.member-promote-to-mod:before, .post-type-archive-meeting .content-filter
 #buddypress .acomment-options li.member-promote-to-mod:before,
 #buddypress .acomment-options
@@ -2180,7 +1205,7 @@ article.handbook a.anchor:before {
 #buddypress .acomment-options li.member-promote-to-mod:before,
 #buddypress .acomment-options .so-widget-sow-cta .sow-cta-base .ow-button-base a.member-promote-to-mod:before, .so-widget-sow-cta .sow-cta-base .ow-button-base
 #buddypress .acomment-options a.member-promote-to-mod:before,
-#buddypress .acomment-options .button.member-promote-to-admin:before,
+#buddypress .acomment-options button.member-promote-to-admin:before,
 #buddypress .acomment-options .post-type-archive-meeting .content-filter li.member-promote-to-admin:before, .post-type-archive-meeting .content-filter
 #buddypress .acomment-options li.member-promote-to-admin:before,
 #buddypress .acomment-options
@@ -2215,7 +1240,7 @@ article.handbook a.anchor:before {
 #buddypress .acomment-options .bp-secondary-action.member-promote-to-admin:before,
 #buddypress .acomment-options .group-button a.member-promote-to-mod:before,
 #buddypress .acomment-options .group-button a.member-promote-to-admin:before,
-#buddypress .action .button.member-promote-to-mod:before,
+#buddypress .action button.member-promote-to-mod:before,
 #buddypress .action .post-type-archive-meeting .content-filter li.member-promote-to-mod:before, .post-type-archive-meeting .content-filter
 #buddypress .action li.member-promote-to-mod:before,
 #buddypress .action
@@ -2244,7 +1269,7 @@ article.handbook a.anchor:before {
 #buddypress .action li.member-promote-to-mod:before,
 #buddypress .action .so-widget-sow-cta .sow-cta-base .ow-button-base a.member-promote-to-mod:before, .so-widget-sow-cta .sow-cta-base .ow-button-base
 #buddypress .action a.member-promote-to-mod:before,
-#buddypress .action .button.member-promote-to-admin:before,
+#buddypress .action button.member-promote-to-admin:before,
 #buddypress .action .post-type-archive-meeting .content-filter li.member-promote-to-admin:before, .post-type-archive-meeting .content-filter
 #buddypress .action li.member-promote-to-admin:before,
 #buddypress .action
@@ -2281,7 +1306,7 @@ article.handbook a.anchor:before {
 #buddypress .action .group-button a.member-promote-to-admin:before {
   content: ""; }
 
-.fa-level-down:before, #buddypress .small .button.admin-demote-to-member:before, #buddypress .small .post-type-archive-meeting .content-filter li.admin-demote-to-member:before, .post-type-archive-meeting .content-filter #buddypress .small li.admin-demote-to-member:before, #buddypress .small
+#buddypress .small button.admin-demote-to-member:before, #buddypress .small .post-type-archive-meeting .content-filter li.admin-demote-to-member:before, .post-type-archive-meeting .content-filter #buddypress .small li.admin-demote-to-member:before, #buddypress .small
 .post-type-archive-proposal .content-filter li.admin-demote-to-member:before,
 .post-type-archive-proposal .content-filter #buddypress .small li.admin-demote-to-member:before, #buddypress .small
 .post-type-archive-summary .content-filter li.admin-demote-to-member:before,
@@ -2297,7 +1322,7 @@ article.handbook a.anchor:before {
 #buddypress .small .bp-primary-action.admin-demote-to-member:before,
 #buddypress .small .bp-secondary-action.admin-demote-to-member:before,
 #buddypress .small .group-button a.admin-demote-to-member:before,
-#buddypress .activity-meta .button.admin-demote-to-member:before,
+#buddypress .activity-meta button.admin-demote-to-member:before,
 #buddypress .activity-meta .post-type-archive-meeting .content-filter li.admin-demote-to-member:before, .post-type-archive-meeting .content-filter
 #buddypress .activity-meta li.admin-demote-to-member:before,
 #buddypress .activity-meta
@@ -2329,7 +1354,7 @@ article.handbook a.anchor:before {
 #buddypress .activity-meta .bp-primary-action.admin-demote-to-member:before,
 #buddypress .activity-meta .bp-secondary-action.admin-demote-to-member:before,
 #buddypress .activity-meta .group-button a.admin-demote-to-member:before,
-#buddypress .acomment-options .button.admin-demote-to-member:before,
+#buddypress .acomment-options button.admin-demote-to-member:before,
 #buddypress .acomment-options .post-type-archive-meeting .content-filter li.admin-demote-to-member:before, .post-type-archive-meeting .content-filter
 #buddypress .acomment-options li.admin-demote-to-member:before,
 #buddypress .acomment-options
@@ -2361,7 +1386,7 @@ article.handbook a.anchor:before {
 #buddypress .acomment-options .bp-primary-action.admin-demote-to-member:before,
 #buddypress .acomment-options .bp-secondary-action.admin-demote-to-member:before,
 #buddypress .acomment-options .group-button a.admin-demote-to-member:before,
-#buddypress .action .button.admin-demote-to-member:before,
+#buddypress .action button.admin-demote-to-member:before,
 #buddypress .action .post-type-archive-meeting .content-filter li.admin-demote-to-member:before, .post-type-archive-meeting .content-filter
 #buddypress .action li.admin-demote-to-member:before,
 #buddypress .action
@@ -2395,926 +1420,8 @@ article.handbook a.anchor:before {
 #buddypress .action .group-button a.admin-demote-to-member:before {
   content: ""; }
 
-.fa-check-square:before {
-  content: ""; }
-
-.fa-pencil-square:before {
-  content: ""; }
-
-.fa-external-link-square:before {
-  content: ""; }
-
-.fa-share-square:before {
-  content: ""; }
-
-.fa-compass:before {
-  content: ""; }
-
-.fa-toggle-down:before,
-.fa-caret-square-o-down:before {
-  content: ""; }
-
-.fa-toggle-up:before,
-.fa-caret-square-o-up:before {
-  content: ""; }
-
-.fa-toggle-right:before,
-.fa-caret-square-o-right:before {
-  content: ""; }
-
-.fa-euro:before,
-.fa-eur:before {
-  content: ""; }
-
-.fa-gbp:before {
-  content: ""; }
-
-.fa-dollar:before,
-.fa-usd:before {
-  content: ""; }
-
-.fa-rupee:before,
-.fa-inr:before {
-  content: ""; }
-
-.fa-cny:before,
-.fa-rmb:before,
-.fa-yen:before,
-.fa-jpy:before {
-  content: ""; }
-
-.fa-ruble:before,
-.fa-rouble:before,
-.fa-rub:before {
-  content: ""; }
-
-.fa-won:before,
-.fa-krw:before {
-  content: ""; }
-
-.fa-bitcoin:before,
-.fa-btc:before {
-  content: ""; }
-
-.fa-file:before {
-  content: ""; }
-
-.fa-file-text:before {
-  content: ""; }
-
-.fa-sort-alpha-asc:before {
-  content: ""; }
-
-.fa-sort-alpha-desc:before {
-  content: ""; }
-
-.fa-sort-amount-asc:before {
-  content: ""; }
-
-.fa-sort-amount-desc:before {
-  content: ""; }
-
-.fa-sort-numeric-asc:before {
-  content: ""; }
-
-.fa-sort-numeric-desc:before {
-  content: ""; }
-
-.fa-thumbs-up:before {
-  content: ""; }
-
-.fa-thumbs-down:before {
-  content: ""; }
-
-.fa-youtube-square:before {
-  content: ""; }
-
-.fa-youtube:before {
-  content: ""; }
-
-.fa-xing:before {
-  content: ""; }
-
-.fa-xing-square:before {
-  content: ""; }
-
-.fa-youtube-play:before {
-  content: ""; }
-
-.fa-dropbox:before {
-  content: ""; }
-
-.fa-stack-overflow:before {
-  content: ""; }
-
-.fa-instagram:before {
-  content: ""; }
-
-.fa-flickr:before {
-  content: ""; }
-
-.fa-adn:before {
-  content: ""; }
-
-.fa-bitbucket:before {
-  content: ""; }
-
-.fa-bitbucket-square:before {
-  content: ""; }
-
-.fa-tumblr:before {
-  content: ""; }
-
-.fa-tumblr-square:before {
-  content: ""; }
-
-.fa-long-arrow-down:before {
-  content: ""; }
-
-.fa-long-arrow-up:before {
-  content: ""; }
-
-.fa-long-arrow-left:before {
-  content: ""; }
-
-.fa-long-arrow-right:before {
-  content: ""; }
-
-.fa-apple:before {
-  content: ""; }
-
-.fa-windows:before {
-  content: ""; }
-
-.fa-android:before {
-  content: ""; }
-
-.fa-linux:before {
-  content: ""; }
-
-.fa-dribbble:before {
-  content: ""; }
-
-.fa-skype:before {
-  content: ""; }
-
-.fa-foursquare:before {
-  content: ""; }
-
-.fa-trello:before {
-  content: ""; }
-
-.fa-female:before {
-  content: ""; }
-
-.fa-male:before {
-  content: ""; }
-
-.fa-gittip:before,
-.fa-gratipay:before {
-  content: ""; }
-
-.fa-sun-o:before {
-  content: ""; }
-
-.fa-moon-o:before {
-  content: ""; }
-
-.fa-archive:before {
-  content: ""; }
-
-.fa-bug:before {
-  content: ""; }
-
-.fa-vk:before {
-  content: ""; }
-
-.fa-weibo:before {
-  content: ""; }
-
-.fa-renren:before {
-  content: ""; }
-
-.fa-pagelines:before {
-  content: ""; }
-
-.fa-stack-exchange:before {
-  content: ""; }
-
-.fa-arrow-circle-o-right:before {
-  content: ""; }
-
-.fa-arrow-circle-o-left:before {
-  content: ""; }
-
-.fa-toggle-left:before,
-.fa-caret-square-o-left:before {
-  content: ""; }
-
-.fa-dot-circle-o:before {
-  content: ""; }
-
-.fa-wheelchair:before {
-  content: ""; }
-
-.fa-vimeo-square:before {
-  content: ""; }
-
-.fa-turkish-lira:before,
-.fa-try:before {
-  content: ""; }
-
-.fa-plus-square-o:before {
-  content: ""; }
-
-.fa-space-shuttle:before {
-  content: ""; }
-
-.fa-slack:before {
-  content: ""; }
-
-.fa-envelope-square:before {
-  content: ""; }
-
-.fa-wordpress:before {
-  content: ""; }
-
-.fa-openid:before {
-  content: ""; }
-
-.fa-institution:before,
-.fa-bank:before,
-.fa-university:before {
-  content: ""; }
-
-.fa-mortar-board:before,
-.fa-graduation-cap:before {
-  content: ""; }
-
-.fa-yahoo:before {
-  content: ""; }
-
-.fa-google:before {
-  content: ""; }
-
-.fa-reddit:before {
-  content: ""; }
-
-.fa-reddit-square:before {
-  content: ""; }
-
-.fa-stumbleupon-circle:before {
-  content: ""; }
-
-.fa-stumbleupon:before {
-  content: ""; }
-
-.fa-delicious:before {
-  content: ""; }
-
-.fa-digg:before {
-  content: ""; }
-
-.fa-pied-piper:before {
-  content: ""; }
-
-.fa-pied-piper-alt:before {
-  content: ""; }
-
-.fa-drupal:before {
-  content: ""; }
-
-.fa-joomla:before {
-  content: ""; }
-
-.fa-language:before {
-  content: ""; }
-
-.fa-fax:before {
-  content: ""; }
-
-.fa-building:before {
-  content: ""; }
-
-.fa-child:before {
-  content: ""; }
-
-.fa-paw:before {
-  content: ""; }
-
-.fa-spoon:before {
-  content: ""; }
-
-.fa-cube:before {
-  content: ""; }
-
-.fa-cubes:before {
-  content: ""; }
-
-.fa-behance:before {
-  content: ""; }
-
-.fa-behance-square:before {
-  content: ""; }
-
-.fa-steam:before {
-  content: ""; }
-
-.fa-steam-square:before {
-  content: ""; }
-
-.fa-recycle:before {
-  content: ""; }
-
-.fa-automobile:before,
-.fa-car:before {
-  content: ""; }
-
-.fa-cab:before,
-.fa-taxi:before {
-  content: ""; }
-
-.fa-tree:before {
-  content: ""; }
-
-.fa-spotify:before {
-  content: ""; }
-
-.fa-deviantart:before {
-  content: ""; }
-
-.fa-soundcloud:before {
-  content: ""; }
-
-.fa-database:before {
-  content: ""; }
-
-.fa-file-pdf-o:before {
-  content: ""; }
-
-.fa-file-word-o:before {
-  content: ""; }
-
-.fa-file-excel-o:before {
-  content: ""; }
-
-.fa-file-powerpoint-o:before {
-  content: ""; }
-
-.fa-file-photo-o:before,
-.fa-file-picture-o:before,
-.fa-file-image-o:before {
-  content: ""; }
-
-.fa-file-zip-o:before,
-.fa-file-archive-o:before {
-  content: ""; }
-
-.fa-file-sound-o:before,
-.fa-file-audio-o:before {
-  content: ""; }
-
-.fa-file-movie-o:before,
-.fa-file-video-o:before {
-  content: ""; }
-
-.fa-file-code-o:before {
-  content: ""; }
-
-.fa-vine:before {
-  content: ""; }
-
-.fa-codepen:before {
-  content: ""; }
-
-.fa-jsfiddle:before {
-  content: ""; }
-
-.fa-life-bouy:before,
-.fa-life-buoy:before,
-.fa-life-saver:before,
-.fa-support:before,
-.fa-life-ring:before {
-  content: ""; }
-
-.fa-circle-o-notch:before {
-  content: ""; }
-
-.fa-ra:before,
-.fa-rebel:before {
-  content: ""; }
-
-.fa-ge:before,
-.fa-empire:before {
-  content: ""; }
-
-.fa-git-square:before {
-  content: ""; }
-
-.fa-git:before {
-  content: ""; }
-
-.fa-y-combinator-square:before,
-.fa-yc-square:before,
-.fa-hacker-news:before {
-  content: ""; }
-
-.fa-tencent-weibo:before {
-  content: ""; }
-
-.fa-qq:before {
-  content: ""; }
-
-.fa-wechat:before,
-.fa-weixin:before {
-  content: ""; }
-
-.fa-send:before,
-.fa-paper-plane:before {
-  content: ""; }
-
-.fa-send-o:before,
-.fa-paper-plane-o:before {
-  content: ""; }
-
-.fa-history:before {
-  content: ""; }
-
-.fa-circle-thin:before {
-  content: ""; }
-
-.fa-header:before {
-  content: ""; }
-
-.fa-paragraph:before {
-  content: ""; }
-
-.fa-sliders:before {
-  content: ""; }
-
-.fa-share-alt:before {
-  content: ""; }
-
-.fa-share-alt-square:before {
-  content: ""; }
-
-.fa-bomb:before {
-  content: ""; }
-
-.fa-soccer-ball-o:before,
-.fa-futbol-o:before {
-  content: ""; }
-
-.fa-tty:before {
-  content: ""; }
-
-.fa-binoculars:before {
-  content: ""; }
-
-.fa-plug:before {
-  content: ""; }
-
-.fa-slideshare:before {
-  content: ""; }
-
-.fa-twitch:before {
-  content: ""; }
-
-.fa-yelp:before {
-  content: ""; }
-
-.fa-newspaper-o:before {
-  content: ""; }
-
-.fa-wifi:before {
-  content: ""; }
-
-.fa-calculator:before {
-  content: ""; }
-
-.fa-paypal:before {
-  content: ""; }
-
-.fa-google-wallet:before {
-  content: ""; }
-
-.fa-cc-visa:before {
-  content: ""; }
-
-.fa-cc-mastercard:before {
-  content: ""; }
-
-.fa-cc-discover:before {
-  content: ""; }
-
-.fa-cc-amex:before {
-  content: ""; }
-
-.fa-cc-paypal:before {
-  content: ""; }
-
-.fa-cc-stripe:before {
-  content: ""; }
-
-.fa-bell-slash:before {
-  content: ""; }
-
-.fa-bell-slash-o:before {
-  content: ""; }
-
-.fa-trash:before {
-  content: ""; }
-
-.fa-copyright:before {
-  content: ""; }
-
-.fa-at:before {
-  content: ""; }
-
-.fa-eyedropper:before {
-  content: ""; }
-
-.fa-paint-brush:before {
-  content: ""; }
-
-.fa-birthday-cake:before {
-  content: ""; }
-
-.fa-area-chart:before {
-  content: ""; }
-
-.fa-pie-chart:before {
-  content: ""; }
-
-.fa-line-chart:before {
-  content: ""; }
-
-.fa-lastfm:before {
-  content: ""; }
-
-.fa-lastfm-square:before {
-  content: ""; }
-
-.fa-toggle-off:before {
-  content: ""; }
-
-.fa-toggle-on:before {
-  content: ""; }
-
-.fa-bicycle:before {
-  content: ""; }
-
-.fa-bus:before {
-  content: ""; }
-
-.fa-ioxhost:before {
-  content: ""; }
-
-.fa-angellist:before {
-  content: ""; }
-
-.fa-cc:before {
-  content: ""; }
-
-.fa-shekel:before,
-.fa-sheqel:before,
-.fa-ils:before {
-  content: ""; }
-
-.fa-meanpath:before {
-  content: ""; }
-
-.fa-buysellads:before {
-  content: ""; }
-
-.fa-connectdevelop:before {
-  content: ""; }
-
-.fa-dashcube:before {
-  content: ""; }
-
-.fa-forumbee:before {
-  content: ""; }
-
-.fa-leanpub:before {
-  content: ""; }
-
-.fa-sellsy:before {
-  content: ""; }
-
-.fa-shirtsinbulk:before {
-  content: ""; }
-
-.fa-simplybuilt:before {
-  content: ""; }
-
-.fa-skyatlas:before {
-  content: ""; }
-
-.fa-cart-plus:before {
-  content: ""; }
-
-.fa-cart-arrow-down:before {
-  content: ""; }
-
-.fa-diamond:before {
-  content: ""; }
-
-.fa-ship:before {
-  content: ""; }
-
-.fa-user-secret:before {
-  content: ""; }
-
-.fa-motorcycle:before {
-  content: ""; }
-
-.fa-street-view:before {
-  content: ""; }
-
-.fa-heartbeat:before {
-  content: ""; }
-
-.fa-venus:before {
-  content: ""; }
-
-.fa-mars:before {
-  content: ""; }
-
-.fa-mercury:before {
-  content: ""; }
-
-.fa-intersex:before,
-.fa-transgender:before {
-  content: ""; }
-
-.fa-transgender-alt:before {
-  content: ""; }
-
-.fa-venus-double:before {
-  content: ""; }
-
-.fa-mars-double:before {
-  content: ""; }
-
-.fa-venus-mars:before {
-  content: ""; }
-
-.fa-mars-stroke:before {
-  content: ""; }
-
-.fa-mars-stroke-v:before {
-  content: ""; }
-
-.fa-mars-stroke-h:before {
-  content: ""; }
-
-.fa-neuter:before {
-  content: ""; }
-
-.fa-genderless:before {
-  content: ""; }
-
-.fa-facebook-official:before {
-  content: ""; }
-
-.fa-pinterest-p:before {
-  content: ""; }
-
-.fa-whatsapp:before {
-  content: ""; }
-
-.fa-server:before {
-  content: ""; }
-
-.fa-user-plus:before {
-  content: ""; }
-
-.fa-user-times:before {
-  content: ""; }
-
-.fa-hotel:before,
-.fa-bed:before {
-  content: ""; }
-
-.fa-viacoin:before {
-  content: ""; }
-
-.fa-train:before {
-  content: ""; }
-
-.fa-subway:before {
-  content: ""; }
-
-.fa-medium:before {
-  content: ""; }
-
-.fa-yc:before,
-.fa-y-combinator:before {
-  content: ""; }
-
-.fa-optin-monster:before {
-  content: ""; }
-
-.fa-opencart:before {
-  content: ""; }
-
-.fa-expeditedssl:before {
-  content: ""; }
-
-.fa-battery-4:before,
-.fa-battery-full:before {
-  content: ""; }
-
-.fa-battery-3:before,
-.fa-battery-three-quarters:before {
-  content: ""; }
-
-.fa-battery-2:before,
-.fa-battery-half:before {
-  content: ""; }
-
-.fa-battery-1:before,
-.fa-battery-quarter:before {
-  content: ""; }
-
-.fa-battery-0:before,
-.fa-battery-empty:before {
-  content: ""; }
-
-.fa-mouse-pointer:before {
-  content: ""; }
-
-.fa-i-cursor:before {
-  content: ""; }
-
-.fa-object-group:before {
-  content: ""; }
-
-.fa-object-ungroup:before {
-  content: ""; }
-
-.fa-sticky-note:before {
-  content: ""; }
-
-.fa-sticky-note-o:before {
-  content: ""; }
-
-.fa-cc-jcb:before {
-  content: ""; }
-
-.fa-cc-diners-club:before {
-  content: ""; }
-
-.fa-clone:before {
-  content: ""; }
-
-.fa-balance-scale:before {
-  content: ""; }
-
-.fa-hourglass-o:before {
-  content: ""; }
-
-.fa-hourglass-1:before,
-.fa-hourglass-start:before {
-  content: ""; }
-
-.fa-hourglass-2:before,
-.fa-hourglass-half:before {
-  content: ""; }
-
-.fa-hourglass-3:before,
-.fa-hourglass-end:before {
-  content: ""; }
-
-.fa-hourglass:before {
-  content: ""; }
-
-.fa-hand-grab-o:before,
-.fa-hand-rock-o:before {
-  content: ""; }
-
-.fa-hand-stop-o:before,
-.fa-hand-paper-o:before {
-  content: ""; }
-
-.fa-hand-scissors-o:before {
-  content: ""; }
-
-.fa-hand-lizard-o:before {
-  content: ""; }
-
-.fa-hand-spock-o:before {
-  content: ""; }
-
-.fa-hand-pointer-o:before {
-  content: ""; }
-
-.fa-hand-peace-o:before {
-  content: ""; }
-
-.fa-trademark:before {
-  content: ""; }
-
-.fa-registered:before {
-  content: ""; }
-
-.fa-creative-commons:before, .copyright .copyleft:before {
+.copyright .copyleft:before {
   content: ""; }
-
-.fa-gg:before {
-  content: ""; }
-
-.fa-gg-circle:before {
-  content: ""; }
-
-.fa-tripadvisor:before {
-  content: ""; }
-
-.fa-odnoklassniki:before {
-  content: ""; }
-
-.fa-odnoklassniki-square:before {
-  content: ""; }
-
-.fa-get-pocket:before {
-  content: ""; }
-
-.fa-wikipedia-w:before {
-  content: ""; }
-
-.fa-safari:before {
-  content: ""; }
-
-.fa-chrome:before {
-  content: ""; }
-
-.fa-firefox:before {
-  content: ""; }
-
-.fa-opera:before {
-  content: ""; }
-
-.fa-internet-explorer:before {
-  content: ""; }
-
-.fa-tv:before,
-.fa-television:before {
-  content: ""; }
-
-.fa-contao:before {
-  content: ""; }
-
-.fa-500px:before {
-  content: ""; }
-
-.fa-amazon:before {
-  content: ""; }
-
-.fa-calendar-plus-o:before {
-  content: ""; }
-
-.fa-calendar-minus-o:before {
-  content: ""; }
-
-.fa-calendar-times-o:before {
-  content: ""; }
-
-.fa-calendar-check-o:before {
-  content: ""; }
-
-.fa-industry:before {
-  content: ""; }
-
-.fa-map-pin:before {
-  content: ""; }
-
-.fa-map-signs:before {
-  content: ""; }
-
-.fa-map-o:before {
-  content: ""; }
-
-.fa-map:before {
-  content: ""; }
-
-.fa-commenting:before {
-  content: ""; }
-
-.fa-commenting-o:before {
-  content: ""; }
-
-.fa-houzz:before {
-  content: ""; }
-
-.fa-vimeo:before {
-  content: ""; }
-
-.fa-black-tie:before {
-  content: ""; }
-
-.fa-fonticons:before {
-  content: ""; }
 
 [class^="icon-"] {
   display: inline-block;
@@ -3859,13 +1966,6 @@ hr {
       display: inline-block;
       color: inherit;
       vertical-align: middle; }
-  .nav-social .facebook a {
-    background: #db3a34;
-    border-color: #db3a34;
-    color: #fff !important; }
-    .nav-social .facebook a:hover, .nav-social .facebook a:focus {
-      background: #fcfcfc;
-      color: #db3a34 !important; }
   .nav-social .twitter a {
     background: #db3a34;
     border-color: #db3a34;
@@ -4521,121 +2621,17 @@ a {
   text-transform: uppercase;
   letter-spacing: 1px; }
 
-button,
-.button,
-.post-type-archive-meeting .content-filter li,
-.post-type-archive-proposal .content-filter li,
-.post-type-archive-summary .content-filter li,
-.post-type-archive-agenda .content-filter li,
-.tax-meeting_tag .content-filter li,
-.tax-meeting_type .content-filter li,
-.tax-proposal_status .content-filter li,
-.so-widget-sow-cta .sow-cta-base .ow-button-base a {
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  font-size: 14px;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  line-height: 1.2;
-  font-weight: 700;
-  padding: .75em 3em;
-  text-align: center;
-  border: 0;
-  background: #4b6768;
-  color: #fff;
-  display: inline-block;
-  border-radius: 0; }
-  button:link, button:visited,
-  .button:link,
-  .post-type-archive-meeting .content-filter li:link,
-  .post-type-archive-proposal .content-filter li:link,
-  .post-type-archive-summary .content-filter li:link,
-  .post-type-archive-agenda .content-filter li:link,
-  .tax-meeting_tag .content-filter li:link,
-  .tax-meeting_type .content-filter li:link,
-  .tax-proposal_status .content-filter li:link,
-  .so-widget-sow-cta .sow-cta-base .ow-button-base a:link,
-  .button:visited,
-  .post-type-archive-meeting .content-filter li:visited,
-  .post-type-archive-proposal .content-filter li:visited,
-  .post-type-archive-summary .content-filter li:visited,
-  .post-type-archive-agenda .content-filter li:visited,
-  .tax-meeting_tag .content-filter li:visited,
-  .tax-meeting_type .content-filter li:visited,
-  .tax-proposal_status .content-filter li:visited,
-  .so-widget-sow-cta .sow-cta-base .ow-button-base a:visited {
-    color: #fff; }
-  button:hover, button:focus,
-  .button:hover,
-  .post-type-archive-meeting .content-filter li:hover,
-  .post-type-archive-proposal .content-filter li:hover,
-  .post-type-archive-summary .content-filter li:hover,
-  .post-type-archive-agenda .content-filter li:hover,
-  .tax-meeting_tag .content-filter li:hover,
-  .tax-meeting_type .content-filter li:hover,
-  .tax-proposal_status .content-filter li:hover,
-  .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover,
-  .button:focus,
-  .post-type-archive-meeting .content-filter li:focus,
-  .post-type-archive-proposal .content-filter li:focus,
-  .post-type-archive-summary .content-filter li:focus,
-  .post-type-archive-agenda .content-filter li:focus,
-  .tax-meeting_tag .content-filter li:focus,
-  .tax-meeting_type .content-filter li:focus,
-  .tax-proposal_status .content-filter li:focus,
-  .so-widget-sow-cta .sow-cta-base .ow-button-base a:focus {
-    background: #608586;
-    color: #fff !important; }
-
-.home-intro .button, .home-intro .post-type-archive-meeting .content-filter li, .post-type-archive-meeting .content-filter .home-intro li, .home-intro
-.post-type-archive-proposal .content-filter li,
-.post-type-archive-proposal .content-filter .home-intro li, .home-intro
-.post-type-archive-summary .content-filter li,
-.post-type-archive-summary .content-filter .home-intro li, .home-intro
-.post-type-archive-agenda .content-filter li,
-.post-type-archive-agenda .content-filter .home-intro li, .home-intro
-.tax-meeting_tag .content-filter li,
-.tax-meeting_tag .content-filter .home-intro li, .home-intro
-.tax-meeting_type .content-filter li,
-.tax-meeting_type .content-filter .home-intro li, .home-intro
-.tax-proposal_status .content-filter li,
-.tax-proposal_status .content-filter .home-intro li, .home-intro .so-widget-sow-cta .sow-cta-base .ow-button-base a, .so-widget-sow-cta .sow-cta-base .ow-button-base .home-intro a {
+.home-intro .button {
   margin-bottom: 10px;
   margin-right: 10px;
   width: 100%; }
 
-.sidebar .button, .sidebar .post-type-archive-meeting .content-filter li, .post-type-archive-meeting .content-filter .sidebar li, .sidebar
-.post-type-archive-proposal .content-filter li,
-.post-type-archive-proposal .content-filter .sidebar li, .sidebar
-.post-type-archive-summary .content-filter li,
-.post-type-archive-summary .content-filter .sidebar li, .sidebar
-.post-type-archive-agenda .content-filter li,
-.post-type-archive-agenda .content-filter .sidebar li, .sidebar
-.tax-meeting_tag .content-filter li,
-.tax-meeting_tag .content-filter .sidebar li, .sidebar
-.tax-meeting_type .content-filter li,
-.tax-meeting_type .content-filter .sidebar li, .sidebar
-.tax-proposal_status .content-filter li,
-.tax-proposal_status .content-filter .sidebar li, .sidebar .so-widget-sow-cta .sow-cta-base .ow-button-base a, .so-widget-sow-cta .sow-cta-base .ow-button-base .sidebar a,
+.sidebar .button,
 .sidebar input[type='submit'] {
   background: #666;
   background: rgba(0, 0, 0, 0.6);
   font-weight: 700; }
-  .sidebar .button:hover, .sidebar .post-type-archive-meeting .content-filter li:hover, .post-type-archive-meeting .content-filter .sidebar li:hover, .sidebar
-  .post-type-archive-proposal .content-filter li:hover,
-  .post-type-archive-proposal .content-filter .sidebar li:hover, .sidebar
-  .post-type-archive-summary .content-filter li:hover,
-  .post-type-archive-summary .content-filter .sidebar li:hover, .sidebar
-  .post-type-archive-agenda .content-filter li:hover,
-  .post-type-archive-agenda .content-filter .sidebar li:hover, .sidebar
-  .tax-meeting_tag .content-filter li:hover,
-  .tax-meeting_tag .content-filter .sidebar li:hover, .sidebar
-  .tax-meeting_type .content-filter li:hover,
-  .tax-meeting_type .content-filter .sidebar li:hover, .sidebar
-  .tax-proposal_status .content-filter li:hover,
-  .tax-proposal_status .content-filter .sidebar li:hover, .sidebar .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover, .so-widget-sow-cta .sow-cta-base .ow-button-base .sidebar a:hover,
+  .sidebar .button:hover,
   .sidebar input[type='submit']:hover {
     background: #888;
     background: rgba(0, 0, 0, 0.4); }
@@ -6135,7 +4131,7 @@ ALERTS AND NOTICES
 Basic Style
 
 -------------------------------- */
-.breadcrumb, #buddypress #group-create-tabs ul {
+#buddypress #group-create-tabs ul {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -6144,397 +4140,29 @@ Basic Style
   border: 1px solid #2f4550;
   background-color: #2f4550;
   margin-bottom: .5em; }
-  .breadcrumb li, #buddypress #group-create-tabs ul li {
+  #buddypress #group-create-tabs ul li {
     display: table-cell; }
-  .breadcrumb li, #buddypress #group-create-tabs ul li {
+  #buddypress #group-create-tabs ul li {
     margin: 0; }
-    .breadcrumb li a, #buddypress #group-create-tabs ul li a,
-    .breadcrumb li span, #buddypress #group-create-tabs ul li span {
+    #buddypress #group-create-tabs ul li a, #buddypress #group-create-tabs ul li span {
       padding: .5em;
       display: block;
       font-size: 16px;
       font-size: 1rem;
       color: #fff; }
-      .breadcrumb li a::first-letter, #buddypress #group-create-tabs ul li a::first-letter,
-      .breadcrumb li span::first-letter, #buddypress #group-create-tabs ul li span::first-letter {
+      #buddypress #group-create-tabs ul li a::first-letter, #buddypress #group-create-tabs ul li span::first-letter {
         color: #7A9E9F; }
-    .breadcrumb li:not(:last-child) a:after, #buddypress #group-create-tabs ul li:not(:last-child) a:after,
-    .breadcrumb li:not(:last-child) span:after, #buddypress #group-create-tabs ul li:not(:last-child) span:after {
+    #buddypress #group-create-tabs ul li:not(:last-child) a:after, #buddypress #group-create-tabs ul li:not(:last-child) span:after {
       content: '';
       font-size: 20px;
       margin-left: .75em;
       font-weight: normal;
       color: #7A9E9F; }
-    .breadcrumb li.current a, #buddypress #group-create-tabs ul li.current a,
-    .breadcrumb li.current span, #buddypress #group-create-tabs ul li.current span, .breadcrumb li.selected a, #buddypress #group-create-tabs ul li.selected a,
-    .breadcrumb li.selected span, #buddypress #group-create-tabs ul li.selected span {
+    #buddypress #group-create-tabs ul li.current a, #buddypress #group-create-tabs ul li.current span, #buddypress #group-create-tabs ul li.selected a, #buddypress #group-create-tabs ul li.selected span {
       font-weight: bold;
       color: #fff; }
-      .breadcrumb li.current a::first-letter, #buddypress #group-create-tabs ul li.current a::first-letter,
-      .breadcrumb li.current span::first-letter, #buddypress #group-create-tabs ul li.current span::first-letter, .breadcrumb li.selected a::first-letter, #buddypress #group-create-tabs ul li.selected a::first-letter,
-      .breadcrumb li.selected span::first-letter, #buddypress #group-create-tabs ul li.selected span::first-letter {
+      #buddypress #group-create-tabs ul li.current a::first-letter, #buddypress #group-create-tabs ul li.current span::first-letter, #buddypress #group-create-tabs ul li.selected a::first-letter, #buddypress #group-create-tabs ul li.selected span::first-letter {
         color: #fff; }
-
-.cd-breadcrumb,
-.cd-multi-steps {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  width: 90%;
-  max-width: 769px;
-  padding: 0.5em 1em;
-  margin: 1em auto;
-  background-color: #eee;
-  border-radius: .25em; }
-  .cd-breadcrumb li,
-  .cd-multi-steps li {
-    display: inline-block; }
-  .cd-breadcrumb::after,
-  .cd-multi-steps::after {
-    clear: both;
-    content: "";
-    display: table; }
-  .cd-breadcrumb li,
-  .cd-multi-steps li {
-    display: inline-block;
-    float: left;
-    margin: 0.5em 0; }
-    .cd-breadcrumb li::after,
-    .cd-multi-steps li::after {
-      /* this is the separator between items */
-      display: inline-block;
-      content: '\00bb';
-      margin: 0 .6em;
-      color: #bdcfcf; }
-    .cd-breadcrumb li:last-of-type::after,
-    .cd-multi-steps li:last-of-type::after {
-      /* hide separator after the last item */
-      display: none; }
-  .cd-breadcrumb li > *,
-  .cd-multi-steps li > * {
-    /* single step */
-    display: inline-block;
-    font-size: 14px;
-    font-size: 0.875rem;
-    color: #7A9E9F; }
-  .cd-breadcrumb li.current > *,
-  .cd-multi-steps li.current > * {
-    /* selected step */
-    color: #2f4550; }
-  .no-touch .cd-breadcrumb a:hover, .no-touch
-  .cd-multi-steps a:hover {
-    /* steps already visited */
-    color: #2f4550; }
-  .cd-breadcrumb.custom-separator li::after,
-  .cd-multi-steps.custom-separator li::after {
-    /* replace the default arrow separator with a custom icon */ }
-  .cd-breadcrumb.custom-icons li > *::before,
-  .cd-multi-steps.custom-icons li > *::before {
-    /* add a custom icon before each item */ }
-  .cd-breadcrumb.custom-icons li:not(.current):nth-of-type(2) > *::before,
-  .cd-multi-steps.custom-icons li:not(.current):nth-of-type(2) > *::before {
-    /* change custom icon using image sprites */
-    background-position: -20px 0; }
-  .cd-breadcrumb.custom-icons li:not(.current):nth-of-type(3) > *::before,
-  .cd-multi-steps.custom-icons li:not(.current):nth-of-type(3) > *::before {
-    background-position: -40px 0; }
-  .cd-breadcrumb.custom-icons li:not(.current):nth-of-type(4) > *::before,
-  .cd-multi-steps.custom-icons li:not(.current):nth-of-type(4) > *::before {
-    background-position: -60px 0; }
-  .cd-breadcrumb.custom-icons li.current:first-of-type > *::before,
-  .cd-multi-steps.custom-icons li.current:first-of-type > *::before {
-    /* change custom icon for the current item */
-    background-position: 0 -20px; }
-  .cd-breadcrumb.custom-icons li.current:nth-of-type(2) > *::before,
-  .cd-multi-steps.custom-icons li.current:nth-of-type(2) > *::before {
-    background-position: -20px -20px; }
-  .cd-breadcrumb.custom-icons li.current:nth-of-type(3) > *::before,
-  .cd-multi-steps.custom-icons li.current:nth-of-type(3) > *::before {
-    background-position: -40px -20px; }
-  .cd-breadcrumb.custom-icons li.current:nth-of-type(4) > *::before,
-  .cd-multi-steps.custom-icons li.current:nth-of-type(4) > *::before {
-    background-position: -60px -20px; }
-  @media screen and (min-width: 769px) {
-    .cd-breadcrumb,
-    .cd-multi-steps {
-      padding: 0 1.2em; }
-      .cd-breadcrumb li,
-      .cd-multi-steps li {
-        margin: 1.2em 0; }
-        .cd-breadcrumb li::after,
-        .cd-multi-steps li::after {
-          margin: 0 1em; }
-      .cd-breadcrumb li > *,
-      .cd-multi-steps li > * {
-        font-size: 14px;
-        font-size: 0.875rem; } }
-
-/* -------------------------------- 
-
-Triangle breadcrumb
-
--------------------------------- */
-@media screen and (min-width: 769px) {
-  .cd-breadcrumb-triangle {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    /* reset basic style */
-    background-color: transparent;
-    padding: 0; }
-    .cd-breadcrumb-triangle li {
-      display: inline-block; }
-    .cd-breadcrumb-triangle li {
-      position: relative;
-      padding: 0;
-      margin: 4px 4px 4px 0; }
-      .cd-breadcrumb-triangle li:last-of-type {
-        margin-right: 0; }
-    .cd-breadcrumb-triangle li > * {
-      position: relative;
-      padding: 1em .8em 1em 2.5em;
-      color: #7A9E9F;
-      background-color: #eee;
-      /* the border color is used to style its ::after pseudo-element */
-      border-color: #eee; }
-    .cd-breadcrumb-triangle li.current > * {
-      /* selected step */
-      color: #fff;
-      background-color: #2f4550;
-      border-color: #2f4550; }
-    .cd-breadcrumb-triangle li:first-of-type > * {
-      padding-left: 1.6em;
-      border-radius: .25em 0 0 .25em; }
-    .cd-breadcrumb-triangle li:last-of-type > * {
-      padding-right: 1.6em;
-      border-radius: 0 .25em .25em 0; }
-    .no-touch .cd-breadcrumb-triangle a:hover {
-      /* steps already visited */
-      color: #fff;
-      background-color: #7A9E9F;
-      border-color: #7A9E9F; }
-    .cd-breadcrumb-triangle li::after,
-    .cd-breadcrumb-triangle li > *::after {
-      /* 
-				li > *::after is the colored triangle after each item
-				li::after is the white separator between two items
-			*/
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 100%;
-      content: '';
-      height: 0;
-      width: 0;
-      /* 48px is the height of the <a> element */
-      border: 24px solid transparent;
-      border-right-width: 0;
-      border-left-width: 20px; }
-    .cd-breadcrumb-triangle li::after {
-      /* this is the white separator between two items */
-      z-index: 1;
-      -webkit-transform: translateX(4px);
-      -moz-transform: translateX(4px);
-      -ms-transform: translateX(4px);
-      -o-transform: translateX(4px);
-      transform: translateX(4px);
-      border-left-color: #fff;
-      /* reset style */
-      margin: 0; }
-    .cd-breadcrumb-triangle li > *::after {
-      /* this is the colored triangle after each element */
-      z-index: 2;
-      border-left-color: inherit; }
-    .cd-breadcrumb-triangle li:last-of-type::after, .cd-breadcrumb-triangle li:last-of-type > *::after {
-      /* hide the triangle after the last step */
-      display: none; }
-    .cd-breadcrumb-triangle.custom-separator li::after {
-      /* reset style */
-      background-image: none; }
-    .cd-breadcrumb-triangle.custom-icons li::after,
-    .cd-breadcrumb-triangle.custom-icons li > *::after {
-      /* 50px is the height of the <a> element */
-      border-top-width: 25px;
-      border-bottom-width: 25px; }
-  @-moz-document url-prefix() {
-    .cd-breadcrumb-triangle li::after,
-    .cd-breadcrumb-triangle li > *::after {
-      /* fix a bug on Firefix - tooth edge on css triangle */
-      border-left-style: dashed; } } }
-
-/* -------------------------------- 
-
-Custom icons hover effects - breadcrumb and multi-steps
-
--------------------------------- */
-@media screen and (min-width: 769px) {
-  .no-touch .cd-breadcrumb-triangle.custom-icons li:first-of-type a:hover::before,
-  .cd-breadcrumb-triangle.custom-icons li.current:first-of-type em::before, .no-touch
-  .cd-multi-steps.text-center.custom-icons li:first-of-type a:hover::before,
-  .cd-multi-steps.text-center.custom-icons li.current:first-of-type em::before {
-    /* change custom icon using image sprites - hover effect or current item */
-    background-position: 0 -40px; }
-  .no-touch .cd-breadcrumb-triangle.custom-icons li:nth-of-type(2) a:hover::before,
-  .cd-breadcrumb-triangle.custom-icons li.current:nth-of-type(2) em::before, .no-touch
-  .cd-multi-steps.text-center.custom-icons li:nth-of-type(2) a:hover::before,
-  .cd-multi-steps.text-center.custom-icons li.current:nth-of-type(2) em::before {
-    background-position: -20px -40px; }
-  .no-touch .cd-breadcrumb-triangle.custom-icons li:nth-of-type(3) a:hover::before,
-  .cd-breadcrumb-triangle.custom-icons li.current:nth-of-type(3) em::before, .no-touch
-  .cd-multi-steps.text-center.custom-icons li:nth-of-type(3) a:hover::before,
-  .cd-multi-steps.text-center.custom-icons li.current:nth-of-type(3) em::before {
-    background-position: -40px -40px; }
-  .no-touch .cd-breadcrumb-triangle.custom-icons li:nth-of-type(4) a:hover::before,
-  .cd-breadcrumb-triangle.custom-icons li.current:nth-of-type(4) em::before, .no-touch
-  .cd-multi-steps.text-center.custom-icons li:nth-of-type(4) a:hover::before,
-  .cd-multi-steps.text-center.custom-icons li.current:nth-of-type(4) em::before {
-    background-position: -60px -40px; } }
-
-/* -------------------------------- 
-
-Multi steps indicator 
-
--------------------------------- */
-@media screen and (min-width: 769px) {
-  .cd-multi-steps {
-    /* reset style */
-    background-color: transparent;
-    padding: 0;
-    text-align: center; }
-  .cd-multi-steps li {
-    position: relative;
-    float: none;
-    margin: 0.4em 40px 0.4em 0; }
-    .cd-multi-steps li:last-of-type {
-      margin-right: 0; }
-    .cd-multi-steps li::after {
-      /* this is the line connecting 2 adjacent items */
-      position: absolute;
-      content: '';
-      height: 4px;
-      background: #eee;
-      /* reset style */
-      margin: 0; }
-    .cd-multi-steps li.visited::after {
-      background-color: #2f4550; }
-    .cd-multi-steps li > *, .cd-multi-steps li.current > * {
-      position: relative;
-      color: #7A9E9F; }
-  .cd-multi-steps.custom-separator li::after {
-    /* reset style */
-    height: 4px;
-    background: #eee; }
-  .cd-multi-steps.text-center li::after {
-    width: 100%;
-    top: 50%;
-    left: 100%;
-    -webkit-transform: translateY(-50%) translateX(-1px);
-    -moz-transform: translateY(-50%) translateX(-1px);
-    -ms-transform: translateY(-50%) translateX(-1px);
-    -o-transform: translateY(-50%) translateX(-1px);
-    transform: translateY(-50%) translateX(-1px); }
-  .cd-multi-steps.text-center li > * {
-    z-index: 1;
-    padding: .6em 1em;
-    border-radius: .25em;
-    background-color: #eee; }
-  .no-touch .cd-multi-steps.text-center a:hover {
-    background-color: #7A9E9F; }
-  .cd-multi-steps.text-center li.current > *, .cd-multi-steps.text-center li.visited > * {
-    color: #fff;
-    background-color: #2f4550; }
-  .cd-multi-steps.text-center.custom-icons li.visited a::before {
-    /* change the custom icon for the visited item - check icon */
-    background-position: 0 -60px; }
-  .cd-multi-steps.text-top li,
-  .cd-multi-steps.text-bottom li {
-    width: 80px;
-    text-align: center; }
-    .cd-multi-steps.text-top li::after,
-    .cd-multi-steps.text-bottom li::after {
-      /* this is the line connecting 2 adjacent items */
-      position: absolute;
-      left: 50%;
-      /* 40px is the <li> right margin value */
-      width: calc(100% + 40px); }
-  .cd-multi-steps.text-top li > *::before,
-  .cd-multi-steps.text-bottom li > *::before {
-    /* this is the spot indicator */
-    content: '';
-    position: absolute;
-    z-index: 1;
-    left: 50%;
-    right: auto;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    background-color: #eee; }
-  .cd-multi-steps.text-top li.visited > *::before,
-  .cd-multi-steps.text-top li.current > *::before,
-  .cd-multi-steps.text-bottom li.visited > *::before,
-  .cd-multi-steps.text-bottom li.current > *::before {
-    background-color: #2f4550; }
-  .no-touch .cd-multi-steps.text-top a:hover, .no-touch
-  .cd-multi-steps.text-bottom a:hover {
-    color: #2f4550; }
-    .no-touch .cd-multi-steps.text-top a:hover::before, .no-touch
-    .cd-multi-steps.text-bottom a:hover::before {
-      box-shadow: 0 0 0 3px rgba(47, 69, 80, 0.3); }
-  .cd-multi-steps.text-top li::after {
-    /* this is the line connecting 2 adjacent items */
-    bottom: 4px; }
-  .cd-multi-steps.text-top li > * {
-    padding-bottom: 20px; }
-    .cd-multi-steps.text-top li > *::before {
-      /* this is the spot indicator */
-      bottom: 0; }
-  .cd-multi-steps.text-bottom li::after {
-    /* this is the line connecting 2 adjacent items */
-    top: 3px; }
-  .cd-multi-steps.text-bottom li > * {
-    padding-top: 20px; }
-    .cd-multi-steps.text-bottom li > *::before {
-      /* this is the spot indicator */
-      top: 0; } }
-
-/* -------------------------------- 
-
-Add a counter to the multi-steps indicator 
-
--------------------------------- */
-.cd-multi-steps.count li {
-  counter-increment: steps; }
-
-.cd-multi-steps.count li > *::before {
-  content: counter(steps) " - "; }
-
-@media screen and (min-width: 769px) {
-  .cd-multi-steps.text-top.count li > *::before,
-  .cd-multi-steps.text-bottom.count li > *::before {
-    /* this is the spot indicator */
-    content: counter(steps);
-    height: 26px;
-    width: 26px;
-    line-height: 26px;
-    font-size: 1.4rem;
-    color: #fff; }
-  .cd-multi-steps.text-top.count li:not(.current) em::before,
-  .cd-multi-steps.text-bottom.count li:not(.current) em::before {
-    /* steps not visited yet - counter color */
-    color: #7A9E9F; }
-  .cd-multi-steps.text-top.count li::after {
-    bottom: 11px; }
-  .cd-multi-steps.text-top.count li > * {
-    padding-bottom: 34px; }
-  .cd-multi-steps.text-bottom.count li::after {
-    top: 11px; }
-  .cd-multi-steps.text-bottom.count li > * {
-    padding-top: 34px; } }
 
 /*********************
 BOX SLIDER PLUGIN 
@@ -8382,7 +6010,7 @@ EVENT ORGANISER
     line-height: 1.5; }
   .event-list a {
     color: #4b6768; }
-    .event-list a.button, .event-list .so-widget-sow-cta .sow-cta-base .ow-button-base a, .so-widget-sow-cta .sow-cta-base .ow-button-base .event-list a {
+    .event-list a.button {
       margin: 0 0 1em 0; }
   .event-list .event-list-header {
     display: none; }
@@ -9706,7 +7334,7 @@ body.buddypress .page-title {
     color: #fff !important; }
 
 #buddypress button.ed_button,
-#buddypress .button.ed_button,
+#buddypress button.ed_button,
 #buddypress .post-type-archive-meeting .content-filter li.ed_button, .post-type-archive-meeting .content-filter
 #buddypress li.ed_button,
 #buddypress
@@ -9739,7 +7367,7 @@ body.buddypress .page-title {
   text-transform: none;
   font-weight: normal; }
   #buddypress button.ed_button:hover, #buddypress button.ed_button:focus,
-  #buddypress .button.ed_button:hover,
+  #buddypress button.ed_button:hover,
   #buddypress .post-type-archive-meeting .content-filter li.ed_button:hover, .post-type-archive-meeting .content-filter
   #buddypress li.ed_button:hover,
   #buddypress
@@ -9768,7 +7396,7 @@ body.buddypress .page-title {
   #buddypress li.ed_button:hover,
   #buddypress .so-widget-sow-cta .sow-cta-base .ow-button-base a.ed_button:hover, .so-widget-sow-cta .sow-cta-base .ow-button-base
   #buddypress a.ed_button:hover,
-  #buddypress .button.ed_button:focus,
+  #buddypress button.ed_button:focus,
   #buddypress .post-type-archive-meeting .content-filter li.ed_button:focus, .post-type-archive-meeting .content-filter
   #buddypress li.ed_button:focus,
   #buddypress
@@ -9824,7 +7452,7 @@ body.buddypress .page-title {
   float: none;
   margin: 0; }
 
-#buddypress .small .button, #buddypress .small .post-type-archive-meeting .content-filter li, .post-type-archive-meeting .content-filter #buddypress .small li, #buddypress .small
+#buddypress .small button, #buddypress .small .post-type-archive-meeting .content-filter li, .post-type-archive-meeting .content-filter #buddypress .small li, #buddypress .small
 .post-type-archive-proposal .content-filter li,
 .post-type-archive-proposal .content-filter #buddypress .small li, #buddypress .small
 .post-type-archive-summary .content-filter li,
@@ -9840,7 +7468,7 @@ body.buddypress .page-title {
 #buddypress .small .bp-primary-action,
 #buddypress .small .bp-secondary-action,
 #buddypress .small .group-button a,
-#buddypress .activity-meta .button,
+#buddypress .activity-meta button,
 #buddypress .activity-meta .post-type-archive-meeting .content-filter li, .post-type-archive-meeting .content-filter
 #buddypress .activity-meta li,
 #buddypress .activity-meta
@@ -9872,7 +7500,7 @@ body.buddypress .page-title {
 #buddypress .activity-meta .bp-primary-action,
 #buddypress .activity-meta .bp-secondary-action,
 #buddypress .activity-meta .group-button a,
-#buddypress .acomment-options .button,
+#buddypress .acomment-options button,
 #buddypress .acomment-options .post-type-archive-meeting .content-filter li, .post-type-archive-meeting .content-filter
 #buddypress .acomment-options li,
 #buddypress .acomment-options
@@ -9904,7 +7532,7 @@ body.buddypress .page-title {
 #buddypress .acomment-options .bp-primary-action,
 #buddypress .acomment-options .bp-secondary-action,
 #buddypress .acomment-options .group-button a,
-#buddypress .action .button,
+#buddypress .action button,
 #buddypress .action .post-type-archive-meeting .content-filter li, .post-type-archive-meeting .content-filter
 #buddypress .action li,
 #buddypress .action
@@ -9947,7 +7575,7 @@ body.buddypress .page-title {
   letter-spacing: normal;
   line-height: inherit;
   padding: 0 .5em 0 0; }
-  #buddypress .small .button:link, #buddypress .small .post-type-archive-meeting .content-filter li:link, .post-type-archive-meeting .content-filter #buddypress .small li:link, #buddypress .small
+  #buddypress .small button:link, #buddypress .small .post-type-archive-meeting .content-filter li:link, .post-type-archive-meeting .content-filter #buddypress .small li:link, #buddypress .small
   .post-type-archive-proposal .content-filter li:link,
   .post-type-archive-proposal .content-filter #buddypress .small li:link, #buddypress .small
   .post-type-archive-summary .content-filter li:link,
@@ -9959,7 +7587,7 @@ body.buddypress .page-title {
   .tax-meeting_type .content-filter li:link,
   .tax-meeting_type .content-filter #buddypress .small li:link, #buddypress .small
   .tax-proposal_status .content-filter li:link,
-  .tax-proposal_status .content-filter #buddypress .small li:link, #buddypress .small .so-widget-sow-cta .sow-cta-base .ow-button-base a:link, .so-widget-sow-cta .sow-cta-base .ow-button-base #buddypress .small a:link, #buddypress .small .button:visited, #buddypress .small .post-type-archive-meeting .content-filter li:visited, .post-type-archive-meeting .content-filter #buddypress .small li:visited, #buddypress .small
+  .tax-proposal_status .content-filter #buddypress .small li:link, #buddypress .small .so-widget-sow-cta .sow-cta-base .ow-button-base a:link, .so-widget-sow-cta .sow-cta-base .ow-button-base #buddypress .small a:link, #buddypress .small button:visited, #buddypress .small .post-type-archive-meeting .content-filter li:visited, .post-type-archive-meeting .content-filter #buddypress .small li:visited, #buddypress .small
   .post-type-archive-proposal .content-filter li:visited,
   .post-type-archive-proposal .content-filter #buddypress .small li:visited, #buddypress .small
   .post-type-archive-summary .content-filter li:visited,
@@ -9978,7 +7606,7 @@ body.buddypress .page-title {
   #buddypress .small .bp-secondary-action:visited,
   #buddypress .small .group-button a:link,
   #buddypress .small .group-button a:visited,
-  #buddypress .activity-meta .button:link,
+  #buddypress .activity-meta button:link,
   #buddypress .activity-meta .post-type-archive-meeting .content-filter li:link, .post-type-archive-meeting .content-filter
   #buddypress .activity-meta li:link,
   #buddypress .activity-meta
@@ -10007,7 +7635,7 @@ body.buddypress .page-title {
   #buddypress .activity-meta li:link,
   #buddypress .activity-meta .so-widget-sow-cta .sow-cta-base .ow-button-base a:link, .so-widget-sow-cta .sow-cta-base .ow-button-base
   #buddypress .activity-meta a:link,
-  #buddypress .activity-meta .button:visited,
+  #buddypress .activity-meta button:visited,
   #buddypress .activity-meta .post-type-archive-meeting .content-filter li:visited, .post-type-archive-meeting .content-filter
   #buddypress .activity-meta li:visited,
   #buddypress .activity-meta
@@ -10042,7 +7670,7 @@ body.buddypress .page-title {
   #buddypress .activity-meta .bp-secondary-action:visited,
   #buddypress .activity-meta .group-button a:link,
   #buddypress .activity-meta .group-button a:visited,
-  #buddypress .acomment-options .button:link,
+  #buddypress .acomment-options button:link,
   #buddypress .acomment-options .post-type-archive-meeting .content-filter li:link, .post-type-archive-meeting .content-filter
   #buddypress .acomment-options li:link,
   #buddypress .acomment-options
@@ -10071,7 +7699,7 @@ body.buddypress .page-title {
   #buddypress .acomment-options li:link,
   #buddypress .acomment-options .so-widget-sow-cta .sow-cta-base .ow-button-base a:link, .so-widget-sow-cta .sow-cta-base .ow-button-base
   #buddypress .acomment-options a:link,
-  #buddypress .acomment-options .button:visited,
+  #buddypress .acomment-options button:visited,
   #buddypress .acomment-options .post-type-archive-meeting .content-filter li:visited, .post-type-archive-meeting .content-filter
   #buddypress .acomment-options li:visited,
   #buddypress .acomment-options
@@ -10106,7 +7734,7 @@ body.buddypress .page-title {
   #buddypress .acomment-options .bp-secondary-action:visited,
   #buddypress .acomment-options .group-button a:link,
   #buddypress .acomment-options .group-button a:visited,
-  #buddypress .action .button:link,
+  #buddypress .action button:link,
   #buddypress .action .post-type-archive-meeting .content-filter li:link, .post-type-archive-meeting .content-filter
   #buddypress .action li:link,
   #buddypress .action
@@ -10135,7 +7763,7 @@ body.buddypress .page-title {
   #buddypress .action li:link,
   #buddypress .action .so-widget-sow-cta .sow-cta-base .ow-button-base a:link, .so-widget-sow-cta .sow-cta-base .ow-button-base
   #buddypress .action a:link,
-  #buddypress .action .button:visited,
+  #buddypress .action button:visited,
   #buddypress .action .post-type-archive-meeting .content-filter li:visited, .post-type-archive-meeting .content-filter
   #buddypress .action li:visited,
   #buddypress .action
@@ -10171,7 +7799,7 @@ body.buddypress .page-title {
   #buddypress .action .group-button a:link,
   #buddypress .action .group-button a:visited {
     color: #444; }
-  #buddypress .small .button:hover, #buddypress .small .post-type-archive-meeting .content-filter li:hover, .post-type-archive-meeting .content-filter #buddypress .small li:hover, #buddypress .small
+  #buddypress .small button:hover, #buddypress .small .post-type-archive-meeting .content-filter li:hover, .post-type-archive-meeting .content-filter #buddypress .small li:hover, #buddypress .small
   .post-type-archive-proposal .content-filter li:hover,
   .post-type-archive-proposal .content-filter #buddypress .small li:hover, #buddypress .small
   .post-type-archive-summary .content-filter li:hover,
@@ -10183,7 +7811,7 @@ body.buddypress .page-title {
   .tax-meeting_type .content-filter li:hover,
   .tax-meeting_type .content-filter #buddypress .small li:hover, #buddypress .small
   .tax-proposal_status .content-filter li:hover,
-  .tax-proposal_status .content-filter #buddypress .small li:hover, #buddypress .small .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover, .so-widget-sow-cta .sow-cta-base .ow-button-base #buddypress .small a:hover, #buddypress .small .button:focus, #buddypress .small .post-type-archive-meeting .content-filter li:focus, .post-type-archive-meeting .content-filter #buddypress .small li:focus, #buddypress .small
+  .tax-proposal_status .content-filter #buddypress .small li:hover, #buddypress .small .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover, .so-widget-sow-cta .sow-cta-base .ow-button-base #buddypress .small a:hover, #buddypress .small button:focus, #buddypress .small .post-type-archive-meeting .content-filter li:focus, .post-type-archive-meeting .content-filter #buddypress .small li:focus, #buddypress .small
   .post-type-archive-proposal .content-filter li:focus,
   .post-type-archive-proposal .content-filter #buddypress .small li:focus, #buddypress .small
   .post-type-archive-summary .content-filter li:focus,
@@ -10202,7 +7830,7 @@ body.buddypress .page-title {
   #buddypress .small .bp-secondary-action:focus,
   #buddypress .small .group-button a:hover,
   #buddypress .small .group-button a:focus,
-  #buddypress .activity-meta .button:hover,
+  #buddypress .activity-meta button:hover,
   #buddypress .activity-meta .post-type-archive-meeting .content-filter li:hover, .post-type-archive-meeting .content-filter
   #buddypress .activity-meta li:hover,
   #buddypress .activity-meta
@@ -10231,7 +7859,7 @@ body.buddypress .page-title {
   #buddypress .activity-meta li:hover,
   #buddypress .activity-meta .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover, .so-widget-sow-cta .sow-cta-base .ow-button-base
   #buddypress .activity-meta a:hover,
-  #buddypress .activity-meta .button:focus,
+  #buddypress .activity-meta button:focus,
   #buddypress .activity-meta .post-type-archive-meeting .content-filter li:focus, .post-type-archive-meeting .content-filter
   #buddypress .activity-meta li:focus,
   #buddypress .activity-meta
@@ -10266,7 +7894,7 @@ body.buddypress .page-title {
   #buddypress .activity-meta .bp-secondary-action:focus,
   #buddypress .activity-meta .group-button a:hover,
   #buddypress .activity-meta .group-button a:focus,
-  #buddypress .acomment-options .button:hover,
+  #buddypress .acomment-options button:hover,
   #buddypress .acomment-options .post-type-archive-meeting .content-filter li:hover, .post-type-archive-meeting .content-filter
   #buddypress .acomment-options li:hover,
   #buddypress .acomment-options
@@ -10295,7 +7923,7 @@ body.buddypress .page-title {
   #buddypress .acomment-options li:hover,
   #buddypress .acomment-options .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover, .so-widget-sow-cta .sow-cta-base .ow-button-base
   #buddypress .acomment-options a:hover,
-  #buddypress .acomment-options .button:focus,
+  #buddypress .acomment-options button:focus,
   #buddypress .acomment-options .post-type-archive-meeting .content-filter li:focus, .post-type-archive-meeting .content-filter
   #buddypress .acomment-options li:focus,
   #buddypress .acomment-options
@@ -10330,7 +7958,7 @@ body.buddypress .page-title {
   #buddypress .acomment-options .bp-secondary-action:focus,
   #buddypress .acomment-options .group-button a:hover,
   #buddypress .acomment-options .group-button a:focus,
-  #buddypress .action .button:hover,
+  #buddypress .action button:hover,
   #buddypress .action .post-type-archive-meeting .content-filter li:hover, .post-type-archive-meeting .content-filter
   #buddypress .action li:hover,
   #buddypress .action
@@ -10359,7 +7987,7 @@ body.buddypress .page-title {
   #buddypress .action li:hover,
   #buddypress .action .so-widget-sow-cta .sow-cta-base .ow-button-base a:hover, .so-widget-sow-cta .sow-cta-base .ow-button-base
   #buddypress .action a:hover,
-  #buddypress .action .button:focus,
+  #buddypress .action button:focus,
   #buddypress .action .post-type-archive-meeting .content-filter li:focus, .post-type-archive-meeting .content-filter
   #buddypress .action li:focus,
   #buddypress .action
@@ -10395,7 +8023,7 @@ body.buddypress .page-title {
   #buddypress .action .group-button a:hover,
   #buddypress .action .group-button a:focus {
     color: #4b6768 !important; }
-  #buddypress .small .button:before, #buddypress .small .post-type-archive-meeting .content-filter li:before, .post-type-archive-meeting .content-filter #buddypress .small li:before, #buddypress .small
+  #buddypress .small button:before, #buddypress .small .post-type-archive-meeting .content-filter li:before, .post-type-archive-meeting .content-filter #buddypress .small li:before, #buddypress .small
   .post-type-archive-proposal .content-filter li:before,
   .post-type-archive-proposal .content-filter #buddypress .small li:before, #buddypress .small
   .post-type-archive-summary .content-filter li:before,
@@ -10411,7 +8039,7 @@ body.buddypress .page-title {
   #buddypress .small .bp-primary-action:before,
   #buddypress .small .bp-secondary-action:before,
   #buddypress .small .group-button a:before,
-  #buddypress .activity-meta .button:before,
+  #buddypress .activity-meta button:before,
   #buddypress .activity-meta .post-type-archive-meeting .content-filter li:before, .post-type-archive-meeting .content-filter
   #buddypress .activity-meta li:before,
   #buddypress .activity-meta
@@ -10443,7 +8071,7 @@ body.buddypress .page-title {
   #buddypress .activity-meta .bp-primary-action:before,
   #buddypress .activity-meta .bp-secondary-action:before,
   #buddypress .activity-meta .group-button a:before,
-  #buddypress .acomment-options .button:before,
+  #buddypress .acomment-options button:before,
   #buddypress .acomment-options .post-type-archive-meeting .content-filter li:before, .post-type-archive-meeting .content-filter
   #buddypress .acomment-options li:before,
   #buddypress .acomment-options
@@ -10475,7 +8103,7 @@ body.buddypress .page-title {
   #buddypress .acomment-options .bp-primary-action:before,
   #buddypress .acomment-options .bp-secondary-action:before,
   #buddypress .acomment-options .group-button a:before,
-  #buddypress .action .button:before,
+  #buddypress .action button:before,
   #buddypress .action .post-type-archive-meeting .content-filter li:before, .post-type-archive-meeting .content-filter
   #buddypress .action li:before,
   #buddypress .action
@@ -10509,7 +8137,7 @@ body.buddypress .page-title {
   #buddypress .action .group-button a:before {
     margin-right: 4px;
     color: #323031; }
-  #buddypress .small .button.confirm:before, #buddypress .small .post-type-archive-meeting .content-filter li.confirm:before, .post-type-archive-meeting .content-filter #buddypress .small li.confirm:before, #buddypress .small
+  #buddypress .small button.confirm:before, #buddypress .small .post-type-archive-meeting .content-filter li.confirm:before, .post-type-archive-meeting .content-filter #buddypress .small li.confirm:before, #buddypress .small
   .post-type-archive-proposal .content-filter li.confirm:before,
   .post-type-archive-proposal .content-filter #buddypress .small li.confirm:before, #buddypress .small
   .post-type-archive-summary .content-filter li.confirm:before,
@@ -10521,7 +8149,7 @@ body.buddypress .page-title {
   .tax-meeting_type .content-filter li.confirm:before,
   .tax-meeting_type .content-filter #buddypress .small li.confirm:before, #buddypress .small
   .tax-proposal_status .content-filter li.confirm:before,
-  .tax-proposal_status .content-filter #buddypress .small li.confirm:before, #buddypress .small .so-widget-sow-cta .sow-cta-base .ow-button-base a.confirm:before, .so-widget-sow-cta .sow-cta-base .ow-button-base #buddypress .small a.confirm:before, #buddypress .small .button.leave-group:before, #buddypress .small .post-type-archive-meeting .content-filter li.leave-group:before, .post-type-archive-meeting .content-filter #buddypress .small li.leave-group:before, #buddypress .small
+  .tax-proposal_status .content-filter #buddypress .small li.confirm:before, #buddypress .small .so-widget-sow-cta .sow-cta-base .ow-button-base a.confirm:before, .so-widget-sow-cta .sow-cta-base .ow-button-base #buddypress .small a.confirm:before, #buddypress .small button.leave-group:before, #buddypress .small .post-type-archive-meeting .content-filter li.leave-group:before, .post-type-archive-meeting .content-filter #buddypress .small li.leave-group:before, #buddypress .small
   .post-type-archive-proposal .content-filter li.leave-group:before,
   .post-type-archive-proposal .content-filter #buddypress .small li.leave-group:before, #buddypress .small
   .post-type-archive-summary .content-filter li.leave-group:before,
@@ -10540,7 +8168,7 @@ body.buddypress .page-title {
   #buddypress .small .bp-secondary-action.leave-group:before,
   #buddypress .small .group-button a.confirm:before,
   #buddypress .small .group-button a.leave-group:before,
-  #buddypress .activity-meta .button.confirm:before,
+  #buddypress .activity-meta button.confirm:before,
   #buddypress .activity-meta .post-type-archive-meeting .content-filter li.confirm:before, .post-type-archive-meeting .content-filter
   #buddypress .activity-meta li.confirm:before,
   #buddypress .activity-meta
@@ -10569,7 +8197,7 @@ body.buddypress .page-title {
   #buddypress .activity-meta li.confirm:before,
   #buddypress .activity-meta .so-widget-sow-cta .sow-cta-base .ow-button-base a.confirm:before, .so-widget-sow-cta .sow-cta-base .ow-button-base
   #buddypress .activity-meta a.confirm:before,
-  #buddypress .activity-meta .button.leave-group:before,
+  #buddypress .activity-meta button.leave-group:before,
   #buddypress .activity-meta .post-type-archive-meeting .content-filter li.leave-group:before, .post-type-archive-meeting .content-filter
   #buddypress .activity-meta li.leave-group:before,
   #buddypress .activity-meta
@@ -10604,7 +8232,7 @@ body.buddypress .page-title {
   #buddypress .activity-meta .bp-secondary-action.leave-group:before,
   #buddypress .activity-meta .group-button a.confirm:before,
   #buddypress .activity-meta .group-button a.leave-group:before,
-  #buddypress .acomment-options .button.confirm:before,
+  #buddypress .acomment-options button.confirm:before,
   #buddypress .acomment-options .post-type-archive-meeting .content-filter li.confirm:before, .post-type-archive-meeting .content-filter
   #buddypress .acomment-options li.confirm:before,
   #buddypress .acomment-options
@@ -10633,7 +8261,7 @@ body.buddypress .page-title {
   #buddypress .acomment-options li.confirm:before,
   #buddypress .acomment-options .so-widget-sow-cta .sow-cta-base .ow-button-base a.confirm:before, .so-widget-sow-cta .sow-cta-base .ow-button-base
   #buddypress .acomment-options a.confirm:before,
-  #buddypress .acomment-options .button.leave-group:before,
+  #buddypress .acomment-options button.leave-group:before,
   #buddypress .acomment-options .post-type-archive-meeting .content-filter li.leave-group:before, .post-type-archive-meeting .content-filter
   #buddypress .acomment-options li.leave-group:before,
   #buddypress .acomment-options
@@ -10668,7 +8296,7 @@ body.buddypress .page-title {
   #buddypress .acomment-options .bp-secondary-action.leave-group:before,
   #buddypress .acomment-options .group-button a.confirm:before,
   #buddypress .acomment-options .group-button a.leave-group:before,
-  #buddypress .action .button.confirm:before,
+  #buddypress .action button.confirm:before,
   #buddypress .action .post-type-archive-meeting .content-filter li.confirm:before, .post-type-archive-meeting .content-filter
   #buddypress .action li.confirm:before,
   #buddypress .action
@@ -10697,7 +8325,7 @@ body.buddypress .page-title {
   #buddypress .action li.confirm:before,
   #buddypress .action .so-widget-sow-cta .sow-cta-base .ow-button-base a.confirm:before, .so-widget-sow-cta .sow-cta-base .ow-button-base
   #buddypress .action a.confirm:before,
-  #buddypress .action .button.leave-group:before,
+  #buddypress .action button.leave-group:before,
   #buddypress .action .post-type-archive-meeting .content-filter li.leave-group:before, .post-type-archive-meeting .content-filter
   #buddypress .action li.leave-group:before,
   #buddypress .action
@@ -10733,7 +8361,7 @@ body.buddypress .page-title {
   #buddypress .action .group-button a.confirm:before,
   #buddypress .action .group-button a.leave-group:before {
     color: #db3a34; }
-  #buddypress .small .button.member-ban:before, #buddypress .small .post-type-archive-meeting .content-filter li.member-ban:before, .post-type-archive-meeting .content-filter #buddypress .small li.member-ban:before, #buddypress .small
+  #buddypress .small button.member-ban:before, #buddypress .small .post-type-archive-meeting .content-filter li.member-ban:before, .post-type-archive-meeting .content-filter #buddypress .small li.member-ban:before, #buddypress .small
   .post-type-archive-proposal .content-filter li.member-ban:before,
   .post-type-archive-proposal .content-filter #buddypress .small li.member-ban:before, #buddypress .small
   .post-type-archive-summary .content-filter li.member-ban:before,
@@ -10749,7 +8377,7 @@ body.buddypress .page-title {
   #buddypress .small .bp-primary-action.member-ban:before,
   #buddypress .small .bp-secondary-action.member-ban:before,
   #buddypress .small .group-button a.member-ban:before,
-  #buddypress .activity-meta .button.member-ban:before,
+  #buddypress .activity-meta button.member-ban:before,
   #buddypress .activity-meta .post-type-archive-meeting .content-filter li.member-ban:before, .post-type-archive-meeting .content-filter
   #buddypress .activity-meta li.member-ban:before,
   #buddypress .activity-meta
@@ -10781,7 +8409,7 @@ body.buddypress .page-title {
   #buddypress .activity-meta .bp-primary-action.member-ban:before,
   #buddypress .activity-meta .bp-secondary-action.member-ban:before,
   #buddypress .activity-meta .group-button a.member-ban:before,
-  #buddypress .acomment-options .button.member-ban:before,
+  #buddypress .acomment-options button.member-ban:before,
   #buddypress .acomment-options .post-type-archive-meeting .content-filter li.member-ban:before, .post-type-archive-meeting .content-filter
   #buddypress .acomment-options li.member-ban:before,
   #buddypress .acomment-options
@@ -10813,7 +8441,7 @@ body.buddypress .page-title {
   #buddypress .acomment-options .bp-primary-action.member-ban:before,
   #buddypress .acomment-options .bp-secondary-action.member-ban:before,
   #buddypress .acomment-options .group-button a.member-ban:before,
-  #buddypress .action .button.member-ban:before,
+  #buddypress .action button.member-ban:before,
   #buddypress .action .post-type-archive-meeting .content-filter li.member-ban:before, .post-type-archive-meeting .content-filter
   #buddypress .action li.member-ban:before,
   #buddypress .action
@@ -10846,7 +8474,7 @@ body.buddypress .page-title {
   #buddypress .action .bp-secondary-action.member-ban:before,
   #buddypress .action .group-button a.member-ban:before {
     color: #db3a34; }
-  #buddypress .small .button.acomment-reply span, #buddypress .small .post-type-archive-meeting .content-filter li.acomment-reply span, .post-type-archive-meeting .content-filter #buddypress .small li.acomment-reply span, #buddypress .small
+  #buddypress .small button.acomment-reply span, #buddypress .small .post-type-archive-meeting .content-filter li.acomment-reply span, .post-type-archive-meeting .content-filter #buddypress .small li.acomment-reply span, #buddypress .small
   .post-type-archive-proposal .content-filter li.acomment-reply span,
   .post-type-archive-proposal .content-filter #buddypress .small li.acomment-reply span, #buddypress .small
   .post-type-archive-summary .content-filter li.acomment-reply span,
@@ -10862,7 +8490,7 @@ body.buddypress .page-title {
   #buddypress .small .bp-primary-action.acomment-reply span,
   #buddypress .small .bp-secondary-action.acomment-reply span,
   #buddypress .small .group-button a.acomment-reply span,
-  #buddypress .activity-meta .button.acomment-reply span,
+  #buddypress .activity-meta button.acomment-reply span,
   #buddypress .activity-meta .post-type-archive-meeting .content-filter li.acomment-reply span, .post-type-archive-meeting .content-filter
   #buddypress .activity-meta li.acomment-reply span,
   #buddypress .activity-meta
@@ -10894,7 +8522,7 @@ body.buddypress .page-title {
   #buddypress .activity-meta .bp-primary-action.acomment-reply span,
   #buddypress .activity-meta .bp-secondary-action.acomment-reply span,
   #buddypress .activity-meta .group-button a.acomment-reply span,
-  #buddypress .acomment-options .button.acomment-reply span,
+  #buddypress .acomment-options button.acomment-reply span,
   #buddypress .acomment-options .post-type-archive-meeting .content-filter li.acomment-reply span, .post-type-archive-meeting .content-filter
   #buddypress .acomment-options li.acomment-reply span,
   #buddypress .acomment-options
@@ -10926,7 +8554,7 @@ body.buddypress .page-title {
   #buddypress .acomment-options .bp-primary-action.acomment-reply span,
   #buddypress .acomment-options .bp-secondary-action.acomment-reply span,
   #buddypress .acomment-options .group-button a.acomment-reply span,
-  #buddypress .action .button.acomment-reply span,
+  #buddypress .action button.acomment-reply span,
   #buddypress .action .post-type-archive-meeting .content-filter li.acomment-reply span, .post-type-archive-meeting .content-filter
   #buddypress .action li.acomment-reply span,
   #buddypress .action

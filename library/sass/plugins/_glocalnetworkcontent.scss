@@ -94,11 +94,11 @@ article.home-feature div.bx-wrapper .bx-viewport {
         color: $anchor-hover;
     }
     .bx-prev {
-        @extend .fa-chevron-left;
+        @extend %fa-chevron-left;
         left: -40px;
     }
     .bx-next {
-        @extend .fa-chevron-right;
+        @extend %fa-chevron-right;
         right: -40px;
     }
 }

@@ -73,29 +73,29 @@
         line-height: 30px; // needed to vertically center icons
         @include font-icon-base(); 
     }
-    .facebook a {
+    %facebook a {
       @include flip-button($tertiary); 
-      @extend .fa-facebook;
+      @extend %fa-facebook;
     }
     .twitter a {
       @include flip-button($tertiary); 
-      @extend .fa-twitter;
+      @extend %fa-twitter;
     }
     .github a {
       @include flip-button($primary); 
-      @extend .fa-github;
+      @extend %fa-github;
     }
     .email a {
       @include flip-button($success); 
-      @extend .fa-mail;
+      @extend %fa-mail;
     }
     .rss a {
       @include flip-button($secondary); 
-      @extend .fa-rss;
+      @extend %fa-rss;
     }
     .network a {
       @include flip-button($black); 
-      @extend .fa-sitemap;
+      @extend %fa-sitemap;
     }
     
     // child themes
@@ -124,7 +124,7 @@
     @include font-size(30);
     // @include flip-button($black); 
     @include font-icon-base(); 
-    @extend .fa-creative-commons;
+    @extend %fa-creative-commons;
   }
   @include breakpoint(md) {
     @include font-size(12);

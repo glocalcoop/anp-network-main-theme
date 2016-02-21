@@ -27,7 +27,7 @@ MEETINGS ARCHIVE & SINGLE STYLES
         }
 
         li {
-            @extend .button;
+            @extend %button;
 
             display: block;
             margin-bottom: .25em;
@@ -95,14 +95,14 @@ MEETINGS ARCHIVE & SINGLE STYLES
                 @extend %fa-before;
 
                 &.agenda-link {
-                    @extend .fa-list;
+                    @extend %fa-list;
                 }
                 &.summary-link,
                 &.meeting-link {
-                    @extend .fa-clipboard;
+                    @extend %fa-clipboard;
                 }
                 &.proposal-link {
-                    @extend .fa-gavel;
+                    @extend %fa-gavel;
                 }
 
                 &::before {
@@ -120,7 +120,7 @@ MEETINGS ARCHIVE & SINGLE STYLES
             }
 
             @extend %fa-before;
-            @extend .fa-tags;
+            @extend %fa-tags;
 
             &::before {
                 margin-right: .25em;
@@ -225,14 +225,14 @@ MEETINGS ARCHIVE & SINGLE STYLES
                     @extend %fa-before;
 
                     &.agenda-link {
-                        @extend .fa-list;
+                        @extend %fa-list;
                     }
                     &.summary-link,
                     &.meeting-link {
-                        @extend .fa-clipboard;
+                        @extend %fa-clipboard;
                     }
                     &.proposal-link {
-                        @extend .fa-gavel;
+                        @extend %fa-gavel;
                     }
 
                     &::before {

@@ -240,7 +240,7 @@ styles and our css is cleaner and more scalable. */
     }
     .anchor-menu {
         @include font-icon-base(); 
-        @extend .fa-angle-down;
+        @extend %fa-angle-down;
         font-size: 14px;
         line-height: 1;
         display: inline-block;
@@ -263,7 +263,7 @@ styles and our css is cleaner and more scalable. */
     }
     .anchor-search {
         @include font-icon-base(); 
-        @extend .fa-search;
+        @extend %fa-search;
         @include font-size($delta); 
         display: block;
         padding: 0;
@@ -381,7 +381,7 @@ styles and our css is cleaner and more scalable. */
     .menu-item-has-children {
         > a {
             @include font-icon-base(); 
-            @extend .fa-angle-down;
+            @extend %fa-angle-down;
         }
         > a:before {
             float: right;
@@ -522,7 +522,7 @@ $f-height: 2.5em; // set variable for this menu
             &.is-on {
                 @include font-icon-base(); 
                 @include font-size($zeta);
-                @extend .fa-angle-down;
+                @extend %fa-angle-down;
                 background: $anchor-color;
                 color: $white;
                 position: absolute;

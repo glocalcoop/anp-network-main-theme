@@ -115,7 +115,7 @@ select {
     }
     #searchsubmit {
         @include font-icon-base(); 
-        @extend .fa-search ;
+        @extend %fa-search ;
         @include font-size(20);
         font-weight: normal;
         line-height: 30px;
