@@ -4,9 +4,11 @@
 ******************************************************************/
 
 form {
-    background: $base8;
+    background: $base9;
     padding: 20px;
-    @include breakpoint(sm) {padding: 40px;}        
+    @include breakpoint(sm) {
+        padding: 40px;
+    }        
     p {
         margin-bottom: .25em; // since Wordpress wraps everything in paragraph tags
     }
@@ -22,16 +24,17 @@ input[type="text"],
 input[type="password"],
 input[type='email'] {
     padding: 5px;
+    @include font-size($zeta);
 }
 
 input[type='submit'] {
     @include transition(all 0.2s ease-in-out);
     text-transform: uppercase; 
-        letter-spacing: $tracking;
+    letter-spacing: $tracking;
     -webkit-appearance: button;
     cursor: pointer;
     border: 0;
-    border-radius: 5px;
+    border-radius: $base-border-radius;
     background: $base2;
     color: $white;
     line-height: 1.2;
@@ -44,6 +47,17 @@ input[type='submit'] {
     }
 }
 
+select {
+    @include font-size($milli);
+    display: inline-block;
+    margin-bottom: 0;
+    background-color: $hr-color;
+    border: 1px solid $hr-color;
+    option {
+        padding: .25em;
+    }
+}
+
 /******************************************************************
  SEARCH FORM 
 ******************************************************************/
@@ -53,7 +67,11 @@ input[type='submit'] {
     width: 100%;
     margin: 0;
     padding: 0;
-    @include breakpoint(md) {display: inline-block; width: auto; float: right; }
+    @include breakpoint(md) {
+        display: inline-block; 
+        width: auto; 
+        float: right;
+    }
 }
 
 // body gets .js class on load
@@ -64,7 +82,9 @@ input[type='submit'] {
     &.active {
     	max-height: 50px;
     }
-    @include breakpoint(md) {max-height: none;}
+    @include breakpoint(md) {
+        max-height: none;
+    }
 }
 
 // form element
@@ -85,11 +105,17 @@ input[type='submit'] {
         padding: 5px;
         margin: 0;
         vertical-align: top;
-        @include breakpoint(md) {@include font-size(14); width: 140px; height: 24px; line-height: 24px; padding: 2px 5px;}
+        @include breakpoint(md) {
+            @include font-size(14); 
+            width: 140px; 
+            height: 24px; 
+            line-height: 24px; 
+            padding: 2px 5px;
+        }
     }
     #searchsubmit {
-        @include font-icon-base($family:"ios7-icon"); 
-        @extend %ios7-search;
+        @include font-icon-base(); 
+        @extend .fa-search ;
         @include font-size(20);
         font-weight: normal;
         line-height: 30px;
@@ -100,8 +126,13 @@ input[type='submit'] {
         vertical-align: top;
         background: $base3;
         border: 1px solid $base3;
-        border-radius: 0;
-        @include breakpoint(md) {@include font-size(16); height: 24px; width: 24px; line-height: 24px; }
+        border-radius: $base-border-radius;
+        @include breakpoint(md) {
+            @include font-size(16); 
+            height: 24px; 
+            width: 24px; 
+            line-height: 24px;
+        }
         &:hover {
             background: $bg-content;
             border-color: $base6;
