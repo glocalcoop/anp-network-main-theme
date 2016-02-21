@@ -18,17 +18,14 @@ Text Domain: anp-network-main
 @import "partials/normalize";
 
 // PARTIALS
-@import "partials/bourbon/bourbon";
-@import "partials/neat/neat";
+@import "partials/base-variables";
+@import "partials/bourbon/app/assets/stylesheets/bourbon";
+@import "partials/neat/app/assets/stylesheets/neat";
 @import "partials/custom";
 @import "partials/config";
 
 // WEB FONTS
 @import "partials/webfonts";
-@import "partials/font-awesome/font-awesome";
-@import "partials/entypo";
-@import "partials/ios7icon";
-
 
 // MODULES
 @import "modules/typography";
@@ -47,19 +44,21 @@ Text Domain: anp-network-main
 @import "modules/forms";
 @import "modules/comments";
 @import "modules/alerts";
+@import "modules/breadcrumb";
 
 
 // // PLUGINS/ADD-ONS
-@import "plugins/biographia";
+// @import "plugins/biographia";
 @import "plugins/bxslider";
 @import "plugins/easymail";
 //@import "plugins/eventmanager";
-@import "plugins/formmanager";
+// @import "plugins/formmanager";
 @import "plugins/thememylogin";
 @import "plugins/meetings";
 @import "plugins/handbook";
 @import "plugins/glocalnetworkcontent";
 @import "plugins/eventorganiser";
+@import "plugins/buddypress";
 @import "plugins/siteorigin";
 
 
@@ -69,5 +68,6 @@ Text Domain: anp-network-main
 @import "anp/sidebar";
 @import "anp/overview";
 @import "theme/default";
+@import "partials/shame";
 
 
