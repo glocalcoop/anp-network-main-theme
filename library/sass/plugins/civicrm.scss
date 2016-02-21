@@ -41,7 +41,7 @@
 	.cancel {
 		@include transition(all 0.2s ease-in-out);
 		text-transform: uppercase; 
-			letter-spacing: $tracking;
+		letter-spacing: $tracking;
 		-webkit-appearance: button;
 		cursor: pointer;
 		border: 0;
