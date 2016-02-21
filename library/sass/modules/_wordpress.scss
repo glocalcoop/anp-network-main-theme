@@ -43,10 +43,15 @@ style a page via class
 	@include font-size($zeta);
     line-height: 1.5;
 }
-.meta {
+.meta,
+.meta * {
 	@include font-size($nano);
 	color: $quiet-color;
 	text-transform: uppercase;
+	a {
+		@include font-size($nano);
+		color: $anchor-color;
+	}
 }
 
 .screen-reader-text {
