@@ -9106,45 +9106,6 @@ ul.event-categories {
     display: inline;
     margin-right: 20px; }
 
-.widget_em_calendar .widgettitle, .widget_em_calendar article.handbook .table-of-contents h3, article.handbook .table-of-contents .widget_em_calendar h3, .widget_em_calendar article.handbook .table-of-contents .news-list .entry-title, article.handbook .table-of-contents .news-list .widget_em_calendar .entry-title, .widget_em_calendar .news-list article.handbook .table-of-contents .entry-title, .news-list article.handbook .table-of-contents .widget_em_calendar .entry-title, .widget_em_calendar article.handbook .table-of-contents
-.news-list .post-title, article.handbook .table-of-contents
-.news-list .widget_em_calendar .post-title, .widget_em_calendar
-.news-list article.handbook .table-of-contents .post-title,
-.news-list article.handbook .table-of-contents .widget_em_calendar .post-title, .widget_em_calendar article.handbook .table-of-contents
-.home .widget_glocal_network_posts_widget .entry-title, article.handbook .table-of-contents
-.home .widget_glocal_network_posts_widget .widget_em_calendar .entry-title, .widget_em_calendar
-.home .widget_glocal_network_posts_widget article.handbook .table-of-contents .entry-title,
-.home .widget_glocal_network_posts_widget article.handbook .table-of-contents .widget_em_calendar .entry-title, .widget_em_calendar article.handbook .table-of-contents
-.home .widget_glocal_network_posts_widget .post-title, article.handbook .table-of-contents
-.home .widget_glocal_network_posts_widget .widget_em_calendar .post-title, .widget_em_calendar
-.home .widget_glocal_network_posts_widget article.handbook .table-of-contents .post-title,
-.home .widget_glocal_network_posts_widget article.handbook .table-of-contents .widget_em_calendar .post-title, .widget_em_calendar article.handbook .table-of-contents .home-modules .events-list .all-events-link, article.handbook .table-of-contents .home-modules .events-list .widget_em_calendar .all-events-link, .widget_em_calendar .home-modules .events-list article.handbook .table-of-contents .all-events-link, .home-modules .events-list article.handbook .table-of-contents .widget_em_calendar .all-events-link, .widget_em_calendar article.handbook .table-of-contents
-.home-modules .widget_em_widget ul .all-events-link, article.handbook .table-of-contents
-.home-modules .widget_em_widget ul .widget_em_calendar .all-events-link, .widget_em_calendar
-.home-modules .widget_em_widget ul article.handbook .table-of-contents .all-events-link,
-.home-modules .widget_em_widget ul article.handbook .table-of-contents .widget_em_calendar .all-events-link {
-  display: none; }
-
-table.em-calendar {
-  width: 100%;
-  margin-bottom: 20px; }
-  table.em-calendar a, table.em-calendar a:hover {
-    padding: 0; }
-  table.em-calendar td.eventful-today,
-  table.em-calendar td.eventless-today {
-    background: transparent !important;
-    border: 1px solid #fff; }
-  table.em-calendar td.eventless-pre,
-  table.em-calendar td.eventless-post {
-    color: #444; }
-  table.em-calendar td.eventful a,
-  table.em-calendar td.eventful-today a {
-    color: white;
-    background: #4b6768; }
-    table.em-calendar td.eventful a:hover,
-    table.em-calendar td.eventful-today a:hover {
-      background-color: #608586; }
-
 .all-events-link {
   text-transform: uppercase;
   letter-spacing: 1px;
