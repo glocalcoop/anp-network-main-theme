@@ -1,0 +1,728 @@
+// BUDDYPRESS STYLES
+
+body.buddypress {
+
+    .page-title {
+        margin-bottom: 35px;
+    }
+
+}
+
+// #buddypress .activity-comments > ul > li {
+//             border-top: 1px solid $hr-color;
+//         }
+
+#buddypress {
+
+    // Headings
+
+    h2,
+    h3,
+    h4 {
+        padding-bottom: .25em;
+        margin-bottom: .25em;
+        border-bottom: 1px solid $hr-alt;
+    }
+
+    h2 {
+        @include font-size($gamma);
+        color: $secondary;
+    }
+
+    h3,
+    h4 {
+        @include font-size($delta);
+        margin-top: 1em;
+    }
+
+    .item-list-tabs + h2 {
+        margin-top: 1em;
+    }
+
+    p {
+        br {
+            margin-bottom: .5em;
+        }
+    }
+
+    label,
+    .label {
+        @include font-size($zeta);
+        color: darken($secondary, 20%);
+    }
+
+    hr {
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    // Navigation Menus
+    .item-list-tabs:not(#group-create-tabs),
+    .bp-avatar-nav {
+        margin-top: .25em;
+        ul {
+            @include inline-list();
+            width: 100%;
+            max-width: 100%;
+            background-color: $panel-bg-color;
+            border-top: 1px solid rgba(0,0,0,.1);
+            li {
+                padding: .25em .5em;
+                margin-bottom: 0;
+                // border-top: 1px solid rgba(0,0,0,.1);
+                // border-bottom: 1px solid rgba(0,0,0,.1);
+                border-radius: $base-border-radius;
+                text-align: center;
+                background-color: $secondary;
+                a {
+                    display: block;
+                    color: $white;
+
+                    span {
+                        @include badge();
+                        font-size: $nano;
+                    }
+                }
+
+                &:hover,
+                &:focus {
+                    background-color: darken($secondary, 10%);
+                }
+
+                &:first-child {
+                    border-left: 1px solid rgba(0,0,0,.1);
+                }
+
+                &:not(:last-child) {
+                    border-right: 1px solid rgba(0,0,0,.1);
+                }
+
+
+                &.selected,
+                &.current {
+                    background-color: $primary;
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .bp-avatar-nav {
+        li {
+            a {
+                color: $white;
+                text-decoration: none;
+            }
+            &.current {
+                a {
+                    outline: none;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    #subnav.item-list-tabs {
+        ul {
+            border: 1px solid $hr-color;
+            width: inherit;
+            li {
+                background-color: white;
+                &.filter {
+                    margin-bottom: 0;
+                }
+                &:hover,
+                &:focus {
+                    background-color: transparent;
+                }
+                &.last {}
+
+                a {
+                    color: $anchor-color;
+                }
+
+                &.selected,
+                &.current {
+                    background-color: $secondary;
+                    a {
+                        color: $white;
+                    }
+                }
+
+            }
+        }
+    }
+
+    #group-create-tabs {
+        ul {
+            @extend .breadcrumb;
+        }
+    }
+
+    #item-header {
+        @include direction-context(right-to-left) {
+            #item-actions {
+                @include span-columns(5);
+            }
+        }
+        #item-actions {
+            @include card($background: $base9);
+            ul {
+                @include inline-list();
+            }
+        }
+        #item-header-avatar {}
+        #item-header-content,
+        .activity-content {
+            .highlight {
+                @include badge($info, .8rem);
+            }
+            .activity,
+            .activity-time-since {
+                @extend .meta;
+            }
+
+            #item-buttons {
+                @include button-group();
+
+                .leave-group {
+                    background-color: $danger;
+                    color: $white;
+                }
+            }
+            
+        }
+        #item-meta {
+            margin-top: 1.5em;
+        }
+    }
+
+    .item-body {
+        hr {
+            display: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    // #groups-directory-form,
+    // #members-directory-form,
+    // #group-settings-form {
+    //     background-color: transparent;
+    //     padding: 0;
+    // }
+
+    // Lists
+    .radio,
+    .checkbox,
+    .dir-list,
+    .activity,
+    .groups,
+    #groupblog-member-roles {
+        ul {
+          @include no-bullets();
+
+          li {
+            &:not(:last-child) {
+                margin-bottom: .25em;
+                padding-bottom: .25em;
+                border-bottom: 1px solid $base9;
+            }
+
+          }
+
+        }
+    }
+
+    .entry-content ul,
+    .bp-avatar-nav ul,
+    ul#groupblog-details,
+    ul#invite-anyone-group-list {
+        @include no-bullets();
+    }
+
+    ol#invite-anyone-steps {
+        margin-left: 0;
+        padding: 0 0 0 1em;
+    }
+
+
+    .radio,
+    .checkbox {
+        strong {
+            @extend label;
+        }
+
+        &> label {
+            display: block;
+        }
+    }
+
+    .checkbox {
+        input[type='radio'] {
+            margin-right: 5px;
+        }
+    }
+
+    .gbd-value em {
+        font-family: $mono;
+    }
+
+    #groupblog-member-options {
+        &> label {
+            display: block;
+        }
+    }
+
+    // Tables
+    table {
+        width: 100%;
+        td,
+        th {
+            padding: .25em;
+        }
+        td {
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+        thead {
+            tr {
+                background-color: $panel-bg-color;
+                color: $secondary;
+                text-align: center;
+            }
+
+            td,
+            th {}        
+        }
+        tbody {
+            tr {
+                // &:nth-child(even) {
+                //     background-color: $panel-bg-color;
+                // }
+                &:not(:last-child) {
+                    border-bottom: 1px solid $panel-bg-color;
+                }
+            }
+            td {
+                &.label {
+                    width: 75%;
+                }
+            }
+        }
+        tfoot {
+            tr {}
+            td {}
+        }
+    }
+
+
+    // Filters
+    .filter,
+    .sort {
+
+        &:hover,
+        &:focus {}
+        
+        label {
+            @include font-size($milli);
+            display: inline-block;
+            margin-bottom: 0;
+        }
+    }
+
+    #docs-filter-meta {
+        a {
+            @include font-size($milli);
+            display: inline-block;
+            padding: .25em .5em;
+            border: 1px solid $hr-color;
+            margin-left: 0;
+            &:hover,
+            &:focus {
+                background-color: $hr-color;
+
+            }
+
+        }
+    }
+
+
+    // FORM ELEMENTS
+    // Buttons
+    #whats-new-form {
+        // @extend %clearfix;
+
+        #whats-new-options {}
+    }
+    form {
+        margin-top: 1em;
+        padding: 1em;
+        border: 1px solid $hr-color;
+        background-color: transparent;
+
+        @extend %clearfix;
+    }
+
+    .left-menu {
+        ul {
+            @include no-bullets();
+        }
+
+        p {
+            @extend .label;
+        }
+
+        #invite-anyone-member-list {
+            border-radius: $base-border-radius;
+        }
+    }
+
+
+
+    input[type="submit"],
+    input[type="button"]:not(.ed_button),
+    button,
+    a.action {
+        @include button();
+    }
+
+    button.ed_button,
+    .button.ed_button,
+    .mce-btn button {
+        text-transform: none;
+        font-weight: normal;
+        &:hover,
+        &:focus {
+            color: $text-color;
+        }
+    }
+
+    .mce-btn button {
+        padding: 0;
+        border: 1px solid $hr-color;
+        background-color: $panel-bg-color;
+        border-radius: 3px;
+    }
+
+    #previous-next {
+        clear: left;
+        margin-top: 1em;
+
+        input#group-creation-previous {
+            background-color: $info;
+        }
+    }
+
+    a.action.safe {
+        background-color: $info;
+    }
+
+    input[type="text"],
+    textarea {
+        display: block;
+    }
+
+    #bp-create-doc-button {
+        float: none;
+        margin: 0;
+    }
+
+    .small,
+    .activity-meta,
+    .acomment-options,
+    .action {
+        .button,
+        .bp-primary-action,
+        .bp-secondary-action,
+        .group-button a {
+            @include button-text();
+
+            &.confirm,
+            &.leave-group {
+                &:before {
+                    @extend .fa-times;
+                    color: $danger;
+                }
+            }
+
+            &.member-ban {
+                &:before {
+                    @extend .fa-ban;
+                    color: $danger;
+                }
+            }
+            &.member-promote-to-mod,
+            &.member-promote-to-admin {
+                &:before {
+                    @extend .fa-level-up;
+                }
+            }
+            &.admin-demote-to-member {
+                &:before {
+                    @extend .fa-level-down;
+                }
+            }
+
+            &.acomment-reply {
+                &:before {
+                    @extend .fa-reply;
+                }
+                span {
+                    @include badge($font-size: $nano);
+                }
+            }
+            &.fav {
+                &:before {
+                    @extend .fa-heart;
+                }
+            }
+        }
+    }
+
+    .dir-search {
+        input {
+            display: inline-block;
+        }
+    }
+
+    textarea {
+        height: 50px;
+        min-height: 50px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    // Info Messages
+    .info,
+    #message,
+    .bbp-template-notice,
+    .bbp-no-topic  {
+
+        p {
+            @extend .alert-info;
+            border: none;
+            color: $white;
+        }
+
+        &.updated p {
+            @extend .alert-success;
+        }
+        
+    }
+
+    .gemail_icon {
+        background-image: none !important;
+        margin-left: 0;
+        padding-left: 0 !important;
+        font-weight: normal;
+
+        &:before {
+            margin-right: 6px;
+            @extend .fa;
+            @extend .fa-envelope;
+
+        }
+    }
+
+    // Groups
+
+    #group-settings-form {
+        &> p {
+            // @extend .alert-info;
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    .dir-list {
+        .item-avatar {}
+    }
+
+    .bp-widget {
+        ul {
+            @include inline-list();
+        }
+    }
+
+    // Docs
+    .doc-content {
+        border: none;
+        padding: 0;
+    }
+
+    .docs-info-header {
+        margin-top: .5em;
+        background-color: $panel-bg-color;
+    }
+
+
+
+    // Members
+
+
+
+    // Activity/Comments
+
+    .activity {
+        margin-top: 1.5em;
+    }
+
+    // Group, Member, Comments Lists
+    .activity-list,
+    .dir-list,
+    .groups {
+        &>li {
+            border-left: $tertiary;
+            &:nth-child(even) {
+                background-color: $light-gray;
+            }
+        }
+        .mini {}
+
+        .activity-avatar,
+        .acomment-avatar,
+        .item-avatar {
+            float: left;
+            margin-right: 1em;
+        }
+
+
+        .activity-header,
+        .acomment-meta,
+        .item-meta {
+            @extend .meta;
+            img {
+                margin-bottom: 0;
+            }
+        }
+
+        .activity-meta {}
+
+        .item,
+        .acomment-content {
+            margin-top: .25em;
+
+            a {
+                color: $tertiary;
+            }
+        }
+
+        .activity-comments {
+            border-top: 1px solid $hr-color;
+            
+            ul {
+                margin-left: 2em;
+                padding-top: .5em;
+
+                &:not(:first-child) {
+                    margin-top: .5em;
+                    padding-top: .25em;
+                    border-top: 1px solid $hr-color;
+                }
+
+
+            }
+
+            &> ul {
+                border-left: 1px solid $hr-color;
+                padding-left: .5em; 
+                background-color: $panel-bg-color;
+
+                &> li:not(:first-child) {
+                    border-top: 1px solid $hr-color;
+                    padding-top: .5em; 
+                    background-color: $panel-bg-color;
+                }
+            }
+
+        }
+
+        .group-button {}
+
+        p {
+            @include font-size($zeta);
+        }
+
+
+    }
+
+    #item-body {
+        h3,
+        p {}
+
+        h3 {}
+        p {
+            @extend .label;
+        }
+    }
+
+
+    // Avatars
+    img.avatar {
+        padding: 2px;
+        border: 1px solid $hr-color;
+    }
+
+    .activity-header {
+        img.avatar {
+            padding: 0 2px;
+            border: none;
+        }
+    }
+
+    .odd {}
+    .public {
+        img.avatar {
+            border-color: $warning;
+        }
+    }
+    .is-admin {
+        img.avatar {
+            border-color: $danger;
+        }
+    }
+    .is-member {
+        img.avatar {
+            border-color: $success;
+        }
+    }
+    .group-has-avatar {}
+
+
+
+    /// SHAME
+
+    // The BuddyPress Documents plugin adds styles to header, making them difficult to override
+    .toggleable {
+        &.toggle-open {
+            .toggle-switch {
+                border-radius: $base-border-radius !important;
+                border-color: $hr-color !important;
+            }
+        }
+
+        .toggle-content {
+            border-color: $hr-color !important;
+        }
+    }
+
+
+    .bbp-template-notice,
+    .bbp-no-topic  {
+
+        p {
+            color: $white !important;
+        }
+        
+    }
+
+}
+
+
