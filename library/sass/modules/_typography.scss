@@ -16,14 +16,6 @@ body {
 }
 
 
-// FONT SIZING
-// http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
-
-@mixin font-size($size: 16){
-  font-size: $size + px;
-  font-size: $size / 16 + rem;
-}
-
 
 // HEADERS
 // note: use only BOTTOM margins for spacing, for easier management, a la @csswizardry

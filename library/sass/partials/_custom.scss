@@ -10,6 +10,14 @@
   &:nth-child(#{$nth}+1) { clear: none }
 }
 
+// FONT SIZING
+// http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+
+@mixin font-size($size: 16){
+  font-size: $size + px;
+  font-size: $size / 16 + rem;
+}
+
 
 // RWD BREAKPOINTS 
 // mobile first! so you only have to use floats etc in larger sizes
@@ -34,31 +42,9 @@
 }
 
 
-
-// BUTTON THAT FLIPS BG/TEXT COLORS ON HOVER
-
-@mixin flip-button($color: $primary){
-  background: $color;
-  border-color: $color;
-  color: $white !important;
-  &:hover,
-  &:focus {
-    background: $bg-content;
-    color: $color !important;
-  }
-}
-
-@mixin badge($color: $warning, $font-size: $nano) {
-  @include font-size($font-size);
-  background-color: $color;
-  border-radius: 10px;
-  color: $white;
-  display: inline-block;
-  line-height: 1;
-  min-width: 10px;
-  padding: 3px 7px;
-}
-
+/**
+ * Lists
+ */
 @mixin no-bullets() {
   margin: 0;
   padding: 0;
@@ -80,6 +66,86 @@
   }
 }
 
+@mixin inline-flex-list($direction: row, $wrap: wrap, $align: space-between) {
+  @include no-bullets();
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  li {
+    display: flex;
+    align-items: $align;
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Navigation
+ */
+@mixin tab-nav($color: $white, $bg-color: $default, $active-color: $white, $active-bg-color: $primary, $border-color: rgba(0,0,0,.1)) {
+  ul {
+    @include inline-list();
+    width: 100%;
+
+    li {
+      a {
+        display: block;
+        padding: .25em .5em;
+        background-color: $bg-color;
+        color: $color;
+        &:hover,
+        &:focus {
+          background-color: darken($bg-color, 20%);
+        }
+
+        &:not(:last-child) {
+          border-right: 1px solid $border-color;
+        }
+      }
+
+      &:active a,
+      &.current a,
+      &.selected a {
+        background-color: $active-bg-color;
+        color: $active-color;
+      }
+    }
+  }
+  
+}
+
+@mixin flex-tab-nav($color: $white, $bg-color: $default, $active-color: $white, $active-bg-color: $primary, $border-color: rgba(0,0,0,.1), $direction: row, $wrap: wrap, $align: space-between) {
+  ul {
+    @include inline-flex-list($direction, $wrap, $align);
+    li {
+      a {
+        display: block;
+        padding: .5em .75em;
+        background-color: $bg-color;
+        color: $color;
+        &:hover,
+        &:focus {
+          background-color: darken($bg-color, 20%);
+        }
+
+        &:not(:last-child) {
+          border-right: 1px solid $border-color;
+        }
+      }
+
+      &:active a,
+      &.current a,
+      &.selected a {
+        background-color: $active-bg-color;
+        color: $active-color;
+      }
+
+    }
+  }
+}
+
+/**
+ * Modules
+ */
 @mixin card($background: transparent, $border: rgba(0,0,0,.1), $color: $text-color) {
   border: 1px solid $border;
   padding: 0.4em 1.2em;
@@ -94,7 +160,10 @@
   }
 }
 
-@mixin button($font-size: $milli) {
+/**
+ * Buttons
+ */
+@mixin button($font-size: $milli, $color: $white, $bg-color: $default) {
 
   @include transition(all 0.25s ease);
   @include font-size($font-size);
@@ -105,22 +174,22 @@
   padding: .75em 3em;
   text-align: center;
   border: 0;
-  background: $anchor-color;
-  color: $white;
+  background: $bg-color;
+  color: $color;
   display: inline-block;
   border-radius: $base-border-radius;
   &:link,
   &:visited {
-    color: $white;
+    color: $color;
   }
   &:hover,
   &:focus {
-    background: lighten($anchor-color, 10);
-    color: $white !important;
+    background: lighten($bg-color, 10);
+    color: $color !important;
   }
 }
 
-@mixin button-text($font-size: $milli, $color: $text-color) {
+@mixin button-text($font-size: $milli, $color: $text-color, $icon: cog) {
 
   @include font-size($font-size);
   font-weight: normal;
@@ -143,7 +212,7 @@
 
   &:before {
     @extend %fa;
-    @extend %fa-cog;
+    @extend %fa-#{$icon};
     margin-right: 4px;
     color: $default;
   }
@@ -211,6 +280,34 @@
 
 }
 
+/**
+ * Elements
+ */
+@mixin flip-button($color: $primary){
+  background: $color;
+  border-color: $color;
+  color: $white !important;
+  &:hover,
+  &:focus {
+    background: $bg-content;
+    color: $color !important;
+  }
+}
+
+@mixin badge($color: $default, $font-size: $nano) {
+  @include font-size($font-size);
+  background-color: $color;
+  border-radius: 10px;
+  color: $white;
+  display: inline-block;
+  line-height: 1;
+  min-width: 10px;
+  padding: 3px 7px;
+}
+
+/**
+ * Utilities
+ */
 @mixin center($xy:xy) {
   @if $xy == xy {
     left: 50%;
@@ -250,8 +347,9 @@
 }
 
 
-// CLEARFIX
-
+/**
+ * Extends
+ */
 // for old markup w/clearfix class:
 .clearfix:after {
   content: "";
@@ -296,28 +394,34 @@
 }
 
 %button {
-    @include transition(all 0.25s ease);
-    @include font-size($milli);
-    text-transform: uppercase; 
-    letter-spacing: $tracking-loose;
-    line-height: 1.2;
-    font-weight: 700;
-    padding: .75em 3em;
-    text-align: center;
-    border: 0;
-    background: $anchor-color;
-    color: $white;
-    display: inline-block;
-    border-radius: $base-border-radius;
-    &:link,
-    &:visited {
-        color: $white;
-    }
-    &:hover,
-    &:focus {
-        background: lighten($anchor-color, 10);
-        color: $white !important;
-    }
+  @include button();
+}
+
+// button sizes
+
+%button-large {
+    @include font-size($delta);
+    padding: 1em 3em;
+}
+
+%button-small {
+    @include font-size($micro);
+    padding: .25em 1em;
+}
+
+%info {
+  @include font-size($micro);
+  color: $medium-gray;
+}
+
+%meta {
+  @include font-size($nano);
+  color: $quiet-color;
+  text-transform: uppercase;
+  a {
+    @include font-size($nano);
+    color: $anchor-color;
+  }
 }
 
 
