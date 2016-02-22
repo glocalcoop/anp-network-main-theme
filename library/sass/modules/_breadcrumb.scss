@@ -1,15 +1,15 @@
 
 /* -------------------------------- 
 
-Basic Style
+Breadcrumb
 
 -------------------------------- */
 
 %breadcrumb {
 	width: 100%;
-	@include inline-table-list();
-	border: 1px solid $primary;
-	background-color: $primary;
+	@include inline-flex-list();
+	// border: 1px solid $primary;
+	background-color: $secondary;
 	margin-bottom: .5em;
 	li {
 		margin: 0;
@@ -22,7 +22,7 @@ Basic Style
 
 			&::first-letter {
 				// font-weight: bold;
-				color: $secondary;
+				color: $primary;
 			}
 
 		}
@@ -36,13 +36,11 @@ Basic Style
 					font-size: 20px;
 					margin-left: .75em;
 					font-weight: normal;
-					color: $secondary;
+					color: $primary;
 				}
 
 			}
-
 		}
-
 
 		&.current,
 		&.selected {

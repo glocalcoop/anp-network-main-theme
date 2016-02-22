@@ -10,14 +10,10 @@ body.buddypress {
 
 }
 
-// #buddypress .activity-comments > ul > li {
-//             border-top: 1px solid $hr-color;
-//         }
-
-#buddypress {
+#buddypress,
+#bbpress-forums {
 
     // Headings
-
     h2,
     h3,
     h4 {
@@ -47,6 +43,10 @@ body.buddypress {
         }
     }
 
+    .meta {
+        @include font-size($micro);
+    }
+
     label,
     .label {
         @include font-size($zeta);
@@ -62,51 +62,26 @@ body.buddypress {
     // Navigation Menus
     .item-list-tabs:not(#group-create-tabs),
     .bp-avatar-nav {
-        margin-top: .25em;
-        ul {
-            @include inline-list();
-            width: 100%;
-            max-width: 100%;
-            background-color: $panel-bg-color;
-            border-top: 1px solid rgba(0,0,0,.1);
-            li {
-                padding: .25em .5em;
-                margin-bottom: 0;
-                // border-top: 1px solid rgba(0,0,0,.1);
-                // border-bottom: 1px solid rgba(0,0,0,.1);
-                border-radius: $base-border-radius;
-                text-align: center;
-                background-color: $secondary;
-                a {
-                    display: block;
-                    color: $white;
+        // @extend %tab-navigation;
+        @include flex-tab-nav($bg-color: $secondary);
+    }
 
-                    span {
-                        @include badge();
-                        font-size: $nano;
-                    }
-                }
+    #subnav.item-list-tabs {
+        @include flex-tab-nav($bg-color: $panel-bg-color);
+        margin-top: .5em;
+        label {
+            display: inline-block;
+            margin-bottom: 0;
+            padding: .5em .25em .25em .5em;
+        }
+    }
 
-                &:hover,
-                &:focus {
-                    background-color: darken($secondary, 10%);
-                }
-
-                &:first-child {
-                    border-left: 1px solid rgba(0,0,0,.1);
-                }
-
-                &:not(:last-child) {
-                    border-right: 1px solid rgba(0,0,0,.1);
-                }
-
-
-                &.selected,
-                &.current {
-                    background-color: $primary;
-                    a {
-                        color: $white;
-                    }
+    .item-list-tabs {
+        li {
+            form {
+                padding: 0 .25em .25em 0;
+                input {
+                    margin-bottom: 0;
                 }
             }
         }
@@ -127,40 +102,117 @@ body.buddypress {
         }
     }
 
-    #subnav.item-list-tabs {
+    // Lists
+
+    .item-list {
+        @include no-bullets();
+    }
+
+    #invite-anyone-group-list {
+        @include no-bullets();
+    }
+
+    .dir-list,
+    .activity,
+    .groups,
+    .radio,
+    .checkbox,
+    #groupblog-member-roles,
+    #invite-anyone-group-list {
         ul {
-            border: 1px solid $hr-color;
-            width: inherit;
+            @include no-bullets(); 
+
             li {
-                background-color: white;
-                &.filter {
-                    margin-bottom: 0;
+                &:not(:last-child) {
+                    border-bottom: 1px solid $hr-color;
                 }
-                &:hover,
-                &:focus {
-                    background-color: transparent;
-                }
-                &.last {}
-
-                a {
-                    color: $anchor-color;
-                }
-
-                &.selected,
-                &.current {
-                    background-color: $secondary;
-                    a {
-                        color: $white;
-                    }
-                }
-
             }
         }
     }
 
+    // Tables
+
+    table {
+        width: 100%;
+        tr {
+            &:not(:last-child) {
+                border-bottom: 1px solid $hr-color;
+            }
+        }
+        td,
+        th {
+            padding: .25em .25em .25em 0;
+        }
+
+        thead {
+            tr {
+                background-color: $panel-bg-color;
+            }
+            td,
+            th {
+                color: $text-color;
+                &:first-child {
+                    padding-left: .25em;
+                }
+            }
+        }
+        tfoot {
+            tr {
+                background-color: $panel-bg-color;
+            }
+        }
+    }
+
+    // Forms
+    form {
+        padding: 1em;
+        @extend %clearfix;
+    }
+
+    textarea {
+        display: block;
+        min-height: 50px;
+        width: 100%;
+    }
+
+    .wp-core-ui {
+        .button,
+        button {
+            text-transform: none;
+            font-weight: normal;
+        }
+    }
+
+    // Sections
+
+    // Activity
+
+    .activity-header p {}
+
+    .activity {
+        @extend %meta;
+    }
+
+    // Groups
     #group-create-tabs {
         ul {
             @extend %breadcrumb;
+        }
+    }
+
+    #groupblog-details {
+        margin: 0;
+        padding: 0;
+
+        .gbd-value em {
+            font-family: mono;
+            font-style: normal;
+        }
+    }
+
+    #groupblog-member-options {
+        label {
+            display: block;
         }
     }
 
@@ -188,11 +240,10 @@ body.buddypress {
             }
 
             #item-buttons {
-                @include button-group();
+                //@include button-group();
 
                 .leave-group {
-                    background-color: $danger;
-                    color: $white;
+                    @include button($bg-color: $danger);
                 }
             }
             
@@ -202,529 +253,969 @@ body.buddypress {
         }
     }
 
-    .item-body {
-        hr {
-            display: none;
-            padding: 0;
-            margin: 0;
-        }
-    }
-
-    // #groups-directory-form,
-    // #members-directory-form,
-    // #group-settings-form {
-    //     background-color: transparent;
-    //     padding: 0;
-    // }
-
-    // Lists
-    .radio,
-    .checkbox,
-    .dir-list,
-    .activity,
-    .groups,
-    #groupblog-member-roles {
-        ul {
-          @include no-bullets();
-
-          li {
-            &:not(:last-child) {
-                margin-bottom: .25em;
-                padding-bottom: .25em;
-                border-bottom: 1px solid $base9;
-            }
-
-          }
-
-        }
-    }
-
-    .entry-content ul,
-    .bp-avatar-nav ul,
-    ul#groupblog-details,
-    ul#invite-anyone-group-list {
-        @include no-bullets();
-    }
-
-    ol#invite-anyone-steps {
-        margin-left: 0;
-        padding: 0 0 0 1em;
-    }
-
-
-    .radio,
-    .checkbox {
-        strong {
-            @extend label;
-        }
-
-        &> label {
-            display: block;
-        }
-    }
-
-    .checkbox {
-        input[type='radio'] {
-            margin-right: 5px;
-        }
-    }
-
-    .gbd-value em {
-        font-family: $mono;
-    }
-
-    #groupblog-member-options {
-        &> label {
-            display: block;
-        }
-    }
-
-    // Tables
-    table {
-        width: 100%;
-        td,
-        th {
-            padding: .25em;
-        }
-        td {
-            &:first-child {
-                padding-left: 0;
-            }
-        }
-        thead {
-            tr {
-                background-color: $panel-bg-color;
-                color: $secondary;
-                text-align: center;
-            }
-
-            td,
-            th {}        
-        }
-        tbody {
-            tr {
-                // &:nth-child(even) {
-                //     background-color: $panel-bg-color;
-                // }
-                &:not(:last-child) {
-                    border-bottom: 1px solid $panel-bg-color;
-                }
-            }
-            td {
-                &.label {
-                    width: 75%;
-                }
-            }
-        }
-        tfoot {
-            tr {}
-            td {}
-        }
-    }
-
-
-    // Filters
-    .filter,
-    .sort {
-
-        &:hover,
-        &:focus {}
-        
-        label {
-            @include font-size($milli);
-            display: inline-block;
-            margin-bottom: 0;
-        }
-    }
-
-    #docs-filter-meta {
-        a {
-            @include font-size($milli);
-            display: inline-block;
-            padding: .25em .5em;
-            border: 1px solid $hr-color;
-            margin-left: 0;
-            &:hover,
-            &:focus {
-                background-color: $hr-color;
-
-            }
-
-        }
-    }
-
-
-    // FORM ELEMENTS
-    // Buttons
-    #whats-new-form {
-        // @extend %clearfix;
-
-        #whats-new-options {}
-    }
-    form {
-        margin-top: 1em;
-        padding: 1em;
-        border: 1px solid $hr-color;
-        background-color: transparent;
-
-        @extend %clearfix;
-    }
-
     .left-menu {
         ul {
             @include no-bullets();
         }
-
-        p {
-            @extend .label;
-        }
-
-        #invite-anyone-member-list {
-            border-radius: $base-border-radius;
-        }
-    }
-
-
-
-    input[type="submit"],
-    input[type="button"]:not(.ed_button),
-    button,
-    a.action {
-        @include button();
-    }
-
-    button.ed_button,
-    %button.ed_button,
-    .mce-btn button {
-        text-transform: none;
-        font-weight: normal;
-        &:hover,
-        &:focus {
-            color: $text-color;
-        }
-    }
-
-    .mce-btn button {
-        padding: 0;
-        border: 1px solid $hr-color;
-        background-color: $panel-bg-color;
-        border-radius: 3px;
     }
 
     #previous-next {
         clear: left;
-        margin-top: 1em;
-
-        input#group-creation-previous {
-            background-color: $info;
-        }
     }
 
-    a.action.safe {
-        background-color: $info;
-    }
 
-    input[type="text"],
-    textarea {
-        display: block;
-    }
-
-    #bp-create-doc-button {
-        float: none;
-        margin: 0;
-    }
-
-    .small,
-    .activity-meta,
-    .acomment-options,
-    .action {
-        %button,
-        .bp-primary-action,
-        .bp-secondary-action,
-        .group-button a {
-            @include button-text();
-
-            &.confirm,
-            &.leave-group {
-                &:before {
-                    @extend %fa-times;
-                    color: $danger;
-                }
-            }
-
-            &.member-ban {
-                &:before {
-                    @extend %fa-ban;
-                    color: $danger;
-                }
-            }
-            &.member-promote-to-mod,
-            &.member-promote-to-admin {
-                &:before {
-                    @extend %fa-level-up;
-                }
-            }
-            &.admin-demote-to-member {
-                &:before {
-                    @extend %fa-level-down;
-                }
-            }
-
-            &.acomment-reply {
-                &:before {
-                    @extend %fa-reply;
-                }
-                span {
-                    @include badge($font-size: $nano);
-                }
-            }
-            &%fav {
-                &:before {
-                    @extend %fa-heart;
-                }
+    .radio {
+        &> label {
+            display: block;
+            &:not(:last-child) {
+                border-bottom: 1px solid $hr-color;
             }
         }
     }
 
-    .dir-search {
-        input {
-            display: inline-block;
+    .checkbox {
+        input[type="radio"] {
+            margin-right: 4px;
         }
     }
 
-    textarea {
-        height: 50px;
-        min-height: 50px;
-        width: 100%;
-        max-width: 100%;
+
+
+    // Forums
+    // members/{username}/forums/
+    ul.forums,
+    ul.bbp-topics,
+    .bbp-topics ul {
+        @include no-bullets();
     }
 
-    // Info Messages
-    .info,
-    #message,
-    .bbp-template-notice,
-    .bbp-no-topic  {
-
-        p {
-            @extend .alert-info;
-            border: none;
-            color: $white;
-        }
-
-        &.updated p {
-            @extend .alert-success;
-        }
-        
-    }
-
-    .gemail_icon {
-        background-image: none !important;
-        margin-left: 0;
-        padding-left: 0 !important;
-        font-weight: normal;
-
-        &:before {
-            margin-right: 6px;
-            @extend %fa;
-            @extend %fa-envelope;
-
-        }
-    }
-
-    // Groups
-
-    #group-settings-form {
-        &> p {
-            // @extend .alert-info;
-
-            br {
-                display: none;
-            }
-        }
-    }
-
-    .dir-list {
-        .item-avatar {}
-    }
-
-    .bp-widget {
+    .bbp-topics {
+        // 2nd level ul act like rows
         ul {
-            @include inline-list();
+            width: 100%;
+            @include inline-table-list();
+
+            // Header row
+            &.forum-titles {
+                background-color: $panel-bg-color;
+                color: $white;
+                padding: .25em;
+            }
+
+            li {
+                padding-right: .5em;
+                padding-left: .5em;
+            }
+
+            // Classes act like columns
+            .bbp-topic-title {
+                width: 55%;
+            }
+            .bbp-topic-voice-count,
+            .bbp-topic-reply-count {
+                width: 5%;
+            }
+            .bbp-topic-freshness {
+                width: 35%;
+            }
+        }
+
+        .bbp-body {
+            &> ul {
+                padding: .5em .25em;
+            }
+            &> ul:nth-child(even) {
+                background-color: $panel-bg-color;
+            }
+            &> ul:not(:last-child) {
+                border-bottom: 1px solid $hr-color;
+            }
+            .bbp-topic-voice-count,
+            .bbp-topic-reply-count {
+                @include font-size($milli);
+            }
+            .bbp-topic-meta,
+            .bbp-topic-freshness {
+                margin-bottom: 0;
+                @extend %meta;
+                img {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
+
 
     // Docs
+    // members/{username}/docs/
     .doc-content {
-        border: none;
         padding: 0;
+        border: none;
     }
 
-    .docs-info-header {
-        margin-top: .5em;
-        background-color: $panel-bg-color;
-    }
-
-
-
-    // Members
-
-
-
-    // Activity/Comments
-
-    .activity {
-        margin-top: 1.5em;
-    }
-
-    // Group, Member, Comments Lists
-    .activity-list,
-    .dir-list,
-    .groups {
-        &>li {
-            border-left: $tertiary;
-            &:nth-child(even) {
-                background-color: $light-gray;
-            }
-        }
-        .mini {}
-
-        .activity-avatar,
-        .acomment-avatar,
-        .item-avatar {
-            float: left;
-            margin-right: 1em;
-        }
-
-
-        .activity-header,
-        .acomment-meta,
-        .item-meta {
-            @extend .meta;
-            img {
-                margin-bottom: 0;
-            }
-        }
-
-        .activity-meta {}
-
-        .item,
-        .acomment-content {
-            margin-top: .25em;
-
-            a {
-                color: $tertiary;
-            }
-        }
-
-        .activity-comments {
-            border-top: 1px solid $hr-color;
-            
-            ul {
-                margin-left: 2em;
-                padding-top: .5em;
-
-                &:not(:first-child) {
-                    margin-top: .5em;
-                    padding-top: .25em;
-                    border-top: 1px solid $hr-color;
-                }
-
-
-            }
-
-            &> ul {
-                border-left: 1px solid $hr-color;
-                padding-left: .5em; 
-                background-color: $panel-bg-color;
-
-                &> li:not(:first-child) {
-                    border-top: 1px solid $hr-color;
-                    padding-top: .5em; 
-                    background-color: $panel-bg-color;
-                }
-            }
-
-        }
-
-        .group-button {}
-
-        p {
-            @include font-size($zeta);
-        }
-
-
-    }
-
-    #item-body {
-        h3,
-        p {}
-
-        h3 {}
-        p {
-            @extend .label;
-        }
-    }
-
-
-    // Avatars
-    img.avatar {
-        padding: 2px;
-        border: 1px solid $hr-color;
-    }
-
-    .activity-header {
-        img.avatar {
-            padding: 0 2px;
-            border: none;
-        }
-    }
-
-    .odd {}
-    .public {
-        img.avatar {
-            border-color: $warning;
-        }
-    }
-    .is-admin {
-        img.avatar {
-            border-color: $danger;
-        }
-    }
-    .is-member {
-        img.avatar {
-            border-color: $success;
-        }
-    }
-    .group-has-avatar {}
-
-
-
-    /// SHAME
-
-    // The BuddyPress Documents plugin adds styles to header, making them difficult to override
     .toggleable {
         &.toggle-open {
             .toggle-switch {
-                border-radius: $base-border-radius !important;
-                border-color: $hr-color !important;
+                background-color: $panel-bg-color;
+                border-radius: $base-border-radius;
+                border-color: $hr-color;
             }
         }
-
         .toggle-content {
-            border-color: $hr-color !important;
+            border-color: $hr-color;
         }
     }
 
+    #doc-submit-options {
+        a {
+            &.action {
+                @include button();
+            }
+        }
+    }
 
-    .bbp-template-notice,
-    .bbp-no-topic  {
+    .docs-info-header {
+        padding: .5em;
+        background-color: $panel-bg-color;
+        .docs-filters {
+            a {
+                padding: .5em;
+                border: 1px solid $white;
 
+                &:hover,
+                &:focus {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    h2.doc-title {
+        display: block;
+        width: 100%;
+    }
+
+    #doc-permissions-summary, {
+        @extend .alert-info;
+        border: none !important;
+    }
+
+    #doc-group-summary {
+        border: none !important;
+    }
+
+    .doc-permissions {
+        border-radius: $base-border-radius;
+        background-color: $panel-bg-color;
+
+        ul {
+            @include no-bullets();
+
+            li {
+                &:not(:last-child) {
+                    padding-bottom: .25em;
+                    margin-bottom: .25em;
+                    border-bottom: 1px solid $hr-color;
+                }
+            }
+        }
+    }
+
+    .doc-tabs {
+        @include flex-tab-nav();
+        li {
+            float: none;
+            margin: 0;
+            a {
+                display: block;
+                border-radius: $base-border-radius;
+            }
+
+        }
+    }
+
+    .doc-content {
+        margin-top: .5em;
+    }
+
+    .doc-meta,
+    .tags-cell {
+        border-top: none;
+        a {
+            @include badge();
+        }
+    }
+
+    // Doc Table
+    .title-cell {
+        width: 50%;
         p {
-            color: $white !important;
+            @extend .post-excerpt;
         }
-        
     }
+
+    .author-cell {
+        width: 20%;
+    }
+    .created-date-cell {
+        width: 10%;
+    }
+    .edited-date-cell {
+        width: 10%;
+    }
+    .tags-cell {
+        width: 20%;
+    }
+
+
+    // Buttons
+    .row-actions,
+    .group-button,
+    .activity-meta {
+        a {
+            @include button-text();
+
+            &[href$="document-title/"] {
+                @include button-text($icon: eye);
+            }
+            &[href$="edit/"] {
+                @include button-text($icon: pencil);
+            }
+            &[href$="history"] {
+                @include button-text($icon: history);
+            }
+            &.leave-group {
+                @include button-text($icon: sign-out);
+            }
+            &.acomment-reply {
+                @include button-text($icon: reply);
+            }
+            &.fav {
+                @include button-text($icon: heart);
+            }
+            &.delete-activity {
+                @include button-text($icon: trash);
+            }
+            &.unlink-from-group {
+                @include button-text($icon: chain-broken);
+            }
+        }
+    }
+
+    #bp-create-doc-button {
+        @include button-text($icon: plus-circle);
+    }
+
+    #members-list {
+        .small {
+            display: block;
+            &> a {
+                &.member-ban {
+                    @include button-text($icon: ban);
+                }
+                &.member-promote-to-mod {
+                    @include button-text($icon: level-up);
+                }
+                &.member-promote-to-admin {
+                     @include button-text($icon: level-up);
+                }
+                &.confirm {
+                    @include button-text($icon: times);
+                }
+            }
+        }
+    }
+
+    // Settings
+    // members/{username}/settings/
+
+    label[for="pass1"] {
+        display: block;
+        margin-top: 1em;
+        margin-bottom: 0;
+    }
+
+    input.settings-input {
+        display: block;
+        margin-bottom: 0;
+    }
+
+
+    // Elements
+
+    .filter {
+        form {
+            padding: .5em .75em;
+        }
+    }
+
+    .no-count {
+        display: none;
+    }
+
+    .count,
+    .item-list-tabs li a span,
+    .acomment-reply span {
+        @include badge();
+    }
+
+    // Alerts
+
+    .bp-template-notice,
+    .updated {
+        @extend %alert;
+
+        &.updated,
+        &.success {
+            @extend .alert-success;
+        }
+    }
+
+    #bp-uploader-warning,
+    .warning {
+        @extend .alert-help;
+    }
+
+    // #subnav.item-list-tabs {
+    //     ul {
+    //         border: 1px solid $hr-color;
+    //         width: inherit;
+    //         li {
+    //             background-color: white;
+    //             margin: 0;
+    //             &.filter {
+    //                 margin-bottom: 0;
+    //             }
+    //             &:hover,
+    //             &:focus {
+    //                 background-color: $white;
+    //             }
+    //             &.last {}
+
+    //             a {
+    //                 color: $anchor-color;
+    //                 margin: 0;
+    //             }
+
+    //             &.selected,
+    //             &.current {
+    //                 background-color: $secondary;
+    //                 a {
+    //                     color: $white;
+    //                 }
+    //             }
+
+    //         }
+    //     }
+    // }
+
+//     #group-create-tabs {
+//         ul {
+//             @extend %breadcrumb;
+//         }
+//     }
+
+//     #item-header {
+//         @include direction-context(right-to-left) {
+//             #item-actions {
+//                 @include span-columns(5);
+//             }
+//         }
+//         #item-actions {
+//             @include card($background: $base9);
+//             ul {
+//                 @include inline-list();
+//             }
+//         }
+//         #item-header-avatar {}
+//         #item-header-content,
+//         .activity-content {
+//             .highlight {
+//                 @include badge($info, .8rem);
+//             }
+//             .activity,
+//             .activity-time-since {
+//                 @extend .meta;
+//             }
+
+//             #item-buttons {
+//                 @include button-group();
+
+//                 .leave-group {
+//                     background-color: $danger;
+//                     color: $white;
+//                 }
+//             }
+            
+//         }
+//         #item-meta {
+//             margin-top: 1.5em;
+//         }
+//     }
+
+//     .item-body {
+//         hr {
+//             display: none;
+//             padding: 0;
+//             margin: 0;
+//         }
+//     }
+
+//     // #groups-directory-form,
+//     // #members-directory-form,
+//     // #group-settings-form {
+//     //     background-color: transparent;
+//     //     padding: 0;
+//     // }
+
+//     // Lists
+//     .radio,
+//     .checkbox,
+//     .dir-list,
+//     .activity,
+//     .groups,
+//     #groupblog-member-roles {
+//         ul {
+//           @include no-bullets();
+
+//           li {
+//             &:not(:last-child) {
+//                 margin-bottom: .25em;
+//                 padding-bottom: .25em;
+//                 border-bottom: 1px solid $base9;
+//             }
+
+//           }
+
+//         }
+//     }
+
+//     .item-list {
+//         li {
+//             padding: .25em;
+
+//             &:hover,
+//             &:focus {
+//                 background-color: $base9;
+//             }
+//         }
+//     }
+
+//     .entry-content ul,
+//     .bp-avatar-nav ul,
+//     ul#groupblog-details,
+//     ul#invite-anyone-group-list {
+//         @include no-bullets();
+//     }
+
+//     ol#invite-anyone-steps {
+//         margin-left: 0;
+//         padding: 0 0 0 1em;
+//     }
+
+
+//     .radio,
+//     .checkbox {
+//         strong {
+//             @extend label;
+//         }
+
+//         &> label {
+//             display: block;
+//         }
+//     }
+
+//     .checkbox {
+//         input[type='radio'] {
+//             margin-right: 5px;
+//         }
+//     }
+
+//     .gbd-value em {
+//         font-family: $mono;
+//     }
+
+//     #groupblog-member-options {
+//         &> label {
+//             display: block;
+//         }
+//     }
+
+//     // Tables
+//     table {
+//         width: 100%;
+//         td,
+//         th {
+//             padding: .25em;
+//         }
+//         td {
+//             &:first-child {
+//                 padding-left: 0;
+//             }
+//         }
+//         thead {
+//             tr {
+//                 background-color: $panel-bg-color;
+//                 color: $secondary;
+//                 text-align: center;
+//             }
+
+//             td,
+//             th {}        
+//         }
+//         tbody {
+//             tr {
+//                 // &:nth-child(even) {
+//                 //     background-color: $panel-bg-color;
+//                 // }
+//                 &:not(:last-child) {
+//                     border-bottom: 1px solid $panel-bg-color;
+//                 }
+//             }
+//             td {
+//                 &.label {
+//                     width: 75%;
+//                 }
+//             }
+//         }
+//         tfoot {
+//             tr {}
+//             td {}
+//         }
+//     }
+
+
+//     // Filters
+//     .filter,
+//     .sort {
+
+//         &:hover,
+//         &:focus {}
+        
+//         label {
+//             @include font-size($milli);
+//             display: inline-block;
+//             margin-bottom: 0;
+//         }
+//     }
+
+//     #docs-filter-meta {
+//         a {
+//             @include font-size($milli);
+//             display: inline-block;
+//             padding: .25em .5em;
+//             border: 1px solid $hr-color;
+//             margin-left: 0;
+//             &:hover,
+//             &:focus {
+//                 background-color: $hr-color;
+
+//             }
+
+//         }
+//     }
+
+//     .docs-filter-section {
+//         border: none;
+//         padding: 0;
+//     }
+
+//     ul#tags-list {
+//         li {}
+//     }
+
+
+//     // FORM ELEMENTS
+//     // Buttons
+//     #whats-new-form {
+//         // @extend %clearfix;
+
+//         #whats-new-options {}
+//     }
+//     form {
+//         margin-top: 1em;
+//         padding: 1em;
+//         border: 1px solid $hr-color;
+//         background-color: transparent;
+
+//         @extend %clearfix;
+//     }
+
+//     .left-menu {
+//         ul {
+//             @include no-bullets();
+//         }
+
+//         p {
+//             @extend .label;
+//         }
+
+//         #invite-anyone-member-list {
+//             border-radius: $base-border-radius;
+//         }
+//     }
+
+
+
+//     input[type="submit"],
+//     input[type="button"]:not(.ed_button),
+//     button,
+//     a.action {
+//         @include button();
+//     }
+
+//     button.ed_button,
+//     %button.ed_button,
+//     .mce-btn button {
+//         text-transform: none;
+//         font-weight: normal;
+//         &:hover,
+//         &:focus {
+//             color: $text-color;
+//         }
+//     }
+
+//     .mce-btn button {
+//         padding: 0;
+//         border: 1px solid $hr-color;
+//         background-color: $panel-bg-color;
+//         border-radius: 3px;
+//     }
+
+//     #previous-next {
+//         clear: left;
+//         margin-top: 1em;
+
+//         input#group-creation-previous {
+//             background-color: $info;
+//         }
+//     }
+
+//     a.action.safe {
+//         background-color: $info;
+//     }
+
+//     input[type="text"],
+//     textarea {
+//         display: block;
+//     }
+
+//     #bp-create-doc-button {
+//         float: none;
+//         margin: 0;
+//     }
+
+//     .small,
+//     .activity-meta,
+//     .acomment-options,
+//     .action {
+//         %button,
+//         .bp-primary-action,
+//         .bp-secondary-action,
+//         .group-button a {
+//             @include button-text();
+
+//             &.confirm,
+//             &.leave-group {
+//                 &:before {
+//                     @extend %fa-times;
+//                     color: $danger;
+//                 }
+//             }
+
+//             &.member-ban {
+//                 &:before {
+//                     @extend %fa-ban;
+//                     color: $danger;
+//                 }
+//             }
+//             &.member-promote-to-mod,
+//             &.member-promote-to-admin {
+//                 &:before {
+//                     @extend %fa-level-up;
+//                 }
+//             }
+//             &.admin-demote-to-member {
+//                 &:before {
+//                     @extend %fa-level-down;
+//                 }
+//             }
+
+//             &.acomment-reply {
+//                 &:before {
+//                     @extend %fa-reply;
+//                 }
+//                 span {
+//                     @include badge($font-size: $nano);
+//                 }
+//             }
+//             &%fav {
+//                 &:before {
+//                     @extend %fa-heart;
+//                 }
+//             }
+//         }
+//     }
+
+//     .dir-search {
+//         input {
+//             display: inline-block;
+//         }
+//     }
+
+//     textarea {
+//         height: 50px;
+//         min-height: 50px;
+//         width: 100%;
+//         max-width: 100%;
+//     }
+
+//     // Info Messages
+//     .info,
+//     #message,
+//     .bbp-template-notice,
+//     .bbp-no-topic  {
+
+//         p {
+//             @extend .alert-info;
+//             border: none;
+//             color: $white;
+//         }
+
+//         &.updated p {
+//             @extend .alert-success;
+//         }
+        
+//     }
+
+//     .gemail_icon {
+//         background-image: none !important;
+//         margin-left: 0;
+//         padding-left: 0 !important;
+//         font-weight: normal;
+
+//         &:before {
+//             margin-right: 6px;
+//             @extend %fa;
+//             @extend %fa-envelope;
+
+//         }
+//     }
+
+//     // Groups
+
+//     #group-settings-form {
+//         &> p {
+//             // @extend .alert-info;
+
+//             br {
+//                 display: none;
+//             }
+//         }
+//     }
+
+//     .dir-list {
+//         .item-avatar {}
+//     }
+
+//     .bp-widget {
+//         ul {
+//             @include inline-list();
+//         }
+//     }
+
+//     // Docs
+//     .doc-content {
+//         border: none;
+//         padding: 0;
+//     }
+
+//     .docs-info-header {
+//         margin-top: .5em;
+//         background-color: $panel-bg-color;
+//     }
+
+//     // #item-body {
+//     //     h3,
+//     //     p {}
+
+//     //     h3 {}
+//     //     p {
+//     //         @extend .label;
+//     //     }
+//     // }
+
+
+
+//     // Members
+
+
+
+//     // Activity/Comments
+
+//     .activity {
+//         margin-top: 1.5em;
+//     }
+
+//     // Group, Member, Comments Lists
+//     .activity-list,
+//     .dir-list,
+//     .groups {
+//         &>li {
+//             border-left: $tertiary;
+//             // &:nth-child(even) {
+//             //     background-color: $light-gray;
+//             // }
+//         }
+//         .mini {}
+
+//         .activity-avatar,
+//         .acomment-avatar,
+//         .item-avatar {
+//             @include span-columns(1 of 12);
+//             // float: left;
+//             // margin-right: 1em;
+//         }
+
+
+//         .activity-header,
+//         .acomment-meta,
+//         .item-meta {
+//             @extend .meta;
+
+//             p,
+//             span {
+//                 @extend .meta;
+//                 font-size: .75rem !important;
+//                 a,
+//                 a span {
+//                     font-size: .75rem !important;
+//                     img {
+//                         margin-bottom: 0;
+//                     }
+//                 }
+//             }
+//         }
+
+//         .activity-meta {}
+
+//         .item,
+//         .acomment-content {
+//             margin-top: .25em;
+
+//             a {
+//                 color: $tertiary;
+//             }
+//         }
+
+//         .activity-comments {
+//             border-top: 1px solid $hr-color;
+            
+//             ul {
+//                 margin-left: 2em;
+//                 padding-top: .5em;
+
+//                 &:not(:first-child) {
+//                     margin-top: .5em;
+//                     padding-top: .25em;
+//                     border-top: 1px solid $hr-color;
+//                 }
+
+
+//             }
+
+//             &> ul {
+//                 border-left: 1px solid $hr-color;
+//                 padding-left: .5em; 
+//                 background-color: $panel-bg-color;
+
+//                 &> li:not(:first-child) {
+//                     border-top: 1px solid $hr-color;
+//                     padding-top: .5em; 
+//                     background-color: $panel-bg-color;
+//                 }
+//             }
+
+//         }
+
+//         .group-button {}
+
+//         p {
+//             @include font-size($zeta);
+//         }
+
+
+//     }
+
+
+//     // Avatars
+//     img {
+//         .avatar {
+//             width: 100%;
+//             height: auto;
+//             padding: 2px;
+//             border: 1px solid $hr-color;
+//         }
+//         .avatar-20 {
+//             max-width: 20px;
+//         }
+//         .avatar-50 {
+//             max-width: 50px;
+//         }
+//         .avatar-150 {
+//             max-width: 150px;
+//         }
+//     }
+
+
+//     .activity-header {
+//         img.avatar {
+//             padding: 0 2px;
+//             border: none;
+//         }
+//     }
+
+//     li.odd {}
+//     li.public {
+//         border-right: 4px solid $info;
+//     }
+//     li.is-member {
+//         border-right: 4px solid $success;
+//     }
+//     li.is-admin {
+//         border-right: 4px solid $warning;
+//     }
+//     li.group-has-avatar {}
+
+
+
+//     /// SHAME
+
+//     // The BuddyPress Documents plugin adds styles to header, making them difficult to override
+//     .toggleable {
+//         &.toggle-open {
+//             .toggle-switch {
+//                 border-radius: $base-border-radius !important;
+//                 border-color: $hr-color !important;
+//             }
+//         }
+
+//         .toggle-content {
+//             border-color: $hr-color !important;
+//         }
+//     }
+
+
+//     .bbp-template-notice,
+//     .bbp-no-topic  {
+
+//         p {
+//             color: $white !important;
+//         }
+        
+//     }
 
 }
+
 
 

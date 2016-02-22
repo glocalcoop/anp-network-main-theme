@@ -595,3 +595,8 @@ $f-height: 2.5em; // set variable for this menu
 	}
 
 }
+
+// Navigation Menus
+%tab-navigation {
+    @include tab-nav();
+}

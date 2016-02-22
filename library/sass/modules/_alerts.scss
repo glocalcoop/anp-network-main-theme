@@ -4,28 +4,32 @@ ALERTS AND NOTICES
 *********************/
 
 %alert {
-	padding: 20px;
+	padding: 1em;
 	color: $white;
+    border: none;
+    a {
+       color: $white; 
+    }
 }
 
 .alert-help {
 	@extend %alert;
-	background: $tertiary;
+	background-color: $warning;
 }
 
 .alert-info {
 	@extend %alert;
-	background: $base2;
+	background-color: $info;
 }
 
 .alert-error {
 	@extend %alert;
-	background: $danger;
+	background-color: $danger;
 }
 
 .alert-success {
 	@extend %alert;
-	background: $success;
+	background-color: $success;
 }
 
 
