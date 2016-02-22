@@ -11,21 +11,18 @@ $base3: #666; //rgb(105,105,105)
 $base2: #444;
 $base1: #111;
 
+$primary:   #2f4550; 
+$secondary: #7A9E9F; 
+$tertiary: #db3a34; 
+$tertiary2: #ffc857; 
+$tertiary3: $base4; 
 
 // COLORS
 $success:         #42A084;
-$info:            #7A9E9F;
-$warning:         #ffc857;
-$danger:          #db3a34;
-$default:         #323031;
-
-
-$primary:   #2f4550; 
-$secondary: $info; 
-$tertiary: $danger; 
-$tertiary2: $warning; 
-$tertiary3: $default; 
-
+$info:            $tertiary2;
+$warning:         $secondary;
+$danger:          $tertiary;
+$default:         $tertiary3;
 
 // Colors
 $blue: $primary;
@@ -54,11 +51,11 @@ $quiet-color: $base6;
 $loud-color: $black;
 $hr-color: $base8;
 $hr-alt: $base6;
-$anchor-color: darken($secondary, 20%);
+$anchor-color: lighten($primary, 20%);
 $anchor-hover: $loud-color;
 $bg-body: $white;
 $bg-content: $base0;
-$panel-bg-color: $base9;
+$panel-bg-color: $base8;
 $base-border-radius: 0;
 $base-font-size: 16px;
 
@@ -68,6 +65,8 @@ $sans: "Lato", Helvetica, Verdana, sans-serif;
 $mono: "Courier New", Courier, monospace;
 $tracking: 1px;
 $tracking-loose: 2px;
+
+$fa-font-path:        "library/fonts";
 
 
 // TYPE SIZES
