@@ -7,6 +7,7 @@ var gulp = require('gulp'),
 	rename = require( 'gulp-rename' ),
 	notify = require( 'gulp-notify' ),
 	include = require( 'gulp-include' ),
+	autoprefixer = require('gulp-autoprefixer'),
 	concat = require('gulp-concat'),
 	sass = require( 'gulp-sass' );
 
@@ -20,8 +21,9 @@ gulp.task( 'styles', function() {
 	return gulp.src( './library/sass/style.scss', {
 		sourceComments: 'map',
 		sourceMap: 'scss',
-		outputStyle: 'nested'
+		outputStyle: 'expanded'
 	} )
+	.pipe( autoprefixer() )
 	.pipe( plumber( { errorHandler: onError } ) )
 	.pipe( sass() )
 	.pipe( gulp.dest( '.' ) )
