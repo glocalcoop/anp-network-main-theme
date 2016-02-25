@@ -13,67 +13,72 @@ body.buddypress {
 #buddypress,
 #bbpress-forums {
 
-    // Headings
-    h2,
-    h3,
-    h4 {
-        padding-bottom: .25em;
-        margin-bottom: .25em;
-        border-bottom: 1px solid $hr-alt;
+    // LAYOUT
+    #item-header {
+
+        #item-header-cover-image {
+
+            #item-header-avatar {}
+
+            #item-header-content {}
+
+            #item-actions {}
+
+        }
+
+        @include breakpoint(md) {
+
+            #item-header-cover-image {
+                display: flex;
+
+                #item-header-avatar {
+                    order: 1;
+                    width: 20%;
+                }
+
+                #item-header-content {
+                    flex: 1;
+                    order: 2;
+                }
+
+                #item-actions {
+                    order: 3;
+                    flex: 0, 1, auto;
+                    width: 30%;
+                }
+
+            }
+        }
+
     }
 
-    h2 {
-        @include font-size($gamma);
-        color: $secondary;
-    }
-
-    h3,
-    h4 {
-        @include font-size($delta);
+    #item-nav {
         margin-top: 1em;
     }
 
-    .item-list-tabs + h2 {
-        margin-top: 1em;
-    }
+    #item-body {}
 
-    p {
-        br {
-            margin-bottom: .5em;
+
+    // NAV MENUS
+    .item-list-tabs:not(#group-create-tabs),
+    .bp-avatar-nav {
+        @include flex-tab-nav($bg-color: $secondary);
+        li {
+            a {
+                text-wrap: none;
+            }
         }
     }
 
-    .meta {
-        @include font-size($micro);
-    }
-
-    label,
-    .label {
-        @include font-size($zeta);
-        color: darken($secondary, 20%);
-    }
-
-    hr {
-        display: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    // Navigation Menus
-    .item-list-tabs:not(#group-create-tabs),
-    .bp-avatar-nav {
-        // @extend %tab-navigation;
-        @include flex-tab-nav($bg-color: $secondary);
-    }
-
     #subnav.item-list-tabs {
-        @include flex-tab-nav($bg-color: $panel-bg-color);
+        @include flex-tab-nav($bg-color: $tertiary3);
         margin-top: .5em;
         label {
             display: inline-block;
             margin-bottom: 0;
             padding: .5em .25em .25em .5em;
         }
+        margin-bottom: 1em;
     }
 
     .item-list-tabs {
@@ -102,8 +107,65 @@ body.buddypress {
         }
     }
 
-    // Lists
+    // HEADINGS
+    h2,
+    h3,
+    h4 {
+        padding-bottom: .25em;
+        margin-bottom: .25em;
+        border-bottom: 1px solid $hr-alt;
+    }
 
+    h2 {
+        @include font-size($gamma);
+        color: $secondary;
+    }
+
+    h3,
+    h4 {
+        @include font-size($delta);
+        margin-top: 1em;
+    }
+
+    .item-list-tabs + h2 {
+        margin-top: 1em;
+    }
+
+    p {
+        color: $text-color;
+        a {
+            color: $anchor-color;
+        }
+
+        br {
+            margin-bottom: .5em;
+        }
+
+    }
+
+    .meta {
+        @include font-size($micro);
+    }
+
+    label,
+    .label {
+        @include font-size($zeta);
+        color: darken($secondary, 20%);
+    }
+
+    hr {
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .clear {
+        @extend %clearfix;
+    }
+
+
+
+    // LISTS
     .item-list {
         @include no-bullets();
     }
@@ -123,15 +185,17 @@ body.buddypress {
             @include no-bullets(); 
 
             li {
+                padding-top: .5em;
+                padding-bottom: .5em;
+                margin-bottom: 0;
                 &:not(:last-child) {
-                    border-bottom: 1px solid $hr-color;
+                    border-bottom: 1px solid $hr-alt;
                 }
             }
         }
     }
 
-    // Tables
-
+    // TABLES
     table {
         width: 100%;
         tr {
@@ -163,7 +227,7 @@ body.buddypress {
         }
     }
 
-    // Forms
+    // FORMS
     form {
         padding: 1em;
         @extend %clearfix;
@@ -183,14 +247,190 @@ body.buddypress {
         }
     }
 
-    // Sections
+    // SECTIONS
 
     // Activity
+    #activity-stream {
+        margin-top: 1em;
+    }
 
-    .activity-header p {}
+    #whats-new-form {
+        #whats-new-avatar,
+        .activity-greeting {
+            @extend %clearfix;
+            float: left;
+        }
 
-    .activity {
-        @extend %meta;
+        #whats-new-avatar {
+            width: 7%;
+        }
+        .activity-greeting {
+            width: 93%;
+        }
+
+        .bp-screen-reader-text {
+            @extend %visuallyhidden;
+        }
+
+        #whats-new {
+            height: 50px;
+        }
+    }
+
+    .activity-greeting {
+        color: $text-color;
+    }
+
+    // Layout
+    .activity-list {
+
+        .activity-avatar,
+        .acomment-avatar,
+        .activity-content,
+        .acomment-meta,
+        .acomment-content,
+        .acomment-options  {
+            @extend %clearfix;
+            float: left;
+        }
+    }
+
+    // Conversation View
+    // Avatar is 150px/16%
+    .activity-list {
+
+        .activity-avatar,
+        .acomment-avatar,
+        .acomment-options {
+            display: none;
+        }
+
+        @include breakpoint(md) {
+
+            .activity-avatar,
+            .acomment-avatar,
+            .acomment-options {
+                display: block;
+                width: 7%;
+            }
+            .activity-content,
+            .acomment-meta,
+            .acomment-content,
+            .acomment-options {
+                width: 93%;
+            }
+
+        }
+
+    }
+
+    // Activity and Comments View
+    // Avatar is 50px/7%
+    #item-body .activity-list {
+
+        .activity-avatar,
+        .acomment-avatar,
+        .acomment-options {
+            display: none;
+        }
+
+        @include breakpoint(md) {
+            .activity-avatar,
+            .acomment-avatar,
+            .acomment-options {
+                display: block;
+                width: 7%;
+            }
+            .activity-content,
+            .acomment-meta,
+            .acomment-content,
+            .acomment-options {
+                width: 93%;
+            }
+        }
+    }
+
+    .activity-list {
+        &> li {
+            display: block;
+            @extend %clearfix;
+
+            .activity-content {
+                padding-bottom: .25em;
+
+                p {
+                    &:last-child {
+                        margin-bottom: .5em;
+                    }
+                }
+
+                .activity-header,
+                .activity-inner  {
+                    p {
+                        @extend .post-excerpt;
+
+                        &:last-child {
+                            margin-bottom: .5em;
+                        }
+                    }
+                }
+                .acomment-meta {}
+                .activity-meta {
+                    @extend %meta;
+                }
+            }
+            .activity-comments {
+                @extend %clearfix;
+                clear: both;
+                margin-top: .5em;
+
+                .acomment-content {
+                    p {
+                        @extend .post-excerpt;
+
+                        &:last-child {
+                            margin-bottom: .25em;
+                        }
+                    }
+                }
+
+                ul {
+                    @extend %clearfix;
+                    li {
+                        @extend %clearfix;
+                        clear: both;
+                        padding-left: .5em;
+                        padding-top: .5em;
+                        padding-bottom: .5em;
+                        margin-left: 2em;
+                        border-top: 1px solid $hr-color;
+                        background-color: rgba($primary,.05);
+                        
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .activity-comments {
+
+            form {
+                @extend %clearfix;
+                margin-top: .5em;
+                background-color: rgba($primary,.05);
+            }   
+
+            // Reply to Comment
+            li {
+                form {
+                    background-color: transparent;
+                }
+            }
+        }
+
+
     }
 
     // Groups
@@ -217,11 +457,6 @@ body.buddypress {
     }
 
     #item-header {
-        @include direction-context(right-to-left) {
-            #item-actions {
-                @include span-columns(5);
-            }
-        }
         #item-actions {
             @include card($background: $base9);
             ul {
@@ -240,7 +475,6 @@ body.buddypress {
             }
 
             #item-buttons {
-                //@include button-group();
 
                 .leave-group {
                     @include button($bg-color: $danger);
@@ -259,10 +493,55 @@ body.buddypress {
         }
     }
 
+    // Listing
+    // Layout
+    #groups-list {
+        .group-has-avatar {
+
+            .item-avatar {
+                text-align: center;
+            }
+
+             @include breakpoint(md) {
+                .item-avatar,
+                .item,
+                .action {
+                    display: block;
+                    float: left;
+                }
+
+                .item-avatar {
+                    width: 7%;
+                    text-align: left;
+                }
+                .item,
+                .action {
+                    width: 93%;
+                    // margin-left: 8%;
+                }
+                .action {
+                    margin-left: 7%;
+                }
+
+             }
+
+        }
+    }
+
+    #groups-list {
+        .item-meta {
+            @extend %meta;
+        }
+        .item-desc,
+        .item-desc p {
+            @extend .post-excerpt;
+            margin-bottom: .25em;
+        }
+    }
+
     #previous-next {
         clear: left;
     }
-
 
     .radio {
         &> label {
@@ -279,6 +558,50 @@ body.buddypress {
         }
     }
 
+    // Members
+    // Layout
+    #member-list,
+    #members-list {
+        li {
+            @extend %clearfix;
+        }
+        li > a,
+        h5,
+        .activity,
+        .item-avatar,
+        .item {
+            float: left;
+        }
+        li > a,
+        .item-avatar {
+            width: 7%;
+        }
+        h5,
+        .item {
+            width: 93%;
+        }
+        .activity,
+        .action {
+            width: 93%;
+            @extend %meta;
+        }
+    }
+
+    #member-list,
+    #members-list {
+        &> a {}
+        h5 {
+            margin-bottom: .25em;
+        }
+        .activity {
+            @extend %meta;
+        }
+    }
+
+    #members-directory-form {
+        background-color: transparent;
+        padding: 0;
+    }
 
 
     // Forums
@@ -376,9 +699,25 @@ body.buddypress {
 
     .docs-info-header {
         padding: .5em;
+        margin-bottom: 1em;
         background-color: $panel-bg-color;
-        .docs-filters {
-            a {
+
+        p.currently-viewing {
+            @include font-size($milli);
+            margin-top: inherit;
+            margin-bottom: inherit;
+        }
+
+        #docs-filter-meta,
+        #docs-filter-sections {
+            @include font-size($milli);
+            color: $text-color;
+        }
+
+        #docs-filter-meta {
+            display: block;
+            margin-bottom: 1em;
+            &> a {
                 padding: .5em;
                 border: 1px solid $white;
 
@@ -387,21 +726,59 @@ body.buddypress {
                     background-color: $white;
                 }
             }
+
+            &:after {
+                clear: both;
+            }
         }
+        
+        #docs-filter-sections {
+            transition: all 2s ease;
+
+            .docs-filter-section {
+                // @extend %visuallyhidden;
+                border: none;
+                border-radius: $base-border-radius;
+                @include font-size($milli);
+
+                &.docs-filter-section-open {
+                    display: block;
+
+                    margin-top: inherit;
+                    padding: inherit;
+                    overflow: visible;
+                }
+            }
+
+            #docs-filter-section-attachments {}
+            #docs-filter-section-search {}
+            #docs-filter-section-tags {
+                ul#tags-list {
+                    @include inline-list();
+
+                    li {
+                        margin-bottom: 0;
+                        @include font-size($milli);
+                        a {
+                            padding: .5em;
+                            border: 1px solid $white;
+
+                            &:hover,
+                            &:focus {
+                                background-color: $white;
+                            } 
+                        }
+                    }
+                }
+            }
+        }
+        
+        .docs-filters {}
     }
 
     h2.doc-title {
         display: block;
         width: 100%;
-    }
-
-    #doc-permissions-summary, {
-        @extend .alert-info;
-        border: none !important;
-    }
-
-    #doc-group-summary {
-        border: none !important;
     }
 
     .doc-permissions {
@@ -412,6 +789,7 @@ body.buddypress {
             @include no-bullets();
 
             li {
+                @include font-size($milli);
                 &:not(:last-child) {
                     padding-bottom: .25em;
                     margin-bottom: .25em;
@@ -419,6 +797,17 @@ body.buddypress {
                 }
             }
         }
+    }
+
+    #doc-permissions-summary, {
+        @extend .alert-info;
+        border: none !important;
+    }
+
+    #doc-permissions-details {}
+
+    #doc-group-summary {
+        border: none !important;
     }
 
     .doc-tabs {
@@ -457,22 +846,51 @@ body.buddypress {
     .author-cell {
         width: 20%;
     }
-    .created-date-cell {
+    .date-cell {
         width: 10%;
-    }
-    .edited-date-cell {
-        width: 10%;
+        @include font-size($milli);
     }
     .tags-cell {
         width: 20%;
+    }
+
+    .desc a {
+        background-image: none;
+        padding-left: 0;
+
+        &.desc {}
+        &.asc {}
+    }
+
+
+    // Send Invites
+
+    #invite-anyone-invite-list {
+        h4 {
+            @extend %username;
+            margin-top: 0;
+            border-bottom: none;
+        }
+        .activity {
+            @extend %meta;
+        }
+
+        .action {
+            a {
+                @include button-text($icon: times);
+            }
+        }
+
     }
 
 
     // Buttons
     .row-actions,
     .group-button,
-    .activity-meta {
+    .activity-meta,
+    .acomment-options {
         a {
+            font-size: 14px !important;
             @include button-text();
 
             &[href$="document-title/"] {
@@ -559,9 +977,21 @@ body.buddypress {
         @include badge();
     }
 
-    // Alerts
+    .gemail_icon {
+        background-image: none !important;
+        @include button-text($font-size: $milli, $icon: envelope);
+        margin-left: 0;
+        padding-left: 0 !important;
+    }
 
+    .dir-search {
+        input[type="submit"] {}
+    }
+
+    // Alerts
     .bp-template-notice,
+    #bp-uploader-warning,
+    .bbp-template-notice,
     .updated {
         @extend %alert;
 
@@ -569,653 +999,56 @@ body.buddypress {
         &.success {
             @extend .alert-success;
         }
+        &.warning {
+            @extend .alert-help;
+        }
     }
 
-    #bp-uploader-warning,
-    .warning {
+    .bbp-template-notice p {
         @extend .alert-help;
     }
 
-    // #subnav.item-list-tabs {
-    //     ul {
-    //         border: 1px solid $hr-color;
-    //         width: inherit;
-    //         li {
-    //             background-color: white;
-    //             margin: 0;
-    //             &.filter {
-    //                 margin-bottom: 0;
-    //             }
-    //             &:hover,
-    //             &:focus {
-    //                 background-color: $white;
-    //             }
-    //             &.last {}
-
-    //             a {
-    //                 color: $anchor-color;
-    //                 margin: 0;
-    //             }
-
-    //             &.selected,
-    //             &.current {
-    //                 background-color: $secondary;
-    //                 a {
-    //                     color: $white;
-    //                 }
-    //             }
-
-    //         }
-    //     }
-    // }
-
-//     #group-create-tabs {
-//         ul {
-//             @extend %breadcrumb;
-//         }
-//     }
-
-//     #item-header {
-//         @include direction-context(right-to-left) {
-//             #item-actions {
-//                 @include span-columns(5);
-//             }
-//         }
-//         #item-actions {
-//             @include card($background: $base9);
-//             ul {
-//                 @include inline-list();
-//             }
-//         }
-//         #item-header-avatar {}
-//         #item-header-content,
-//         .activity-content {
-//             .highlight {
-//                 @include badge($info, .8rem);
-//             }
-//             .activity,
-//             .activity-time-since {
-//                 @extend .meta;
-//             }
-
-//             #item-buttons {
-//                 @include button-group();
-
-//                 .leave-group {
-//                     background-color: $danger;
-//                     color: $white;
-//                 }
-//             }
-            
-//         }
-//         #item-meta {
-//             margin-top: 1.5em;
-//         }
-//     }
-
-//     .item-body {
-//         hr {
-//             display: none;
-//             padding: 0;
-//             margin: 0;
-//         }
-//     }
-
-//     // #groups-directory-form,
-//     // #members-directory-form,
-//     // #group-settings-form {
-//     //     background-color: transparent;
-//     //     padding: 0;
-//     // }
-
-//     // Lists
-//     .radio,
-//     .checkbox,
-//     .dir-list,
-//     .activity,
-//     .groups,
-//     #groupblog-member-roles {
-//         ul {
-//           @include no-bullets();
-
-//           li {
-//             &:not(:last-child) {
-//                 margin-bottom: .25em;
-//                 padding-bottom: .25em;
-//                 border-bottom: 1px solid $base9;
-//             }
-
-//           }
-
-//         }
-//     }
-
-//     .item-list {
-//         li {
-//             padding: .25em;
-
-//             &:hover,
-//             &:focus {
-//                 background-color: $base9;
-//             }
-//         }
-//     }
-
-//     .entry-content ul,
-//     .bp-avatar-nav ul,
-//     ul#groupblog-details,
-//     ul#invite-anyone-group-list {
-//         @include no-bullets();
-//     }
-
-//     ol#invite-anyone-steps {
-//         margin-left: 0;
-//         padding: 0 0 0 1em;
-//     }
-
-
-//     .radio,
-//     .checkbox {
-//         strong {
-//             @extend label;
-//         }
-
-//         &> label {
-//             display: block;
-//         }
-//     }
-
-//     .checkbox {
-//         input[type='radio'] {
-//             margin-right: 5px;
-//         }
-//     }
-
-//     .gbd-value em {
-//         font-family: $mono;
-//     }
-
-//     #groupblog-member-options {
-//         &> label {
-//             display: block;
-//         }
-//     }
-
-//     // Tables
-//     table {
-//         width: 100%;
-//         td,
-//         th {
-//             padding: .25em;
-//         }
-//         td {
-//             &:first-child {
-//                 padding-left: 0;
-//             }
-//         }
-//         thead {
-//             tr {
-//                 background-color: $panel-bg-color;
-//                 color: $secondary;
-//                 text-align: center;
-//             }
-
-//             td,
-//             th {}        
-//         }
-//         tbody {
-//             tr {
-//                 // &:nth-child(even) {
-//                 //     background-color: $panel-bg-color;
-//                 // }
-//                 &:not(:last-child) {
-//                     border-bottom: 1px solid $panel-bg-color;
-//                 }
-//             }
-//             td {
-//                 &.label {
-//                     width: 75%;
-//                 }
-//             }
-//         }
-//         tfoot {
-//             tr {}
-//             td {}
-//         }
-//     }
-
-
-//     // Filters
-//     .filter,
-//     .sort {
-
-//         &:hover,
-//         &:focus {}
-        
-//         label {
-//             @include font-size($milli);
-//             display: inline-block;
-//             margin-bottom: 0;
-//         }
-//     }
-
-//     #docs-filter-meta {
-//         a {
-//             @include font-size($milli);
-//             display: inline-block;
-//             padding: .25em .5em;
-//             border: 1px solid $hr-color;
-//             margin-left: 0;
-//             &:hover,
-//             &:focus {
-//                 background-color: $hr-color;
-
-//             }
-
-//         }
-//     }
-
-//     .docs-filter-section {
-//         border: none;
-//         padding: 0;
-//     }
-
-//     ul#tags-list {
-//         li {}
-//     }
-
-
-//     // FORM ELEMENTS
-//     // Buttons
-//     #whats-new-form {
-//         // @extend %clearfix;
-
-//         #whats-new-options {}
-//     }
-//     form {
-//         margin-top: 1em;
-//         padding: 1em;
-//         border: 1px solid $hr-color;
-//         background-color: transparent;
-
-//         @extend %clearfix;
-//     }
-
-//     .left-menu {
-//         ul {
-//             @include no-bullets();
-//         }
-
-//         p {
-//             @extend .label;
-//         }
-
-//         #invite-anyone-member-list {
-//             border-radius: $base-border-radius;
-//         }
-//     }
-
-
-
-//     input[type="submit"],
-//     input[type="button"]:not(.ed_button),
-//     button,
-//     a.action {
-//         @include button();
-//     }
-
-//     button.ed_button,
-//     %button.ed_button,
-//     .mce-btn button {
-//         text-transform: none;
-//         font-weight: normal;
-//         &:hover,
-//         &:focus {
-//             color: $text-color;
-//         }
-//     }
-
-//     .mce-btn button {
-//         padding: 0;
-//         border: 1px solid $hr-color;
-//         background-color: $panel-bg-color;
-//         border-radius: 3px;
-//     }
-
-//     #previous-next {
-//         clear: left;
-//         margin-top: 1em;
-
-//         input#group-creation-previous {
-//             background-color: $info;
-//         }
-//     }
-
-//     a.action.safe {
-//         background-color: $info;
-//     }
-
-//     input[type="text"],
-//     textarea {
-//         display: block;
-//     }
-
-//     #bp-create-doc-button {
-//         float: none;
-//         margin: 0;
-//     }
-
-//     .small,
-//     .activity-meta,
-//     .acomment-options,
-//     .action {
-//         %button,
-//         .bp-primary-action,
-//         .bp-secondary-action,
-//         .group-button a {
-//             @include button-text();
-
-//             &.confirm,
-//             &.leave-group {
-//                 &:before {
-//                     @extend %fa-times;
-//                     color: $danger;
-//                 }
-//             }
-
-//             &.member-ban {
-//                 &:before {
-//                     @extend %fa-ban;
-//                     color: $danger;
-//                 }
-//             }
-//             &.member-promote-to-mod,
-//             &.member-promote-to-admin {
-//                 &:before {
-//                     @extend %fa-level-up;
-//                 }
-//             }
-//             &.admin-demote-to-member {
-//                 &:before {
-//                     @extend %fa-level-down;
-//                 }
-//             }
-
-//             &.acomment-reply {
-//                 &:before {
-//                     @extend %fa-reply;
-//                 }
-//                 span {
-//                     @include badge($font-size: $nano);
-//                 }
-//             }
-//             &%fav {
-//                 &:before {
-//                     @extend %fa-heart;
-//                 }
-//             }
-//         }
-//     }
-
-//     .dir-search {
-//         input {
-//             display: inline-block;
-//         }
-//     }
-
-//     textarea {
-//         height: 50px;
-//         min-height: 50px;
-//         width: 100%;
-//         max-width: 100%;
-//     }
-
-//     // Info Messages
-//     .info,
-//     #message,
-//     .bbp-template-notice,
-//     .bbp-no-topic  {
-
-//         p {
-//             @extend .alert-info;
-//             border: none;
-//             color: $white;
-//         }
-
-//         &.updated p {
-//             @extend .alert-success;
-//         }
-        
-//     }
-
-//     .gemail_icon {
-//         background-image: none !important;
-//         margin-left: 0;
-//         padding-left: 0 !important;
-//         font-weight: normal;
-
-//         &:before {
-//             margin-right: 6px;
-//             @extend %fa;
-//             @extend %fa-envelope;
-
-//         }
-//     }
-
-//     // Groups
-
-//     #group-settings-form {
-//         &> p {
-//             // @extend .alert-info;
-
-//             br {
-//                 display: none;
-//             }
-//         }
-//     }
-
-//     .dir-list {
-//         .item-avatar {}
-//     }
-
-//     .bp-widget {
-//         ul {
-//             @include inline-list();
-//         }
-//     }
-
-//     // Docs
-//     .doc-content {
-//         border: none;
-//         padding: 0;
-//     }
-
-//     .docs-info-header {
-//         margin-top: .5em;
-//         background-color: $panel-bg-color;
-//     }
-
-//     // #item-body {
-//     //     h3,
-//     //     p {}
-
-//     //     h3 {}
-//     //     p {
-//     //         @extend .label;
-//     //     }
-//     // }
-
-
-
-//     // Members
-
-
-
-//     // Activity/Comments
-
-//     .activity {
-//         margin-top: 1.5em;
-//     }
-
-//     // Group, Member, Comments Lists
-//     .activity-list,
-//     .dir-list,
-//     .groups {
-//         &>li {
-//             border-left: $tertiary;
-//             // &:nth-child(even) {
-//             //     background-color: $light-gray;
-//             // }
-//         }
-//         .mini {}
-
-//         .activity-avatar,
-//         .acomment-avatar,
-//         .item-avatar {
-//             @include span-columns(1 of 12);
-//             // float: left;
-//             // margin-right: 1em;
-//         }
-
-
-//         .activity-header,
-//         .acomment-meta,
-//         .item-meta {
-//             @extend .meta;
-
-//             p,
-//             span {
-//                 @extend .meta;
-//                 font-size: .75rem !important;
-//                 a,
-//                 a span {
-//                     font-size: .75rem !important;
-//                     img {
-//                         margin-bottom: 0;
-//                     }
-//                 }
-//             }
-//         }
-
-//         .activity-meta {}
-
-//         .item,
-//         .acomment-content {
-//             margin-top: .25em;
-
-//             a {
-//                 color: $tertiary;
-//             }
-//         }
-
-//         .activity-comments {
-//             border-top: 1px solid $hr-color;
-            
-//             ul {
-//                 margin-left: 2em;
-//                 padding-top: .5em;
-
-//                 &:not(:first-child) {
-//                     margin-top: .5em;
-//                     padding-top: .25em;
-//                     border-top: 1px solid $hr-color;
-//                 }
-
-
-//             }
-
-//             &> ul {
-//                 border-left: 1px solid $hr-color;
-//                 padding-left: .5em; 
-//                 background-color: $panel-bg-color;
-
-//                 &> li:not(:first-child) {
-//                     border-top: 1px solid $hr-color;
-//                     padding-top: .5em; 
-//                     background-color: $panel-bg-color;
-//                 }
-//             }
-
-//         }
-
-//         .group-button {}
-
-//         p {
-//             @include font-size($zeta);
-//         }
-
-
-//     }
-
-
-//     // Avatars
-//     img {
-//         .avatar {
-//             width: 100%;
-//             height: auto;
-//             padding: 2px;
-//             border: 1px solid $hr-color;
-//         }
-//         .avatar-20 {
-//             max-width: 20px;
-//         }
-//         .avatar-50 {
-//             max-width: 50px;
-//         }
-//         .avatar-150 {
-//             max-width: 150px;
-//         }
-//     }
-
-
-//     .activity-header {
-//         img.avatar {
-//             padding: 0 2px;
-//             border: none;
-//         }
-//     }
-
-//     li.odd {}
-//     li.public {
-//         border-right: 4px solid $info;
-//     }
-//     li.is-member {
-//         border-right: 4px solid $success;
-//     }
-//     li.is-admin {
-//         border-right: 4px solid $warning;
-//     }
-//     li.group-has-avatar {}
-
-
-
-//     /// SHAME
-
-//     // The BuddyPress Documents plugin adds styles to header, making them difficult to override
-//     .toggleable {
-//         &.toggle-open {
-//             .toggle-switch {
-//                 border-radius: $base-border-radius !important;
-//                 border-color: $hr-color !important;
-//             }
-//         }
-
-//         .toggle-content {
-//             border-color: $hr-color !important;
-//         }
-//     }
-
-
-//     .bbp-template-notice,
-//     .bbp-no-topic  {
-
-//         p {
-//             color: $white !important;
-//         }
-        
-//     }
+    .bp-screen-reader-text {
+        margin-right: .25em;
+    }
+
+    // Avatars
+    img {
+        .avatar {
+            width: 100%;
+            height: auto;
+            padding: 2px;
+            border: 1px solid $hr-color;
+        }
+        .avatar-20 {
+            max-width: 20px;
+        }
+        .avatar-50 {
+            max-width: 50px;
+        }
+        .avatar-150 {
+            max-width: 150px;
+        }
+    }
+
+    img.avatar {
+        padding: 2px;
+        border: 1px solid $hr-color;
+        border-radius: 50%;
+
+        &.avatar-20 {
+            padding: 0;
+            margin-right: 2px;
+        }
+    }
 
 }
 
+// Shame
+// BuddyPress Docs uses CSS columns, which breaks things
 
-
+.entry-content ul#tags-list {
+    -moz-column-count:  unset !important;
+    -webkit-column-count:  unset !important;
+    column-count:  unset !important;
+}
