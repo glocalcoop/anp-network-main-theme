@@ -262,11 +262,10 @@ body.buddypress {
         }
 
         #whats-new-avatar {
-            width: 7%;
+            min-width: 52px;
+            width: 8%;
         }
-        .activity-greeting {
-            width: 93%;
-        }
+        .activity-greeting {}
 
         .bp-screen-reader-text {
             @extend %visuallyhidden;
@@ -282,42 +281,61 @@ body.buddypress {
     }
 
     // Layout
-    .activity-list {
-
-        .activity-avatar,
-        .acomment-avatar,
-        .activity-content,
-        .acomment-meta,
-        .acomment-content,
-        .acomment-options  {
-            @extend %clearfix;
-            float: left;
-        }
-    }
 
     // Conversation View
     // Avatar is 150px/16%
     .activity-list {
 
-        .activity-avatar,
-        .acomment-avatar,
+        .acomment-meta {
+            background-color: rgba($primary, .05);
+            padding: .125em;
+        }
+
+        .activity-content,
+        .activity-comments,
         .acomment-options {
+            display: block;
+        }
+
+        .activity-avatar,
+        .acomment-avatar {
             display: none;
         }
 
         @include breakpoint(md) {
 
-            .activity-avatar,
-            .acomment-avatar,
-            .acomment-options {
-                display: block;
-                width: 7%;
-            }
-            .activity-content,
-            .acomment-meta,
-            .acomment-content,
-            .acomment-options {
-                width: 93%;
+            li {                
+                .activity-avatar,
+                .acomment-avatar {
+                    display: block;
+                }
+
+                .activity-avatar,
+                .activity-content,
+                .acomment-avatar,
+                .acomment-meta,
+                .acomment-content,
+                .acomment-options {
+                    float: left;
+                }
+
+                .activity-avatar,
+                .acomment-avatar {
+                    width: 8%;
+                    min-width: 50px;
+                }
+                .activity-content,
+                .acomment-meta,
+                .acomment-content,
+                .acomment-options {
+                    width: 92%;
+                }
+                .acomment-options {
+                    margin-left: 8%;
+                }
+                .activity-comments {
+                    @extend %clearfix;
+                }
             }
 
         }
@@ -329,8 +347,7 @@ body.buddypress {
     #item-body .activity-list {
 
         .activity-avatar,
-        .acomment-avatar,
-        .acomment-options {
+        .acomment-avatar {
             display: none;
         }
 
@@ -339,20 +356,24 @@ body.buddypress {
             .acomment-avatar,
             .acomment-options {
                 display: block;
-                width: 7%;
+                width: 8%;
+            }
+            .activity-avatar,
+            .acomment-avatar {
+                min-width: 50px;
             }
             .activity-content,
             .acomment-meta,
             .acomment-content,
             .acomment-options {
-                width: 93%;
+                // width: 92%;
             }
         }
     }
 
     .activity-list {
         &> li {
-            display: block;
+            // display: block;
             @extend %clearfix;
 
             .activity-content {
@@ -375,9 +396,9 @@ body.buddypress {
                     }
                 }
                 .acomment-meta {}
-                .activity-meta {
-                    @extend %meta;
-                }
+                // .activity-meta {
+                //     @extend %meta;
+                // }
             }
             .activity-comments {
                 @extend %clearfix;
@@ -402,9 +423,13 @@ body.buddypress {
                         padding-left: .5em;
                         padding-top: .5em;
                         padding-bottom: .5em;
-                        margin-left: 2em;
+                        margin-left: .5em;
                         border-top: 1px solid $hr-color;
                         background-color: rgba($primary,.05);
+
+                        @include breakpoint(md) {
+                            margin-left: 2em;
+                        }
                         
                         &:last-child {
                             padding-bottom: 0;
@@ -496,34 +521,42 @@ body.buddypress {
     // Listing
     // Layout
     #groups-list {
-        .group-has-avatar {
 
-            .item-avatar {
-                text-align: center;
+        .item-avatar {
+            text-align: center;
+        }
+
+        // li {
+        //     display: block;
+        // }
+
+        @include breakpoint(md) {
+
+            li {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                align-items: top;
+                max-width: 100%;
+
+              .item-avatar {
+                flex: 0 0 7%;
+                text-align: left;
+              }
+
+              .item {
+                flex: 1;
+                padding-right: .5em;
+                padding-left:  .5em;
+              }
+
+              .action {
+                flex-basis: 15%;
+              }
+
             }
-
-             @include breakpoint(md) {
-                .item-avatar,
-                .item,
-                .action {
-                    display: block;
-                    float: left;
-                }
-
-                .item-avatar {
-                    width: 7%;
-                    text-align: left;
-                }
-                .item,
-                .action {
-                    width: 93%;
-                    // margin-left: 8%;
-                }
-                .action {
-                    margin-left: 7%;
-                }
-
-             }
 
         }
     }
@@ -890,7 +923,7 @@ body.buddypress {
     .activity-meta,
     .acomment-options {
         a {
-            font-size: 14px !important;
+            // font-size: 14px !important;
             @include button-text();
 
             &[href$="document-title/"] {

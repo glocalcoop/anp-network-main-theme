@@ -233,20 +233,9 @@ html {
 #bbpress-forums form:after, #buddypress #whats-new-form #whats-new-avatar:after,
 #buddypress #whats-new-form .activity-greeting:after,
 #bbpress-forums #whats-new-form #whats-new-avatar:after,
-#bbpress-forums #whats-new-form .activity-greeting:after, #buddypress .activity-list .activity-avatar:after,
-#buddypress .activity-list .acomment-avatar:after,
-#buddypress .activity-list .activity-content:after,
-#buddypress .activity-list .acomment-meta:after,
-#buddypress .activity-list .acomment-content:after,
-#buddypress .activity-list .acomment-options:after,
-#bbpress-forums .activity-list .activity-avatar:after,
-#bbpress-forums .activity-list .acomment-avatar:after,
-#bbpress-forums .activity-list .activity-content:after,
-#bbpress-forums .activity-list .acomment-meta:after,
-#bbpress-forums .activity-list .acomment-content:after,
-#bbpress-forums .activity-list .acomment-options:after, #buddypress .activity-list > li:after,
-#bbpress-forums .activity-list > li:after, #buddypress .activity-list > li .activity-comments:after,
-#bbpress-forums .activity-list > li .activity-comments:after, #buddypress .activity-list > li .activity-comments ul:after,
+#bbpress-forums #whats-new-form .activity-greeting:after, #buddypress .activity-list li .activity-comments:after,
+#bbpress-forums .activity-list li .activity-comments:after, #buddypress .activity-list > li:after,
+#bbpress-forums .activity-list > li:after, #buddypress .activity-list > li .activity-comments ul:after,
 #bbpress-forums .activity-list > li .activity-comments ul:after, #buddypress .activity-list > li .activity-comments ul li:after,
 #bbpress-forums .activity-list > li .activity-comments ul li:after, #buddypress .activity-list .activity-comments form:after,
 #bbpress-forums .activity-list .activity-comments form:after, #buddypress #member-list li:after,
@@ -279,7 +268,6 @@ button,
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  font-size: 14px;
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -289,7 +277,7 @@ button,
   text-align: center;
   border: 0;
   background: #888;
-  color: #fff;
+  color: #fff !important;
   display: inline-block;
   border-radius: 0; }
   button:link,
@@ -307,7 +295,7 @@ button,
   .tax-meeting_tag .content-filter li:visited,
   .tax-meeting_type .content-filter li:visited,
   .tax-proposal_status .content-filter li:visited, .so-widget-sow-cta .sow-cta-base .ow-button-base a:visited {
-    color: #fff; }
+    color: #fff !important; }
   button:hover,
   .button:hover, .post-type-archive-meeting .content-filter li:hover,
   .post-type-archive-proposal .content-filter li:hover,
@@ -333,8 +321,7 @@ button,
 #bbpress-forums #item-header #item-header-content .activity,
 #bbpress-forums #item-header #item-header-content .activity-time-since,
 #bbpress-forums #item-header .activity-content .activity,
-#bbpress-forums #item-header .activity-content .activity-time-since, #buddypress .activity-list > li .activity-content .activity-meta,
-#bbpress-forums .activity-list > li .activity-content .activity-meta, #buddypress #groups-list .item-meta,
+#bbpress-forums #item-header .activity-content .activity-time-since, #buddypress #groups-list .item-meta,
 #bbpress-forums #groups-list .item-meta, #buddypress #member-list .activity,
 #buddypress #member-list .action,
 #buddypress #members-list .activity,
@@ -347,7 +334,6 @@ button,
 #bbpress-forums .bbp-topics .bbp-body .bbp-topic-meta,
 #bbpress-forums .bbp-topics .bbp-body .bbp-topic-freshness, #buddypress #invite-anyone-invite-list .activity,
 #bbpress-forums #invite-anyone-invite-list .activity {
-  font-size: 11px;
   font-size: 0.6875rem;
   color: #c0c0c0;
   text-transform: uppercase; }
@@ -358,8 +344,7 @@ button,
   #bbpress-forums #item-header #item-header-content .activity a,
   #bbpress-forums #item-header #item-header-content .activity-time-since a,
   #bbpress-forums #item-header .activity-content .activity a,
-  #bbpress-forums #item-header .activity-content .activity-time-since a, #buddypress .activity-list > li .activity-content .activity-meta a,
-  #bbpress-forums .activity-list > li .activity-content .activity-meta a, #buddypress #groups-list .item-meta a,
+  #bbpress-forums #item-header .activity-content .activity-time-since a, #buddypress #groups-list .item-meta a,
   #bbpress-forums #groups-list .item-meta a, #buddypress #member-list .activity a,
   #buddypress #member-list .action a,
   #buddypress #members-list .activity a,
@@ -372,7 +357,6 @@ button,
   #bbpress-forums .bbp-topics .bbp-body .bbp-topic-meta a,
   #bbpress-forums .bbp-topics .bbp-body .bbp-topic-freshness a, #buddypress #invite-anyone-invite-list .activity a,
   #bbpress-forums #invite-anyone-invite-list .activity a {
-    font-size: 11px;
     font-size: 0.6875rem;
     color: #557c90; }
 
@@ -755,13 +739,11 @@ style a page via class
 .home .widget_glocal_network_posts_widget .so-widget-sow-post-carousel .post-title a, .so-widget-sow-post-carousel .home-modules .events-list .all-events-link a, .home-modules .events-list .so-widget-sow-post-carousel .all-events-link a, .so-widget-sow-post-carousel
 .home-modules .widget_em_widget ul .all-events-link a,
 .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a {
-  font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
 
 #buddypress #invite-anyone-invite-list h4,
 #bbpress-forums #invite-anyone-invite-list h4 {
-  font-size: 14px;
   font-size: 0.875rem;
   color: #c0c0c0; }
 
@@ -842,11 +824,9 @@ h6, .event-list .event-location, .meta *, #buddypress #item-header #item-header-
   margin-bottom: 12px; }
 
 h1 {
-  font-size: 48px;
   font-size: 3rem; }
 
 h2, .so-widget-sow-cta .sow-cta-base h4 {
-  font-size: 36px;
   font-size: 2.25rem; }
 
 h3, .news-list .entry-title,
@@ -854,15 +834,12 @@ h3, .news-list .entry-title,
 .home .widget_glocal_network_posts_widget .entry-title,
 .home .widget_glocal_network_posts_widget .post-title, .home-modules .events-list .all-events-link,
 .home-modules .widget_em_widget ul .all-events-link {
-  font-size: 28px;
   font-size: 1.75rem; }
 
 h4 {
-  font-size: 22px;
   font-size: 1.375rem; }
 
 h5 {
-  font-size: 18px;
   font-size: 1.125rem; }
 
 h6, .event-list .event-location, .meta *, #buddypress #item-header #item-header-content .activity *,
@@ -873,7 +850,6 @@ h6, .event-list .event-location, .meta *, #buddypress #item-header #item-header-
 #bbpress-forums #item-header #item-header-content .activity-time-since *,
 #bbpress-forums #item-header .activity-content .activity *,
 #bbpress-forums #item-header .activity-content .activity-time-since * {
-  font-size: 16px;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px; }
@@ -881,18 +857,15 @@ h6, .event-list .event-location, .meta *, #buddypress #item-header #item-header-
 p, li, dt, dd {
   margin-top: 0;
   margin-bottom: 24px;
-  font-size: 18px;
   font-size: 1.125rem; }
 
 input, label, select, textarea {
-  font-size: 18px;
   font-size: 1.125rem;
   margin-bottom: 12px;
   font-family: "Lato", Helvetica, Verdana, sans-serif;
   font-weight: 300; }
 
 small {
-  font-size: 14px;
   font-size: 0.875rem; }
 
 b, strong {
@@ -923,7 +896,6 @@ kbd,
 pre,
 samp {
   font-family: "Courier New", Courier, monospace;
-  font-size: 18px;
   font-size: 1.125rem; }
 
 pre {
@@ -1118,7 +1090,6 @@ hr {
   .footer .widget ul, .footer article.handbook .table-of-contents ul, article.handbook .footer .table-of-contents ul {
     margin-bottom: 0; }
   .footer .widget li, .footer article.handbook .table-of-contents li, article.handbook .footer .table-of-contents li {
-    font-size: 16px;
     font-size: 1rem;
     color: #444;
     padding: 0;
@@ -1145,7 +1116,6 @@ hr {
   padding: 0;
   float: left; }
   .nav-social li {
-    font-size: 40px;
     font-size: 2.5rem;
     display: inline-block;
     margin: 0;
@@ -1213,7 +1183,6 @@ hr {
     display: none; }
 
 .copyright {
-  font-size: 10px;
   font-size: 0.625rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1223,7 +1192,6 @@ hr {
   height: 30px;
   line-height: 30px; }
   .copyright .copyleft {
-    font-size: 30px;
     font-size: 1.875rem; }
     .copyright .copyleft:before {
       font-family: "FontAwesome";
@@ -1237,7 +1205,6 @@ hr {
       vertical-align: middle; }
   @media screen and (min-width: 769px) {
     .copyright {
-      font-size: 12px;
       font-size: 0.75rem; } }
 
 .header-local {
@@ -1318,7 +1285,6 @@ hr {
 .site-banner .site-name {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 36px;
   font-size: 2.25rem;
   line-height: 1.1;
   margin: 0;
@@ -1519,7 +1485,6 @@ styles and our css is cleaner and more scalable. */
       margin-left: 7px;
       margin-top: 2px; }
   .nav-anchors .anchor-search {
-    font-size: 22px;
     font-size: 1.375rem;
     display: block;
     padding: 0; }
@@ -1618,7 +1583,6 @@ styles and our css is cleaner and more scalable. */
   float: right;
   margin-left: 6px;
   margin-top: 3px;
-  font-size: 14px;
   font-size: 0.875rem; }
 
 @media screen and (min-width: 769px) {
@@ -1727,7 +1691,6 @@ styles and our css is cleaner and more scalable. */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 16px;
     font-size: 1rem; }
     .directory-content .filter li:hover,
     .directory-content .sort li:hover {
@@ -1735,7 +1698,6 @@ styles and our css is cleaner and more scalable. */
       color: #fff; }
     .directory-content .filter li.is-on,
     .directory-content .sort li.is-on {
-      font-size: 16px;
       font-size: 1rem;
       background: #557c90;
       color: #fff;
@@ -1848,7 +1810,6 @@ POSTS & CONTENT STYLES
 .section-title {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 28px;
   font-size: 1.75rem;
   line-height: 1.1;
   margin: 24px 0 48px; }
@@ -1885,7 +1846,6 @@ POSTS & CONTENT STYLES
   color: #c0c0c0;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 15px;
   font-size: 0.9375rem; }
   .byline a {
     color: #c0c0c0; }
@@ -1894,7 +1854,6 @@ POSTS & CONTENT STYLES
   padding-top: 40px; }
 
 .single-post .entry-content p:first-child {
-  font-size: 22px;
   font-size: 1.375rem; }
 
 .post .entry-content, article.handbook .entry-content {
@@ -1979,7 +1938,6 @@ POSTS & CONTENT STYLES
     color: #fff;
     white-space: nowrap; }
     .directory-promo .promo-icons .icon {
-      font-size: 48px;
       font-size: 3rem;
       line-height: 1; }
       .directory-promo .promo-icons .icon:before {
@@ -2076,7 +2034,6 @@ POSTS & CONTENT STYLES
 .home-modules .widget_em_widget ul .all-events-link .home a, .home
 .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a,
 .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .home a {
-  font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
 
@@ -2085,7 +2042,6 @@ POSTS & CONTENT STYLES
 .sites .module-heading,
 .home .widget_glocal_network_sites_widget .module-heading,
 .home .widget_glocal_network_posts_widget .module-heading {
-  font-size: 18px;
   font-size: 1.125rem;
   text-transform: uppercase;
   letter-spacing: 1px; }
@@ -2122,7 +2078,6 @@ POSTS & CONTENT STYLES
     margin-bottom: 2px; }
   .highlights-list .post-title {
     margin: 3px 0 -3px;
-    font-size: 22px;
     font-size: 1.375rem; }
   .highlights-list .post-excerpt, .highlights-list #buddypress .activity-list > li .activity-content .activity-header p, #buddypress .activity-list > li .activity-content .activity-header .highlights-list p, .highlights-list
   #buddypress .activity-list > li .activity-content .activity-inner p,
@@ -2157,13 +2112,11 @@ POSTS & CONTENT STYLES
   .home-modules .widget_em_widget ul .all-events-link .highlights-list a, .highlights-list
   .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a,
   .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link .highlights-list a {
-    font-size: 14px;
     font-size: 0.875rem; }
   .highlights-list .blog-name,
   .highlights-list .post-date,
   .highlights-list .byline {
     display: inline-block;
-    font-size: 12px;
     font-size: 0.75rem;
     white-space: nowrap;
     margin: 0 6px 0 0;
@@ -2258,7 +2211,6 @@ POSTS & CONTENT STYLES
     letter-spacing: 1px;
     margin: 0;
     padding: 8px 12px 0;
-    font-size: 18px;
     font-size: 1.125rem; }
   .home .sites-list .meta, .home .sites-list #buddypress #item-header #item-header-content .activity, #buddypress #item-header #item-header-content .home .sites-list .activity, .home .sites-list
   #buddypress #item-header #item-header-content .activity-time-since,
@@ -2308,7 +2260,6 @@ POSTS & CONTENT STYLES
   .page-template-page-directory .sites-list .activity-time-since {
     margin: 0;
     padding: 6px 12px 0;
-    font-size: 11px;
     font-size: 0.6875rem;
     color: #c0c0c0; }
   .home .sites-list.no-site-image li,
@@ -2335,7 +2286,6 @@ SIDEBARS & ASIDES
 *********************/
 .sidebar p {
   line-height: 1.3;
-  font-size: 16px;
   font-size: 1rem; }
 
 .sidebar .menu a,
@@ -2355,7 +2305,6 @@ SIDEBARS & ASIDES
   margin: -5px 0 0.5em;
   color: #fff;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 16px;
   font-size: 1rem; }
 
 .widget, article.handbook .table-of-contents {
@@ -2413,17 +2362,14 @@ SIDEBARS & ASIDES
 
 .widget_recent_entries li,
 .widget_em_widget li {
-  font-size: 22px;
   font-size: 1.375rem; }
   .widget_recent_entries li li,
   .widget_em_widget li li {
-    font-size: 18px;
     font-size: 1.125rem; }
 
 .widget_archive li,
 .widget_meta li {
   white-space: nowrap;
-  font-size: 16px;
   font-size: 1rem;
   line-height: 1.1; }
 
@@ -2738,7 +2684,6 @@ SIDEBARS & ASIDES
   margin-right: 6px;
   white-space: nowrap;
   color: #888;
-  font-size: 12px;
   font-size: 0.75rem; }
   .news-list .blog-name a,
   .news-list .post-date a,
@@ -2797,7 +2742,6 @@ SIDEBARS & ASIDES
     margin-bottom: 18px; }
   .post .post-date, article.handbook .post-date,
   .post .post-categories li, article.handbook .post-categories li {
-    font-size: 16px;
     font-size: 1rem; }
 
 .blog .news .post-image {
@@ -2854,7 +2798,6 @@ SIDEBARS & ASIDES
   overflow: hidden; }
 
 .main-network .subtitle {
-  font-size: 18px;
   font-size: 1.125rem;
   letter-spacing: 2px;
   margin-bottom: 12px; }
@@ -2869,7 +2812,6 @@ SIDEBARS & ASIDES
 
 .network-posts .entry-title,
 .network-posts .post-title {
-  font-size: 36px;
   font-size: 2.25rem;
   margin-bottom: 6px; }
 
@@ -2966,7 +2908,6 @@ SIDEBARS & ASIDES
 .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link a,
 .home-modules .widget_em_widget ul .so-widget-sow-post-carousel .all-events-link
 .network-posts a {
-  font-size: 22px;
   font-size: 1.375rem;
   margin-bottom: 12px; }
 
@@ -3002,7 +2943,6 @@ SIDEBARS & ASIDES
 #bbpress-forums #item-header .activity-content .activity .network-posts *, .network-posts
 #bbpress-forums #item-header .activity-content .activity-time-since *,
 #bbpress-forums #item-header .activity-content .activity-time-since .network-posts * {
-  font-size: 14px;
   font-size: 0.875rem;
   color: #a9a9a9;
   display: inline-block; }
@@ -3151,7 +3091,6 @@ input[type="text"],
 input[type="password"],
 input[type='email'] {
   padding: 5px;
-  font-size: 16px;
   font-size: 1rem; }
 
 input[type='submit'] {
@@ -3178,7 +3117,6 @@ input[type='submit'] {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  font-size: 14px;
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -3188,11 +3126,11 @@ input[type='submit'] {
   text-align: center;
   border: 0;
   background: #2f4550;
-  color: #fff;
+  color: #fff !important;
   display: inline-block;
   border-radius: 0; }
   input[type='submit']:link, input[type='submit']:visited {
-    color: #fff; }
+    color: #fff !important; }
   input[type='submit']:hover, input[type='submit']:focus {
     background: #426170;
     color: #fff !important; }
@@ -3201,7 +3139,6 @@ input[type='button'] {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  font-size: 14px;
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -3211,17 +3148,16 @@ input[type='button'] {
   text-align: center;
   border: 0;
   background: #888;
-  color: #fff;
+  color: #fff !important;
   display: inline-block;
   border-radius: 0; }
   input[type='button']:link, input[type='button']:visited {
-    color: #fff; }
+    color: #fff !important; }
   input[type='button']:hover, input[type='button']:focus {
     background: #a2a2a2;
     color: #fff !important; }
 
 select {
-  font-size: 14px;
   font-size: 0.875rem;
   display: inline-block;
   margin-bottom: 0;
@@ -3262,7 +3198,6 @@ select {
   #searchform label {
     display: none; }
   #searchform #s {
-    font-size: 18px;
     font-size: 1.125rem;
     line-height: 1;
     width: 270px;
@@ -3275,7 +3210,6 @@ select {
     vertical-align: top; }
     @media screen and (min-width: 769px) {
       #searchform #s {
-        font-size: 14px;
         font-size: 0.875rem;
         width: 140px;
         height: 24px;
@@ -3303,7 +3237,6 @@ select {
       vertical-align: middle; }
     @media screen and (min-width: 769px) {
       #searchform #searchsubmit {
-        font-size: 16px;
         font-size: 1rem;
         height: 24px;
         width: 24px;
@@ -3565,7 +3498,6 @@ ALERTS AND NOTICES
   padding: 20px 40px; }
   .respond-form .alert code,
   .respond-form .alert p {
-    font-size: 15px;
     font-size: 0.9375rem;
     line-height: 1.4; }
 
@@ -3604,7 +3536,6 @@ Breadcrumb
     #bbpress-forums #group-create-tabs ul li span {
       padding: .5em;
       display: block;
-      font-size: 16px;
       font-size: 1rem;
       color: #fff; }
       #buddypress #group-create-tabs ul li a::first-letter,
@@ -3670,7 +3601,6 @@ div.bx-wrapper {
     div.bx-wrapper .bx-caption span {
       color: #444;
       font-family: "Lato", Helvetica, Verdana, sans-serif;
-      font-size: 22px;
       font-size: 1.375rem;
       margin: 0; }
   div.bx-wrapper .bx-pager.bx-default-pager {
@@ -3716,7 +3646,6 @@ article.home-feature div.bx-wrapper .bx-viewport {
   right: -40px; }
 
 .home-modules .bx-wrapper .bx-controls-direction a {
-  font-size: 36px;
   font-size: 2.25rem;
   height: 48px;
   margin-top: -24px;
@@ -3745,7 +3674,6 @@ EASY MAIL
     width: 100%;
     margin-top: .5em;
     padding: .5em 1em;
-    font-size: 15px;
     font-size: 0.9375rem; }
   .sidebar .alo_easymail_widget_form {
     padding: 20px 0;
@@ -3772,7 +3700,6 @@ THEME MY LOGIN
     margin-bottom: 20px;
     color: #444;
     border: 0;
-    font-size: 18px;
     font-size: 1.125rem; }
   .login p.error {
     background-color: #f2b8b6; }
@@ -4268,7 +4195,6 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .home-modules .widget_em_widget ul .all-events-link,
   .home-modules .widget_em_widget ul
   .tax-proposal_status article header .all-events-link {
-    font-size: 22px;
     font-size: 1.375rem;
     margin-bottom: 0; }
   .post-type-archive-meeting article .connected-content,
@@ -4464,7 +4390,6 @@ MEETINGS ARCHIVE & SINGLE STYLES
 #bbpress-forums #item-header .activity-content
 .single-summary article p.activity-time-since {
   margin-bottom: 0;
-  font-size: 14px;
   font-size: 0.875rem; }
 
 .single-meeting article header .meta, .single-meeting article header #buddypress #item-header #item-header-content .activity, #buddypress #item-header #item-header-content .single-meeting article header .activity, .single-meeting article header
@@ -4575,7 +4500,6 @@ MEETINGS ARCHIVE & SINGLE STYLES
 #bbpress-forums #item-header .activity-content .activity-time-since,
 #bbpress-forums #item-header .activity-content
 .single-summary article header .activity-time-since {
-  font-size: 16px;
   font-size: 1rem; }
 
 .single-meeting article .entry-content,
@@ -4593,7 +4517,6 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .single-summary article .entry-content h2,
   .single-summary article .entry-content .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
   .single-summary article .entry-content h4 {
-    font-size: 28px;
     font-size: 1.75rem;
     margin-top: .5em;
     padding-top: .5em; }
@@ -4680,14 +4603,12 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .home-modules .widget_em_widget ul .all-events-link,
   .home-modules .widget_em_widget ul
   .single-summary article .entry-content .all-events-link {
-    font-size: 22px;
     font-size: 1.375rem;
     margin: 1em 0 .25em 0; }
   .single-meeting article .entry-content h4,
   .single-proposal article .entry-content h4,
   .single-agenda article .entry-content h4,
   .single-summary article .entry-content h4 {
-    font-size: 18px;
     font-size: 1.125rem; }
   .single-meeting article .entry-content p, .single-meeting article .entry-content li, .single-meeting article .entry-content dt, .single-meeting article .entry-content dd,
   .single-proposal article .entry-content p,
@@ -4702,7 +4623,6 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .single-summary article .entry-content li,
   .single-summary article .entry-content dt,
   .single-summary article .entry-content dd {
-    font-size: 16px;
     font-size: 1rem; }
   .single-meeting article .entry-content li,
   .single-proposal article .entry-content li,
@@ -4976,7 +4896,6 @@ MEETINGS ARCHIVE & SINGLE STYLES
   .home-modules .widget_em_widget ul .all-events-link,
   .home-modules .widget_em_widget ul
   .single-summary article .post-footer .all-events-link {
-    font-size: 22px;
     font-size: 1.375rem;
     margin: 0 0 .25em 0; }
   .single-meeting article .post-footer ul,
@@ -4989,7 +4908,6 @@ MEETINGS ARCHIVE & SINGLE STYLES
     .single-agenda article .post-footer ul li,
     .single-summary article .post-footer ul li {
       list-style: square;
-      font-size: 16px;
       font-size: 1rem;
       margin-bottom: .25em; }
     .single-meeting article .post-footer ul ul,
@@ -5112,7 +5030,6 @@ div.bx-wrapper {
     div.bx-wrapper .bx-caption span {
       color: #444;
       font-family: "Lato", Helvetica, Verdana, sans-serif;
-      font-size: 22px;
       font-size: 1.375rem;
       margin: 0; }
   div.bx-wrapper .bx-pager.bx-default-pager {
@@ -5158,7 +5075,6 @@ article.home-feature div.bx-wrapper .bx-viewport {
   right: -40px; }
 
 .home-modules .bx-wrapper .bx-controls-direction a {
-  font-size: 36px;
   font-size: 2.25rem;
   height: 48px;
   margin-top: -24px;
@@ -5253,7 +5169,6 @@ EVENT ORGANISER
       line-height: 1.5;
       color: #a9a9a9;
       display: inline-block;
-      font-size: 16px;
       font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 1px; }
@@ -5868,7 +5783,6 @@ ul.event-categories {
   overflow: hidden; }
   @media screen and (min-width: 321px) {
     .home-modules .event-title {
-      font-size: 20px;
       font-size: 1.25rem;
       line-height: 1.3; } }
   .home-modules .event-title a {
@@ -5885,7 +5799,6 @@ ul.event-categories {
     .home-modules .event-start .event-day,
     .home-modules .event-start .event-date,
     .home-modules .event-start .all-events-link {
-      font-size: 16px;
       font-size: 1rem;
       line-height: 1.3; }
     .home-modules .event-start .event-date {
@@ -5971,7 +5884,7 @@ body.buddypress .page-title {
     #buddypress .bp-avatar-nav ul li a:not(:last-child),
     #bbpress-forums .item-list-tabs:not(#group-create-tabs) ul li a:not(:last-child),
     #bbpress-forums .bp-avatar-nav ul li a:not(:last-child) {
-      border-right: 1px solid rgba(0, 0, 0, 0.1); }
+      border-right: 1px solid rbga(#7A9E9F, 0.1); }
   #buddypress .item-list-tabs:not(#group-create-tabs) ul li:active a,
   #buddypress .item-list-tabs:not(#group-create-tabs) ul li.current a,
   #buddypress .item-list-tabs:not(#group-create-tabs) ul li.selected a,
@@ -6028,7 +5941,7 @@ body.buddypress .page-title {
         background-color: #555555; }
       #buddypress #subnav.item-list-tabs ul li a:not(:last-child),
       #bbpress-forums #subnav.item-list-tabs ul li a:not(:last-child) {
-        border-right: 1px solid rgba(0, 0, 0, 0.1); }
+        border-right: 1px solid rbga(#888, 0.1); }
     #buddypress #subnav.item-list-tabs ul li:active a,
     #buddypress #subnav.item-list-tabs ul li.current a,
     #buddypress #subnav.item-list-tabs ul li.selected a,
@@ -6116,7 +6029,6 @@ body.buddypress .page-title {
 #bbpress-forums h2,
 #bbpress-forums .so-widget-sow-cta .sow-cta-base h4, .so-widget-sow-cta .sow-cta-base
 #bbpress-forums h4 {
-  font-size: 28px;
   font-size: 1.75rem;
   color: #7A9E9F; }
 
@@ -6152,7 +6064,6 @@ body.buddypress .page-title {
 .home-modules .widget_em_widget ul
 #bbpress-forums .all-events-link,
 #bbpress-forums h4 {
-  font-size: 22px;
   font-size: 1.375rem;
   margin-top: 1em; }
 
@@ -6192,14 +6103,12 @@ body.buddypress .page-title {
 #bbpress-forums #item-header #item-header-content .activity-time-since,
 #bbpress-forums #item-header .activity-content .activity,
 #bbpress-forums #item-header .activity-content .activity-time-since {
-  font-size: 12px;
   font-size: 0.75rem; }
 
 #buddypress label,
 #buddypress .label,
 #bbpress-forums label,
 #bbpress-forums .label {
-  font-size: 16px;
   font-size: 1rem;
   color: #4b6768; }
 
@@ -6328,11 +6237,8 @@ body.buddypress .page-title {
 
 #buddypress #whats-new-form #whats-new-avatar,
 #bbpress-forums #whats-new-form #whats-new-avatar {
-  width: 7%; }
-
-#buddypress #whats-new-form .activity-greeting,
-#bbpress-forums #whats-new-form .activity-greeting {
-  width: 93%; }
+  min-width: 52px;
+  width: 8%; }
 
 #buddypress #whats-new-form #whats-new,
 #bbpress-forums #whats-new-form #whats-new {
@@ -6342,53 +6248,67 @@ body.buddypress .page-title {
 #bbpress-forums .activity-greeting {
   color: #444; }
 
-#buddypress .activity-list .activity-avatar,
-#buddypress .activity-list .acomment-avatar,
-#buddypress .activity-list .activity-content,
 #buddypress .activity-list .acomment-meta,
-#buddypress .activity-list .acomment-content,
+#bbpress-forums .activity-list .acomment-meta {
+  background-color: rgba(47, 69, 80, 0.05);
+  padding: .125em; }
+
+#buddypress .activity-list .activity-content,
+#buddypress .activity-list .activity-comments,
 #buddypress .activity-list .acomment-options,
-#bbpress-forums .activity-list .activity-avatar,
-#bbpress-forums .activity-list .acomment-avatar,
 #bbpress-forums .activity-list .activity-content,
-#bbpress-forums .activity-list .acomment-meta,
-#bbpress-forums .activity-list .acomment-content,
+#bbpress-forums .activity-list .activity-comments,
 #bbpress-forums .activity-list .acomment-options {
-  float: left; }
+  display: block; }
 
 #buddypress .activity-list .activity-avatar,
 #buddypress .activity-list .acomment-avatar,
-#buddypress .activity-list .acomment-options,
 #bbpress-forums .activity-list .activity-avatar,
-#bbpress-forums .activity-list .acomment-avatar,
-#bbpress-forums .activity-list .acomment-options {
+#bbpress-forums .activity-list .acomment-avatar {
   display: none; }
 
 @media screen and (min-width: 769px) {
-  #buddypress .activity-list .activity-avatar,
-  #buddypress .activity-list .acomment-avatar,
-  #buddypress .activity-list .acomment-options,
-  #bbpress-forums .activity-list .activity-avatar,
-  #bbpress-forums .activity-list .acomment-avatar,
-  #bbpress-forums .activity-list .acomment-options {
-    display: block;
-    width: 7%; }
-  #buddypress .activity-list .activity-content,
-  #buddypress .activity-list .acomment-meta,
-  #buddypress .activity-list .acomment-content,
-  #buddypress .activity-list .acomment-options,
-  #bbpress-forums .activity-list .activity-content,
-  #bbpress-forums .activity-list .acomment-meta,
-  #bbpress-forums .activity-list .acomment-content,
-  #bbpress-forums .activity-list .acomment-options {
-    width: 93%; } }
+  #buddypress .activity-list li .activity-avatar,
+  #buddypress .activity-list li .acomment-avatar,
+  #bbpress-forums .activity-list li .activity-avatar,
+  #bbpress-forums .activity-list li .acomment-avatar {
+    display: block; }
+  #buddypress .activity-list li .activity-avatar,
+  #buddypress .activity-list li .activity-content,
+  #buddypress .activity-list li .acomment-avatar,
+  #buddypress .activity-list li .acomment-meta,
+  #buddypress .activity-list li .acomment-content,
+  #buddypress .activity-list li .acomment-options,
+  #bbpress-forums .activity-list li .activity-avatar,
+  #bbpress-forums .activity-list li .activity-content,
+  #bbpress-forums .activity-list li .acomment-avatar,
+  #bbpress-forums .activity-list li .acomment-meta,
+  #bbpress-forums .activity-list li .acomment-content,
+  #bbpress-forums .activity-list li .acomment-options {
+    float: left; }
+  #buddypress .activity-list li .activity-avatar,
+  #buddypress .activity-list li .acomment-avatar,
+  #bbpress-forums .activity-list li .activity-avatar,
+  #bbpress-forums .activity-list li .acomment-avatar {
+    width: 8%;
+    min-width: 50px; }
+  #buddypress .activity-list li .activity-content,
+  #buddypress .activity-list li .acomment-meta,
+  #buddypress .activity-list li .acomment-content,
+  #buddypress .activity-list li .acomment-options,
+  #bbpress-forums .activity-list li .activity-content,
+  #bbpress-forums .activity-list li .acomment-meta,
+  #bbpress-forums .activity-list li .acomment-content,
+  #bbpress-forums .activity-list li .acomment-options {
+    width: 92%; }
+  #buddypress .activity-list li .acomment-options,
+  #bbpress-forums .activity-list li .acomment-options {
+    margin-left: 8%; } }
 
 #buddypress #item-body .activity-list .activity-avatar,
 #buddypress #item-body .activity-list .acomment-avatar,
-#buddypress #item-body .activity-list .acomment-options,
 #bbpress-forums #item-body .activity-list .activity-avatar,
-#bbpress-forums #item-body .activity-list .acomment-avatar,
-#bbpress-forums #item-body .activity-list .acomment-options {
+#bbpress-forums #item-body .activity-list .acomment-avatar {
   display: none; }
 
 @media screen and (min-width: 769px) {
@@ -6399,50 +6319,48 @@ body.buddypress .page-title {
   #bbpress-forums #item-body .activity-list .acomment-avatar,
   #bbpress-forums #item-body .activity-list .acomment-options {
     display: block;
-    width: 7%; }
-  #buddypress #item-body .activity-list .activity-content,
-  #buddypress #item-body .activity-list .acomment-meta,
-  #buddypress #item-body .activity-list .acomment-content,
-  #buddypress #item-body .activity-list .acomment-options,
-  #bbpress-forums #item-body .activity-list .activity-content,
-  #bbpress-forums #item-body .activity-list .acomment-meta,
-  #bbpress-forums #item-body .activity-list .acomment-content,
-  #bbpress-forums #item-body .activity-list .acomment-options {
-    width: 93%; } }
+    width: 8%; }
+  #buddypress #item-body .activity-list .activity-avatar,
+  #buddypress #item-body .activity-list .acomment-avatar,
+  #bbpress-forums #item-body .activity-list .activity-avatar,
+  #bbpress-forums #item-body .activity-list .acomment-avatar {
+    min-width: 50px; } }
 
-#buddypress .activity-list > li,
-#bbpress-forums .activity-list > li {
-  display: block; }
-  #buddypress .activity-list > li .activity-content,
-  #bbpress-forums .activity-list > li .activity-content {
-    padding-bottom: .25em; }
-    #buddypress .activity-list > li .activity-content p:last-child,
-    #bbpress-forums .activity-list > li .activity-content p:last-child {
-      margin-bottom: .5em; }
-    #buddypress .activity-list > li .activity-content .activity-header p:last-child,
-    #buddypress .activity-list > li .activity-content .activity-inner p:last-child,
-    #bbpress-forums .activity-list > li .activity-content .activity-header p:last-child,
-    #bbpress-forums .activity-list > li .activity-content .activity-inner p:last-child {
-      margin-bottom: .5em; }
-  #buddypress .activity-list > li .activity-comments,
-  #bbpress-forums .activity-list > li .activity-comments {
+#buddypress .activity-list > li .activity-content,
+#bbpress-forums .activity-list > li .activity-content {
+  padding-bottom: .25em; }
+  #buddypress .activity-list > li .activity-content p:last-child,
+  #bbpress-forums .activity-list > li .activity-content p:last-child {
+    margin-bottom: .5em; }
+  #buddypress .activity-list > li .activity-content .activity-header p:last-child,
+  #buddypress .activity-list > li .activity-content .activity-inner p:last-child,
+  #bbpress-forums .activity-list > li .activity-content .activity-header p:last-child,
+  #bbpress-forums .activity-list > li .activity-content .activity-inner p:last-child {
+    margin-bottom: .5em; }
+
+#buddypress .activity-list > li .activity-comments,
+#bbpress-forums .activity-list > li .activity-comments {
+  clear: both;
+  margin-top: .5em; }
+  #buddypress .activity-list > li .activity-comments .acomment-content p:last-child,
+  #bbpress-forums .activity-list > li .activity-comments .acomment-content p:last-child {
+    margin-bottom: .25em; }
+  #buddypress .activity-list > li .activity-comments ul li,
+  #bbpress-forums .activity-list > li .activity-comments ul li {
     clear: both;
-    margin-top: .5em; }
-    #buddypress .activity-list > li .activity-comments .acomment-content p:last-child,
-    #bbpress-forums .activity-list > li .activity-comments .acomment-content p:last-child {
-      margin-bottom: .25em; }
-    #buddypress .activity-list > li .activity-comments ul li,
-    #bbpress-forums .activity-list > li .activity-comments ul li {
-      clear: both;
-      padding-left: .5em;
-      padding-top: .5em;
-      padding-bottom: .5em;
-      margin-left: 2em;
-      border-top: 1px solid #c0c0c0;
-      background-color: rgba(47, 69, 80, 0.05); }
-      #buddypress .activity-list > li .activity-comments ul li:last-child,
-      #bbpress-forums .activity-list > li .activity-comments ul li:last-child {
-        padding-bottom: 0; }
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-left: .5em;
+    border-top: 1px solid #c0c0c0;
+    background-color: rgba(47, 69, 80, 0.05); }
+    @media screen and (min-width: 769px) {
+      #buddypress .activity-list > li .activity-comments ul li,
+      #bbpress-forums .activity-list > li .activity-comments ul li {
+        margin-left: 2em; } }
+    #buddypress .activity-list > li .activity-comments ul li:last-child,
+    #bbpress-forums .activity-list > li .activity-comments ul li:last-child {
+      padding-bottom: 0; }
 
 #buddypress .activity-list .activity-comments form,
 #bbpress-forums .activity-list .activity-comments form {
@@ -6519,7 +6437,6 @@ body.buddypress .page-title {
 #buddypress #item-header .activity-content .highlight,
 #bbpress-forums #item-header #item-header-content .highlight,
 #bbpress-forums #item-header .activity-content .highlight {
-  font-size: 0.8rempx;
   font-size: 0.05remrem;
   background-color: #ffc857;
   border-radius: 10px;
@@ -6536,7 +6453,6 @@ body.buddypress .page-title {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  font-size: 14px;
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -6546,7 +6462,7 @@ body.buddypress .page-title {
   text-align: center;
   border: 0;
   background: #db3a34;
-  color: #fff;
+  color: #fff !important;
   display: inline-block;
   border-radius: 0; }
   #buddypress #item-header #item-header-content #item-buttons .leave-group:link, #buddypress #item-header #item-header-content #item-buttons .leave-group:visited,
@@ -6556,7 +6472,7 @@ body.buddypress .page-title {
   #bbpress-forums #item-header #item-header-content #item-buttons .leave-group:visited,
   #bbpress-forums #item-header .activity-content #item-buttons .leave-group:link,
   #bbpress-forums #item-header .activity-content #item-buttons .leave-group:visited {
-    color: #fff; }
+    color: #fff !important; }
   #buddypress #item-header #item-header-content #item-buttons .leave-group:hover, #buddypress #item-header #item-header-content #item-buttons .leave-group:focus,
   #buddypress #item-header .activity-content #item-buttons .leave-group:hover,
   #buddypress #item-header .activity-content #item-buttons .leave-group:focus,
@@ -6577,31 +6493,32 @@ body.buddypress .page-title {
   padding: 0;
   list-style: none; }
 
-#buddypress #groups-list .group-has-avatar .item-avatar,
-#bbpress-forums #groups-list .group-has-avatar .item-avatar {
+#buddypress #groups-list .item-avatar,
+#bbpress-forums #groups-list .item-avatar {
   text-align: center; }
 
 @media screen and (min-width: 769px) {
-  #buddypress #groups-list .group-has-avatar .item-avatar,
-  #buddypress #groups-list .group-has-avatar .item,
-  #buddypress #groups-list .group-has-avatar .action,
-  #bbpress-forums #groups-list .group-has-avatar .item-avatar,
-  #bbpress-forums #groups-list .group-has-avatar .item,
-  #bbpress-forums #groups-list .group-has-avatar .action {
-    display: block;
-    float: left; }
-  #buddypress #groups-list .group-has-avatar .item-avatar,
-  #bbpress-forums #groups-list .group-has-avatar .item-avatar {
-    width: 7%;
-    text-align: left; }
-  #buddypress #groups-list .group-has-avatar .item,
-  #buddypress #groups-list .group-has-avatar .action,
-  #bbpress-forums #groups-list .group-has-avatar .item,
-  #bbpress-forums #groups-list .group-has-avatar .action {
-    width: 93%; }
-  #buddypress #groups-list .group-has-avatar .action,
-  #bbpress-forums #groups-list .group-has-avatar .action {
-    margin-left: 7%; } }
+  #buddypress #groups-list li,
+  #bbpress-forums #groups-list li {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: top;
+    max-width: 100%; }
+    #buddypress #groups-list li .item-avatar,
+    #bbpress-forums #groups-list li .item-avatar {
+      flex: 0 0 7%;
+      text-align: left; }
+    #buddypress #groups-list li .item,
+    #bbpress-forums #groups-list li .item {
+      flex: 1;
+      padding-right: .5em;
+      padding-left: .5em; }
+    #buddypress #groups-list li .action,
+    #bbpress-forums #groups-list li .action {
+      flex-basis: 15%; } }
 
 #buddypress #groups-list .item-desc,
 #buddypress #groups-list .item-desc p,
@@ -6744,7 +6661,6 @@ body.buddypress .page-title {
 #buddypress .bbp-topics .bbp-body .bbp-topic-reply-count,
 #bbpress-forums .bbp-topics .bbp-body .bbp-topic-voice-count,
 #bbpress-forums .bbp-topics .bbp-body .bbp-topic-reply-count {
-  font-size: 14px;
   font-size: 0.875rem; }
 
 #buddypress .bbp-topics .bbp-body .bbp-topic-meta,
@@ -6778,7 +6694,6 @@ body.buddypress .page-title {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  font-size: 14px;
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -6788,13 +6703,13 @@ body.buddypress .page-title {
   text-align: center;
   border: 0;
   background: #888;
-  color: #fff;
+  color: #fff !important;
   display: inline-block;
   border-radius: 0; }
   #buddypress #doc-submit-options a.action:link, #buddypress #doc-submit-options a.action:visited,
   #bbpress-forums #doc-submit-options a.action:link,
   #bbpress-forums #doc-submit-options a.action:visited {
-    color: #fff; }
+    color: #fff !important; }
   #buddypress #doc-submit-options a.action:hover, #buddypress #doc-submit-options a.action:focus,
   #bbpress-forums #doc-submit-options a.action:hover,
   #bbpress-forums #doc-submit-options a.action:focus {
@@ -6808,7 +6723,6 @@ body.buddypress .page-title {
   background-color: #ddd; }
   #buddypress .docs-info-header p.currently-viewing,
   #bbpress-forums .docs-info-header p.currently-viewing {
-    font-size: 14px;
     font-size: 0.875rem;
     margin-top: inherit;
     margin-bottom: inherit; }
@@ -6816,7 +6730,6 @@ body.buddypress .page-title {
   #buddypress .docs-info-header #docs-filter-sections,
   #bbpress-forums .docs-info-header #docs-filter-meta,
   #bbpress-forums .docs-info-header #docs-filter-sections {
-    font-size: 14px;
     font-size: 0.875rem;
     color: #444; }
   #buddypress .docs-info-header #docs-filter-meta,
@@ -6841,7 +6754,6 @@ body.buddypress .page-title {
     #bbpress-forums .docs-info-header #docs-filter-sections .docs-filter-section {
       border: none;
       border-radius: 0;
-      font-size: 14px;
       font-size: 0.875rem; }
       #buddypress .docs-info-header #docs-filter-sections .docs-filter-section.docs-filter-section-open,
       #bbpress-forums .docs-info-header #docs-filter-sections .docs-filter-section.docs-filter-section-open {
@@ -6860,7 +6772,6 @@ body.buddypress .page-title {
       #buddypress .docs-info-header #docs-filter-sections #docs-filter-section-tags ul#tags-list li,
       #bbpress-forums .docs-info-header #docs-filter-sections #docs-filter-section-tags ul#tags-list li {
         margin-bottom: 0;
-        font-size: 14px;
         font-size: 0.875rem; }
         #buddypress .docs-info-header #docs-filter-sections #docs-filter-section-tags ul#tags-list li a,
         #bbpress-forums .docs-info-header #docs-filter-sections #docs-filter-section-tags ul#tags-list li a {
@@ -6889,7 +6800,6 @@ body.buddypress .page-title {
     list-style: none; }
     #buddypress .doc-permissions ul li,
     #bbpress-forums .doc-permissions ul li {
-      font-size: 14px;
       font-size: 0.875rem; }
       #buddypress .doc-permissions ul li:not(:last-child),
       #bbpress-forums .doc-permissions ul li:not(:last-child) {
@@ -6936,7 +6846,7 @@ body.buddypress .page-title {
       background-color: #555555; }
     #buddypress .doc-tabs ul li a:not(:last-child),
     #bbpress-forums .doc-tabs ul li a:not(:last-child) {
-      border-right: 1px solid rgba(0, 0, 0, 0.1); }
+      border-right: 1px solid rbga(#888, 0.1); }
   #buddypress .doc-tabs ul li:active a,
   #buddypress .doc-tabs ul li.current a,
   #buddypress .doc-tabs ul li.selected a,
@@ -6968,7 +6878,6 @@ body.buddypress .page-title {
   #buddypress .tags-cell a,
   #bbpress-forums .doc-meta a,
   #bbpress-forums .tags-cell a {
-    font-size: 11px;
     font-size: 0.6875rem;
     background-color: #888;
     border-radius: 10px;
@@ -6989,7 +6898,6 @@ body.buddypress .page-title {
 #buddypress .date-cell,
 #bbpress-forums .date-cell {
   width: 10%;
-  font-size: 14px;
   font-size: 0.875rem; }
 
 #buddypress .tags-cell,
@@ -7041,7 +6949,6 @@ body.buddypress .page-title {
 #bbpress-forums .group-button a,
 #bbpress-forums .activity-meta a,
 #bbpress-forums .acomment-options a {
-  font-size: 14px !important;
   font-size: 14px;
   font-size: 0.875rem;
   font-weight: normal;
@@ -7753,7 +7660,6 @@ body.buddypress .page-title {
 #bbpress-forums .count,
 #bbpress-forums .item-list-tabs li a span,
 #bbpress-forums .acomment-reply span {
-  font-size: 11px;
   font-size: 0.6875rem;
   background-color: #888;
   border-radius: 10px;
@@ -7910,7 +7816,6 @@ PAGE BUILDER
 
 .logo-NYCP,
 .domain-logo {
-  font-size: 18px;
   font-size: 1.125rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -7947,7 +7852,6 @@ PAGE BUILDER
 
 .tagline-NYCP,
 .tagline-network {
-  font-size: 13px;
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -7956,7 +7860,6 @@ PAGE BUILDER
   color: #a9a9a9; }
 
 .footer .menu li:first-child {
-  font-size: 28px;
   font-size: 1.75rem;
   margin: 0;
   border-top: 0; }
@@ -8059,7 +7962,6 @@ body.overview .promo-intro {
   .overview-actions li {
     display: inline-block;
     margin: 5px;
-    font-size: 18px;
     font-size: 1.125rem;
     line-height: 1.2;
     white-space: nowrap; }
@@ -8114,7 +8016,6 @@ body.overview .promo-intro {
     .overview-value .wp-caption img {
       border: 5px solid #fff; }
     .overview-value .wp-caption p.wp-caption-text {
-      font-size: 18px;
       font-size: 1.125rem;
       line-height: 1.6;
       text-align: left;
@@ -8208,7 +8109,6 @@ body.overview .promo-intro {
       width: 153px !important;
       padding-top: 10px; }
       .services-promo .wp-caption p {
-        font-size: 14px;
         font-size: 0.875rem; } }
 
 .glocal-promo {

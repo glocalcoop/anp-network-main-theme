@@ -11,11 +11,10 @@
 }
 
 // FONT SIZING
-// http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
-
-@mixin font-size($size: 16){
-  font-size: $size + px;
-  font-size: $size / 16 + rem;
+@mixin font-size($font-size: 16) {
+  $rem-font-value: ($font-size / 16);
+  // font-size: ($font-size * 1px);
+  font-size: $rem-font-value + rem;
 }
 
 
@@ -136,7 +135,7 @@
         }
 
         &:not(:last-child) {
-          border-right: 1px solid $border-color;
+          border-right: 1px solid rbga($bg-color,.1);
         }
       }
 
@@ -183,12 +182,12 @@
   text-align: center;
   border: 0;
   background: $bg-color;
-  color: $color;
+  color: $color !important;
   display: inline-block;
   border-radius: $base-border-radius;
   &:link,
   &:visited {
-    color: $color;
+    color: $color !important;
   }
   &:hover,
   &:focus {
@@ -199,6 +198,7 @@
 
 @mixin button-text($font-size: $milli, $color: $text-color, $icon: cog, $icon-color: $default) {
 
+  font-size: 14px;
   @include font-size($font-size);
   font-weight: normal;
   color: $text-color !important;
@@ -230,7 +230,6 @@
 
 @mixin button-icon($white: $white, $icon: cog, $background-color: $default) {
   @include button($color: $white, $bg-color: $background-color);
-  // @include visuallyhidden();
   
   &:before {
     @include font-icon-base();
@@ -452,6 +451,16 @@
     @include font-size($nano);
     color: $anchor-color;
   }
+}
+
+// FLEX BOX
+
+%flexbox-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 
 
