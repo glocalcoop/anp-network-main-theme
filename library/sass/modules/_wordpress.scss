@@ -47,6 +47,11 @@ style a page via class
 	@extend %meta;
 }
 
+%username {
+	@include font-size($milli);
+	color: $quiet-color;
+}
+
 %small {
 	@include font-size($milli);
 	color: $quiet-color;
