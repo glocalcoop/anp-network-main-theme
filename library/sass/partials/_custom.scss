@@ -66,15 +66,23 @@
   }
 }
 
-@mixin inline-flex-list($direction: row, $wrap: wrap, $align: space-between) {
+@mixin inline-flex-list($direction: row, $wrap: wrap, $align: space-between, $shrink: 1, $grow: 0, $context: auto) {
   @include no-bullets();
   display: flex;
-  flex-direction: $direction;
   flex-wrap: $wrap;
   li {
-    display: flex;
-    align-items: $align;
-    margin-bottom: 0;
+    flex: $shrink $grow $context;
+    margin-bottom: 1px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+
+    &:not(:last-child) {
+      border-right: 1px solid rgba(0,0,0,.1);
+    }
+
+    a {
+      display: block;
+    }
   }
 }
 
@@ -189,12 +197,13 @@
   }
 }
 
-@mixin button-text($font-size: $milli, $color: $text-color, $icon: cog) {
+@mixin button-text($font-size: $milli, $color: $text-color, $icon: cog, $icon-color: $default) {
 
   @include font-size($font-size);
   font-weight: normal;
-  color: $text-color;
+  color: $text-color !important;
   display: inline-block;
+  vertical-align: middle;
   border-radius: 0;
   background: transparent;
   text-transform: none;
@@ -214,10 +223,20 @@
     @extend %fa;
     @extend %fa-#{$icon};
     margin-right: 4px;
-    color: $default;
+    color: $icon-color;
   }
 }
 
+
+@mixin button-icon($white: $white, $icon: cog, $background-color: $default) {
+  @include button($color: $white, $bg-color: $background-color);
+  // @include visuallyhidden();
+  
+  &:before {
+    @include font-icon-base();
+    @extend %fa-#{$icon};
+  }
+}
 
 @mixin button-group($border-color: $hr-alt, $background-color: $quiet-color, $active-color: $info, $radius: 3px) {
 
@@ -344,6 +363,17 @@
     transition: visibility 1s, opacity 1s;
   }
 
+}
+
+@mixin visuallyhidden() {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
 }
 
 
