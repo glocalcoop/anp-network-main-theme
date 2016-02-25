@@ -8,10 +8,22 @@ body.buddypress {
         margin-bottom: 35px;
     }
 
+    h1 {
+        text-align: center;
+    }
+
+    @include breakpoint(md) {
+        h1 {
+            text-align: left;
+        }
+    }
+
 }
 
 #buddypress,
 #bbpress-forums {
+
+    transition: all 2s;
 
     // LAYOUT
     #item-header {
@@ -33,18 +45,20 @@ body.buddypress {
 
                 #item-header-avatar {
                     order: 1;
-                    width: 20%;
+                    flex-basis: 20%;
+                    min-width: 150px;
                 }
 
                 #item-header-content {
                     flex: 1;
                     order: 2;
+                    padding-right: .5em;
+                    padding-left: .5em;
                 }
 
                 #item-actions {
                     order: 3;
-                    flex: 0, 1, auto;
-                    width: 30%;
+                    flex-basis: 30%;
                 }
 
             }
@@ -52,11 +66,39 @@ body.buddypress {
 
     }
 
+    #item-header {
+
+        h2 {
+            border-bottom: none;
+        }
+
+        #item-header-content {
+            @media screen and (max-width: $md-screen - 1) {
+                text-align: center;
+            }
+        }
+
+        #item-meta {
+
+            @media screen and (max-width: $md-screen - 1) {
+                text-align: center;
+
+                span {
+                    display: block;
+                    margin: .25em auto;
+                }
+
+                p {
+                    text-align: left;
+                }
+            }
+            
+        }
+    }
+
     #item-nav {
         margin-top: 1em;
     }
-
-    #item-body {}
 
 
     // NAV MENUS
@@ -202,6 +244,10 @@ body.buddypress {
             &:not(:last-child) {
                 border-bottom: 1px solid $hr-color;
             }
+            &:hover,
+            &:focus {
+                background-color: rgba($primary, .05);
+            }
         }
         td,
         th {
@@ -211,6 +257,10 @@ body.buddypress {
         thead {
             tr {
                 background-color: $panel-bg-color;
+                &:hover,
+                &:focus {
+                    background-color: darken($panel-bg-color, 10%);
+                }
             }
             td,
             th {
@@ -488,7 +538,9 @@ body.buddypress {
                 @include inline-list();
             }
         }
-        #item-header-avatar {}
+        #item-header-avatar {
+            text-align: center;
+        }
         #item-header-content,
         .activity-content {
             .highlight {
@@ -597,27 +649,46 @@ body.buddypress {
     #members-list {
         li {
             @extend %clearfix;
+            text-align: center;
         }
-        li > a,
-        h5,
-        .activity,
-        .item-avatar,
-        .item {
-            float: left;
+
+        @include breakpoint(md) {
+
+            li {
+                text-align: left;
+
+                &> a,
+                h5,
+                .activity,
+                .item-avatar,
+                .item {
+                    float: left;
+                }
+                &> a,
+                .item-avatar {
+                    width: 8%;
+                    min-width: 52px;
+                }
+
+                h5,
+                .item,
+                .activity,
+                .action {
+                    width: 90%;
+                    max-width: 92%;
+                }
+
+                .activity,
+                .action {
+                    @extend %meta;
+                }
+
+            }
+
+
         }
-        li > a,
-        .item-avatar {
-            width: 7%;
-        }
-        h5,
-        .item {
-            width: 93%;
-        }
-        .activity,
-        .action {
-            width: 93%;
-            @extend %meta;
-        }
+
+
     }
 
     #member-list,
