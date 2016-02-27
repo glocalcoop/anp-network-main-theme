@@ -209,7 +209,7 @@ ENQUEUE AND REGISTER SCRIPTS AND STYLES
 ***************************************/
 
 
-function glocal_scripts_and_styles() {
+function anp_scripts_and_styles() {
 
 	// Load hosted version of jquery for template using isotope only
 	if(is_page_template('page-directory.php')) {
@@ -235,13 +235,11 @@ function glocal_scripts_and_styles() {
 	wp_register_script( 'isotope-script', get_template_directory_uri() . '/library/js/isotope.pkgd.min.js', array(), '', true );
 	
 	// Civi Theme Stylesheet
-	wp_register_style( 'glocal-civicrm', get_template_directory_uri() . '/library/css/plugins/civicrm.css');
+	wp_register_style( 'anp-civicrm', get_template_directory_uri() . '/library/css/plugins/civicrm.css');
 
 	// Main Theme Stylesheet
-	//wp_register_style( 'glocal-stylesheet-dev', get_template_directory_uri() . '/style.css');
-	wp_register_style( 'glocal-stylesheet', get_template_directory_uri() . '/library/css/style.min.css');
-	
-
+	wp_register_style( 'anp-stylesheet', get_template_directory_uri() . '/style.css');
+	// wp_register_style( 'anp-stylesheet', get_template_directory_uri() . '/library/css/style.min.css');
 	
 
 	// enqueue styles and scripts
@@ -249,13 +247,26 @@ function glocal_scripts_and_styles() {
     wp_enqueue_script( 'isotope-script' );
 
     wp_enqueue_style( 'responsive-slider-stylesheet' );
-	wp_enqueue_style( 'glocal-civicrm' );
-    //wp_enqueue_style( 'glocal-stylesheet-dev' );
-    wp_enqueue_style( 'glocal-stylesheet' );
+	wp_enqueue_style( 'anp-civicrm' );
+    wp_enqueue_style( 'anp-stylesheet' );
+
+	// Dequeue BuddyPress styles
+	wp_dequeue_style( 'bp-groupblog-screen' );
+    wp_dequeue_style( 'bbp-default' );
+    wp_dequeue_style( 'bp-legacy-css' );
+	wp_dequeue_style( 'invite-anyone-by-email-style' );
 
 }
 
-if ( !is_admin() ) add_action( 'wp_enqueue_scripts', 'glocal_scripts_and_styles' );
+if ( !is_admin() ) add_action( 'wp_enqueue_scripts', 'anp_scripts_and_styles' );
+
+
+// Invite Anyone plugin enequeued styles on 'wp_print_styles' instead of 'wp_enqueue_scripts'
+function remove_bp_print_styles() {
+	wp_dequeue_style( 'invite-anyone-by-email-style' );
+}
+
+add_action( 'wp_print_styles', 'remove_bp_print_styles');
 
 /************* COMMENT LAYOUT *********************/
 
