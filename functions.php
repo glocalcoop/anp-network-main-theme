@@ -238,7 +238,7 @@ function anp_scripts_and_styles() {
 	wp_register_style( 'anp-civicrm', get_template_directory_uri() . '/library/css/plugins/civicrm.css');
 
 	// Main Theme Stylesheet
-	wp_register_style( 'anp-stylesheet-dev', get_template_directory_uri() . '/style.css');
+	wp_register_style( 'anp-stylesheet', get_template_directory_uri() . '/style.css');
 	// wp_register_style( 'anp-stylesheet', get_template_directory_uri() . '/library/css/style.min.css');
 	
 
@@ -248,8 +248,7 @@ function anp_scripts_and_styles() {
 
     wp_enqueue_style( 'responsive-slider-stylesheet' );
 	wp_enqueue_style( 'anp-civicrm' );
-    wp_enqueue_style( 'anp-stylesheet-dev' );
-    // wp_enqueue_style( 'anp-stylesheet' );
+    wp_enqueue_style( 'anp-stylesheet' );
 
 	// Dequeue BuddyPress styles
 	wp_dequeue_style( 'bp-groupblog-screen' );
