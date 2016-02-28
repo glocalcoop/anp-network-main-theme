@@ -4,7 +4,9 @@
     background: $base8;
     .global {
         padding: 30px 0;
-        @include breakpoint(md) {position: relative;}
+        @include breakpoint(md) {
+          position: relative;
+        }
     }
 }
 
@@ -24,11 +26,11 @@
     	margin-bottom: 0;
 	}
 	li {
-    	@include font-size(16);
+    	@include font-size($zeta);
     	color: $text-color;
     	padding: 0;
     	margin: 0;
-    	display: block !important;
+    	display: block;
 	}
 	a, a:visited {
     	color: $primary;
@@ -64,20 +66,39 @@
         width: 30px;
         line-height: 30px;
         text-align: center;
-        border-radius: 0;
+        border-radius: $base-border-radius;
         margin-right: 2px;
     }
     a {
         display: block;
         height: 100%;
         line-height: 30px; // needed to vertically center icons
+        @include font-icon-base(); 
     }
-    .facebook a {@include flip-button($tertiary); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-facebook;}
-    .twitter a {@include flip-button($tertiary); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-twitter;}
-    .github a {@include flip-button($primary); @include font-icon-base($family:"entypo-social"); @extend %entypo-social-github;}
-    .email a {@include flip-button($success); @include font-icon-base($family:"entypo"); @extend %entypo-mail;}
-    .rss a {@include flip-button($secondary); @include font-icon-base($family:"entypo"); @extend %entypo-rss;}
-    .network a {@include flip-button($black); @include font-icon-base($family:"entypo"); @extend %entypo-network;}
+    %facebook a {
+      @include flip-button($tertiary); 
+      @extend %fa-facebook;
+    }
+    .twitter a {
+      @include flip-button($tertiary); 
+      @extend %fa-twitter;
+    }
+    .github a {
+      @include flip-button($primary); 
+      @extend %fa-github;
+    }
+    .email a {
+      @include flip-button($success); 
+      @extend %fa-mail;
+    }
+    .rss a {
+      @include flip-button($secondary); 
+      @extend %fa-rss;
+    }
+    .network a {
+      @include flip-button($black); 
+      @extend %fa-sitemap;
+    }
     
     // child themes
     .glocal-group &,
@@ -95,7 +116,7 @@
 .copyright {
   @include font-size(10);
   text-transform: uppercase; 
-      letter-spacing: $tracking;
+  letter-spacing: $tracking;
   color: $base4;
   display: inline-block;
   margin: 15px 0;
@@ -104,8 +125,10 @@
   .copyleft {
     @include font-size(30);
     // @include flip-button($black); 
-    @include font-icon-base($family:"entypo"); 
-    @extend %entypo-cc-sa;
+    @include font-icon-base(); 
+    @extend %fa-creative-commons;
   }
-  @include breakpoint(md) {@include font-size(12);}
+  @include breakpoint(md) {
+    @include font-size($micro);
+  }
 }

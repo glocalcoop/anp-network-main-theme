@@ -140,8 +140,8 @@ styles and our css is cleaner and more scalable. */
         .main-nav,
         .main-nav.active {
             display: block;
-            position: relative !important;
-            width: 730/900 * 100% !important;
+            position: relative;
+            width: 730/900 * 100%;
 
             &>li {
                 display: inline-block;
@@ -239,8 +239,8 @@ styles and our css is cleaner and more scalable. */
         }
     }
     .anchor-menu {
-        @include font-icon-base($family:"FontAwesome"); 
-        @extend .fa-angle-down;
+        @include font-icon-base(); 
+        @extend %fa-angle-down;
         font-size: 14px;
         line-height: 1;
         display: inline-block;
@@ -262,8 +262,8 @@ styles and our css is cleaner and more scalable. */
         }
     }
     .anchor-search {
-        @include font-icon-base($family:"ios7-icon"); 
-        @extend %ios7-search;
+        @include font-icon-base(); 
+        @extend %fa-search;
         @include font-size($delta); 
         display: block;
         padding: 0;
@@ -380,8 +380,8 @@ styles and our css is cleaner and more scalable. */
 
     .menu-item-has-children {
         > a {
-            @include font-icon-base($family:"ios7-icon"); 
-            @extend %ios7-down;
+            @include font-icon-base(); 
+            @extend %fa-angle-down;
         }
         > a:before {
             float: right;
@@ -488,50 +488,53 @@ styles and our css is cleaner and more scalable. */
 
 $f-height: 2.5em; // set variable for this menu
 
-.filter, 
-.sort {
-    max-height: $f-height;
-    padding-top: $f-height; // allow for absolutely-positioned .is-on item
-    overflow: hidden;
-    position: relative;
-    margin-bottom: $space;
-    @include transition(max-height 0.25s ease); // slide down and up
-	@include breakpoint(sm) {@include span-columns(8);}
-	@include breakpoint(lg) {@include span-columns(4);}
-	&:hover {
-    	max-height: 10em;
-    	cursor: pointer;
-	}
-    li {
-        line-height: $f-height;
-        display: block;
-        padding: 0 1em;
-        margin: 0;
-        background: $bg-content;
-        color: $text-color;
-        width: 100%;
-        white-space: nowrap;
+.directory-content {
+    .filter, 
+    .sort {
+        max-height: $f-height;
+        padding-top: $f-height; // allow for absolutely-positioned .is-on item
         overflow: hidden;
-        text-overflow: ellipsis;
-        @include font-size($zeta);
+        position: relative;
+        margin-bottom: $space;
+        @include transition(max-height 0.25s ease); // slide down and up
+        @include breakpoint(sm) {@include span-columns(8);}
+        @include breakpoint(lg) {@include span-columns(4);}
         &:hover {
-            background: lighten($anchor-color, 10);
-            color: $white;
+            max-height: 10em;
+            cursor: pointer;
         }
-        &.is-on {
-            @include font-icon-base($family:"ios7-icon"); 
-            @include font-size($zeta);
-            @extend %ios7-down;
-            background: $anchor-color;
-            color: $white;
-            position: absolute;
-            top: 0;
+        li {
+            line-height: $f-height;
+            display: block;
+            padding: 0 1em;
+            margin: 0;
+            background: $bg-content;
+            color: $text-color;
             width: 100%;
-            &:before {
-                float: right;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include font-size($zeta);
+            &:hover {
+                background: lighten($anchor-color, 10);
+                color: $white;
+            }
+            &.is-on {
+                @include font-icon-base(); 
+                @include font-size($zeta);
+                @extend %fa-angle-down;
+                background: $anchor-color;
+                color: $white;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                &:before {
+                    float: right;
+                }
             }
         }
     }
+    
 }
 
 
@@ -591,4 +594,9 @@ $f-height: 2.5em; // set variable for this menu
 		float: right;
 	}
 
+}
+
+// Navigation Menus
+%tab-navigation {
+    @include tab-nav();
 }

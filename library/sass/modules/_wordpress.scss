@@ -44,9 +44,20 @@ style a page via class
     line-height: 1.5;
 }
 .meta {
-	@include font-size($nano);
+	@extend %meta;
+}
+
+%username {
+	@include font-size($milli);
 	color: $quiet-color;
-	text-transform: uppercase;
+}
+
+%small {
+	@include font-size($milli);
+	color: $quiet-color;
+	a {
+		color: $quiet-color;
+	}
 }
 
 .screen-reader-text {

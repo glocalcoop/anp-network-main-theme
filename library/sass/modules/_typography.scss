@@ -2,27 +2,23 @@
 // variations are in _posts partial
 
 html {
-    line-height: 1.5;
+    line-height: $base-line-height;
     font-size: 80%;
-	@include breakpoint(md) {font-size: 90%;}
-	@include breakpoint(lg) {font-size: 100%;} // 16px
+	@include breakpoint(md) {
+        font-size: 90%;
+    }
+	@include breakpoint(lg) {
+        font-size: 100%;
+    } // 16px
 }
 
 body {
     font-family: $sans;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: $base-line-height;
     color: $text-color;
 }
 
-
-// FONT SIZING
-// http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
-
-@mixin font-size($size: 16){
-  font-size: $size + px;
-  font-size: $size / 16 + rem;
-}
 
 
 // HEADERS

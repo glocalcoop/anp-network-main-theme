@@ -1,5 +1,6 @@
-// BOX SLIDER PLUGIN 
-
+/*********************
+BOX SLIDER PLUGIN 
+*********************/
 div.bx-wrapper {
     position: relative;
     margin: 20px auto;
@@ -68,7 +69,7 @@ article.home-feature div.bx-wrapper .bx-viewport {
 
 .bx-wrapper .bx-controls-direction {
     a {
-        @include font-icon-base($family:"ios7-icon"); 
+        @include font-icon-base(); 
         background: none;
         color: $anchor-color;
         overflow: hidden;
@@ -77,11 +78,11 @@ article.home-feature div.bx-wrapper .bx-viewport {
         color: $anchor-hover;
     }
     .bx-prev {
-        @extend %ios7-left;
+        @extend %fa-chevron-left;
         left: -40px;
     }
     .bx-next {
-        @extend %ios7-right;
+        @extend %fa-chevron-right;
         right: -40px;
     }
 }

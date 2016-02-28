@@ -1,0 +1,60 @@
+
+/* -------------------------------- 
+
+Breadcrumb
+
+-------------------------------- */
+
+%breadcrumb {
+	width: 100%;
+	@include inline-flex-list();
+	// border: 1px solid $primary;
+	background-color: $secondary;
+	margin-bottom: .5em;
+	li {
+		margin: 0;
+		a,
+		span {
+			padding: .5em;
+			display: block;
+			@include font-size($zeta);
+			color: $white;
+
+			&::first-letter {
+				// font-weight: bold;
+				color: $primary;
+			}
+
+		}
+
+		&:not(:last-child) {
+			a,
+			span {
+				&:after {
+					@extend %fa;
+					content: '';
+					font-size: 20px;
+					margin-left: .75em;
+					font-weight: normal;
+					color: $primary;
+				}
+
+			}
+		}
+
+		&.current,
+		&.selected {
+
+			a,
+			span {
+				font-weight: bold;
+				color: $white;
+
+				&::first-letter {
+					color: $white;
+				}
+			}
+
+		}
+	}
+}

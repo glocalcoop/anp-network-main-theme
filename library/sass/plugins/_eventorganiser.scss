@@ -1,5 +1,6 @@
-
-// EVENTS INDEX
+/*********************
+EVENT ORGANISER
+*********************/
 
 
 .page-events #main {
@@ -199,40 +200,6 @@ ul.event-categories {
     li {
         display: inline;
         margin-right: 20px;
-    }
-}
-
-
-
-// WIDGET
-
-.widget_em_calendar .widgettitle {
-  display: none;
-}
-
-table.em-calendar {
-    width: 100%;
-    margin-bottom: 20px;
-    a, a:hover {
-        padding: 0;
-    }
-    td.eventful-today,
-    td.eventless-today {
-        background: transparent !important;
-        border: 1px solid $white;
-    }
-    td.eventless-pre,
-    td.eventless-post {
-        color: $base2;
-    }
-    
-    td.eventful a, 
-    td.eventful-today a {
-        color: white;
-        background: $anchor-color;
-        &:hover {
-            background-color: lighten($anchor-color, 10);
-        }
     }
 }
 

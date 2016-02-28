@@ -43,6 +43,7 @@ SIDEBARS & ASIDES
   	border-bottom: 1px solid $text-color;
   	border-bottom: 1px solid rgba(0,0,0,.1);
   	margin: 0;
+    width: 100%;
 	}
 	li {
   	border-top: 1px solid $text-color;
@@ -143,7 +144,7 @@ SIDEBARS & ASIDES
     border-bottom: none;
 
     li {
-      display: inline-block !important;
+      display: inline-block;
       line-height: 30px;
       height: 30px;
       width: 30px;
@@ -153,7 +154,7 @@ SIDEBARS & ASIDES
       }
       a {
         height: 30px;
-        padding: 0 !important;
+        padding: 0;
       }
     }
 
