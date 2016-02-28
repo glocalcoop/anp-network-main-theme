@@ -140,8 +140,8 @@ styles and our css is cleaner and more scalable. */
         .main-nav,
         .main-nav.active {
             display: block;
-            position: relative !important;
-            width: 730/900 * 100% !important;
+            position: relative;
+            width: 730/900 * 100%;
 
             &>li {
                 display: inline-block;

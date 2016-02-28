@@ -1097,7 +1097,7 @@ hr {
     color: #444;
     padding: 0;
     margin: 0;
-    display: block !important; }
+    display: block; }
   .footer .widget a, .footer article.handbook .table-of-contents a, article.handbook .footer .table-of-contents a, .footer .widget a:visited, .footer article.handbook .table-of-contents a:visited, article.handbook .footer .table-of-contents a:visited {
     color: #2f4550; }
   @media screen and (min-width: 481px) {
@@ -1410,8 +1410,8 @@ styles and our css is cleaner and more scalable. */
   .nav-global .main-nav,
   .nav-global .main-nav.active {
     display: block;
-    position: relative !important;
-    width: 81.11111% !important; }
+    position: relative;
+    width: 81.11111%; }
     .nav-global .main-nav > li,
     .nav-global .main-nav.active > li {
       display: inline-block;
@@ -2389,7 +2389,7 @@ SIDEBARS & ASIDES
   float: none;
   border-bottom: none; }
   .widget ul.nav-social li, article.handbook .table-of-contents ul.nav-social li {
-    display: inline-block !important;
+    display: inline-block;
     line-height: 30px;
     height: 30px;
     width: 30px;
@@ -2398,7 +2398,7 @@ SIDEBARS & ASIDES
       margin-right: 0; }
     .widget ul.nav-social li a, article.handbook .table-of-contents ul.nav-social li a {
       height: 30px;
-      padding: 0 !important; }
+      padding: 0; }
 
 .widget .sites-list .site-name, article.handbook .table-of-contents .sites-list .site-name,
 .widget_glocal_network_sites_widget .sites-list .site-name {
@@ -3065,7 +3065,7 @@ article .post-image {
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-bottom: 0 !important; }
+    margin-bottom: 0; }
   .wp-caption p.wp-caption-text {
     font-size: 16;
     line-height: 1.3;

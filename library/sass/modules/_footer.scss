@@ -4,7 +4,9 @@
     background: $base8;
     .global {
         padding: 30px 0;
-        @include breakpoint(md) {position: relative;}
+        @include breakpoint(md) {
+          position: relative;
+        }
     }
 }
 
@@ -24,11 +26,11 @@
     	margin-bottom: 0;
 	}
 	li {
-    	@include font-size(16);
+    	@include font-size($zeta);
     	color: $text-color;
     	padding: 0;
     	margin: 0;
-    	display: block !important;
+    	display: block;
 	}
 	a, a:visited {
     	color: $primary;
@@ -127,6 +129,6 @@
     @extend %fa-creative-commons;
   }
   @include breakpoint(md) {
-    @include font-size(12);
+    @include font-size($micro);
   }
 }
