@@ -166,12 +166,6 @@ function bones_register_sidebars() {
 	*/
 } // don't remove this bracket!
 
-/*********************
-MENUS & NAVIGATION
-*********************/
-
-// wp menus
-add_theme_support( 'menus' );
 
 
 
@@ -179,10 +173,10 @@ add_theme_support( 'menus' );
 ADD THEME SUPPORT
 *************************/
 
-if ( ! function_exists('glocal_theme_features') ) {
+if ( ! function_exists('anp_theme_features') ) {
 
 // Register Theme Features
-function glocal_theme_features()  {
+function anp_theme_features()  {
 
 	// Add theme support for Post Formats
 	$formats = array( 'gallery', 'image', 'video', 'link', 'aside', );
@@ -193,14 +187,22 @@ function glocal_theme_features()  {
 	add_theme_support( 'html5', $markup );	
 
 	// Add theme support for custom header
-	add_theme_support( 'custom-header' );
+	add_theme_support( 'custom-header', array(
+		'header-text' => false
+	) );
+
+	// Add theme support for custom background image
+	add_theme_support( 'custom-background' );
+
+	// wp menus
+	add_theme_support( 'menus' );
 
 	// Add theme support for Translation
 	load_theme_textdomain( 'glocal', get_template_directory() . '/library/language' );	
 }
 
 // Hook into the 'after_setup_theme' action
-add_action( 'after_setup_theme', 'glocal_theme_features' );
+add_action( 'after_setup_theme', 'anp_theme_features' );
 
 }
 
@@ -335,7 +337,7 @@ function glocal_custom_theme_support() {
 	) );
 
 }
-add_action( 'after_setup_theme', 'glocal_custom_theme_support', 60 );
+//add_action( 'after_setup_theme', 'glocal_custom_theme_support', 60 );
 
 
 

@@ -14,7 +14,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background: $bg-body;
+  background-color: $bg-body;
 }
 
 
@@ -103,7 +103,9 @@ hr {
     background: $bg-content;
     margin: 20px 0;
     @include pad($space $space 0);
-  	@include breakpoint(md) {@include span-columns(16); }
+  	@include breakpoint(md) {
+      @include span-columns(16);
+    }
   	h1 {
       	margin-bottom: $space-third;
       	line-height: 1.1;
@@ -114,17 +116,20 @@ hr {
   }
 
 .home-feature {
-    border-top: 1px solid $hr-color;
-	@include breakpoint(md) {@include span-columns(12); border: 0;}
+  border-top: 1px solid $hr-color;
+	@include breakpoint(md) {
+    @include span-columns(12); 
+    border: 0;
+  }
 }
 
 .home-modules {
-    padding-bottom: 30px;
-    .row {
-        clear: both;
-        border-top: 1px solid $hr-color;
-        padding: 20px 0;
-    }
+  padding-bottom: 30px;
+  .row {
+      clear: both;
+      border-top: 1px solid $hr-color;
+      padding: 20px 0;
+  }
 }
 
 

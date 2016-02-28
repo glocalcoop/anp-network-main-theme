@@ -919,7 +919,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background: #fff; }
+  background-color: transparent; }
 
 hr {
   border: 0;
